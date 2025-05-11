@@ -1,0 +1,72 @@
+# Gradle cache y builds
+.gradle/
+build/
+!server/src/**/build/
+!shared/src/**/build/
+.kotlin/
+kotlin-native-data/
+kotlin-js-store/
+.kotlin-js-store/
+
+# IDEs & Config
+.idea/
+*.ipr
+*.iws
+.fleet/
+.vscode/
+.history/
+
+# Logs y archivos temporales
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Android
+.externalNativeBuild/
+.cxx/
+captures/
+.navigation/
+output.json
+*.aab
+
+# iOS
+*.xcworkspace/
+*.xcodeproj/
+*.xcuserstate
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+xcuserdata/
+
+# Node.js (por si usas frontend JS)
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# Archivos de configuración local
+.env
+local.properties
+
+# Git
+.git/
+.gitignore
+.dockerignore
