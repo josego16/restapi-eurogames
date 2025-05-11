@@ -13,13 +13,6 @@ import java.util.*
 
 fun Application.configureSecurity() {
     install(Sessions) {
-        cookie<UserIdPrincipal>(
-            "user_session",
-            storage = SessionStorageMemory()
-        ) {
-            cookie.path = "/"
-            cookie.maxAgeInSeconds = 60 * 60 * 24 * 30 // 30 days
-        }
     }
     install(Authentication) {
         jwt("jwt-auth") {
