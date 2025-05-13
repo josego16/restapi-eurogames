@@ -11,9 +11,9 @@ data class User(
     var id: UUID = UUID.randomUUID(),
 
     // Datos
-    var name: String, //nombre
+    var fullName: String, //nombre
     var username: String, //nombre de usuario
-    var email: String, //correo electronico
     var password: String, //contraseña
+    var email: String, //correo electronico
     var avatar: String? = null //foto de perfil
 )

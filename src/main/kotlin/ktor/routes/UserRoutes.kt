@@ -2,6 +2,7 @@ package ktor.routes
 
 import domain.dto.UserLoginDto
 import domain.dto.UserRegisterDto
+import domain.dto.UserUpdateDto
 import domain.usecase.user.ProviderUserUseCase
 import io.ktor.http.*
 import io.ktor.server.request.*
@@ -27,6 +28,24 @@ fun Routing.userRouting() {
             val user = ProviderUserUseCase.getUserById(id)
             if (user == null) {
                 call.respond(HttpStatusCode.NotFound, "Usuario no encontrado")
+            } else {
+                call.respond(user)
+            }
+        }
+        patch {
+            val updateUser = call.receive<UserUpdateDto>()
+
+            val idParam = call.parameters["id"]
+            val idUser = runCatching {
+                UUID.fromString(idParam)
+            }.onFailure {
+                call.respond(HttpStatusCode.BadRequest, "Id no valido")
+                return@patch
+            }.getOrDefault(UUID.randomUUID())
+
+            val user = ProviderUserUseCase.updateUser(idUser, updateUser)
+            if (user == null) {
+                call.respond(HttpStatusCode.NotFound, "No se ha podido actualizar el usuario")
             } else {
                 call.respond(user)
             }

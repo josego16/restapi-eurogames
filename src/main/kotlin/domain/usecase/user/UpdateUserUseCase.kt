@@ -10,9 +10,10 @@ class UpdateUserUseCase(private val repository: UserInterface) {
     suspend operator fun invoke(id: UUID, dto: UserUpdateDto): UserResponseDto? {
         val user = repository.getById(id) ?: return null
         val updateUser = user.copy(
-            name = dto.name,
-            username = dto.username,
-            email = dto.email,
+            fullName = dto.fullName?:"",
+            username = dto.username?:"",
+            email = dto.email?:"",
+            avatar = dto.avatar?:"",
         )
         val savedUser = repository.update(id, updateUser)
         return savedUser?.toResponseDto()

@@ -11,7 +11,7 @@ fun RequestValidationConfig.usersValidation() {
 
     validate<UserRegisterDto> { user ->
         when {
-            user.name.isBlank() -> return@validate ValidationResult.Invalid("El nombre no puede estar vacío.")
+            user.fullName.isBlank() -> return@validate ValidationResult.Invalid("El nombre no puede estar vacío.")
 
             user.email.isBlank() -> return@validate ValidationResult.Invalid("El correo no puede estar vacío.")
 
@@ -41,17 +41,13 @@ fun RequestValidationConfig.usersValidation() {
 
     validate<UserUpdateDto> { user ->
         when {
-            user.name.isBlank() ->
-                return@validate ValidationResult.Invalid("El nombre no puede estar vacío.")
+            user.fullName != null && user.fullName.isBlank() -> return@validate ValidationResult.Invalid("El nombre no puede estar vacío.")
 
-            user.email.isBlank() ->
-                return@validate ValidationResult.Invalid("El correo no puede estar vacío.")
+            user.email != null && user.email.isBlank() -> return@validate ValidationResult.Invalid("El correo no puede estar vacío.")
 
-            !user.email.matches(emailRegex) ->
-                return@validate ValidationResult.Invalid("El formato del correo no es válido.")
+            user.email != null && !user.email.matches(emailRegex) -> return@validate ValidationResult.Invalid("El formato del correo no es válido.")
 
-            user.username.isBlank() || user.username.length < 3 ->
-                return@validate ValidationResult.Invalid("El nombre de usuario debe tener al menos 3 caracteres.")
+            user.username != null && user.username.length < 3 -> return@validate ValidationResult.Invalid("El nombre de usuario debe tener al menos 3 caracteres.")
 
             else -> ValidationResult.Valid
         }

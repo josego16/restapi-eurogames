@@ -8,7 +8,7 @@ import java.util.*
 data class UserResponseDto(
     @Serializable(with = UUIDSerializer::class)
     val id: UUID? = null,
-    val name: String,
+    val fullName: String,
     val username: String,
     val email: String,
     val avatar: String?
@@ -16,10 +16,10 @@ data class UserResponseDto(
 
 @Serializable
 data class UserRegisterDto(
-    val name: String,
+    val fullName: String,
     val username: String,
-    val email: String,
     val password: String,
+    val email: String,
     val avatar: String? = null
 )
 
@@ -31,13 +31,14 @@ data class UserLoginDto(
 
 @Serializable
 data class UserUpdateDto(
-    val name: String,
-    val username: String,
-    val email: String,
+    val fullName: String? = null,
+    val username: String? = null,
+    val email: String? = null,
+    val avatar: String? = null
 )
 
 @Serializable
 data class AuthResponseDto(
-    val token: String,
-    val user: UserResponseDto
+    val user: UserResponseDto,
+    val token: String
 )

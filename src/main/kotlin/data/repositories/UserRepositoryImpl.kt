@@ -42,10 +42,10 @@ class UserRepositoryImpl : UserInterface {
     override suspend fun create(user: User): User = runCatching {
         suspendedTransaction {
             UserDao.new {
-                name = user.name
+                fullName = user.fullName
                 username = user.username
+                password = user.password
                 email = user.email
-                password = PasswordHash.hash(user.password)
                 avatar = user.avatar ?: ""
             }.toDomain()
         }
@@ -62,7 +62,7 @@ class UserRepositoryImpl : UserInterface {
                 if (user.password.isNotBlank() && user.password != dao.password) {
                     password = PasswordHash.hash(user.password)
                 }
-                name = user.name
+                fullName = user.fullName
                 email = user.email
                 avatar = user.avatar ?: ""
             }.toDomain()
