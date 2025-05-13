@@ -7,32 +7,32 @@ import java.util.*
 
 fun Country.toResponseDto(): CountryResponseDto = CountryResponseDto(
     id = id,
-    name = name,
+    countryName = countryName,
     capital = capital,
-    flagUrl = flagUrl,
+    flagUrl = flagUrl ?: "",
     region = region
 )
 
 fun Country.toDetailDto(): CountryDetailDto = CountryDetailDto(
     id = id,
-    name = name,
+    countryName = countryName,
     capital = capital,
     region = region,
     subregion = subregion,
     population = population,
-    flagUrl = flagUrl,
-    shieldUrl = shieldUrl,
+    flagUrl = flagUrl ?: "",
+    shieldUrl = shieldUrl ?: "",
     description = description
 )
 
 fun CountryDetailDto.toModel(): Country = Country(
     id = UUID.randomUUID(),
-    name = name,
+    countryName = countryName,
     capital = capital,
     region = region,
     subregion = subregion,
     population = population,
-    flagUrl = flagUrl,
-    shieldUrl = shieldUrl,
+    flagUrl = flagUrl ?: "",
+    shieldUrl = shieldUrl ?: "",
     description = description
 )

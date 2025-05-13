@@ -8,10 +8,14 @@ import java.util.*
 
 fun Routing.countryRouting() {
     route("/country") {
+
+        // Obtener todos los países
         get {
             val countries = ProviderCountryUseCase.getAllCountries()
             call.respond(countries)
         }
+
+        // Obtener país por ID
         get("/{id}") {
             val idParam = call.parameters["id"]
             val id = runCatching {
@@ -23,10 +27,37 @@ fun Routing.countryRouting() {
 
             val country = ProviderCountryUseCase.getCountryById(id)
             if (country == null) {
-                call.respond(HttpStatusCode.NotFound, "Pais no encontrado")
+                call.respond(HttpStatusCode.NotFound, "País no encontrado")
             } else {
                 call.respond(country)
             }
+        }
+
+        // Filtrar países
+        get("/filter") {
+            val region = call.request.queryParameters["region"]
+            val subregion = call.request.queryParameters["subregion"]
+            val minPop = call.request.queryParameters["minPop"]?.toLongOrNull()
+            val maxPop = call.request.queryParameters["maxPop"]?.toLongOrNull()
+
+            val filtered = ProviderCountryUseCase.filterCountries(region, subregion, minPop, maxPop)
+            call.respond(filtered)
+        }
+
+        // Buscar países por texto
+        get("/search") {
+            val text = call.request.queryParameters["text"]
+            val results = ProviderCountryUseCase.searchCountries(text)
+            call.respond(results)
+        }
+
+        // Ordenar países
+        get("/sort") {
+            val sortBy = call.request.queryParameters["by"]
+            val desc = call.request.queryParameters["desc"]?.toBooleanStrictOrNull() ?: false
+
+            val sorted = ProviderCountryUseCase.sortedCountries(sortBy, desc)
+            call.respond(sorted)
         }
     }
 }
