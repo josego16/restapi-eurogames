@@ -19,7 +19,7 @@ object ProviderUserUseCase {
     private val getUserByIdUseCase = GetUserByIdUseCase(repository)
     private val updateUserUseCase = UpdateUserUseCase(repository)
     private val loginUseCase = LoginUseCase(repository, hasher, jwt)
-    private val registerUseCase = RegisterUseCase(repository, hasher, jwt)
+    private val registerUseCase = RegisterUseCase(repository, hasher)
 
     suspend fun getAllUsers(): List<UserResponseDto> = getAllUsersUseCase()
 
@@ -27,7 +27,7 @@ object ProviderUserUseCase {
 
     suspend fun login(dto: UserLoginDto): AuthResponseDto? = loginUseCase(dto)
 
-    suspend fun register(dto: UserRegisterDto): AuthResponseDto? = registerUseCase(dto)
+    suspend fun register(dto: UserRegisterDto): UserResponseDto? = registerUseCase(dto)
 
     suspend fun updateUser(id: UUID, dto: UserUpdateDto): UserResponseDto? = updateUserUseCase(id, dto)
 }

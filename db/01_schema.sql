@@ -14,11 +14,20 @@ $$
         END IF;
 
         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'media_type') THEN
-            CREATE TYPE media_type AS ENUM ('FLAG','COAT');
+            CREATE TYPE media_type AS ENUM (
+                'FLAG', 'COAT', 'MONUMENT',
+                'SCULPTURE', 'PAINTING', 'LANDSCAPE',
+                'FOOD', 'ARCHITECTURE', 'SPORTS',
+                'FESTIVAL','DEFAULT'
+                );
         END IF;
 
         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'question_type') THEN
-            CREATE TYPE question_type AS ENUM ('FLAG_GUESS', 'CAPITAL_QUIZ');
+            CREATE TYPE question_type AS ENUM (
+                'FLAG_GUESS', 'COAT_QUIZ', 'CAPITAL_QUIZ',
+                'HISTORY_QUIZ', 'GEOGRAPHY_QUIZ', 'CULTURE_QUIZ',
+                'MONUMENTS_QUIZ', 'CUISINE_QUIZ', 'FESTIVAL_QUIZ', 'SPORTS_QUIZ'
+                );
         END IF;
 
         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'response_mode') THEN
@@ -39,14 +48,14 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 CREATE TABLE IF NOT EXISTS country
 (
     id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    name        VARCHAR(255) NOT NULL,
+    country_name        VARCHAR(255) NOT NULL,
     capital     VARCHAR(255) NOT NULL,
     region      VARCHAR(255) NOT NULL,
     subregion   VARCHAR(255) NOT NULL,
     population  BIGINT       NOT NULL,
-    description TEXT         NOT NULL,
     flag_url    VARCHAR(512) NOT NULL,
-    shield_url  VARCHAR(512) NOT NULL
+    shield_url  VARCHAR(512) NOT NULL,
+    description TEXT         NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS language
@@ -69,8 +78,8 @@ CREATE TABLE auth
     id        UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     full_name VARCHAR(255),
     username  VARCHAR(255),
-    email     VARCHAR(255) NOT NULL UNIQUE,
     password  VARCHAR(255) NOT NULL,
+    email     VARCHAR(255) NOT NULL,
     avatar    VARCHAR(512)
 );
 
@@ -79,8 +88,8 @@ CREATE TABLE media
 (
     id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     country_id  UUID REFERENCES country (id) ON DELETE CASCADE,
-    type        media_type   NOT NULL,
     title       VARCHAR(255) NOT NULL,
+    media_type        media_type   NOT NULL,
     image_url   VARCHAR(512) NOT NULL,
     description TEXT         NOT NULL
 );
@@ -114,7 +123,7 @@ CREATE TABLE question
     id            UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     country_id    UUID REFERENCES country (id) ON DELETE CASCADE,
     statement     TEXT          NOT NULL,
-    type          question_type NOT NULL,
+    question_type          question_type NOT NULL,
     response_mode response_mode NOT NULL,
     difficulty    difficulty    NOT NULL,
     image_url     VARCHAR(512)
