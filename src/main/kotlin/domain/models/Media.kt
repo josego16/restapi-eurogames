@@ -15,6 +15,7 @@ data class Media(
 
     // Datos
     val title: String, //titulo
-    val type: MediaType, //tipo de contenido
-    val img: String //archivo o url
+    val mediaType: MediaType, //tipo de contenido
+    val image: String? = null, //archivo o url
+    val description: String?=null //descripcion
 )

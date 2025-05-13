@@ -14,7 +14,7 @@ fun RequestValidationConfig.mediaValidation() {
         }
 
         val urlRegex = Regex("^(http|https)://.*\\.(jpg|jpeg|png|svg)\$", RegexOption.IGNORE_CASE)
-        if (!urlRegex.matches(media.img)) {
+        if (!urlRegex.matches(media.image?:"")) {
             return@validate ValidationResult.Invalid("La URL de la imagen no es válida.")
         }
 

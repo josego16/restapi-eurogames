@@ -13,24 +13,27 @@ class MediaDao(id: EntityID<UUID>) : UUIDEntity(id) {
             return existing ?: new(domain.id) {
                 countryId = CountryDao[domain.countryId]
                 title = domain.title
-                type = domain.type
-                img = domain.img
+                mediaType = domain.mediaType
+                image = domain.image ?: ""
+                description = domain.description ?: ""
             }
         }
     }
 
     var countryId by CountryDao referencedOn MediaTable.countryId
-    var type by MediaTable.type
+    var mediaType by MediaTable.mediaType
     var title by MediaTable.title
-    var img by MediaTable.img
+    var image by MediaTable.image
     var description by MediaTable.description
 
     fun toDomain(): Media {
         return Media(
-            id.value, countryId.id.value,
+            id.value,
+            countryId.id.value,
             title,
-            type,
-            img
+            mediaType,
+            image ?: "",
+            description ?: ""
         )
     }
 }
