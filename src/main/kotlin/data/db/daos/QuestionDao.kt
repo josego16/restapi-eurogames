@@ -11,7 +11,7 @@ class QuestionDao(id: EntityID<UUID>) : UUIDEntity(id) {
     companion object : UUIDEntityClass<QuestionDao>(QuestionTable)
 
     var statement by QuestionTable.statement
-    var type by QuestionTable.type
+    var questionType by QuestionTable.questionType
     var difficulty by QuestionTable.difficulty
     var imageUrl by QuestionTable.imageUrl
     var responseMode by QuestionTable.responseMode
@@ -21,7 +21,7 @@ class QuestionDao(id: EntityID<UUID>) : UUIDEntity(id) {
         id.value,
         countryId.id.value,
         statement,
-        type,
+        questionType,
         responseMode,
         difficulty,
         imageUrl,

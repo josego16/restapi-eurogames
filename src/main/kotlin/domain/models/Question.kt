@@ -17,8 +17,8 @@ data class Question(
 
     // Datos
     val statement: String, //enunciado
-    val type: QuestionType, //tipo de la pregunta
+    val questionType: QuestionType, //tipo de la pregunta
     val responseMode: ResponseMode, //modo de la respuesta
     val difficulty: Difficulty, //dificultad
-    val imageUrl: String? //archivo o url de la imagen
+    val imageUrl: String? = null //archivo o url de la imagen
 )

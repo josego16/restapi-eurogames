@@ -1,24 +1,27 @@
 package domain.mappers
 
-import domain.dto.QuestionCreateDto
 import domain.dto.QuestionResponseDto
+import domain.dto.QuestionWithAnswersDto
 import domain.models.Question
-
-fun QuestionCreateDto.toModel(): Question = Question(
-    countryId = countryId,
-    statement = statement,
-    type = type,
-    responseMode = responseMode,
-    difficulty = difficulty,
-    imageUrl = imageUrl
-)
+import domain.models.QuestionWithAnswer
 
 fun Question.toResponseDto(): QuestionResponseDto = QuestionResponseDto(
     id = id,
     countryId = countryId,
     statement = statement,
-    type = type,
+    questionType = questionType,
     responseMode = responseMode,
     difficulty = difficulty,
     imageUrl = imageUrl
+)
+
+fun QuestionWithAnswer.toDto(): QuestionWithAnswersDto = QuestionWithAnswersDto(
+    id = question.id,
+    countryId = question.countryId,
+    statement = question.statement,
+    questionType = question.questionType,
+    responseMode = question.responseMode,
+    difficulty = question.difficulty,
+    imageUrl = question.imageUrl,
+    answers = answer.map { it.toResponseDto() }
 )
