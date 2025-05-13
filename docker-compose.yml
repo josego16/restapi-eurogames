@@ -26,5 +26,24 @@ services:
       - "8080:8080"
     restart: always
 
+  ktor:
+    build: .
+    ports:
+      - "8081:8081"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    depends_on:
+      - ktor
+    restart: unless-stopped
+
 volumes:
   postgres-data:

@@ -4,7 +4,7 @@ ktor:
       - ktor.ApplicationKt.module
   deployment:
     port: 8081
-    host: "localhost"
+    host: "0.0.0.0"
   database:
     url: "jdbc:postgresql://localhost:5433/euroexplorer"
     driver: "org.postgresql.Driver"
