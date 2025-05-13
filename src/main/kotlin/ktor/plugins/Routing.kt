@@ -6,12 +6,13 @@ import ktor.routes.*
 
 fun Application.configureRouting() {
     routing {
+        userRouting()
         countryRouting()
         gameRouting()
         gameSessionRouting()
         questionRouting()
         answerRouting()
         scoreRouting()
-        userRouting()
+        mediaRouting()
     }
 }
