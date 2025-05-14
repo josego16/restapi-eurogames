@@ -1,7 +1,6 @@
 package domain.usecase.score
 
 import data.repositories.ScoreRepositoryImpl
-import domain.dto.ScoreCreateDto
 import domain.dto.ScoreResponseDto
 import domain.interfaces.ScoreInterface
 import org.slf4j.Logger
@@ -14,9 +13,7 @@ object ProviderMediaUseCase {
 
     private val getAllScoresUseCase = GetAllScoresUseCase(repository)
     private val getScoreByIdUseCase = GetScoreByIdUseCase(repository)
-    private val createScoreUseCase = CreateScoreUseCase(repository)
 
     suspend fun getAllScores(): List<ScoreResponseDto> = getAllScoresUseCase()
     suspend fun getScoreById(id: UUID): ScoreResponseDto? = getScoreByIdUseCase(id)
-    suspend fun createScore(dto: ScoreCreateDto) = createScoreUseCase(dto)
 }

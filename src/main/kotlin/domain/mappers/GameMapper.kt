@@ -7,8 +7,6 @@ import domain.models.Game
 fun Game.toResponseDto(): GameResponseDto = GameResponseDto(
     id = id,
     name = name,
-    gameType = gameType,
-    difficulty = difficulty,
     imageUrl = imageUrl ?: ""
 )
 

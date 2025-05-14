@@ -13,10 +13,9 @@ data class Game(
     val id: UUID = UUID.randomUUID(),
 
     // Datos
-    val name: String, //nombre
-    val gameType: GameType, //tipo de juego
-    val difficulty: Difficulty, //dificultad
-    val playFor: List<User> = emptyList(), //jugado por
-    val imageUrl: String? = null, //url imagen
-    val description: String //descripcion del minijuego
+    val name: String,
+    val gameType: GameType,
+    val difficulty: Difficulty,
+    val imageUrl: String? = null,
+    val description: String? = null
 )

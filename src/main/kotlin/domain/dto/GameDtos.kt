@@ -11,9 +11,7 @@ data class GameResponseDto(
     @Serializable(with = UUIDSerializer::class)
     val id: UUID,
     val name: String,
-    val gameType: GameType,
-    val difficulty: Difficulty,
-    val imageUrl: String,
+    val imageUrl: String? = null,
 )
 
 @Serializable
@@ -23,6 +21,6 @@ data class GameDetailDto(
     val name: String,
     val gameType: GameType,
     val difficulty: Difficulty,
-    val imageUrl: String,
-    val description: String,
+    val imageUrl: String? = null,
+    val description: String? = null,
 )

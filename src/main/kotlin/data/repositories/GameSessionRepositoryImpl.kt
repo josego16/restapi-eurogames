@@ -35,28 +35,14 @@ class GameSessionRepositoryImpl : GameSessionInterface {
         logger.error("Error al crear sesión", it)
     }.getOrNull()
 
-    override suspend fun update(id: UUID, entity: GameSession): GameSession? = runCatching {
+    override suspend fun update(entity: GameSession): GameSession? = runCatching {
         suspendedTransaction {
-            val existing = GameSessionDao.findById(id)
+            val existing = GameSessionDao.findById(entity.id)
             if (existing != null) {
                 GameSessionDao.fromDomain(entity, existing).toDomain()
-            } else {
-                logger.warn("Sesión con ID $id no encontrada para actualizar")
-                null
-            }
+            } else null
         }
     }.onFailure {
-        logger.error("Error al actualizar sesión con ID $id", it)
+        logger.error("Error al actualizar sesión con ID ${entity.id}", it)
     }.getOrNull()
-
-    override suspend fun delete(id: UUID): Boolean = runCatching {
-        suspendedTransaction {
-            GameSessionDao.findById(id)?.let {
-                it.delete()
-                true
-            } ?: false
-        }
-    }.onFailure {
-        logger.error("Error al eliminar sesión con ID $id", it)
-    }.getOrDefault(false)
 }

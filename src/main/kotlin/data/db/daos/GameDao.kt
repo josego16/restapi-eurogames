@@ -21,8 +21,7 @@ class GameDao(id: EntityID<UUID>) : UUIDEntity(id) {
         name,
         gameType,
         difficulty,
-        emptyList(),
-        imageUrl,
-        description
+        imageUrl ?: "",
+        description,
     )
 }

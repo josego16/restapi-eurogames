@@ -2,7 +2,9 @@ package domain.models
 
 import domain.enums.Difficulty
 import domain.enums.GameType
+import domain.enums.SessionStatus
 import domain.utils.serializers.UUIDSerializer
+import kotlinx.datetime.Instant
 import kotlinx.serialization.Serializable
 import java.util.*
 
@@ -12,10 +14,15 @@ data class GameSession(
     @Serializable(with = UUIDSerializer::class)
     val id: UUID = UUID.randomUUID(),
     @Serializable(with = UUIDSerializer::class)
-    val userId: UUID,//id usuario
+    val userId: UUID,
+    @Serializable(with = UUIDSerializer::class)
+    val gameId: UUID,
 
     // Datos
-    val scoreSession: Double, //puntuacion
-    val difficulty: Difficulty, //dificultad
-    val gameType: GameType //tipo de juego
+    val scoreSession: Double = 0.0,
+    val difficulty: Difficulty,
+    val gameType: GameType,
+    val status: SessionStatus = SessionStatus.IN_PROGRESS,
+    val startedAt: Instant,
+    val finishedAt: Instant? = null
 )
