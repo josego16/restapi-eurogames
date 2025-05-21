@@ -2,6 +2,7 @@ package domain.mappers
 
 import domain.dto.UserRegisterDto
 import domain.dto.UserResponseDto
+import domain.dto.UserUpdateDto
 import domain.models.User
 
 fun UserRegisterDto.toModel(): User = User(
@@ -9,7 +10,16 @@ fun UserRegisterDto.toModel(): User = User(
     username = username,
     email = email,
     password = password,
-    avatar = avatar ?:""
+    avatar = avatar ?: ""
+)
+
+fun UserUpdateDto.toModel(existing: User): User = User(
+    id = existing.id,
+    fullName = fullName ?: existing.fullName,
+    username = username ?: existing.username,
+    email = email ?: existing.email,
+    password = password ?: existing.password,
+    avatar = avatar ?: existing.avatar
 )
 
 fun User.toResponseDto(): UserResponseDto = UserResponseDto(

@@ -60,6 +60,7 @@ class UserRepositoryImpl : UserInterface {
             dao.apply {
                 username = user.username
                 if (user.password.isNotBlank() && user.password != dao.password) {
+                    println("[DEBUG] Valor recibido en user.password: ${user.password}")
                     password = PasswordHash.hash(user.password)
                 }
                 fullName = user.fullName

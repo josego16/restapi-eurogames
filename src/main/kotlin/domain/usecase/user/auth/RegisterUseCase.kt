@@ -12,13 +12,19 @@ class RegisterUseCase(
     private val hasher: PasswordInterface,
 ) {
     suspend operator fun invoke(dto: UserRegisterDto): UserResponseDto? {
+        println("[REGISTER] Comprobando si el usuario existe: ${dto.username}")
         val userExists = repository.findByUsername(dto.username) != null
-        if (userExists) return null
+        if (userExists) {
+            println("[REGISTER] Usuario ya existente: ${dto.username}")
+            return null
+        }
 
+        println("[REGISTER] Usuario no existe, creando usuario...")
         val hashedPassword = hasher.hash(dto.password)
         val newUser = dto.toModel().copy(password = hashedPassword)
         val createdUser = repository.create(newUser)
 
+        println("[REGISTER] Usuario creado correctamente: ${createdUser.username}")
         return createdUser.toResponseDto()
     }
 }

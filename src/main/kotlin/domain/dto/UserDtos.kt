@@ -34,7 +34,8 @@ data class UserUpdateDto(
     val fullName: String? = null,
     val username: String? = null,
     val email: String? = null,
-    val avatar: String? = null
+    val avatar: String? = null,
+    val password: String? = null
 )
 
 @Serializable

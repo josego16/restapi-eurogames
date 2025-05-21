@@ -32,7 +32,7 @@ fun Routing.userRouting() {
                 call.respond(user)
             }
         }
-        patch {
+        patch("/{id}") {
             val updateUser = call.receive<UserUpdateDto>()
 
             val idParam = call.parameters["id"]
@@ -53,22 +53,30 @@ fun Routing.userRouting() {
     }
     route("/auth") {
         post("/login") {
+            println("[LOGIN] Petición recibida en /auth/login")
             val dto = call.receive<UserLoginDto>()
+            println("[LOGIN] DTO recibido: $dto")
             val authResult = ProviderUserUseCase.login(dto)
 
             if (authResult == null) {
-                call.respond(HttpStatusCode.Unauthorized, "Credenciales incorrectas")
+                println("[LOGIN] Fallo de autenticación: credenciales incorrectas")
+                call.respond(HttpStatusCode.Unauthorized, mapOf("error" to "Credenciales incorrectas"))
             } else {
+                println("[LOGIN] Autenticación exitosa para usuario: ${dto.username}")
                 call.respond(authResult)
             }
         }
         post("/register") {
+            println("[REGISTER] Petición recibida en /auth/register")
             val dto = call.receive<UserRegisterDto>()
+            println("[REGISTER] DTO recibido: $dto")
             val authResult = ProviderUserUseCase.register(dto)
 
             if (authResult == null) {
-                call.respond(HttpStatusCode.Conflict, "Usuario ya existente o datos inválidos")
+                println("[REGISTER] Fallo: usuario ya existente o datos inválidos")
+                call.respond(HttpStatusCode.Conflict, mapOf("error" to "Usuario ya existente o datos inválidos"))
             } else {
+                println("[REGISTER] Usuario registrado correctamente: ${dto.username}")
                 call.respond(HttpStatusCode.Created, authResult)
             }
         }

@@ -13,8 +13,8 @@ class UserDao(id: EntityID<UUID>) : UUIDEntity(id) {
             return existing ?: new(domain.id) {
                 fullName = domain.fullName
                 username = domain.username
-                password = domain.password
                 email = domain.email
+                password = domain.password
                 avatar = domain.avatar ?: ""
             }
         }
@@ -31,9 +31,10 @@ class UserDao(id: EntityID<UUID>) : UUIDEntity(id) {
             id.value,
             fullName,
             username,
-            password,
             email,
+            password,
             avatar
         )
     }
 }
+
