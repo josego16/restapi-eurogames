@@ -96,4 +96,3 @@ class CountryRepositoryImpl : CountryInterface {
         logger.error("Error al ordenar países por '$sortBy'", it)
     }.getOrDefault(emptyList())
 }
-
