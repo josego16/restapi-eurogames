@@ -10,26 +10,34 @@ import java.util.*
 class CountryDao(id: EntityID<UUID>) : UUIDEntity(id) {
     companion object : UUIDEntityClass<CountryDao>(CountryTable)
 
-    var countryName by CountryTable.countryName
+    var nameCommon by CountryTable.nameCommon
+    var nameOfficial by CountryTable.nameOfficial
     var capital by CountryTable.capital
     var region by CountryTable.region
     var subregion by CountryTable.subregion
     var language by CountryTable.language
     var population by CountryTable.population
-    var description by CountryTable.description
+    var timezones by CountryTable.timezones
+    var continents by CountryTable.continents
     var flagUrl by CountryTable.flagUrl
+    var flagDescription by CountryTable.flagDescription
     var shieldUrl by CountryTable.shieldUrl
+    var startOfWeek by CountryTable.startOfWeek
 
     fun toDomain() = Country(
         id.value,
-        countryName,
+        nameCommon,
+        nameOfficial,
         capital,
         region,
         subregion,
         language,
         population,
+        emptyList(),
+        continents,
         flagUrl,
+        flagDescription,
         shieldUrl,
-        description
+        startOfWeek
     )
 }
