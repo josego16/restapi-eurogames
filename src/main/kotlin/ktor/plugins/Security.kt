@@ -15,7 +15,6 @@ fun Application.configureSecurity() {
     }
 
     routing {
-        // Ruta protegida como ejemplo
         authenticate("jwt-auth") {
             get("/protected") {
                 val principal = call.principal<JWTPrincipal>()!!
@@ -24,7 +23,6 @@ fun Application.configureSecurity() {
             }
         }
 
-        // Ruta pública como ejemplo
         get("/public") {
             call.respondText("This is a public endpoint, no token needed.")
         }

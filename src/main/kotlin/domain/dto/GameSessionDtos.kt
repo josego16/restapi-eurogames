@@ -32,15 +32,3 @@ data class GameSessionResponseDto(
     val startedAt: Long,
     val finishedAt: Long? = null
 )
-
-@Serializable
-data class GameSessionFinishDto(
-    val actions: List<ActionDto>
-)
-
-@Serializable
-data class ActionDto(
-    val actionType: String,
-    val value: String,
-    val timestamp: Long
-)

@@ -7,15 +7,12 @@ import java.util.*
 
 @Serializable
 data class Media(
-    // Identificador
     @Serializable(with = UUIDSerializer::class)
     val id: UUID = UUID.randomUUID(),
     @Serializable(with = UUIDSerializer::class)
-    val countryId: UUID, //id del pais
-
-    // Datos
-    val title: String, //titulo
-    val mediaType: MediaType, //tipo de contenido
-    val image: String? = null, //archivo o url
-    val description: String?=null //descripcion
+    val countryId: UUID,
+    val title: String,
+    val mediaType: MediaType,
+    val image: String? = null,
+    val description: String?=null
 )

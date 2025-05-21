@@ -9,7 +9,7 @@ import java.util.*
 
 fun Routing.answerRouting() {
     authenticate("jwt-auth") {
-        route("/answer") {
+        route("/answers") {
             get {
                 val answers = ProviderAnswersUseCase.getAllAnswers()
                 call.respond(answers)

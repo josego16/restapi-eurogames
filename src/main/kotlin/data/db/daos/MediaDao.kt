@@ -32,8 +32,8 @@ class MediaDao(id: EntityID<UUID>) : UUIDEntity(id) {
             countryId.id.value,
             title,
             mediaType,
-            image ?: "",
-            description ?: ""
+            image,
+            description
         )
     }
 }

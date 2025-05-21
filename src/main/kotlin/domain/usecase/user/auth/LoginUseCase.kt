@@ -15,12 +15,7 @@ class LoginUseCase(
     suspend operator fun invoke(dto: UserLoginDto): AuthResponseDto? {
         val user = repository.findByUsername(dto.username) ?: return null
 
-        println("Intentando login para: ${dto.username}")
-        println("Contraseña enviada: ${dto.password}")
-        println("Contraseña hasheada en base de datos: ${user.password}")
-
         val isPasswordValid = hasher.verify(dto.password, user.password)
-        println("¿Contraseña valida?: $isPasswordValid")
         if (!isPasswordValid) return null
 
         val token = jwt.generateToken(user.id)

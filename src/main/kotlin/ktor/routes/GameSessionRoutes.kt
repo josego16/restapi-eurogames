@@ -1,7 +1,6 @@
 package ktor.routes
 
 import domain.dto.GameSessionCreateDto
-import domain.dto.GameSessionFinishDto
 import domain.usecase.gamesession.ProviderGameSessionUseCase
 import io.ktor.http.*
 import io.ktor.server.auth.*
@@ -12,7 +11,7 @@ import java.util.*
 
 fun Routing.gameSessionRouting() {
     authenticate("jwt-auth") {
-        route("/gameSession") {
+        route("/gameSessions") {
             get {
                 val gameSessions = ProviderGameSessionUseCase.getAllGameSessions()
                 call.respond(gameSessions)
@@ -37,24 +36,6 @@ fun Routing.gameSessionRouting() {
                 val dto = call.receive<GameSessionCreateDto>()
                 val gameSession = ProviderGameSessionUseCase.startGameSession(dto)
                 call.respond(gameSession)
-            }
-
-            put("/{id}/finish") {
-                val idParam = call.parameters["id"]
-                val id = runCatching {
-                    UUID.fromString(idParam)
-                }.onFailure {
-                    call.respond(HttpStatusCode.BadRequest, "Id no valido")
-                    return@put
-                }.getOrDefault(UUID.randomUUID())
-                if (id == null) {
-                    call.respond(HttpStatusCode.BadRequest, "Id no válido")
-                    return@put
-                }
-
-                val dto = call.receive<GameSessionFinishDto>()
-                val score = ProviderGameSessionUseCase.finishGameSession(id, dto.actions)
-                call.respond(HttpStatusCode.OK, score)
             }
         }
     }

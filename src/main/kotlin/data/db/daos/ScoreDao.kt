@@ -12,6 +12,7 @@ class ScoreDao(id: EntityID<UUID>) : UUIDEntity(id) {
         fun fromDomain(domain: Score, existing: ScoreDao? = null): ScoreDao {
             return existing ?: new(domain.id) {
                 userId = UserDao.Companion[domain.userId]
+                gameId = GameDao.Companion[domain.gameId]
                 scoreValue = domain.scoreValue
                 gameType = domain.gameType
                 difficulty = domain.difficulty
@@ -20,6 +21,7 @@ class ScoreDao(id: EntityID<UUID>) : UUIDEntity(id) {
     }
 
     var userId by UserDao.Companion referencedOn ScoreTable.userId
+    var gameId by GameDao.Companion referencedOn ScoreTable.gameId
     var gameType by ScoreTable.gameType
     var difficulty by ScoreTable.difficulty
     var scoreValue by ScoreTable.scoreValue
@@ -27,6 +29,7 @@ class ScoreDao(id: EntityID<UUID>) : UUIDEntity(id) {
     fun toDomain() = Score(
         id.value,
         userId.id.value,
+        gameId.id.value,
         scoreValue,
         gameType,
         difficulty,

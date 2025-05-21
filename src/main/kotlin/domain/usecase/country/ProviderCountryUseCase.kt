@@ -4,13 +4,10 @@ import data.repositories.CountryRepositoryImpl
 import domain.dto.CountryDetailDto
 import domain.dto.CountryResponseDto
 import domain.interfaces.CountryInterface
-import org.slf4j.Logger
-import org.slf4j.LoggerFactory
 import java.util.*
 
 object ProviderCountryUseCase {
     private val repository: CountryInterface = CountryRepositoryImpl()
-    private val logger: Logger = LoggerFactory.getLogger("CountryUseCaseLogger")
 
     private val getAllCountriesUseCase = GetAllCountriesUseCase(repository)
     private val getCountryByIdUseCase = GetCountryByIdUseCase(repository)

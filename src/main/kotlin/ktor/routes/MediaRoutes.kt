@@ -62,7 +62,7 @@ fun Routing.mediaRouting() {
                     call.respond(media)
                 }
             }
-            delete {
+            delete("{id}") {
                 val idParam = call.parameters["id"]
                 val idMedia = runCatching {
                     UUID.fromString(idParam)

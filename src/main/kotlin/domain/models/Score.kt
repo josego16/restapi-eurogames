@@ -8,14 +8,13 @@ import java.util.*
 
 @Serializable
 data class Score(
-    // Identificador
     @Serializable(with = UUIDSerializer::class)
     val id: UUID = UUID.randomUUID(),
     @Serializable(with = UUIDSerializer::class)
-    val userId: UUID, // id del usuario
-
-    // Datos
-    val scoreValue: Double, //puntuacion obtenida
-    val gameType: GameType, //tipo del juego
-    val difficulty: Difficulty //dificultad
+    val userId: UUID,
+    @Serializable(with = UUIDSerializer::class)
+    val gameId: UUID,
+    val scoreValue: Double,
+    val gameType: GameType,
+    val difficulty: Difficulty
 )

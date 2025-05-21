@@ -8,6 +8,7 @@ import domain.dto.*
 import domain.interfaces.UserInterface
 import domain.usecase.user.auth.LoginUseCase
 import domain.usecase.user.auth.RegisterUseCase
+import domain.usecase.user.auth.UpdateTokenUseCase
 import java.util.*
 
 object ProviderUserUseCase {
@@ -17,17 +18,14 @@ object ProviderUserUseCase {
 
     private val getAllUsersUseCase = GetAllUsersUseCase(repository)
     private val getUserByIdUseCase = GetUserByIdUseCase(repository)
-    private val updateUserUseCase = UpdateUserUseCase(repository)
     private val loginUseCase = LoginUseCase(repository, hasher, jwt)
     private val registerUseCase = RegisterUseCase(repository, hasher)
+    private val updateTokenUseCase = UpdateTokenUseCase(repository, jwt)
+    private val updateUserUseCase = UpdateUserUseCase(repository)
 
     suspend fun getAllUsers(): List<UserResponseDto> = getAllUsersUseCase()
-
     suspend fun getUserById(id: UUID): UserResponseDto? = getUserByIdUseCase(id)
-
     suspend fun login(dto: UserLoginDto): AuthResponseDto? = loginUseCase(dto)
-
     suspend fun register(dto: UserRegisterDto): UserResponseDto? = registerUseCase(dto)
-
     suspend fun updateUser(id: UUID, dto: UserUpdateDto): UserResponseDto? = updateUserUseCase(id, dto)
 }

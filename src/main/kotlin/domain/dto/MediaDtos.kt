@@ -31,7 +31,7 @@ data class MediaResponseDto(
     @Serializable(with = UUIDSerializer::class)
     val countryId: UUID,
     val title: String,
-    val mediaType: MediaType,
+    val mediaType: MediaType?,
     val image: String? = null,
     val description: String? = null,
 )

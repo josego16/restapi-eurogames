@@ -8,11 +8,8 @@ import java.util.*
 
 @Serializable
 data class Game(
-    // Identificador
     @Serializable(with = UUIDSerializer::class)
     val id: UUID = UUID.randomUUID(),
-
-    // Datos
     val name: String,
     val gameType: GameType,
     val difficulty: Difficulty,

@@ -34,7 +34,7 @@ class UserDao(id: EntityID<UUID>) : UUIDEntity(id) {
             username,
             password,
             email,
-            avatar ?: ""
+            avatar
         )
     }
 }

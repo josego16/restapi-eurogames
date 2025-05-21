@@ -6,11 +6,8 @@ import java.util.*
 
 @Serializable
 data class Language(
-    // Identificador
     @Serializable(with = UUIDSerializer::class)
     val id: UUID = UUID.randomUUID(),
-
-    // Datos
-    val name: String, //nombre
-    val code: String //codigo
+    val name: String,
+    val code: String
 )

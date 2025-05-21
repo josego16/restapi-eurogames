@@ -36,6 +36,5 @@ fun Application.configureObservatory() {
         allowMethod(HttpMethod.Patch)
         allowHeader(HttpHeaders.Authorization)
         allowHeader("MyCustomHeader")
-        //host("tudominio.com", schemes = listOf("https"))
     }
 }

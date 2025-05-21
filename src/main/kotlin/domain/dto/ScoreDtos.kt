@@ -10,6 +10,8 @@ import java.util.*
 data class ScoreCreateDto(
     @Serializable(with = UUIDSerializer::class)
     val userId: UUID,
+    @Serializable(with = UUIDSerializer::class)
+    val gameId: UUID,
     val scoreValue: Double,
     val gameType: GameType,
     val difficulty: Difficulty
@@ -20,6 +22,8 @@ data class ScoreResponseDto(
     val id: UUID,
     @Serializable(with = UUIDSerializer::class)
     val userId: UUID,
+    @Serializable(with = UUIDSerializer::class)
+    val gameId: UUID,
     val scoreValue: Double,
     val gameType: GameType,
     val difficulty: Difficulty

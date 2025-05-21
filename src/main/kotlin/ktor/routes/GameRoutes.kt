@@ -9,7 +9,7 @@ import java.util.*
 
 fun Routing.gameRouting() {
     authenticate("jwt-auth") {
-        route("/game") {
+        route("/games") {
             get {
                 val games = ProviderGameUseCase.getAllGames()
                 call.respond(games)

@@ -6,6 +6,7 @@ import domain.models.Score
 
 fun ScoreCreateDto.toModel(): Score = Score(
     userId = userId,
+    gameId = gameId,
     scoreValue = scoreValue,
     gameType = gameType,
     difficulty = difficulty
@@ -14,6 +15,7 @@ fun ScoreCreateDto.toModel(): Score = Score(
 fun Score.toResponseDto(): ScoreResponseDto = ScoreResponseDto(
     id = id,
     userId = userId,
+    gameId = gameId,
     scoreValue = scoreValue,
     gameType = gameType,
     difficulty = difficulty

@@ -2,6 +2,7 @@ package domain.mappers
 
 import domain.dto.GameSessionCreateDto
 import domain.dto.GameSessionResponseDto
+import domain.enums.SessionStatus
 import domain.models.GameSession
 import kotlinx.datetime.Clock
 import java.util.*
@@ -13,6 +14,7 @@ fun GameSessionCreateDto.toModel(): GameSession = GameSession(
     scoreSession = 0.0,
     gameType = gameType,
     difficulty = difficulty,
+    status = SessionStatus.IN_PROGRESS,
     startedAt = Clock.System.now()
 )
 

@@ -10,8 +10,8 @@ import io.ktor.server.plugins.requestvalidation.*
 fun Application.configureValidation() {
     install(RequestValidation){
         usersValidation()
-        gameSessionValidation()
         scoreValidation()
         mediaValidation()
+        gameSessionValidation()
     }
 }

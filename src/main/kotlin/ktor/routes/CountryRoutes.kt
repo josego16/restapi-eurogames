@@ -7,15 +7,12 @@ import io.ktor.server.routing.*
 import java.util.*
 
 fun Routing.countryRouting() {
-    route("/country") {
-
-        // Obtener todos los países
+    route("/countries") {
         get {
             val countries = ProviderCountryUseCase.getAllCountries()
             call.respond(countries)
         }
 
-        // Obtener país por ID
         get("/{id}") {
             val idParam = call.parameters["id"]
             val id = runCatching {
@@ -33,7 +30,6 @@ fun Routing.countryRouting() {
             }
         }
 
-        // Filtrar países
         get("/filter") {
             val region = call.request.queryParameters["region"]
             val subregion = call.request.queryParameters["subregion"]
@@ -44,14 +40,12 @@ fun Routing.countryRouting() {
             call.respond(filtered)
         }
 
-        // Buscar países por texto
         get("/search") {
             val text = call.request.queryParameters["text"]
             val results = ProviderCountryUseCase.searchCountries(text)
             call.respond(results)
         }
 
-        // Ordenar países
         get("/sort") {
             val sortBy = call.request.queryParameters["by"]
             val desc = call.request.queryParameters["desc"]?.toBooleanStrictOrNull() ?: false

@@ -9,7 +9,7 @@ import java.util.*
 
 fun Routing.questionRouting() {
     authenticate("jwt-auth"){
-        route("/question") {
+        route("/questions") {
             get {
                 val questions = ProviderQuestionUseCase.getAllQuestions()
                 call.respond(questions)

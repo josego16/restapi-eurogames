@@ -26,8 +26,8 @@ class CountryDao(id: EntityID<UUID>) : UUIDEntity(id) {
         region,
         subregion,
         population,
-        flagUrl ?: "",
-        shieldUrl ?: "",
-        description ?: ""
+        flagUrl,
+        shieldUrl,
+        description
     )
 }

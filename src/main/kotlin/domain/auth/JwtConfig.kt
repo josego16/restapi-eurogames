@@ -14,7 +14,6 @@ object JwtConfig {
     const val REALM = "ktor_realm"
     private val algorithm = Algorithm.HMAC256(SECRET)
 
-    // Generar un token válido con userId como claim
     fun generateToken(userId: UUID): String {
         return JWT.create()
             .withIssuer(ISSUER)
@@ -26,14 +25,12 @@ object JwtConfig {
             .sign(algorithm)
     }
 
-    // Verificador JWT para el plugin de autenticación
     private fun getVerifier(): JWTVerifier = JWT
         .require(algorithm)
         .withIssuer(ISSUER)
         .withAudience(AUDIENCE)
         .build()
 
-    // Configura el provider JWT de Ktor
     fun configureAuthentication(config: JWTAuthenticationProvider.Config) {
         config.realm = REALM
         config.verifier(getVerifier())
