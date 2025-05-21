@@ -7,9 +7,9 @@ import domain.interfaces.CountryInterface
 import domain.models.Country
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.between
-import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.greaterEq
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.lessEq
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.like
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import java.util.*
@@ -40,10 +40,10 @@ class CountryRepositoryImpl : CountryInterface {
             val conditions = mutableListOf<Op<Boolean>>()
 
             region?.let {
-                conditions += CountryTable.region.lowerCase() eq it.lowercase()
+                conditions += CountryTable.region.lowerCase() like "%${it.lowercase()}%"
             }
             subregion?.let {
-                conditions += CountryTable.subregion.lowerCase() eq it.lowercase()
+                conditions += CountryTable.subregion.lowerCase() like "%${it.lowercase()}%"
             }
 
             when {
@@ -67,12 +67,13 @@ class CountryRepositoryImpl : CountryInterface {
     override suspend fun searchCountries(text: String?): List<Country> = runCatching {
         if (text.isNullOrBlank()) return@runCatching emptyList()
 
+        val searchText = "%${text.lowercase()}%"
         suspendedTransaction {
             CountryDao.find {
-                (CountryTable.nameOfficial like "%$text%") or
-                        (CountryTable.capital like "%$text%") or
-                        (CountryTable.region like "%$text%") or
-                        (CountryTable.subregion like "%$text%")
+                (CountryTable.nameOfficial.lowerCase() like searchText) or
+                (CountryTable.capital.lowerCase() like searchText) or
+                (CountryTable.region.lowerCase() like searchText) or
+                (CountryTable.subregion.lowerCase() like searchText)
             }.map { it.toDomain() }
         }
     }.onFailure {
@@ -94,14 +95,5 @@ class CountryRepositoryImpl : CountryInterface {
     }.onFailure {
         logger.error("Error al ordenar países por '$sortBy'", it)
     }.getOrDefault(emptyList())
-
-    suspend fun getAllPaged(limit: Int, offset: Int): Pair<List<Country>, Long> = runCatching {
-        suspendedTransaction {
-            val total = CountryDao.all().count()
-            val items = CountryDao.all().limit(limit).offset(offset.toLong()).map { it.toDomain() }
-            Pair(items, total)
-        }
-    }.onFailure {
-        logger.error("Error al obtener países paginados", it)
-    }.getOrDefault(Pair(emptyList(), 0L))
 }
+

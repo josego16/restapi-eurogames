@@ -13,13 +13,6 @@ fun Routing.countryRouting() {
             call.respond(countries)
         }
 
-        get("/paged") {
-            val page = call.request.queryParameters["page"]?.toIntOrNull() ?: 1
-            val size = call.request.queryParameters["size"]?.toIntOrNull() ?: 20
-            val pagedResult = ProviderCountryUseCase.getAllCountriesPaged(page, size)
-            call.respond(pagedResult)
-        }
-
         get("/{id}") {
             val idParam = call.parameters["id"]
             val id = runCatching {
@@ -38,8 +31,8 @@ fun Routing.countryRouting() {
         }
 
         get("/filter") {
-            val region = call.request.queryParameters["region"]
-            val subregion = call.request.queryParameters["subregion"]
+            val region = call.request.queryParameters["region"]?.lowercase()
+            val subregion = call.request.queryParameters["subregion"]?.lowercase()
             val minPop = call.request.queryParameters["minPop"]?.toLongOrNull()
             val maxPop = call.request.queryParameters["maxPop"]?.toLongOrNull()
 
@@ -48,7 +41,7 @@ fun Routing.countryRouting() {
         }
 
         get("/search") {
-            val text = call.request.queryParameters["text"]
+            val text = call.request.queryParameters["text"]?.lowercase()
             val results = ProviderCountryUseCase.searchCountries(text)
             call.respond(results)
         }

@@ -14,12 +14,11 @@ data class Country(
     val capital: String,
     val region: String,
     val subregion: String,
-    val language: String? = null,
+    val language: String,
     val population: Long,
-    val timezones: List<String>,
+    val timezones: String,
     val continents: String,
     val flagUrl: String? = null,
-    val flagDescription: String? = null,
     val shieldUrl: String? = null,
     val startOfWeek: String
 )

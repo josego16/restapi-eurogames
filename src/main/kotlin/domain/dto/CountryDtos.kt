@@ -11,7 +11,7 @@ data class CountryResponseDto(
     val nameCommon: String,
     val capital: String,
     val region: String,
-    val language: String? = null,
+    val subregion: String,
     val flagUrl: String? = null
 )
 
@@ -24,20 +24,11 @@ data class CountryDetailDto(
     val capital: String,
     val region: String,
     val subregion: String,
+    val language: String,
     val population: Long,
-    val timezones: List<String>,
-    val continents: List<String>,
+    val timezones: String,
+    val continents: String,
     val flagUrl: String? = null,
-    val description: String? = null,
     val shieldUrl: String? = null,
-    val startOfWeek: String,
-    val language: String? = null
-)
-
-@Serializable
-data class PagedCountryResponseDto(
-    val items: List<CountryResponseDto>,
-    val totalItems: Long,
-    val page: Int,
-    val pageSize: Int
+    val startOfWeek: String
 )

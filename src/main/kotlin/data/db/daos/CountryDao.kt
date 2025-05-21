@@ -20,7 +20,6 @@ class CountryDao(id: EntityID<UUID>) : UUIDEntity(id) {
     var timezones by CountryTable.timezones
     var continents by CountryTable.continents
     var flagUrl by CountryTable.flagUrl
-    var flagDescription by CountryTable.flagDescription
     var shieldUrl by CountryTable.shieldUrl
     var startOfWeek by CountryTable.startOfWeek
 
@@ -33,10 +32,9 @@ class CountryDao(id: EntityID<UUID>) : UUIDEntity(id) {
         subregion,
         language,
         population,
-        emptyList(),
+        timezones,
         continents,
         flagUrl,
-        flagDescription,
         shieldUrl,
         startOfWeek
     )

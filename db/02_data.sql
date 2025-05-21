@@ -3,373 +3,316 @@
 -- ========================================================
 
 -- Script para insertar datos en la tabla `country`
-INSERT INTO country (id, country_name, capital, region, subregion, population, flag_url, shield_url, description) VALUES
-('a6846e8b-edf2-4ce3-82df-9747ca637b4d', 'Bulgaria', 'Sofia', 'Europe', 'Southeast Europe', 6927288, 'https://flagcdn.com/w320/bg.png', 'https://mainfacts.com/media/images/coats_of_arms/bg.png', 'Republic of Bulgaria'),
-('190a6b0a-ac0a-4f46-b60a-bc8ba50c3943', 'Finland', 'Helsinki', 'Europe', 'Northern Europe', 5530719, 'https://flagcdn.com/w320/fi.png', 'https://mainfacts.com/media/images/coats_of_arms/fi.png', 'Republic of Finland'),
-('4d39bf6d-164f-40d5-8b15-fb8e62700bcf', 'Slovenia', 'Ljubljana', 'Europe', 'Central Europe', 2100126, 'https://flagcdn.com/w320/si.png', 'https://mainfacts.com/media/images/coats_of_arms/si.png', 'Republic of Slovenia'),
-('189b70cf-4bae-45b6-8f37-5636b0a6220b', 'Monaco', 'Monaco', 'Europe', 'Western Europe', 39244, 'https://flagcdn.com/w320/mc.png', 'https://mainfacts.com/media/images/coats_of_arms/mc.png', 'Principality of Monaco'),
-('f5e0c189-19ef-4968-b71e-5028a4c6a31f', 'Greece', 'Athens', 'Europe', 'Southern Europe', 10715549, 'https://flagcdn.com/w320/gr.png', 'https://mainfacts.com/media/images/coats_of_arms/gr.png', 'Hellenic Republic'),
-('0256d14e-7095-402a-a992-4e73b6268ba0', 'Andorra', 'Andorra la Vella', 'Europe', 'Southern Europe', 77265, 'https://flagcdn.com/w320/ad.png', 'https://mainfacts.com/media/images/coats_of_arms/ad.png', 'Principality of Andorra'),
-('74b468b5-b90a-4aa5-bfe1-2489174394fa', 'Belarus', 'Minsk', 'Europe', 'Eastern Europe', 9398861, 'https://flagcdn.com/w320/by.png', 'https://mainfacts.com/media/images/coats_of_arms/by.png', 'Republic of Belarus'),
-('85580046-cd81-4c16-95b9-cbcfb819fe7f', 'Iceland', 'Reykjavik', 'Europe', 'Northern Europe', 366425, 'https://flagcdn.com/w320/is.png', 'https://mainfacts.com/media/images/coats_of_arms/is.png', 'Iceland'),
-('36787050-a5fa-458a-931d-08be1e5fe515', 'Liechtenstein', 'Vaduz', 'Europe', 'Western Europe', 38137, 'https://flagcdn.com/w320/li.png', 'https://mainfacts.com/media/images/coats_of_arms/li.png', 'Principality of Liechtenstein'),
-('2c8c442e-b3c2-4096-8e73-6a22aa944b87', 'Bosnia and Herzegovina', 'Sarajevo', 'Europe', 'Southeast Europe', 3280815, 'https://flagcdn.com/w320/ba.png', 'https://mainfacts.com/media/images/coats_of_arms/ba.png', 'Bosnia and Herzegovina'),
-('ab5445cb-d369-427c-a305-6a8853bf01da', 'Switzerland', 'Bern', 'Europe', 'Western Europe', 8654622, 'https://flagcdn.com/w320/ch.png', 'https://mainfacts.com/media/images/coats_of_arms/ch.png', 'Swiss Confederation'),
-('ea551e2a-7fa0-4c93-a69c-11bf30836e7a', 'Slovakia', 'Bratislava', 'Europe', 'Central Europe', 5458827, 'https://flagcdn.com/w320/sk.png', 'https://mainfacts.com/media/images/coats_of_arms/sk.png', 'Slovak Republic'),
-('570b171d-7c22-4c2c-8f98-52e5549c58fb', 'Austria', 'Vienna', 'Europe', 'Central Europe', 8917205, 'https://flagcdn.com/w320/at.png', 'https://mainfacts.com/media/images/coats_of_arms/at.png', 'Republic of Austria'),
-('7f342588-a0fc-4cf4-8b08-3629235428a7', 'Spain', 'Madrid', 'Europe', 'Southern Europe', 47351567, 'https://flagcdn.com/w320/es.png', 'https://mainfacts.com/media/images/coats_of_arms/es.png', 'Kingdom of Spain'),
-('2443f4bc-54d8-4a23-b858-8c16abadf65e', 'Russia', 'Moscow', 'Europe', 'Eastern Europe', 144104080, 'https://flagcdn.com/w320/ru.png', 'https://mainfacts.com/media/images/coats_of_arms/ru.png', 'Russian Federation'),
-('3e987bed-c129-464a-96b9-abe2d6f89c63', 'Hungary', 'Budapest', 'Europe', 'Central Europe', 9749763, 'https://flagcdn.com/w320/hu.png', 'https://mainfacts.com/media/images/coats_of_arms/hu.png', 'Hungary'),
-('678bf9f1-4828-492d-8365-62adbe325088', 'Czechia', 'Prague', 'Europe', 'Central Europe', 10698896, 'https://flagcdn.com/w320/cz.png', 'https://mainfacts.com/media/images/coats_of_arms/cz.png', 'Czech Republic'),
-('fd0e1ddf-b4eb-4742-b38a-279a9df5baff', 'Netherlands', 'Amsterdam', 'Europe', 'Western Europe', 16655799, 'https://flagcdn.com/w320/nl.png', 'https://mainfacts.com/media/images/coats_of_arms/nl.png', 'Kingdom of the Netherlands'),
-('438b5baa-18f4-4c17-8718-9979e128f5ac', 'Faroe Islands', 'Tórshavn', 'Europe', 'Northern Europe', 48865, 'https://flagcdn.com/w320/fo.png', 'https://mainfacts.com/media/images/coats_of_arms/fo.png', 'Faroe Islands'),
-('0b292f99-c7a3-4470-a64a-18ce7ab9c81d', 'Estonia', 'Tallinn', 'Europe', 'Northern Europe', 1331057, 'https://flagcdn.com/w320/ee.png', 'https://mainfacts.com/media/images/coats_of_arms/ee.png', 'Republic of Estonia'),
-('e8c4cc4e-8463-465f-adc5-b511e9b6a680', 'Poland', 'Warsaw', 'Europe', 'Central Europe', 37950802, 'https://flagcdn.com/w320/pl.png', 'https://mainfacts.com/media/images/coats_of_arms/pl.png', 'Republic of Poland'),
-('bf664036-7664-4b9e-a4c5-eca49fdcb72d', 'Portugal', 'Lisbon', 'Europe', 'Southern Europe', 10305564, 'https://flagcdn.com/w320/pt.png', 'https://mainfacts.com/media/images/coats_of_arms/pt.png', 'Portuguese Republic'),
-('25788280-42f6-43c7-a332-a64b764f8abf', 'Moldova', 'Chișinău', 'Europe', 'Eastern Europe', 2617820, 'https://flagcdn.com/w320/md.png', 'https://mainfacts.com/media/images/coats_of_arms/md.png', 'Republic of Moldova'),
-('689e3375-09e0-4596-a835-b075a2ad6b1f', 'San Marino', 'City of San Marino', 'Europe', 'Southern Europe', 33938, 'https://flagcdn.com/w320/sm.png', 'https://mainfacts.com/media/images/coats_of_arms/sm.png', 'Republic of San Marino'),
-('77ff6fea-09d5-43b2-ab03-713c32e9cecf', 'Sweden', 'Stockholm', 'Europe', 'Northern Europe', 10353442, 'https://flagcdn.com/w320/se.png', 'https://mainfacts.com/media/images/coats_of_arms/se.png', 'Kingdom of Sweden'),
-('0d628655-745a-402c-8602-6e6ae2d5e921', 'Denmark', 'Copenhagen', 'Europe', 'Northern Europe', 5831404, 'https://flagcdn.com/w320/dk.png', 'https://mainfacts.com/media/images/coats_of_arms/dk.png', 'Kingdom of Denmark'),
-('48af72e2-8782-4459-8bef-ee538608a206', 'Malta', 'Valletta', 'Europe', 'Southern Europe', 525285, 'https://flagcdn.com/w320/mt.png', 'https://mainfacts.com/media/images/coats_of_arms/mt.png', 'Republic of Malta'),
-('7a97d53c-3c87-45eb-a8b3-7e75206a2c71', 'Norway', 'Oslo', 'Europe', 'Northern Europe', 5379475, 'https://flagcdn.com/w320/no.png', 'https://mainfacts.com/media/images/coats_of_arms/no.png', 'Kingdom of Norway'),
-('1a8eb685-e384-4ef3-a6e1-ba714ed19805', 'Ireland', 'Dublin', 'Europe', 'Northern Europe', 4994724, 'https://flagcdn.com/w320/ie.png', 'https://mainfacts.com/media/images/coats_of_arms/ie.png', 'Republic of Ireland'),
-('ba773e03-cf4c-4afe-9e6d-07548d6c6409', 'Ukraine', 'Kyiv', 'Europe', 'Eastern Europe', 44134693, 'https://flagcdn.com/w320/ua.png', 'https://mainfacts.com/media/images/coats_of_arms/ua.png', 'Ukraine'),
-('150d2f47-70d7-47cc-a28d-9c8121849211', 'Serbia', 'Belgrade', 'Europe', 'Southeast Europe', 6908224, 'https://flagcdn.com/w320/rs.png', 'https://mainfacts.com/media/images/coats_of_arms/rs.png', 'Republic of Serbia'),
-('7c9cc38a-71c1-4b7d-86cd-1a7e761d65f2', 'Isle of Man', 'Douglas', 'Europe', 'Northern Europe', 85032, 'https://flagcdn.com/w320/im.png', 'https://mainfacts.com/media/images/coats_of_arms/im.png', 'Isle of Man'),
-('cb0e3d0f-bdeb-42de-bcff-1be5327e2102', 'Jersey', 'Saint Helier', 'Europe', 'Northern Europe', 100800, 'https://flagcdn.com/w320/je.png', 'https://mainfacts.com/media/images/coats_of_arms/je.png', 'Bailiwick of Jersey'),
-('35b3145f-9db2-4002-9b89-0daa8cda1697', 'Åland Islands', 'Mariehamn', 'Europe', 'Northern Europe', 29458, 'https://flagcdn.com/w320/ax.png', 'https://mainfacts.com/media/images/coats_of_arms/ax.png', 'Åland Islands'),
-('b92fb3e1-6574-4fdb-822e-7872dc2b46bf', 'Kosovo', 'Pristina', 'Europe', 'Southeast Europe', 1775378, 'https://flagcdn.com/w320/xk.png', 'https://mainfacts.com/media/images/coats_of_arms/xk.png', 'Republic of Kosovo'),
-('295bfdc5-6eac-4b9e-af13-344d37e91dea', 'Guernsey', 'St. Peter Port', 'Europe', 'Northern Europe', 62999, 'https://flagcdn.com/w320/gg.png', 'https://mainfacts.com/media/images/coats_of_arms/gg.png', 'Bailiwick of Guernsey'),
-('b094e08f-103c-494c-95ce-30b11f316e63', 'Albania', 'Tirana', 'Europe', 'Southeast Europe', 2837743, 'https://flagcdn.com/w320/al.png', 'https://mainfacts.com/media/images/coats_of_arms/al.png', 'Republic of Albania'),
-('85121a15-9a20-4744-a006-3a71e1e71aa2', 'Vatican City', 'Vatican City', 'Europe', 'Southern Europe', 451, 'https://flagcdn.com/w320/va.png', 'https://mainfacts.com/media/images/coats_of_arms/va.png', 'Vatican City State'),
-('43a52ee5-09c2-4116-b1fd-d07f069a7afc', 'Belgium', 'Brussels', 'Europe', 'Western Europe', 11555997, 'https://flagcdn.com/w320/be.png', 'https://mainfacts.com/media/images/coats_of_arms/be.png', 'Kingdom of Belgium'),
-('4e8196c2-6de7-4423-badd-44265bfe33b1', 'United Kingdom', 'London', 'Europe', 'Northern Europe', 67215293, 'https://flagcdn.com/w320/gb.png', 'https://mainfacts.com/media/images/coats_of_arms/gb.png', 'United Kingdom of Great Britain and Northern Ireland'),
-('4a902d7d-8cf8-413f-9628-037957b86487', 'Romania', 'Bucharest', 'Europe', 'Southeast Europe', 19286123, 'https://flagcdn.com/w320/ro.png', 'https://mainfacts.com/media/images/coats_of_arms/ro.png', 'Romania'),
-('28c63a3e-1ce6-40ad-bb84-3e7865c89976', 'Gibraltar', 'Gibraltar', 'Europe', 'Southern Europe', 33691, 'https://flagcdn.com/w320/gi.png', 'https://mainfacts.com/media/images/coats_of_arms/gi.png', 'Gibraltar'),
-('5751a12f-d383-4d62-b8c2-153969923b1f', 'Italy', 'Rome', 'Europe', 'Southern Europe', 59554023, 'https://flagcdn.com/w320/it.png', 'https://mainfacts.com/media/images/coats_of_arms/it.png', 'Italian Republic'),
-('79007d65-c86e-4542-bd07-167d3e16d1b3', 'France', 'Paris', 'Europe', 'Western Europe', 67391582, 'https://flagcdn.com/w320/fr.png', 'https://mainfacts.com/media/images/coats_of_arms/fr.png', 'French Republic'),
-('845d0517-94c0-40ad-97ec-dd8858100773', 'Svalbard and Jan Mayen', 'Longyearbyen', 'Europe', 'Northern Europe', 2562, 'https://flagcdn.com/w320/sj.png', '', 'Svalbard og Jan Mayen'),
-('98f4c948-b7db-4262-ab16-e2c50c7390c2', 'North Macedonia', 'Skopje', 'Europe', 'Southeast Europe', 2077132, 'https://flagcdn.com/w320/mk.png', 'https://mainfacts.com/media/images/coats_of_arms/mk.png', 'Republic of North Macedonia'),
-('4351c83d-4e65-4b88-8029-7af8df3b9241', 'Croatia', 'Zagreb', 'Europe', 'Southeast Europe', 4047200, 'https://flagcdn.com/w320/hr.png', 'https://mainfacts.com/media/images/coats_of_arms/hr.png', 'Republic of Croatia'),
-('4a520f22-8674-44e9-b01d-950f4f5fe479', 'Latvia', 'Riga', 'Europe', 'Northern Europe', 1901548, 'https://flagcdn.com/w320/lv.png', 'https://mainfacts.com/media/images/coats_of_arms/lv.png', 'Republic of Latvia'),
-('53b6f87d-114a-4ee2-a9f8-990c8169ffe3', 'Lithuania', 'Vilnius', 'Europe', 'Northern Europe', 2794700, 'https://flagcdn.com/w320/lt.png', 'https://mainfacts.com/media/images/coats_of_arms/lt.png', 'Republic of Lithuania'),
-('7a8b95e6-bdda-48d1-948d-2d62d5e6ae0b', 'Cyprus', 'Nicosia', 'Europe', 'Southern Europe', 1207361, 'https://flagcdn.com/w320/cy.png', 'https://mainfacts.com/media/images/coats_of_arms/cy.png', 'Republic of Cyprus'),
-('5d293e5b-36de-41e9-b7e7-f47bbe3c529f', 'Montenegro', 'Podgorica', 'Europe', 'Southeast Europe', 621718, 'https://flagcdn.com/w320/me.png', 'https://mainfacts.com/media/images/coats_of_arms/me.png', 'Montenegro'),
-('dae05032-38ec-4db3-8472-485eecb8549e', 'Germany', 'Berlin', 'Europe', 'Western Europe', 83240525, 'https://flagcdn.com/w320/de.png', 'https://mainfacts.com/media/images/coats_of_arms/de.png', 'Federal Republic of Germany'),
-('6202b412-d16b-4335-91e5-0bb1f57f71e2', 'Luxembourg', 'Luxembourg', 'Europe', 'Western Europe', 632275, 'https://flagcdn.com/w320/lu.png', 'https://mainfacts.com/media/images/coats_of_arms/lu.png', 'Grand Duchy of Luxembourg');
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Suecia', 'Reino de Suecia', 'Estocolmo', 'Europa', 'Europa del Norte', 'swe', 10353442, 'UTC+01:00', 'Europa',
+        'https://flagcdn.com/w320/se.png',
+        'https://mainfacts.com/media/images/coats_of_arms/se.png', 'lunes');
 
--- Tabla language
-INSERT INTO language (id, name, code) VALUES
-('b46f3318-b675-4994-be5e-dec6c958f34c', 'Bulgarian', 'bul'),
-('9c3261b8-481a-403a-8e18-f7a56c541802', 'Finnish', 'fin'),
-('60e3005c-6d41-4eee-bc77-934e26d72aa2', 'Swedish', 'swe'),
-('b9e8e3fb-b7b6-4f3f-a275-520f8bfa9b68', 'Slovene', 'slv'),
-('6aa18ef2-5b76-4c91-a832-33aee7fa281c', 'French', 'fra'),
-('1a45c456-44c5-4a76-9f85-4419369d0f89', 'Greek', 'ell'),
-('cf731bd0-c783-41c4-8572-eef87f0f63d0', 'Catalan', 'cat'),
-('1c0e664b-8cf9-498b-ba44-00d06cf1def4', 'Belarusian', 'bel'),
-('234bad6f-7eee-495d-9b5b-a3122a921e2e', 'Russian', 'rus'),
-('3a349333-8410-4b2c-8497-f567106059ce', 'Icelandic', 'isl'),
-('dbb1bca0-dd67-4b72-8322-ed02fded98c6', 'German', 'deu'),
-('992b83bf-057f-47ec-888b-371aa0e8ee7c', 'Bosnian', 'bos'),
-('4d5a62c9-94ac-4832-8354-6cb0b69f1df6', 'Croatian', 'hrv'),
-('6bbf848e-32aa-45a0-b03b-e48ebb0ea6a5', 'Serbian', 'srp'),
-('e850eba0-fe3c-47b9-b3dd-6e3b4205691f', 'Swiss German', 'gsw'),
-('6d25c15d-6b7d-468e-8863-2a64f2cf3139', 'Italian', 'ita'),
-('b80647d7-2d25-4be8-8396-2beeb378b019', 'Romansh', 'roh'),
-('5241d009-5546-4aa5-88ee-dffaa1c650e1', 'Slovak', 'slk'),
-('d32e42d1-193d-4cfa-ac6a-8ad85f98b828', 'Spanish', 'spa'),
-('8dd1576a-c857-4e5f-b273-565ede492f40', 'Basque', 'eus'),
-('38a5f5d6-96e2-4a93-9e83-1f5b25bc8734', 'Galician', 'glc'),
-('7a799125-1265-489d-931f-839d7792a775', 'Hungarian', 'hun'),
-('bbcf45a6-0a16-4f17-b4c3-a2443557a095', 'Czech', 'ces'),
-('ba437398-3f4e-4fb8-b7f5-f70e64a01809', 'Dutch', 'nld'),
-('45c08dde-04fc-4c60-b190-7b625cedbcc0', 'Danish', 'dan'),
-('38b7823a-3c3c-4464-87aa-dc0ca55464cc', 'Faroese', 'fao'),
-('e7e3572f-119b-43c7-b5d5-6939c2e08c29', 'Estonian', 'est'),
-('65afbccd-8b2d-4f6c-8498-2f3a217906d0', 'Polish', 'pol'),
-('153e9425-cbea-4081-95d2-b7a6ea37e770', 'Portuguese', 'por'),
-('0049f06d-291e-4c3e-ae87-afd660e90f91', 'Romanian', 'ron'),
-('e023d5f0-0348-4e0a-a79b-e09e5ad4f657', 'English', 'eng'),
-('06096479-d5f6-4cb0-8e99-785dc3f61d31', 'Maltese', 'mlt'),
-('ce1d87b8-940e-46da-89da-8831636a5103', 'Norwegian Nynorsk', 'nno'),
-('bca712b1-bf4f-4769-b3ec-65068afffcb5', 'Norwegian Bokmål', 'nob'),
-('db51adc7-ddd7-469a-9732-4511159906e8', 'Sami', 'smi'),
-('202c3ffa-da2c-4719-9e79-e59cc07a1eb0', 'Irish', 'gle'),
-('710c84b2-3c66-4a9b-8131-9457f73a3c9d', 'Ukrainian', 'ukr'),
-('984382f0-18f6-4752-ba8b-643ebb8afb17', 'Manx', 'glv'),
-('63386a5d-4831-48c8-8ee0-d069605a2157', 'Jèrriais', 'nrf'),
-('d1c03dd4-fe1a-4ef6-bc33-c8675dddf38b', 'Albanian', 'sqi'),
-('36973158-ae9c-4f4f-a53d-dfd8d1daffd6', 'Guernésiais', 'nfr'),
-('0fbf2abb-e7df-43b1-8b98-0d272d918725', 'Latin', 'lat'),
-('773661c0-6692-49b5-80cf-9775b7c7dabc', 'Norwegian', 'nor'),
-('1edd02de-90d2-476d-945a-784dd302555b', 'Macedonian', 'mkd'),
-('6f7a8345-faa0-451e-a1f7-840107a5d6cb', 'Latvian', 'lav'),
-('08806f5d-4548-4958-b85e-2ec69e72fa8c', 'Lithuanian', 'lit'),
-('115f8505-36f6-47de-a20b-0cea7f1ed529', 'Turkish', 'tur'),
-('faad7686-4e68-4a70-8e77-24dac9ff73d9', 'Montenegrin', 'cnr'),
-('023ea98a-ae07-4264-ac1e-3f534b04aeb2', 'Luxembourgish', 'ltz');
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('España', 'Reino de España', 'Madrid', 'Europa', 'Europa del Sur', 'spa', 47351567, 'UTC', 'Europa',
+        'https://flagcdn.com/w320/es.png',
+        'https://mainfacts.com/media/images/coats_of_arms/es.png', 'lunes');
 
--- Tabla media
-INSERT INTO media (id, country_id, title, media_type, image_url, description) VALUES
-('1ebd585b-8ec7-448c-8fd7-2a2534a17e2f', 'a6846e8b-edf2-4ce3-82df-9747ca637b4d', 'Bandera de Bulgaria', 'FLAG', 'https://flagcdn.com/w320/bg.png', 'Imagen de la bandera de Bulgaria'),
-('7195a553-bf6a-4dfe-a9ba-b491ad2b9c68', 'a6846e8b-edf2-4ce3-82df-9747ca637b4d', 'Escudo de Bulgaria', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/bg.png', 'Imagen del escudo de Bulgaria'),
-('de90758a-db70-465b-8411-72512842a903', '190a6b0a-ac0a-4f46-b60a-bc8ba50c3943', 'Bandera de Finland', 'FLAG', 'https://flagcdn.com/w320/fi.png', 'Imagen de la bandera de Finland'),
-('b4094fa0-9a36-49b5-bd29-fd112f9726ed', '190a6b0a-ac0a-4f46-b60a-bc8ba50c3943', 'Escudo de Finland', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/fi.png', 'Imagen del escudo de Finland'),
-('4a7b59aa-47db-4db3-8cc4-7c660ab593ca', '4d39bf6d-164f-40d5-8b15-fb8e62700bcf', 'Bandera de Slovenia', 'FLAG', 'https://flagcdn.com/w320/si.png', 'Imagen de la bandera de Slovenia'),
-('ca129eae-0941-4ac6-b3cb-9fd3bb5ee93d', '4d39bf6d-164f-40d5-8b15-fb8e62700bcf', 'Escudo de Slovenia', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/si.png', 'Imagen del escudo de Slovenia'),
-('93092af6-66d5-4388-84ab-91629cf75fae', '189b70cf-4bae-45b6-8f37-5636b0a6220b', 'Bandera de Monaco', 'FLAG', 'https://flagcdn.com/w320/mc.png', 'Imagen de la bandera de Monaco'),
-('15e93010-3f50-4a8b-8ce5-9436047dca9a', '189b70cf-4bae-45b6-8f37-5636b0a6220b', 'Escudo de Monaco', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/mc.png', 'Imagen del escudo de Monaco'),
-('957cb0a5-db9c-411d-bb2b-b882abc45e9b', 'f5e0c189-19ef-4968-b71e-5028a4c6a31f', 'Bandera de Greece', 'FLAG', 'https://flagcdn.com/w320/gr.png', 'Imagen de la bandera de Greece'),
-('d0542f69-c510-48da-9589-33132d595517', 'f5e0c189-19ef-4968-b71e-5028a4c6a31f', 'Escudo de Greece', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/gr.png', 'Imagen del escudo de Greece'),
-('d489e213-8a47-4b5c-8057-0b10a3c8de1f', '0256d14e-7095-402a-a992-4e73b6268ba0', 'Bandera de Andorra', 'FLAG', 'https://flagcdn.com/w320/ad.png', 'Imagen de la bandera de Andorra'),
-('f59725c5-6a2b-4860-a103-1af8831751ba', '0256d14e-7095-402a-a992-4e73b6268ba0', 'Escudo de Andorra', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/ad.png', 'Imagen del escudo de Andorra'),
-('e003c54c-c505-495f-ae6b-5e2297aad701', '74b468b5-b90a-4aa5-bfe1-2489174394fa', 'Bandera de Belarus', 'FLAG', 'https://flagcdn.com/w320/by.png', 'Imagen de la bandera de Belarus'),
-('dea09184-7a74-4a4e-8e8a-45fdef921af0', '74b468b5-b90a-4aa5-bfe1-2489174394fa', 'Escudo de Belarus', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/by.png', 'Imagen del escudo de Belarus'),
-('5416bfd7-ca8d-4a1b-bb96-18ba2098a14e', '85580046-cd81-4c16-95b9-cbcfb819fe7f', 'Bandera de Iceland', 'FLAG', 'https://flagcdn.com/w320/is.png', 'Imagen de la bandera de Iceland'),
-('6e6d28e9-2c09-4fde-b1dc-08fe2f65b90f', '85580046-cd81-4c16-95b9-cbcfb819fe7f', 'Escudo de Iceland', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/is.png', 'Imagen del escudo de Iceland'),
-('062a29e8-7119-4e5c-8f63-841446218a2c', '36787050-a5fa-458a-931d-08be1e5fe515', 'Bandera de Liechtenstein', 'FLAG', 'https://flagcdn.com/w320/li.png', 'Imagen de la bandera de Liechtenstein'),
-('1ee4ce63-8cb9-4926-b8b2-69f41c6c8f7b', '36787050-a5fa-458a-931d-08be1e5fe515', 'Escudo de Liechtenstein', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/li.png', 'Imagen del escudo de Liechtenstein'),
-('c4f3129d-e99e-4baa-abb2-1c580a9a1c94', '2c8c442e-b3c2-4096-8e73-6a22aa944b87', 'Bandera de Bosnia and Herzegovina', 'FLAG', 'https://flagcdn.com/w320/ba.png', 'Imagen de la bandera de Bosnia and Herzegovina'),
-('b66559e8-2a9d-4211-bb64-c3f6134103d4', '2c8c442e-b3c2-4096-8e73-6a22aa944b87', 'Escudo de Bosnia and Herzegovina', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/ba.png', 'Imagen del escudo de Bosnia and Herzegovina'),
-('b30ec186-89e1-4d0e-888a-d21b8a6b0fa9', 'ab5445cb-d369-427c-a305-6a8853bf01da', 'Bandera de Switzerland', 'FLAG', 'https://flagcdn.com/w320/ch.png', 'Imagen de la bandera de Switzerland'),
-('8c48bcac-7ba9-45be-8109-e58bcd6746e1', 'ab5445cb-d369-427c-a305-6a8853bf01da', 'Escudo de Switzerland', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/ch.png', 'Imagen del escudo de Switzerland'),
-('f560d082-3d61-4928-a537-a84882f91ba1', 'ea551e2a-7fa0-4c93-a69c-11bf30836e7a', 'Bandera de Slovakia', 'FLAG', 'https://flagcdn.com/w320/sk.png', 'Imagen de la bandera de Slovakia'),
-('200c751c-a37d-4cff-aee2-d428d0908505', 'ea551e2a-7fa0-4c93-a69c-11bf30836e7a', 'Escudo de Slovakia', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/sk.png', 'Imagen del escudo de Slovakia'),
-('7aa38cf3-d93f-4c2c-9ced-e26c1754e7f2', '570b171d-7c22-4c2c-8f98-52e5549c58fb', 'Bandera de Austria', 'FLAG', 'https://flagcdn.com/w320/at.png', 'Imagen de la bandera de Austria'),
-('8f26b2b1-00e3-45bd-a64f-44861f89c227', '570b171d-7c22-4c2c-8f98-52e5549c58fb', 'Escudo de Austria', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/at.png', 'Imagen del escudo de Austria'),
-('3e134139-c98e-4a79-838e-9f8dafdb9bc4', '7f342588-a0fc-4cf4-8b08-3629235428a7', 'Bandera de Spain', 'FLAG', 'https://flagcdn.com/w320/es.png', 'Imagen de la bandera de Spain'),
-('6a847e3b-8ef4-4277-a085-df7fc6ad1240', '7f342588-a0fc-4cf4-8b08-3629235428a7', 'Escudo de Spain', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/es.png', 'Imagen del escudo de Spain'),
-('8882656a-ef00-44df-92ac-b67686b6183d', '2443f4bc-54d8-4a23-b858-8c16abadf65e', 'Bandera de Russia', 'FLAG', 'https://flagcdn.com/w320/ru.png', 'Imagen de la bandera de Russia'),
-('e804aa9d-3378-44c1-ad36-604a135fb43f', '2443f4bc-54d8-4a23-b858-8c16abadf65e', 'Escudo de Russia', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/ru.png', 'Imagen del escudo de Russia'),
-('13800c15-9f77-4238-a237-390e75b67788', '3e987bed-c129-464a-96b9-abe2d6f89c63', 'Bandera de Hungary', 'FLAG', 'https://flagcdn.com/w320/hu.png', 'Imagen de la bandera de Hungary'),
-('954ea0a7-900b-4f0e-90d8-4a91ee5ae838', '3e987bed-c129-464a-96b9-abe2d6f89c63', 'Escudo de Hungary', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/hu.png', 'Imagen del escudo de Hungary'),
-('df29f8fa-00be-46e6-855d-b2b917aa0233', '678bf9f1-4828-492d-8365-62adbe325088', 'Bandera de Czechia', 'FLAG', 'https://flagcdn.com/w320/cz.png', 'Imagen de la bandera de Czechia'),
-('72c8eb55-27bc-47e8-9446-da6276111789', '678bf9f1-4828-492d-8365-62adbe325088', 'Escudo de Czechia', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/cz.png', 'Imagen del escudo de Czechia'),
-('ae6a5a28-c41f-44c2-8453-022bd305de45', 'fd0e1ddf-b4eb-4742-b38a-279a9df5baff', 'Bandera de Netherlands', 'FLAG', 'https://flagcdn.com/w320/nl.png', 'Imagen de la bandera de Netherlands'),
-('7bccc5f2-ec9c-49be-ba6d-ebb5b306154e', 'fd0e1ddf-b4eb-4742-b38a-279a9df5baff', 'Escudo de Netherlands', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/nl.png', 'Imagen del escudo de Netherlands'),
-('c6f457c8-4ecb-4d3f-9f0e-3575cb83ea22', '438b5baa-18f4-4c17-8718-9979e128f5ac', 'Bandera de Faroe Islands', 'FLAG', 'https://flagcdn.com/w320/fo.png', 'Imagen de la bandera de Faroe Islands'),
-('406b599d-0d0f-43e1-ab90-493519de5ed5', '438b5baa-18f4-4c17-8718-9979e128f5ac', 'Escudo de Faroe Islands', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/fo.png', 'Imagen del escudo de Faroe Islands'),
-('611eb3c2-b999-48c3-8b59-3423f56b8c10', '0b292f99-c7a3-4470-a64a-18ce7ab9c81d', 'Bandera de Estonia', 'FLAG', 'https://flagcdn.com/w320/ee.png', 'Imagen de la bandera de Estonia'),
-('33cb05c3-c277-4719-a3f8-b6587295f52d', '0b292f99-c7a3-4470-a64a-18ce7ab9c81d', 'Escudo de Estonia', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/ee.png', 'Imagen del escudo de Estonia'),
-('4c912534-9898-4565-8e47-b92a3634e01b', 'e8c4cc4e-8463-465f-adc5-b511e9b6a680', 'Bandera de Poland', 'FLAG', 'https://flagcdn.com/w320/pl.png', 'Imagen de la bandera de Poland'),
-('ea1d1a11-3490-4b7c-b6e5-067ef6eae0c1', 'e8c4cc4e-8463-465f-adc5-b511e9b6a680', 'Escudo de Poland', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/pl.png', 'Imagen del escudo de Poland'),
-('cbe60a0c-7eeb-44cd-8435-2f52de9bb88a', 'bf664036-7664-4b9e-a4c5-eca49fdcb72d', 'Bandera de Portugal', 'FLAG', 'https://flagcdn.com/w320/pt.png', 'Imagen de la bandera de Portugal'),
-('f660852a-00d2-46cc-b8f5-0fcbcc0282ba', 'bf664036-7664-4b9e-a4c5-eca49fdcb72d', 'Escudo de Portugal', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/pt.png', 'Imagen del escudo de Portugal'),
-('d3d130c7-4b73-4055-bfa6-d025fa1cc6f7', '25788280-42f6-43c7-a332-a64b764f8abf', 'Bandera de Moldova', 'FLAG', 'https://flagcdn.com/w320/md.png', 'Imagen de la bandera de Moldova'),
-('f2357c29-d530-4ba3-921c-78c9881bea0a', '25788280-42f6-43c7-a332-a64b764f8abf', 'Escudo de Moldova', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/md.png', 'Imagen del escudo de Moldova'),
-('3c84e3b6-38db-419f-b546-7a44560f15b9', '689e3375-09e0-4596-a835-b075a2ad6b1f', 'Bandera de San Marino', 'FLAG', 'https://flagcdn.com/w320/sm.png', 'Imagen de la bandera de San Marino'),
-('5a47f883-85d3-4a1e-92d9-051725bcb6e0', '689e3375-09e0-4596-a835-b075a2ad6b1f', 'Escudo de San Marino', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/sm.png', 'Imagen del escudo de San Marino'),
-('b662f088-22b5-4bcb-b8ab-215f049375c2', '77ff6fea-09d5-43b2-ab03-713c32e9cecf', 'Bandera de Sweden', 'FLAG', 'https://flagcdn.com/w320/se.png', 'Imagen de la bandera de Sweden'),
-('ed3aca9a-5cda-4639-a4b5-38b6ba764423', '77ff6fea-09d5-43b2-ab03-713c32e9cecf', 'Escudo de Sweden', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/se.png', 'Imagen del escudo de Sweden'),
-('015a4c57-ae3a-474e-a45e-4fc04e3da13f', '0d628655-745a-402c-8602-6e6ae2d5e921', 'Bandera de Denmark', 'FLAG', 'https://flagcdn.com/w320/dk.png', 'Imagen de la bandera de Denmark'),
-('dc2ed7fc-43a3-4681-a886-df2c16a6cc0d', '0d628655-745a-402c-8602-6e6ae2d5e921', 'Escudo de Denmark', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/dk.png', 'Imagen del escudo de Denmark'),
-('b6525843-5554-4456-a2c8-1a0076549280', '48af72e2-8782-4459-8bef-ee538608a206', 'Bandera de Malta', 'FLAG', 'https://flagcdn.com/w320/mt.png', 'Imagen de la bandera de Malta'),
-('901ec5f0-8049-48f9-a51e-3256f14f28c0', '48af72e2-8782-4459-8bef-ee538608a206', 'Escudo de Malta', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/mt.png', 'Imagen del escudo de Malta'),
-('69d606f2-1cc7-43bf-9ca7-4749ab1fa85d', '7a97d53c-3c87-45eb-a8b3-7e75206a2c71', 'Bandera de Norway', 'FLAG', 'https://flagcdn.com/w320/no.png', 'Imagen de la bandera de Norway'),
-('e99122f2-2949-4902-b9c6-f5757d1219d9', '7a97d53c-3c87-45eb-a8b3-7e75206a2c71', 'Escudo de Norway', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/no.png', 'Imagen del escudo de Norway'),
-('5723cfee-f28b-4fd2-a499-34f509f43bce', '1a8eb685-e384-4ef3-a6e1-ba714ed19805', 'Bandera de Ireland', 'FLAG', 'https://flagcdn.com/w320/ie.png', 'Imagen de la bandera de Ireland'),
-('60bc2e02-37b5-4fc6-bd9b-10d0c7c9fd79', '1a8eb685-e384-4ef3-a6e1-ba714ed19805', 'Escudo de Ireland', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/ie.png', 'Imagen del escudo de Ireland'),
-('98b95fc8-13cd-432b-a62a-e6fa802257ce', 'ba773e03-cf4c-4afe-9e6d-07548d6c6409', 'Bandera de Ukraine', 'FLAG', 'https://flagcdn.com/w320/ua.png', 'Imagen de la bandera de Ukraine'),
-('b920ffb3-1f7b-4100-b75b-149dcaf25d15', 'ba773e03-cf4c-4afe-9e6d-07548d6c6409', 'Escudo de Ukraine', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/ua.png', 'Imagen del escudo de Ukraine'),
-('b9f2b86c-8de2-4240-8c62-b27e1f8142e7', '150d2f47-70d7-47cc-a28d-9c8121849211', 'Bandera de Serbia', 'FLAG', 'https://flagcdn.com/w320/rs.png', 'Imagen de la bandera de Serbia'),
-('f9f1020b-0166-4790-b0d9-acb1110e141c', '150d2f47-70d7-47cc-a28d-9c8121849211', 'Escudo de Serbia', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/rs.png', 'Imagen del escudo de Serbia'),
-('4c2af745-ae86-40f8-a7b0-787d9a4a4c7a', '7c9cc38a-71c1-4b7d-86cd-1a7e761d65f2', 'Bandera de Isle of Man', 'FLAG', 'https://flagcdn.com/w320/im.png', 'Imagen de la bandera de Isle of Man'),
-('0f54242c-ad51-4968-b294-9b132c0210e8', '7c9cc38a-71c1-4b7d-86cd-1a7e761d65f2', 'Escudo de Isle of Man', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/im.png', 'Imagen del escudo de Isle of Man'),
-('61effe81-2785-481b-a76b-136672ca7ab0', 'cb0e3d0f-bdeb-42de-bcff-1be5327e2102', 'Bandera de Jersey', 'FLAG', 'https://flagcdn.com/w320/je.png', 'Imagen de la bandera de Jersey'),
-('7f767621-6e1f-4ea5-b503-f2cb00c5ea87', 'cb0e3d0f-bdeb-42de-bcff-1be5327e2102', 'Escudo de Jersey', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/je.png', 'Imagen del escudo de Jersey'),
-('3c56fe46-bbbb-4546-b5c3-380c270f221e', '35b3145f-9db2-4002-9b89-0daa8cda1697', 'Bandera de Åland Islands', 'FLAG', 'https://flagcdn.com/w320/ax.png', 'Imagen de la bandera de Åland Islands'),
-('3e0c8cb9-9035-4f25-9bfb-8be3ad9e79b1', '35b3145f-9db2-4002-9b89-0daa8cda1697', 'Escudo de Åland Islands', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/ax.png', 'Imagen del escudo de Åland Islands'),
-('f3cc7fd6-437e-4079-9f0e-2e0ce8ec2118', 'b92fb3e1-6574-4fdb-822e-7872dc2b46bf', 'Bandera de Kosovo', 'FLAG', 'https://flagcdn.com/w320/xk.png', 'Imagen de la bandera de Kosovo'),
-('1086a52a-f9fe-44fc-b5e2-09850ccd666c', 'b92fb3e1-6574-4fdb-822e-7872dc2b46bf', 'Escudo de Kosovo', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/xk.png', 'Imagen del escudo de Kosovo'),
-('41714baa-9663-40d0-a056-89bbeb6f6bbb', '295bfdc5-6eac-4b9e-af13-344d37e91dea', 'Bandera de Guernsey', 'FLAG', 'https://flagcdn.com/w320/gg.png', 'Imagen de la bandera de Guernsey'),
-('f7b22066-b878-46bc-bb07-f5702495c7b3', '295bfdc5-6eac-4b9e-af13-344d37e91dea', 'Escudo de Guernsey', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/gg.png', 'Imagen del escudo de Guernsey'),
-('6408bcad-8fbc-47f8-a848-96a1fc75c6a7', 'b094e08f-103c-494c-95ce-30b11f316e63', 'Bandera de Albania', 'FLAG', 'https://flagcdn.com/w320/al.png', 'Imagen de la bandera de Albania'),
-('f9424a09-b4eb-4e76-b325-412e4ebca397', 'b094e08f-103c-494c-95ce-30b11f316e63', 'Escudo de Albania', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/al.png', 'Imagen del escudo de Albania'),
-('d829361a-e839-479c-87ad-988e71e880f1', '85121a15-9a20-4744-a006-3a71e1e71aa2', 'Bandera de Vatican City', 'FLAG', 'https://flagcdn.com/w320/va.png', 'Imagen de la bandera de Vatican City'),
-('9b26802a-bc9e-47d0-a050-c09554da082a', '85121a15-9a20-4744-a006-3a71e1e71aa2', 'Escudo de Vatican City', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/va.png', 'Imagen del escudo de Vatican City'),
-('29f05465-95fc-4df9-9be5-ae99cbaf940d', '43a52ee5-09c2-4116-b1fd-d07f069a7afc', 'Bandera de Belgium', 'FLAG', 'https://flagcdn.com/w320/be.png', 'Imagen de la bandera de Belgium'),
-('1336f320-bef9-4cdc-a41e-674721f405a6', '43a52ee5-09c2-4116-b1fd-d07f069a7afc', 'Escudo de Belgium', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/be.png', 'Imagen del escudo de Belgium'),
-('34283d9f-a934-4a37-80a9-5acf9fa2287f', '4e8196c2-6de7-4423-badd-44265bfe33b1', 'Bandera de United Kingdom', 'FLAG', 'https://flagcdn.com/w320/gb.png', 'Imagen de la bandera de United Kingdom'),
-('91ff368e-5f0f-45c0-8618-081904c780d3', '4e8196c2-6de7-4423-badd-44265bfe33b1', 'Escudo de United Kingdom', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/gb.png', 'Imagen del escudo de United Kingdom'),
-('590f3c50-59f8-4b07-a89b-a746a5bf60d3', '4a902d7d-8cf8-413f-9628-037957b86487', 'Bandera de Romania', 'FLAG', 'https://flagcdn.com/w320/ro.png', 'Imagen de la bandera de Romania'),
-('271841dd-2eaa-4bba-b12c-e2e97f5949b4', '4a902d7d-8cf8-413f-9628-037957b86487', 'Escudo de Romania', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/ro.png', 'Imagen del escudo de Romania'),
-('31f5eddc-4431-4a95-be06-58bafa6ddecc', '28c63a3e-1ce6-40ad-bb84-3e7865c89976', 'Bandera de Gibraltar', 'FLAG', 'https://flagcdn.com/w320/gi.png', 'Imagen de la bandera de Gibraltar'),
-('bd4a6a70-f29f-431d-a921-ee6983e1b31d', '28c63a3e-1ce6-40ad-bb84-3e7865c89976', 'Escudo de Gibraltar', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/gi.png', 'Imagen del escudo de Gibraltar'),
-('a9e05c61-45ce-445e-829b-12d175c6476d', '5751a12f-d383-4d62-b8c2-153969923b1f', 'Bandera de Italy', 'FLAG', 'https://flagcdn.com/w320/it.png', 'Imagen de la bandera de Italy'),
-('b3df75d8-823d-4245-a18f-9b5325157447', '5751a12f-d383-4d62-b8c2-153969923b1f', 'Escudo de Italy', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/it.png', 'Imagen del escudo de Italy'),
-('ee745195-c9ab-42bd-9db8-b54b666a2135', '79007d65-c86e-4542-bd07-167d3e16d1b3', 'Bandera de France', 'FLAG', 'https://flagcdn.com/w320/fr.png', 'Imagen de la bandera de France'),
-('98ebfebe-8652-4e39-9696-e0da8be86759', '79007d65-c86e-4542-bd07-167d3e16d1b3', 'Escudo de France', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/fr.png', 'Imagen del escudo de France'),
-('056a9c48-a0dd-4f69-84cc-2b47886039c1', '845d0517-94c0-40ad-97ec-dd8858100773', 'Bandera de Svalbard and Jan Mayen', 'FLAG', 'https://flagcdn.com/w320/sj.png', 'Imagen de la bandera de Svalbard and Jan Mayen'),
-('558fc720-383b-41ce-bfc4-2a9f244c5f27', '98f4c948-b7db-4262-ab16-e2c50c7390c2', 'Bandera de North Macedonia', 'FLAG', 'https://flagcdn.com/w320/mk.png', 'Imagen de la bandera de North Macedonia'),
-('d82c822e-d79f-44f3-9d6d-933de8e81360', '98f4c948-b7db-4262-ab16-e2c50c7390c2', 'Escudo de North Macedonia', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/mk.png', 'Imagen del escudo de North Macedonia'),
-('b6056b16-e9af-49c8-a43d-c6fcb6e7aa1c', '4351c83d-4e65-4b88-8029-7af8df3b9241', 'Bandera de Croatia', 'FLAG', 'https://flagcdn.com/w320/hr.png', 'Imagen de la bandera de Croatia'),
-('e8b9d0eb-57db-4f01-a098-c752bdd8fe8b', '4351c83d-4e65-4b88-8029-7af8df3b9241', 'Escudo de Croatia', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/hr.png', 'Imagen del escudo de Croatia'),
-('69299cb7-978f-47c2-907c-a8a27810e94e', '4a520f22-8674-44e9-b01d-950f4f5fe479', 'Bandera de Latvia', 'FLAG', 'https://flagcdn.com/w320/lv.png', 'Imagen de la bandera de Latvia'),
-('93628e75-a40d-4bf8-9da0-0529a8695f20', '4a520f22-8674-44e9-b01d-950f4f5fe479', 'Escudo de Latvia', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/lv.png', 'Imagen del escudo de Latvia'),
-('ce1f1439-35bd-460a-83f2-90e5a3725a0d', '53b6f87d-114a-4ee2-a9f8-990c8169ffe3', 'Bandera de Lithuania', 'FLAG', 'https://flagcdn.com/w320/lt.png', 'Imagen de la bandera de Lithuania'),
-('beff411c-6097-4961-b610-3a68dcb33f04', '53b6f87d-114a-4ee2-a9f8-990c8169ffe3', 'Escudo de Lithuania', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/lt.png', 'Imagen del escudo de Lithuania'),
-('5b45a1f1-8ded-4342-8606-640b9bf4a25a', '7a8b95e6-bdda-48d1-948d-2d62d5e6ae0b', 'Bandera de Cyprus', 'FLAG', 'https://flagcdn.com/w320/cy.png', 'Imagen de la bandera de Cyprus'),
-('c139a3e7-4f1b-4779-ab0a-287b77bbfc8f', '7a8b95e6-bdda-48d1-948d-2d62d5e6ae0b', 'Escudo de Cyprus', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/cy.png', 'Imagen del escudo de Cyprus'),
-('4503ddf6-4851-4374-ad81-54ff8d39d545', '5d293e5b-36de-41e9-b7e7-f47bbe3c529f', 'Bandera de Montenegro', 'FLAG', 'https://flagcdn.com/w320/me.png', 'Imagen de la bandera de Montenegro'),
-('40055d18-3550-44da-b7a2-8fd58249387f', '5d293e5b-36de-41e9-b7e7-f47bbe3c529f', 'Escudo de Montenegro', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/me.png', 'Imagen del escudo de Montenegro'),
-('dd3ca692-9451-415e-8244-a98476f92190', 'dae05032-38ec-4db3-8472-485eecb8549e', 'Bandera de Germany', 'FLAG', 'https://flagcdn.com/w320/de.png', 'Imagen de la bandera de Germany'),
-('a13314ea-88b3-4090-8591-ce2c712a094a', 'dae05032-38ec-4db3-8472-485eecb8549e', 'Escudo de Germany', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/de.png', 'Imagen del escudo de Germany'),
-('6b46b417-714d-4d53-a618-92bb7e7a3541', '6202b412-d16b-4335-91e5-0bb1f57f71e2', 'Bandera de Luxembourg', 'FLAG', 'https://flagcdn.com/w320/lu.png', 'Imagen de la bandera de Luxembourg'),
-('d314036e-df3a-4116-bf48-a962e2ae3b2d', '6202b412-d16b-4335-91e5-0bb1f57f71e2', 'Escudo de Luxembourg', 'COAT', 'https://mainfacts.com/media/images/coats_of_arms/lu.png', 'Imagen del escudo de Luxembourg');
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Montenegro', 'Montenegro', 'Podgorica', 'Europa', 'Europa Sudoriental', 'cnr', 621718, 'UTC+01:00', 'Europa',
+        'https://flagcdn.com/w320/me.png',
+        'https://mainfacts.com/media/images/coats_of_arms/me.png', 'lunes');
 
--- Tabla question
-INSERT INTO question (id, country_id, statement, question_type, response_mode, difficulty, image_url) VALUES
-('842e6f80-6d3d-4eaf-94e3-408b5f8cb35b', '7c9cc38a-71c1-4b7d-86cd-1a7e761d65f2', '¿A qué país pertenece esta bandera?', 'FLAG_GUESS', 'SINGLE_CHOICE', 'EASY', 'https://flagcdn.com/w320/im.png'),
-('a87a42ac-0008-4ada-8991-ca9ecaabd2c3', '7c9cc38a-71c1-4b7d-86cd-1a7e761d65f2', '¿Cuál es la capital de Isle of Man?', 'CAPITAL_QUIZ', 'SINGLE_CHOICE', 'EASY', NULL),
-('9f3d6340-756d-4747-9ce6-f1064aff04a9', '150d2f47-70d7-47cc-a28d-9c8121849211', '¿A qué país pertenece esta bandera?', 'FLAG_GUESS', 'SINGLE_CHOICE', 'EASY', 'https://flagcdn.com/w320/rs.png'),
-('72684df2-bf85-4772-8c8b-d4020369e614', '150d2f47-70d7-47cc-a28d-9c8121849211', '¿Cuál es la capital de Serbia?', 'CAPITAL_QUIZ', 'SINGLE_CHOICE', 'EASY', NULL),
-('e9c9f95a-1c2b-4de8-a569-f5cfe3c9453a', '43a52ee5-09c2-4116-b1fd-d07f069a7afc', '¿A qué país pertenece esta bandera?', 'FLAG_GUESS', 'SINGLE_CHOICE', 'EASY', 'https://flagcdn.com/w320/be.png'),
-('7ec92a92-ef5b-44d2-bcaf-c423d160b8e9', '43a52ee5-09c2-4116-b1fd-d07f069a7afc', '¿Cuál es la capital de Belgium?', 'CAPITAL_QUIZ', 'SINGLE_CHOICE', 'EASY', NULL),
-('3e92e537-de48-4f1d-9f03-aad25e7d1649', '689e3375-09e0-4596-a835-b075a2ad6b1f', '¿A qué país pertenece esta bandera?', 'FLAG_GUESS', 'SINGLE_CHOICE', 'EASY', 'https://flagcdn.com/w320/sm.png'),
-('96159565-8937-47f1-8993-9675df257cb6', '689e3375-09e0-4596-a835-b075a2ad6b1f', '¿Cuál es la capital de San Marino?', 'CAPITAL_QUIZ', 'SINGLE_CHOICE', 'EASY', NULL),
-('c791d70c-0103-4b29-82b6-8b9581377388', '295bfdc5-6eac-4b9e-af13-344d37e91dea', '¿A qué país pertenece esta bandera?', 'FLAG_GUESS', 'SINGLE_CHOICE', 'EASY', 'https://flagcdn.com/w320/gg.png'),
-('893e0f75-3cd1-4073-a756-564950b7e8a2', '295bfdc5-6eac-4b9e-af13-344d37e91dea', '¿Cuál es la capital de Guernsey?', 'CAPITAL_QUIZ', 'SINGLE_CHOICE', 'EASY', NULL),
-('a5967687-d53f-4b35-b1b0-4235d3e55294', '53b6f87d-114a-4ee2-a9f8-990c8169ffe3', '¿A qué país pertenece esta bandera?', 'FLAG_GUESS', 'SINGLE_CHOICE', 'EASY', 'https://flagcdn.com/w320/lt.png'),
-('54652113-93f5-442d-8199-7f8965ebfa67', '53b6f87d-114a-4ee2-a9f8-990c8169ffe3', '¿Cuál es la capital de Lithuania?', 'CAPITAL_QUIZ', 'SINGLE_CHOICE', 'EASY', NULL),
-('fa6ab8d5-dce4-4241-9422-ed76b1cc1ece', 'a6846e8b-edf2-4ce3-82df-9747ca637b4d', '¿A qué país pertenece esta bandera?', 'FLAG_GUESS', 'SINGLE_CHOICE', 'EASY', 'https://flagcdn.com/w320/bg.png'),
-('3695278e-69e8-4d95-9db7-4175bedc86d4', 'a6846e8b-edf2-4ce3-82df-9747ca637b4d', '¿Cuál es la capital de Bulgaria?', 'CAPITAL_QUIZ', 'SINGLE_CHOICE', 'EASY', NULL),
-('b6265401-6522-4e33-b063-b4de6f1a6181', 'ba773e03-cf4c-4afe-9e6d-07548d6c6409', '¿A qué país pertenece esta bandera?', 'FLAG_GUESS', 'SINGLE_CHOICE', 'EASY', 'https://flagcdn.com/w320/ua.png'),
-('71633aa2-0ce2-4c71-8d9b-72c028a938f7', 'ba773e03-cf4c-4afe-9e6d-07548d6c6409', '¿Cuál es la capital de Ukraine?', 'CAPITAL_QUIZ', 'SINGLE_CHOICE', 'EASY', NULL),
-('ad527296-2b85-433c-8a3c-14542532ead9', '845d0517-94c0-40ad-97ec-dd8858100773', '¿A qué país pertenece esta bandera?', 'FLAG_GUESS', 'SINGLE_CHOICE', 'EASY', 'https://flagcdn.com/w320/sj.png'),
-('1db9f92b-e070-4f21-9f53-945b9f0405c6', '845d0517-94c0-40ad-97ec-dd8858100773', '¿Cuál es la capital de Svalbard and Jan Mayen?', 'CAPITAL_QUIZ', 'SINGLE_CHOICE', 'EASY', NULL),
-('09313c8d-7cd4-4af9-aa9b-885986f5e8f4', '570b171d-7c22-4c2c-8f98-52e5549c58fb', '¿A qué país pertenece esta bandera?', 'FLAG_GUESS', 'SINGLE_CHOICE', 'EASY', 'https://flagcdn.com/w320/at.png'),
-('d84b7d66-a015-43b6-965e-ec3f475c824a', '570b171d-7c22-4c2c-8f98-52e5549c58fb', '¿Cuál es la capital de Austria?', 'CAPITAL_QUIZ', 'SINGLE_CHOICE', 'EASY', NULL),
-('e62b03b9-b3ea-4332-b26d-871c0c9d1503', '85580046-cd81-4c16-95b9-cbcfb819fe7f', '¿A qué país pertenece esta bandera?', 'FLAG_GUESS', 'SINGLE_CHOICE', 'EASY', 'https://flagcdn.com/w320/is.png'),
-('24f96727-2958-4f3a-a4c3-56f59ac15f18', '85580046-cd81-4c16-95b9-cbcfb819fe7f', '¿Cuál es la capital de Iceland?', 'CAPITAL_QUIZ', 'SINGLE_CHOICE', 'EASY', NULL),
-('b803195a-dc76-462d-a6d2-61aedd8c4540', '4351c83d-4e65-4b88-8029-7af8df3b9241', '¿A qué país pertenece esta bandera?', 'FLAG_GUESS', 'SINGLE_CHOICE', 'EASY', 'https://flagcdn.com/w320/hr.png'),
-('e0dd4536-400e-48ca-ba0c-7da1124c7469', '4351c83d-4e65-4b88-8029-7af8df3b9241', '¿Cuál es la capital de Croatia?', 'CAPITAL_QUIZ', 'SINGLE_CHOICE', 'EASY', NULL),
-('49d9a92e-3ed2-4ad9-9d3c-db11d74c3a39', '189b70cf-4bae-45b6-8f37-5636b0a6220b', '¿A qué país pertenece esta bandera?', 'FLAG_GUESS', 'SINGLE_CHOICE', 'EASY', 'https://flagcdn.com/w320/mc.png'),
-('f707b8f8-f437-411b-ae48-b74be35c42e2', '189b70cf-4bae-45b6-8f37-5636b0a6220b', '¿Cuál es la capital de Monaco?', 'CAPITAL_QUIZ', 'SINGLE_CHOICE', 'EASY', NULL),
-('e13faa23-a574-4e38-a65c-d9ae6cf087c1', '36787050-a5fa-458a-931d-08be1e5fe515', '¿A qué país pertenece esta bandera?', 'FLAG_GUESS', 'SINGLE_CHOICE', 'EASY', 'https://flagcdn.com/w320/li.png'),
-('905aa162-e2b0-4446-bb55-f3d06dc8c79c', '36787050-a5fa-458a-931d-08be1e5fe515', '¿Cuál es la capital de Liechtenstein?', 'CAPITAL_QUIZ', 'SINGLE_CHOICE', 'EASY', NULL),
-('bca9c0ab-9e3d-4e7b-9f97-56a0ffe61097', '4a902d7d-8cf8-413f-9628-037957b86487', '¿A qué país pertenece esta bandera?', 'FLAG_GUESS', 'SINGLE_CHOICE', 'EASY', 'https://flagcdn.com/w320/ro.png'),
-('13cf3779-46aa-42ae-8176-1361ae88dc78', '4a902d7d-8cf8-413f-9628-037957b86487', '¿Cuál es la capital de Romania?', 'CAPITAL_QUIZ', 'SINGLE_CHOICE', 'EASY', NULL);
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Bélgica', 'Reino de Bélgica', 'Bruselas', 'Europa', 'Europa Occidental', 'nld', 11555997, 'UTC+01:00',
+        'Europa', 'https://flagcdn.com/w320/be.png',
+        'https://mainfacts.com/media/images/coats_of_arms/be.png', 'lunes');
 
--- Tabla answer
-INSERT INTO answer (id, question_id, text, is_correct) VALUES
-('443bc95d-92f4-42ac-8ace-e557d40d77f1', '842e6f80-6d3d-4eaf-94e3-408b5f8cb35b', 'Isle of Man', true),
-('bc02135a-b180-4a8f-9eb6-6fc4b1340dcd', '842e6f80-6d3d-4eaf-94e3-408b5f8cb35b', 'Gibraltar', false),
-('377e8ecc-09d8-431f-86d8-8e754e3d18b5', '842e6f80-6d3d-4eaf-94e3-408b5f8cb35b', 'Guernsey', false),
-('967efd85-4c2a-42ad-b09d-b2c2458a0669', '842e6f80-6d3d-4eaf-94e3-408b5f8cb35b', 'Liechtenstein', false),
-('3548210e-bc6a-4cf7-b9af-b4791e96bfa8', 'a87a42ac-0008-4ada-8991-ca9ecaabd2c3', 'Copenhagen', false),
-('5f1972e2-5708-42c9-a269-c095d9e2bd4e', 'a87a42ac-0008-4ada-8991-ca9ecaabd2c3', 'Skopje', false),
-('259a6a38-a78a-4d8b-a3db-a51d7be628a5', 'a87a42ac-0008-4ada-8991-ca9ecaabd2c3', 'Budapest', false),
-('541f8031-7ff7-4bac-a3d5-b5b5b22992b2', 'a87a42ac-0008-4ada-8991-ca9ecaabd2c3', 'Douglas', true),
-('8bfc556c-e557-4a11-b047-c1519a76901b', '9f3d6340-756d-4747-9ce6-f1064aff04a9', 'Monaco', false),
-('17e24d76-9eca-4a31-b59b-9eb706b65ad2', '9f3d6340-756d-4747-9ce6-f1064aff04a9', 'Kosovo', false),
-('74a142bf-26c4-470a-976b-243194e30c80', '9f3d6340-756d-4747-9ce6-f1064aff04a9', 'Croatia', false),
-('0a575b2d-9b7a-4685-b655-0964dff604ab', '9f3d6340-756d-4747-9ce6-f1064aff04a9', 'Serbia', true),
-('4f04b203-a9ee-4c1a-a64a-e234d095335d', '72684df2-bf85-4772-8c8b-d4020369e614', 'Lisbon', false),
-('2fa6e23d-1cfa-46d5-b2b8-048b17c16aef', '72684df2-bf85-4772-8c8b-d4020369e614', 'Ljubljana', false),
-('fc04eddc-e472-4dcb-b378-874e07985ddf', '72684df2-bf85-4772-8c8b-d4020369e614', 'Belgrade', true),
-('b3f3e9f7-4994-4c3d-affe-f3208ef4dcf2', '72684df2-bf85-4772-8c8b-d4020369e614', 'Vaduz', false),
-('34983e88-d48b-4749-88e6-7001078409c7', 'e9c9f95a-1c2b-4de8-a569-f5cfe3c9453a', 'Belgium', true),
-('ea06b840-b0c2-4399-9713-4ecf52a900c0', 'e9c9f95a-1c2b-4de8-a569-f5cfe3c9453a', 'Slovakia', false),
-('884b0535-5d89-4d46-b550-b384ad7a52b6', 'e9c9f95a-1c2b-4de8-a569-f5cfe3c9453a', 'Finland', false),
-('0f1bae79-988f-4adb-97c3-ba8831708f55', 'e9c9f95a-1c2b-4de8-a569-f5cfe3c9453a', 'Belarus', false),
-('459f3796-6d88-4a8e-936b-6be09b769589', '7ec92a92-ef5b-44d2-bcaf-c423d160b8e9', 'Bratislava', false),
-('556bf95a-681a-4101-bbd4-6ed9352c2492', '7ec92a92-ef5b-44d2-bcaf-c423d160b8e9', 'Andorra la Vella', false),
-('e3497b7b-e92c-492c-a4d0-d520832972c9', '7ec92a92-ef5b-44d2-bcaf-c423d160b8e9', 'Stockholm', false),
-('ac44c1e0-fe0c-4599-84c7-c4b1d6c2e316', '7ec92a92-ef5b-44d2-bcaf-c423d160b8e9', 'Brussels', true),
-('8b5b846f-e3ab-421a-9f94-ccb1c19e640f', '3e92e537-de48-4f1d-9f03-aad25e7d1649', 'Bosnia and Herzegovina', false),
-('076edb92-5c3b-486f-924c-2446c4e72173', '3e92e537-de48-4f1d-9f03-aad25e7d1649', 'Faroe Islands', false),
-('2f1b6c9c-98a0-4747-a671-3f7e39f62bed', '3e92e537-de48-4f1d-9f03-aad25e7d1649', 'San Marino', true),
-('37b5b55f-b79f-452c-84a8-288b9d5a00a5', '3e92e537-de48-4f1d-9f03-aad25e7d1649', 'Romania', false),
-('c8858d96-28c6-46e8-8450-7c9340392e58', '96159565-8937-47f1-8993-9675df257cb6', 'Budapest', false),
-('a3b4f194-790f-4a5b-9862-ac627dabd3a0', '96159565-8937-47f1-8993-9675df257cb6', 'City of San Marino', true),
-('bccefbb5-2517-4b16-95e6-d184d75fd269', '96159565-8937-47f1-8993-9675df257cb6', 'Tórshavn', false),
-('d212d835-be7c-4ee0-812d-69bb598681b9', '96159565-8937-47f1-8993-9675df257cb6', 'Chișinău', false),
-('248dec87-e82c-448b-a507-b137f1c78083', 'c791d70c-0103-4b29-82b6-8b9581377388', 'Germany', false),
-('d5df6cb5-0305-4a95-94a0-0906ae46727c', 'c791d70c-0103-4b29-82b6-8b9581377388', 'Guernsey', true),
-('0e64c250-cbd0-4469-8c91-ef6383924b59', 'c791d70c-0103-4b29-82b6-8b9581377388', 'Lithuania', false),
-('5e408e02-27da-4dc9-899c-6a527ad8458a', 'c791d70c-0103-4b29-82b6-8b9581377388', 'Moldova', false),
-('c8e826ee-e961-42ab-818d-44fc6254a5ce', '893e0f75-3cd1-4073-a756-564950b7e8a2', 'Bucharest', false),
-('1e96f394-1314-43da-99a5-1ebf2e962118', '893e0f75-3cd1-4073-a756-564950b7e8a2', 'Saint Helier', false),
-('3c85cd7e-b8f1-461d-a04f-90ca7f8774de', '893e0f75-3cd1-4073-a756-564950b7e8a2', 'Sofia', false),
-('e5482826-d2fe-4970-aefe-b44e969fd83e', '893e0f75-3cd1-4073-a756-564950b7e8a2', 'St. Peter Port', true),
-('b1b6b7c9-915e-441c-9f7f-d9d138a43edf', 'a5967687-d53f-4b35-b1b0-4235d3e55294', 'Belarus', false),
-('ebf85fb0-8d6f-4309-9c5c-9f586d9ad05e', 'a5967687-d53f-4b35-b1b0-4235d3e55294', 'Iceland', false),
-('9e6c4b6d-745b-44e4-b2d9-24a0f4584050', 'a5967687-d53f-4b35-b1b0-4235d3e55294', 'North Macedonia', false),
-('f57472e1-d972-4e73-867c-c4d3ccd73f0e', 'a5967687-d53f-4b35-b1b0-4235d3e55294', 'Lithuania', true),
-('2d2b306b-b0fe-4d3b-9006-8b902754643b', '54652113-93f5-442d-8199-7f8965ebfa67', 'Paris', false),
-('8525fa9f-3e91-4331-a120-ab55fd38b17b', '54652113-93f5-442d-8199-7f8965ebfa67', 'Sofia', false),
-('135dd853-61e4-4857-a20a-c25bb88e8cd0', '54652113-93f5-442d-8199-7f8965ebfa67', 'London', false),
-('9ea313eb-f581-473b-8c7b-517cddff8c40', '54652113-93f5-442d-8199-7f8965ebfa67', 'Vilnius', true),
-('e36a3bd1-4797-4abc-97ca-89d2789c9363', 'fa6ab8d5-dce4-4241-9422-ed76b1cc1ece', 'Denmark', false),
-('74b2e8d2-c411-4167-b991-99aa75e77f34', 'fa6ab8d5-dce4-4241-9422-ed76b1cc1ece', 'Bulgaria', true),
-('f95d75db-68a2-4361-8dd4-325646c860a8', 'fa6ab8d5-dce4-4241-9422-ed76b1cc1ece', 'Croatia', false),
-('4a220b69-51f7-4a10-aa84-697f44d914cc', 'fa6ab8d5-dce4-4241-9422-ed76b1cc1ece', 'Russia', false),
-('bac7d517-9246-4d20-a23c-c8950b3c42e5', '3695278e-69e8-4d95-9db7-4175bedc86d4', 'St. Peter Port', false),
-('8ab154d7-54e8-4b8d-8634-187abb490b3c', '3695278e-69e8-4d95-9db7-4175bedc86d4', 'Sofia', true),
-('6bc6964d-f0db-4497-9686-752f3f3e5cb2', '3695278e-69e8-4d95-9db7-4175bedc86d4', 'Dublin', false),
-('a8479bc6-c7eb-4ad1-85ce-a6dc7b3019e2', '3695278e-69e8-4d95-9db7-4175bedc86d4', 'Paris', false),
-('208ed59c-cc74-49dd-a864-79546db0a5f2', 'b6265401-6522-4e33-b063-b4de6f1a6181', 'Jersey', false),
-('0b3ba848-9c8e-4db8-8237-16b14683bf14', 'b6265401-6522-4e33-b063-b4de6f1a6181', 'Ukraine', true),
-('56acfbf5-5a59-4e25-aa1a-f9ae345100e8', 'b6265401-6522-4e33-b063-b4de6f1a6181', 'Luxembourg', false),
-('c6000144-5bfc-43b5-a24a-aafa05513fdd', 'b6265401-6522-4e33-b063-b4de6f1a6181', 'Iceland', false),
-('666f246e-71f6-4d02-ba58-92065ea718ca', '71633aa2-0ce2-4c71-8d9b-72c028a938f7', 'Madrid', false),
-('b4f6f6dd-b9a6-44f8-8da6-f92f8c010ca2', '71633aa2-0ce2-4c71-8d9b-72c028a938f7', 'Kyiv', true),
-('e55ceb3c-4786-4b9d-abe2-aa95ac41c35c', '71633aa2-0ce2-4c71-8d9b-72c028a938f7', 'Dublin', false),
-('f791a5a3-1289-48d6-b166-abb56ca8fc81', '71633aa2-0ce2-4c71-8d9b-72c028a938f7', 'Helsinki', false),
-('ed02e565-c214-418c-a00e-052954f7b057', 'ad527296-2b85-433c-8a3c-14542532ead9', 'Denmark', false),
-('0fe439b6-d75e-4028-a6ea-891ecb7dcda6', 'ad527296-2b85-433c-8a3c-14542532ead9', 'Svalbard and Jan Mayen', true),
-('c218b555-a6ae-4d76-ae01-7a15be927695', 'ad527296-2b85-433c-8a3c-14542532ead9', 'Moldova', false),
-('38f7bafd-dd20-44ab-8123-5e1ca94b6b7b', 'ad527296-2b85-433c-8a3c-14542532ead9', 'Faroe Islands', false),
-('94c63926-07ee-44d2-b925-74379f7aff83', '1db9f92b-e070-4f21-9f53-945b9f0405c6', 'Longyearbyen', true),
-('da04747c-3a40-42cd-ae64-e7f48734be5b', '1db9f92b-e070-4f21-9f53-945b9f0405c6', 'City of San Marino', false),
-('6670b75f-2432-4a47-b1b3-6e678d6358f0', '1db9f92b-e070-4f21-9f53-945b9f0405c6', 'Amsterdam', false),
-('4713926e-1df8-4ce6-b212-0747bf8b92b9', '1db9f92b-e070-4f21-9f53-945b9f0405c6', 'Madrid', false),
-('a826bd4c-99d6-4957-b2e0-fe53b2badda8', '09313c8d-7cd4-4af9-aa9b-885986f5e8f4', 'Liechtenstein', false),
-('ffab663a-4800-41fd-b2f9-300568707bb0', '09313c8d-7cd4-4af9-aa9b-885986f5e8f4', 'Isle of Man', false),
-('c0719312-3316-4b09-81e7-de7769b85f3b', '09313c8d-7cd4-4af9-aa9b-885986f5e8f4', 'Austria', true),
-('ba5fdf0e-0e73-46d3-8f30-bca4ee0353a5', '09313c8d-7cd4-4af9-aa9b-885986f5e8f4', 'Jersey', false),
-('b2695a8f-6b89-4da6-96ee-b42b7739ff24', 'd84b7d66-a015-43b6-965e-ec3f475c824a', 'Minsk', false),
-('ed8bb529-b953-4c93-a7e0-216d8bba0eb6', 'd84b7d66-a015-43b6-965e-ec3f475c824a', 'Prague', false),
-('8df61835-9970-4b19-9514-c3d8e5bb8adc', 'd84b7d66-a015-43b6-965e-ec3f475c824a', 'Vaduz', false),
-('f30258df-6ef0-46fa-beb0-6f5c5dd7a835', 'd84b7d66-a015-43b6-965e-ec3f475c824a', 'Vienna', true),
-('7ef408b7-ac52-489c-91f1-9b7da2655243', 'e62b03b9-b3ea-4332-b26d-871c0c9d1503', 'Serbia', false),
-('e467e1c9-ab4c-4110-b53c-9a8ef22f2550', 'e62b03b9-b3ea-4332-b26d-871c0c9d1503', 'Iceland', true),
-('6897e390-f698-4d60-96df-d16fd9c6be67', 'e62b03b9-b3ea-4332-b26d-871c0c9d1503', 'Czechia', false),
-('37c51748-83a4-42b1-a250-dd2950db8244', 'e62b03b9-b3ea-4332-b26d-871c0c9d1503', 'Vatican City', false),
-('c4f6e2bd-6809-4963-8ab4-ed6f5be1b361', '24f96727-2958-4f3a-a4c3-56f59ac15f18', 'Reykjavik', true),
-('5a131431-385a-408c-8ee0-7ee85fb6a06d', '24f96727-2958-4f3a-a4c3-56f59ac15f18', 'Vienna', false),
-('10370da6-b5ff-412f-ab35-87f21e13065e', '24f96727-2958-4f3a-a4c3-56f59ac15f18', 'Andorra la Vella', false),
-('9e849df4-d1d5-4dba-ad4b-955406493a50', '24f96727-2958-4f3a-a4c3-56f59ac15f18', 'Saint Helier', false),
-('32b0f1ef-3826-45ec-a2b1-ba48e75540d1', 'b803195a-dc76-462d-a6d2-61aedd8c4540', 'Croatia', true),
-('48f230cc-3fb5-4d3f-a3b2-3d680d90e668', 'b803195a-dc76-462d-a6d2-61aedd8c4540', 'Serbia', false),
-('a189bd05-73a5-4044-9379-d05ce7654907', 'b803195a-dc76-462d-a6d2-61aedd8c4540', 'Vatican City', false),
-('7c1bcfc5-4c2e-4c78-94aa-7798d76d9cb0', 'b803195a-dc76-462d-a6d2-61aedd8c4540', 'Montenegro', false),
-('f8c64c8a-4cab-4b3a-9f9f-68217d148a86', 'e0dd4536-400e-48ca-ba0c-7da1124c7469', 'Warsaw', false),
-('296f5034-081a-4836-9f51-b606b3dd39f4', 'e0dd4536-400e-48ca-ba0c-7da1124c7469', 'Kyiv', false),
-('db02f191-58ab-4c1a-ac28-be1e0c3baed7', 'e0dd4536-400e-48ca-ba0c-7da1124c7469', 'Athens', false),
-('6b03a628-6897-4beb-8765-b7aa08cee1df', 'e0dd4536-400e-48ca-ba0c-7da1124c7469', 'Zagreb', true),
-('e6140efe-f999-4f50-a3c7-459114d8f499', '49d9a92e-3ed2-4ad9-9d3c-db11d74c3a39', 'Serbia', false),
-('82faf8ff-3d86-444d-adb8-8918b3eb7c06', '49d9a92e-3ed2-4ad9-9d3c-db11d74c3a39', 'Monaco', true),
-('ba91253f-1ab6-413d-b301-80b005aaafa0', '49d9a92e-3ed2-4ad9-9d3c-db11d74c3a39', 'San Marino', false),
-('49fd8339-5e38-4384-9623-a6796cc4b46e', '49d9a92e-3ed2-4ad9-9d3c-db11d74c3a39', 'France', false),
-('60e3ea89-3fb9-4360-a5f2-e5a42f5ef2aa', 'f707b8f8-f437-411b-ae48-b74be35c42e2', 'Tórshavn', false),
-('02a15ce3-610d-49f3-b2b2-87a0d47c348b', 'f707b8f8-f437-411b-ae48-b74be35c42e2', 'Helsinki', false),
-('127c7118-b1ba-4e1b-944b-d7995462e3dc', 'f707b8f8-f437-411b-ae48-b74be35c42e2', 'Monaco', true),
-('a19b42ca-4680-4f84-8d34-79bdd5f415ab', 'f707b8f8-f437-411b-ae48-b74be35c42e2', 'London', false),
-('e1c60bd5-db7f-4ad1-836c-0d802955c093', 'e13faa23-a574-4e38-a65c-d9ae6cf087c1', 'Liechtenstein', true),
-('7a9389a4-bda9-4457-b2cf-a373af62874c', 'e13faa23-a574-4e38-a65c-d9ae6cf087c1', 'Austria', false),
-('b341ad98-f055-4250-825d-1af4e929478d', 'e13faa23-a574-4e38-a65c-d9ae6cf087c1', 'Cyprus', false),
-('62505c90-8486-498d-ab02-de5ed37be559', 'e13faa23-a574-4e38-a65c-d9ae6cf087c1', 'Romania', false),
-('08ccf585-457f-4374-b661-f3ad50cf0e17', '905aa162-e2b0-4446-bb55-f3d06dc8c79c', 'Saint Helier', false),
-('2529e219-257d-43ed-9a70-04446d48defe', '905aa162-e2b0-4446-bb55-f3d06dc8c79c', 'Vaduz', true),
-('58ee7586-923f-4ed6-8a1c-99aa8d92f05c', '905aa162-e2b0-4446-bb55-f3d06dc8c79c', 'Longyearbyen', false),
-('668dd5c3-1e4e-444f-b792-1ecf193ee7fe', '905aa162-e2b0-4446-bb55-f3d06dc8c79c', 'Vienna', false),
-('107cb297-0d19-4a00-8b45-9d7db1d44ee3', 'bca9c0ab-9e3d-4e7b-9f97-56a0ffe61097', 'Gibraltar', false),
-('c4d3ec16-a8df-4f1a-b85f-71ed56caebe1', 'bca9c0ab-9e3d-4e7b-9f97-56a0ffe61097', 'Romania', true),
-('c0776d1b-1e43-4cbe-8b81-66eac5779ed3', 'bca9c0ab-9e3d-4e7b-9f97-56a0ffe61097', 'Åland Islands', false),
-('9a0c7b5d-fadf-4c9e-abab-d318f4ecda1d', 'bca9c0ab-9e3d-4e7b-9f97-56a0ffe61097', 'Svalbard and Jan Mayen', false),
-('f2cf04cf-0a26-48da-973a-256ad8a24f28', '13cf3779-46aa-42ae-8176-1361ae88dc78', 'Bucharest', true),
-('31d8fcee-7365-44c9-bbe4-d0121176d1e8', '13cf3779-46aa-42ae-8176-1361ae88dc78', 'Vienna', false),
-('5f99ae48-b660-4260-bb4a-405b4752e6ea', '13cf3779-46aa-42ae-8176-1361ae88dc78', 'Prague', false),
-('1874c66e-74f9-42de-a0f6-eac246c0def7', '13cf3779-46aa-42ae-8176-1361ae88dc78', 'Budapest', false);
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Bielorrusia', 'República de Bielorrusia', 'Minsk', 'Europa', 'Europa Oriental', 'bel', 9398861, 'UTC+03:00',
+        'Europa', 'https://flagcdn.com/w320/by.png',
+        'https://mainfacts.com/media/images/coats_of_arms/by.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Portugal', 'República Portuguesa', 'Lisboa', 'Europa', 'Europa del Sur', 'por', 10305564, 'UTC-01:00',
+        'Europa', 'https://flagcdn.com/w320/pt.png',
+        'https://mainfacts.com/media/images/coats_of_arms/pt.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Islas Feroe', 'Islas Feroe', 'Tórshavn', 'Europa', 'Europa del Norte', 'fao', 48865, 'UTC+00:00', 'Europa',
+        'https://flagcdn.com/w320/fo.png', 'https://mainfacts.com/media/images/coats_of_arms/fo.png',
+        'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Liechtenstein', 'Principado de Liechtenstein', 'Vaduz', 'Europa', 'Europa Occidental', 'deu', 38137,
+        'UTC+01:00', 'Europa', 'https://flagcdn.com/w320/li.png',
+        'https://mainfacts.com/media/images/coats_of_arms/li.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Malta', 'República de Malta', 'La Valeta', 'Europa', 'Europa del Sur', 'mlt', 525285, 'UTC+01:00', 'Europa',
+        'https://flagcdn.com/w320/mt.png',
+        'https://mainfacts.com/media/images/coats_of_arms/mt.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('San Marino', 'República de San Marino', 'Ciudad de San Marino', 'Europa', 'Europa del Sur', 'ita', 33938,
+        'UTC+01:00', 'Europa', 'https://flagcdn.com/w320/sm.png',
+        'https://mainfacts.com/media/images/coats_of_arms/sm.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Lituania', 'República de Lituania', 'Vilna', 'Europa', 'Europa del Norte', 'lit', 2794700, 'UTC+02:00',
+        'Europa', 'https://flagcdn.com/w320/lt.png',
+        'https://mainfacts.com/media/images/coats_of_arms/lt.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Suiza', 'Confederación Suiza', 'Berna', 'Europa', 'Europa Occidental', 'deu', 8654622, 'UTC+01:00', 'Europa',
+        'https://flagcdn.com/w320/ch.png',
+        'https://mainfacts.com/media/images/coats_of_arms/ch.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Isla de Man', 'Isla de Man', 'Douglas', 'Europa', 'Europa del Norte', 'glv', 85032, 'UTC+00:00', 'Europa',
+        'https://flagcdn.com/w320/im.png', 'https://mainfacts.com/media/images/coats_of_arms/im.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Mónaco', 'Principado de Mónaco', 'Mónaco', 'Europa', 'Europa Occidental', 'fra', 39244, 'UTC+01:00', 'Europa',
+        'https://flagcdn.com/w320/mc.png',
+        'https://mainfacts.com/media/images/coats_of_arms/mc.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Gibraltar', 'Gibraltar', 'Gibraltar', 'Europa', 'Europa del Sur', 'eng', 33691, 'UTC+01:00', 'Europa',
+        'https://flagcdn.com/w320/gi.png', 'https://mainfacts.com/media/images/coats_of_arms/gi.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Austria', 'República de Austria', 'Viena', 'Europa', 'Europa Central', 'deu', 8917205, 'UTC+01:00', 'Europa',
+        'https://flagcdn.com/w320/at.png',
+        'https://mainfacts.com/media/images/coats_of_arms/at.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Rumanía', 'Rumanía', 'Bucarest', 'Europa', 'Europa Sudoriental', 'ron', 19286123, 'UTC+02:00', 'Europa',
+        'https://flagcdn.com/w320/ro.png',
+        'https://mainfacts.com/media/images/coats_of_arms/ro.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Irlanda', 'República de Irlanda', 'Dublín', 'Europa', 'Europa del Norte', 'gle', 4994724, 'UTC', 'Europa',
+        'https://flagcdn.com/w320/ie.png',
+        'https://mainfacts.com/media/images/coats_of_arms/ie.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Grecia', 'República Helénica', 'Atenas', 'Europa', 'Europa del Sur', 'ell', 10715549, 'UTC+02:00', 'Europa',
+        'https://flagcdn.com/w320/gr.png',
+        'https://mainfacts.com/media/images/coats_of_arms/gr.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Kosovo', 'República de Kosovo', 'Pristina', 'Europa', 'Europa Sudoriental', 'sqi', 1775378, 'UTC+01:00',
+        'Europa', 'https://flagcdn.com/w320/xk.png', 'https://mainfacts.com/media/images/coats_of_arms/xk.png',
+        'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Bulgaria', 'República de Bulgaria', 'Sofía', 'Europa', 'Europa Sudoriental', 'bul', 6927288, 'UTC+02:00',
+        'Europa', 'https://flagcdn.com/w320/bg.png',
+        'https://mainfacts.com/media/images/coats_of_arms/bg.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Italia', 'República Italiana', 'Roma', 'Europa', 'Europa del Sur', 'ita', 59554023, 'UTC+01:00', 'Europa',
+        'https://flagcdn.com/w320/it.png',
+        'https://mainfacts.com/media/images/coats_of_arms/it.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Albania', 'República de Albania', 'Tirana', 'Europa', 'Europa Sudoriental', 'sqi', 2837743, 'UTC+01:00',
+        'Europa', 'https://flagcdn.com/w320/al.png',
+        'https://mainfacts.com/media/images/coats_of_arms/al.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Polonia', 'República de Polonia', 'Varsovia', 'Europa', 'Europa Central', 'pol', 37950802, 'UTC+01:00',
+        'Europa', 'https://flagcdn.com/w320/pl.png',
+        'https://mainfacts.com/media/images/coats_of_arms/pl.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Estonia', 'República de Estonia', 'Tallin', 'Europa', 'Europa del Norte', 'est', 1331057, 'UTC+02:00',
+        'Europa', 'https://flagcdn.com/w320/ee.png',
+        'https://mainfacts.com/media/images/coats_of_arms/ee.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Islas Åland', 'Islas Åland', 'Mariehamn', 'Europa', 'Europa del Norte', 'swe', 29458, 'UTC+02:00', 'Europa',
+        'https://flagcdn.com/w320/ax.png', 'https://mainfacts.com/media/images/coats_of_arms/ax.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Rusia', 'Federación de Rusia', 'Moscú', 'Europa', 'Europa Oriental', 'rus', 144104080, 'UTC+03:00', 'Europa',
+        'https://flagcdn.com/w320/ru.png',
+        'https://mainfacts.com/media/images/coats_of_arms/ru.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Croacia', 'República de Croacia', 'Zagreb', 'Europa', 'Europa Sudoriental', 'hrv', 4047200, 'UTC+01:00',
+        'Europa', 'https://flagcdn.com/w320/hr.png',
+        'https://mainfacts.com/media/images/coats_of_arms/hr.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Dinamarca', 'Reino de Dinamarca', 'Copenhague', 'Europa', 'Europa del Norte', 'dan', 5831404, 'UTC-04:00',
+        'Europa', 'https://flagcdn.com/w320/dk.png',
+        'https://mainfacts.com/media/images/coats_of_arms/dk.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Macedonia del Norte', 'República de Macedonia del Norte', 'Skopie', 'Europa', 'Europa Sudoriental', 'mkd',
+        2077132, 'UTC+01:00', 'Europa', 'https://flagcdn.com/w320/mk.png',
+        'https://mainfacts.com/media/images/coats_of_arms/mk.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Andorra', 'Principado de Andorra', 'Andorra la Vieja', 'Europa', 'Europa del Sur', 'cat', 77265, 'UTC+01:00',
+        'Europa', 'https://flagcdn.com/w320/ad.png',
+        'https://mainfacts.com/media/images/coats_of_arms/ad.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Hungría', 'Hungría', 'Budapest', 'Europa', 'Europa Central', 'hun', 9749763, 'UTC+01:00', 'Europa',
+        'https://flagcdn.com/w320/hu.png',
+        'https://mainfacts.com/media/images/coats_of_arms/hu.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Eslovaquia', 'República Eslovaca', 'Bratislava', 'Europa', 'Europa Central', 'slk', 5458827, 'UTC+01:00',
+        'Europa', 'https://flagcdn.com/w320/sk.png',
+        'https://mainfacts.com/media/images/coats_of_arms/sk.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Ciudad del Vaticano', 'Estado de la Ciudad del Vaticano', 'Ciudad del Vaticano', 'Europa', 'Europa del Sur',
+        'lat', 451, 'UTC+01:00', 'Europa', 'https://flagcdn.com/w320/va.png',
+        'https://mainfacts.com/media/images/coats_of_arms/va.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Moldavia', 'República de Moldavia', 'Chisináu', 'Europa', 'Europa Oriental', 'ron', 2617820, 'UTC+02:00',
+        'Europa', 'https://flagcdn.com/w320/md.png',
+        'https://mainfacts.com/media/images/coats_of_arms/md.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Chipre', 'República de Chipre', 'Nicosia', 'Europa', 'Europa del Sur', 'ell', 1207361, 'UTC+02:00', 'Europa',
+        'https://flagcdn.com/w320/cy.png',
+        'https://mainfacts.com/media/images/coats_of_arms/cy.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Guernsey', 'Bailía de Guernsey', 'St. Peter Port', 'Europa', 'Europa del Norte', 'nfr', 62999, 'UTC+00:00',
+        'Europa', 'https://flagcdn.com/w320/gg.png', 'https://mainfacts.com/media/images/coats_of_arms/gg.png',
+        'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Finlandia', 'República de Finlandia', 'Helsinki', 'Europa', 'Europa del Norte', 'fin', 5530719, 'UTC+02:00',
+        'Europa', 'https://flagcdn.com/w320/fi.png',
+        'https://mainfacts.com/media/images/coats_of_arms/fi.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Francia', 'República Francesa', 'París', 'Europa', 'Europa Occidental', 'fra', 67391582, 'UTC-10:00', 'Europa',
+        'https://flagcdn.com/w320/fr.png',
+        'https://mainfacts.com/media/images/coats_of_arms/fr.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Islandia', 'Islandia', 'Reikiavik', 'Europa', 'Europa del Norte', 'isl', 366425, 'UTC', 'Europa',
+        'https://flagcdn.com/w320/is.png',
+        'https://mainfacts.com/media/images/coats_of_arms/is.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Letonia', 'República de Letonia', 'Riga', 'Europa', 'Europa del Norte', 'lav', 1901548, 'UTC+02:00', 'Europa',
+        'https://flagcdn.com/w320/lv.png',
+        'https://mainfacts.com/media/images/coats_of_arms/lv.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Alemania', 'República Federal de Alemania', 'Berlín', 'Europa', 'Europa Occidental', 'deu', 83240525,
+        'UTC+01:00', 'Europa', 'https://flagcdn.com/w320/de.png',
+        'https://mainfacts.com/media/images/coats_of_arms/de.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Bosnia y Herzegovina', 'Bosnia y Herzegovina', 'Sarajevo', 'Europa', 'Europa Sudoriental', 'bos', 3280815,
+        'UTC+01:00', 'Europa', 'https://flagcdn.com/w320/ba.png',
+        'https://mainfacts.com/media/images/coats_of_arms/ba.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Jersey', 'Bailía de Jersey', 'Saint Helier', 'Europa', 'Europa del Norte', 'nrf', 100800, 'UTC+01:00',
+        'Europa', 'https://flagcdn.com/w320/je.png', 'https://mainfacts.com/media/images/coats_of_arms/je.png',
+        'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Luxemburgo', 'Gran Ducado de Luxemburgo', 'Luxemburgo', 'Europa', 'Europa Occidental', 'ltz', 632275,
+        'UTC+01:00', 'Europa', 'https://flagcdn.com/w320/lu.png',
+        'https://mainfacts.com/media/images/coats_of_arms/lu.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Eslovenia', 'República de Eslovenia', 'Liubliana', 'Europa', 'Europa Central', 'slv', 2100126, 'UTC+01:00',
+        'Europa', 'https://flagcdn.com/w320/si.png',
+        'https://mainfacts.com/media/images/coats_of_arms/si.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Chequia', 'República Checa', 'Praga', 'Europa', 'Europa Central', 'ces', 10698896, 'UTC+01:00', 'Europa',
+        'https://flagcdn.com/w320/cz.png',
+        'https://mainfacts.com/media/images/coats_of_arms/cz.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Svalbard y Jan Mayen', 'Svalbard og Jan Mayen', 'Longyearbyen', 'Europa', 'Europa del Norte', 'nor', 2562,
+        'UTC+01:00', 'Europa', 'https://flagcdn.com/w320/sj.png', '', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Países Bajos', 'Reino de los Países Bajos', 'Ámsterdam', 'Europa', 'Europa Occidental', 'nld', 16655799,
+        'UTC+01:00', 'Europa', 'https://flagcdn.com/w320/nl.png',
+        'https://mainfacts.com/media/images/coats_of_arms/nl.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Ucrania', 'Ucrania', 'Kiev', 'Europa', 'Europa Oriental', 'ukr', 44134693, 'UTC+02:00', 'Europa',
+        'https://flagcdn.com/w320/ua.png',
+        'https://mainfacts.com/media/images/coats_of_arms/ua.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Reino Unido', 'Reino Unido de Gran Bretaña e Irlanda del Norte', 'Londres', 'Europa', 'Europa del Norte',
+        'eng', 67215293, 'UTC-08:00', 'Europa', 'https://flagcdn.com/w320/gb.png',
+        'https://mainfacts.com/media/images/coats_of_arms/gb.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Serbia', 'República de Serbia', 'Belgrado', 'Europa', 'Europa Sudoriental', 'srp', 6908224, 'UTC+01:00',
+        'Europa', 'https://flagcdn.com/w320/rs.png',
+        'https://mainfacts.com/media/images/coats_of_arms/rs.png', 'lunes');
+
+INSERT INTO country (name_common, name_official, capital, region, subregion, language, population, timezones,
+                     continents, flag_url, shield_url, start_of_week)
+VALUES ('Noruega', 'Reino de Noruega', 'Oslo', 'Europa', 'Europa del Norte', 'nor', 5379475, 'UTC+01:00', 'Europa',
+        'https://flagcdn.com/w320/no.png',
+        'https://mainfacts.com/media/images/coats_of_arms/no.png', 'lunes');

@@ -6,32 +6,23 @@ DO
 $$
     BEGIN
         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'difficulty') THEN
-            CREATE TYPE difficulty AS ENUM ('EASY', 'MEDIUM', 'HARD');
+            CREATE TYPE difficulty AS ENUM ('easy', 'medium', 'hard');
         END IF;
 
         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'game_type') THEN
-            CREATE TYPE game_type AS ENUM ('GUESS_FLAG', 'QUIZ');
-        END IF;
-
-        IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'media_type') THEN
-            CREATE TYPE media_type AS ENUM (
-                'FLAG', 'COAT', 'MONUMENT',
-                'SCULPTURE', 'PAINTING', 'LANDSCAPE',
-                'FOOD', 'ARCHITECTURE', 'SPORTS',
-                'FESTIVAL','DEFAULT'
-                );
+            CREATE TYPE game_type AS ENUM ('guess_flag','quiz');
         END IF;
 
         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'question_type') THEN
-            CREATE TYPE question_type AS ENUM (
-                'FLAG_GUESS', 'COAT_QUIZ', 'CAPITAL_QUIZ',
-                'HISTORY_QUIZ', 'GEOGRAPHY_QUIZ', 'CULTURE_QUIZ',
-                'MONUMENTS_QUIZ', 'CUISINE_QUIZ', 'FESTIVAL_QUIZ', 'SPORTS_QUIZ'
-                );
+            CREATE TYPE question_type AS ENUM ('FLAG_GUESS', 'COAT_QUIZ','HISTORY_QUIZ', 'GEOGRAPHY_QUIZ', 'SPORTS_QUIZ','MYTHOLOGY_QUIZ');
         END IF;
 
         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'response_mode') THEN
-            CREATE TYPE response_mode AS ENUM ('SINGLE_CHOICE','MULTIPLE_CHOICE', 'FREE_TEXT');
+            CREATE TYPE response_mode AS ENUM ('TRUE/FALSE','MULTIPLE_CHOICE', 'FREE_TEXT');
+        END IF;
+
+        IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'session_status') THEN
+            CREATE TYPE session_status AS ENUM ('IN_PROGRESS', 'FINISHED');
         END IF;
     END
 $$;
@@ -47,54 +38,31 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 CREATE TABLE IF NOT EXISTS country
 (
-    id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    country_name        VARCHAR(255) NOT NULL,
-    capital     VARCHAR(255) NOT NULL,
-    region      VARCHAR(255) NOT NULL,
-    subregion   VARCHAR(255) NOT NULL,
-    population  BIGINT       NOT NULL,
-    flag_url    VARCHAR(512) NOT NULL,
-    shield_url  VARCHAR(512) NOT NULL,
-    description TEXT         NOT NULL
+    id               UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    name_common      VARCHAR(255) NOT NULL,
+    name_official    VARCHAR(255) NOT NULL,
+    capital          VARCHAR(255) NOT NULL,
+    region           VARCHAR(255) NOT NULL,
+    subregion        VARCHAR(255) NOT NULL,
+    language         VARCHAR(255) NOT NULL,
+    population       BIGINT       NOT NULL,
+    timezones        VARCHAR(255) NOT NULL,
+    continents       VARCHAR(255) NOT NULL,
+    flag_url         VARCHAR(512) NOT NULL,
+    shield_url       VARCHAR(512) NOT NULL,
+    start_of_week    VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS language
-(
-    id   UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    name VARCHAR(255) NOT NULL,
-    code VARCHAR(10)  NOT NULL
-);
-
-CREATE TABLE IF NOT EXISTS country_lang
-(
-    country_id UUID REFERENCES country (id) ON DELETE CASCADE,
-    lang_id    UUID REFERENCES language (id) ON DELETE CASCADE,
-    PRIMARY KEY (country_id, lang_id)
-);
-
--- 1. Tabla auth (usuarios)
 CREATE TABLE auth
 (
     id        UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     full_name VARCHAR(255),
     username  VARCHAR(255),
-    password  VARCHAR(255) NOT NULL,
     email     VARCHAR(255) NOT NULL,
+    password  VARCHAR(255) NOT NULL,
     avatar    VARCHAR(512)
 );
 
--- 2. Tabla media (imágenes)
-CREATE TABLE media
-(
-    id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    country_id  UUID REFERENCES country (id) ON DELETE CASCADE,
-    title       VARCHAR(255) NOT NULL,
-    media_type        media_type   NOT NULL,
-    image_url   VARCHAR(512) NOT NULL,
-    description TEXT         NOT NULL
-);
-
--- 3. Tabla game (minijuegos)
 CREATE TABLE game
 (
     id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -105,7 +73,6 @@ CREATE TABLE game
     description TEXT         NOT NULL
 );
 
--- 4. Tabla game_session (sesiones de juego)
 CREATE TABLE game_session
 (
     id            UUID PRIMARY KEY          DEFAULT uuid_generate_v4(),
@@ -117,19 +84,16 @@ CREATE TABLE game_session
     played_at     TIMESTAMP        NOT NULL DEFAULT now()
 );
 
--- 5. Tabla question (preguntas del quiz)
 CREATE TABLE question
 (
     id            UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    country_id    UUID REFERENCES country (id) ON DELETE CASCADE,
     statement     TEXT          NOT NULL,
-    question_type          question_type NOT NULL,
+    question_type question_type NOT NULL,
     response_mode response_mode NOT NULL,
     difficulty    difficulty    NOT NULL,
     image_url     VARCHAR(512)
 );
 
--- 6. Tabla answer (respuestas)
 CREATE TABLE answer
 (
     id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
@@ -138,7 +102,6 @@ CREATE TABLE answer
     is_correct  BOOLEAN NOT NULL
 );
 
--- 7. Tabla score (puntuación del usuario para ranking)
 CREATE TABLE score
 (
     id          UUID PRIMARY KEY          DEFAULT uuid_generate_v4(),

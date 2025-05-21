@@ -12,8 +12,7 @@ object CountryTable : UUIDTable("country") {
     val population = long("population")
     val timezones = varchar("timezones", 255)
     val continents = varchar("continents", 255)
-    val flagUrl = varchar("flag_url", 512)
-    val flagDescription = varchar("flag_description", 255)
-    val shieldUrl = varchar("shield_url", 512)
+    val flagUrl = varchar("flag_url", 512).nullable()
+    val shieldUrl = varchar("shield_url", 512).nullable()
     val startOfWeek = varchar("start_of_week", 255)
 }

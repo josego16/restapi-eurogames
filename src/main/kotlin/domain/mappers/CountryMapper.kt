@@ -8,9 +8,9 @@ fun Country.toResponseDto(): CountryResponseDto = CountryResponseDto(
     id = id,
     nameCommon = nameCommon,
     capital = capital,
-    language = language ?: "Unknown",
+    region = region,
+    subregion = subregion,
     flagUrl = flagUrl,
-    region = region
 )
 
 fun Country.toDetailDto(): CountryDetailDto = CountryDetailDto(
@@ -20,12 +20,27 @@ fun Country.toDetailDto(): CountryDetailDto = CountryDetailDto(
     capital = capital,
     region = region,
     subregion = subregion,
+    language = language,
     population = population,
     timezones = timezones,
-    continents = emptyList(),
+    continents = continents,
     flagUrl = flagUrl,
     shieldUrl = shieldUrl,
-    description = flagDescription,
     startOfWeek = startOfWeek,
-    language = language
+)
+
+fun CountryDetailDto.toModel(): Country = Country(
+    id = id,
+    nameCommon = nameCommon,
+    nameOfficial = nameOfficial,
+    capital = capital,
+    region = region,
+    subregion = subregion,
+    language = language,
+    population = population,
+    timezones = timezones,
+    continents = continents,
+    flagUrl = flagUrl,
+    shieldUrl = shieldUrl,
+    startOfWeek = startOfWeek,
 )
