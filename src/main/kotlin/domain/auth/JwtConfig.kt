@@ -21,7 +21,7 @@ object JwtConfig {
             .withSubject("Authentication")
             .withClaim("userId", userId.toString())
             .withIssuedAt(Date())
-            .withExpiresAt(Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24)) // 24h
+            .withExpiresAt(Date(System.currentTimeMillis() + 1000 * 60 * 15))
             .sign(algorithm)
     }
 

@@ -10,6 +10,7 @@ data class CountryResponseDto(
     val id: UUID,
     val countryName: String,
     val capital: String,
+    val language: String,
     val flagUrl: String? = null,
     val region: String,
 )
@@ -22,6 +23,7 @@ data class CountryDetailDto(
     val capital: String,
     val region: String,
     val subregion: String,
+    val language: String,
     val population: Long,
     val flagUrl: String? = null,
     val shieldUrl: String? = null,

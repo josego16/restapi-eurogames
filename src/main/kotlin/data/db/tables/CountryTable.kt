@@ -7,6 +7,7 @@ object CountryTable : UUIDTable("country") {
     val capital = varchar("capital", 255)
     val region = varchar("region", 255)
     val subregion = varchar("subregion", 255)
+    val language = varchar("language", 255)
     val population = long("population")
     val flagUrl = varchar("flag_url", 512)
     val shieldUrl = varchar("shield_url", 512)

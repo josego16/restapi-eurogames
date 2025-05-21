@@ -9,5 +9,4 @@ interface UserInterface {
     suspend fun create(user: User): User
     suspend fun update(id: UUID, user: User): User?
     suspend fun findByUsername(username: String): User?
-    suspend fun updateToken(id: UUID, token: String)
 }

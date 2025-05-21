@@ -5,7 +5,7 @@ import domain.dto.ScoreResponseDto
 import domain.interfaces.ScoreInterface
 import java.util.*
 
-object ProviderMediaUseCase {
+object ProviderScoreUseCase {
     private val repository: ScoreInterface = ScoreRepositoryImpl()
 
     private val getAllScoresUseCase = GetAllScoresUseCase(repository)

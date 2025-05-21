@@ -14,6 +14,7 @@ class CountryDao(id: EntityID<UUID>) : UUIDEntity(id) {
     var capital by CountryTable.capital
     var region by CountryTable.region
     var subregion by CountryTable.subregion
+    var language by CountryTable.language
     var population by CountryTable.population
     var description by CountryTable.description
     var flagUrl by CountryTable.flagUrl
@@ -25,6 +26,7 @@ class CountryDao(id: EntityID<UUID>) : UUIDEntity(id) {
         capital,
         region,
         subregion,
+        language,
         population,
         flagUrl,
         shieldUrl,

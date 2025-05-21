@@ -26,23 +26,4 @@ class GameSessionRepositoryImpl : GameSessionInterface {
     }.onFailure {
         logger.error("Error al obtener sesión con ID $id", it)
     }.getOrNull()
-
-    override suspend fun create(entity: GameSession): GameSession? = runCatching {
-        suspendedTransaction {
-            GameSessionDao.fromDomain(entity, null).toDomain()
-        }
-    }.onFailure {
-        logger.error("Error al crear sesión", it)
-    }.getOrNull()
-
-    override suspend fun update(entity: GameSession): GameSession? = runCatching {
-        suspendedTransaction {
-            val existing = GameSessionDao.findById(entity.id)
-            if (existing != null) {
-                GameSessionDao.fromDomain(entity, existing).toDomain()
-            } else null
-        }
-    }.onFailure {
-        logger.error("Error al actualizar sesión con ID ${entity.id}", it)
-    }.getOrNull()
 }

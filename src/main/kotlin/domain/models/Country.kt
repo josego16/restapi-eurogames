@@ -12,6 +12,7 @@ data class Country(
     val capital: String,
     val region: String,
     val subregion: String,
+    val language: String,
     val population: Long,
     val flagUrl: String? = null,
     val shieldUrl: String? = null,

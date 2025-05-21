@@ -18,8 +18,8 @@ data class UserResponseDto(
 data class UserRegisterDto(
     val fullName: String,
     val username: String,
-    val password: String,
     val email: String,
+    val password: String,
     val avatar: String? = null
 )
 

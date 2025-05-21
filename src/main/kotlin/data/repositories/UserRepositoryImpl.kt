@@ -70,8 +70,4 @@ class UserRepositoryImpl : UserInterface {
     }.onFailure {
         logger.error("Error al actualizar usuario con ID $id", it)
     }.getOrNull()
-
-    override suspend fun updateToken(id: UUID, token: String) {
-        logger.info("Token actualizado para usuario con ID $id (nota: el token no se almacena en la base de datos)")
-    }
 }

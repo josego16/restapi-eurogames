@@ -1,6 +1,6 @@
 package ktor.routes
 
-import domain.usecase.score.ProviderMediaUseCase
+import domain.usecase.score.ProviderScoreUseCase
 import io.ktor.http.*
 import io.ktor.server.auth.*
 import io.ktor.server.response.*
@@ -11,7 +11,7 @@ fun Routing.scoreRouting() {
     authenticate("jwt-auth") {
         route("/scores") {
             get {
-                val scores = ProviderMediaUseCase.getAllScores()
+                val scores = ProviderScoreUseCase.getAllScores()
                 call.respond(scores)
             }
             get("/{id}") {
@@ -23,7 +23,7 @@ fun Routing.scoreRouting() {
                     return@get
                 }.getOrDefault(UUID.randomUUID())
 
-                val score = ProviderMediaUseCase.getScoreById(id)
+                val score = ProviderScoreUseCase.getScoreById(id)
                 if (score == null) {
                     call.respond(HttpStatusCode.NotFound, "Puntuacion no encontrada")
                 } else {

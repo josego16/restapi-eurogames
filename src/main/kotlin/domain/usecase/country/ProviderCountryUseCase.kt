@@ -12,7 +12,7 @@ object ProviderCountryUseCase {
     private val getAllCountriesUseCase = GetAllCountriesUseCase(repository)
     private val getCountryByIdUseCase = GetCountryByIdUseCase(repository)
     private val filterCountriesUseCase = FilterCountriesUseCase(repository)
-    private val sortedCountriesUseCase = SortedCountriesUseCase(repository)
+    private val sortCountriesUseCase = SortCountriesUseCase(repository)
     private val searchCountriesUseCase = SearchCountriesUseCase(repository)
 
     suspend fun getAllCountries(): List<CountryResponseDto> = getAllCountriesUseCase()
@@ -22,7 +22,7 @@ object ProviderCountryUseCase {
     }
 
     suspend fun sortedCountries(sortBy: String?, descending: Boolean): List<CountryResponseDto> {
-        return sortedCountriesUseCase(sortBy, descending)
+        return sortCountriesUseCase(sortBy, descending)
     }
 
     suspend fun searchCountries(text: String?): List<CountryResponseDto> {

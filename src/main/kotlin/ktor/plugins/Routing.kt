@@ -23,6 +23,5 @@ fun Application.configureRouting() {
         questionRouting()
         answerRouting()
         scoreRouting()
-        mediaRouting()
     }
 }

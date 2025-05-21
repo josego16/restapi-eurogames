@@ -26,12 +26,4 @@ class ScoreRepositoryImpl : ScoreInterface {
     }.onFailure {
         logger.error("Error al obtener sesión con ID $id", it)
     }.getOrNull()
-
-    override suspend fun create(entity: Score): Score? = runCatching {
-        suspendedTransaction {
-            ScoreDao.fromDomain(entity, null).toDomain()
-        }
-    }.onFailure {
-        logger.error("Error al crear sesión", it)
-    }.getOrNull()
 }

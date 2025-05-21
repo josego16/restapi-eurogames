@@ -1,10 +1,8 @@
 package ktor.routes
 
-import domain.dto.GameSessionCreateDto
 import domain.usecase.gamesession.ProviderGameSessionUseCase
 import io.ktor.http.*
 import io.ktor.server.auth.*
-import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import java.util.*
@@ -31,11 +29,6 @@ fun Routing.gameSessionRouting() {
                 } else {
                     call.respond(gameSession)
                 }
-            }
-            post {
-                val dto = call.receive<GameSessionCreateDto>()
-                val gameSession = ProviderGameSessionUseCase.startGameSession(dto)
-                call.respond(gameSession)
             }
         }
     }

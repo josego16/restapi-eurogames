@@ -26,7 +26,6 @@ class UserDao(id: EntityID<UUID>) : UUIDEntity(id) {
     var password by UserTable.password
     var avatar by UserTable.avatar
 
-    // Convertir el DAO a un modelo de dominio (User)
     fun toDomain(): User {
         return User(
             id.value,

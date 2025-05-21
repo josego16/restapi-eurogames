@@ -10,7 +10,7 @@ data class User(
     var id: UUID = UUID.randomUUID(),
     var fullName: String,
     var username: String,
-    var password: String,
     var email: String,
+    var password: String,
     var avatar: String? = null
 )
