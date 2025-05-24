@@ -5,7 +5,6 @@ import domain.enums.GameType
 import domain.enums.SessionStatus
 import kotlinx.datetime.Instant
 import kotlinx.serialization.Serializable
-import java.util.*
 
 @Serializable
 data class GameSession(
@@ -15,7 +14,7 @@ data class GameSession(
     val scoreSession: Double = 0.0,
     val difficulty: Difficulty,
     val gameType: GameType,
-    val status: SessionStatus = SessionStatus.IN_PROGRESS,
+    val status: SessionStatus = SessionStatus.In_Progress,
     val startedAt: Instant,
     val finishedAt: Instant? = null
 )
