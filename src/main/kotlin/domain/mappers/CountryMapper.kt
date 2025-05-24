@@ -28,19 +28,3 @@ fun Country.toDetailDto(): CountryDetailDto = CountryDetailDto(
     shieldUrl = shieldUrl,
     startOfWeek = startOfWeek,
 )
-
-fun CountryDetailDto.toModel(): Country = Country(
-    id = id,
-    nameCommon = nameCommon,
-    nameOfficial = nameOfficial,
-    capital = capital,
-    region = region,
-    subregion = subregion,
-    language = language,
-    population = population,
-    timezones = timezones,
-    continents = continents,
-    flagUrl = flagUrl,
-    shieldUrl = shieldUrl,
-    startOfWeek = startOfWeek,
-)

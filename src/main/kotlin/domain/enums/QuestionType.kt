@@ -4,11 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 enum class QuestionType {
-    FLAG_GUESS,
-    COAT_QUIZ,
-    HISTORY_QUIZ,
-    GEOGRAPHY_QUIZ,
-    SPORTS_QUIZ,
-    MYTHOLOGY_QUIZ,
-    GENERAL_KNOWLEDGE_QUIZ,
+    Flag_Guess, Coat_Quiz,
+    History_Quiz, Geography_Quiz,
+    Sports_Quiz, Mythology_Quiz
 }

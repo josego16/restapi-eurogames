@@ -12,7 +12,6 @@ import org.jetbrains.exposed.sql.SqlExpressionBuilder.lessEq
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.like
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import java.util.*
 
 class CountryRepositoryImpl : CountryInterface {
     private val logger: Logger = LoggerFactory.getLogger(CountryRepositoryImpl::class.java)
@@ -25,7 +24,7 @@ class CountryRepositoryImpl : CountryInterface {
         logger.error("Error al obtener todos los países", it)
     }.getOrDefault(emptyList())
 
-    override suspend fun getById(id: UUID): Country? = runCatching {
+    override suspend fun getById(id: Int): Country? = runCatching {
         suspendedTransaction {
             CountryDao.findById(id)?.toDomain()
         }

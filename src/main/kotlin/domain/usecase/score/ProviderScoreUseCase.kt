@@ -3,7 +3,6 @@ package domain.usecase.score
 import data.repositories.ScoreRepositoryImpl
 import domain.dto.ScoreResponseDto
 import domain.interfaces.ScoreInterface
-import java.util.*
 
 object ProviderScoreUseCase {
     private val repository: ScoreInterface = ScoreRepositoryImpl()
@@ -12,5 +11,5 @@ object ProviderScoreUseCase {
     private val getScoreByIdUseCase = GetScoreByIdUseCase(repository)
 
     suspend fun getAllScores(): List<ScoreResponseDto> = getAllScoresUseCase()
-    suspend fun getScoreById(id: UUID): ScoreResponseDto? = getScoreByIdUseCase(id)
+    suspend fun getScoreById(id: Int): ScoreResponseDto? = getScoreByIdUseCase(id)
 }

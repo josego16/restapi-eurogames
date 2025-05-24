@@ -6,7 +6,6 @@ import domain.interfaces.GameSessionInterface
 import domain.models.GameSession
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import java.util.*
 
 class GameSessionRepositoryImpl : GameSessionInterface {
     private val logger: Logger = LoggerFactory.getLogger(GameSessionRepositoryImpl::class.java)
@@ -19,7 +18,7 @@ class GameSessionRepositoryImpl : GameSessionInterface {
         logger.error("Error al obtener todas las sesiones", it)
     }.getOrDefault(emptyList())
 
-    override suspend fun getById(id: UUID): GameSession? = runCatching {
+    override suspend fun getById(id: Int): GameSession? = runCatching {
         suspendedTransaction {
             GameSessionDao.findById(id)?.toDomain()
         }

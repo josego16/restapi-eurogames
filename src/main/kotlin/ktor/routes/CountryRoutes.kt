@@ -4,7 +4,6 @@ import domain.usecase.country.ProviderCountryUseCase
 import io.ktor.http.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
-import java.util.*
 
 fun Routing.countryRouting() {
     route("/countries") {
@@ -15,12 +14,11 @@ fun Routing.countryRouting() {
 
         get("/{id}") {
             val idParam = call.parameters["id"]
-            val id = runCatching {
-                UUID.fromString(idParam)
-            }.onFailure {
+            val id = idParam?.toIntOrNull()
+            if (id == null) {
                 call.respond(HttpStatusCode.BadRequest, "Id no valido")
                 return@get
-            }.getOrDefault(UUID.randomUUID())
+            }
 
             val country = ProviderCountryUseCase.getCountryById(id)
             if (country == null) {
@@ -55,4 +53,3 @@ fun Routing.countryRouting() {
         }
     }
 }
-

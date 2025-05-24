@@ -8,7 +8,6 @@ import domain.interfaces.UserInterface
 import domain.models.User
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import java.util.*
 
 class UserRepositoryImpl : UserInterface {
     private val logger: Logger = LoggerFactory.getLogger(UserRepositoryImpl::class.java)
@@ -21,7 +20,7 @@ class UserRepositoryImpl : UserInterface {
         logger.error("Error al obtener todos los usuarios", it)
     }.getOrDefault(emptyList())
 
-    override suspend fun getById(id: UUID): User? = runCatching {
+    override suspend fun getById(id: Int): User? = runCatching {
         suspendedTransaction {
             UserDao.findById(id)?.toDomain()
         }
@@ -53,7 +52,7 @@ class UserRepositoryImpl : UserInterface {
         logger.error("Error al registrar usuario", it)
     }.getOrDefault(user)
 
-    override suspend fun update(id: UUID, user: User): User? = runCatching {
+    override suspend fun update(id: Int, user: User): User? = runCatching {
         suspendedTransaction {
             val dao = UserDao.findById(id) ?: return@suspendedTransaction null
 

@@ -2,13 +2,12 @@ package data.db.daos
 
 import data.db.tables.ScoreTable
 import domain.models.Score
-import org.jetbrains.exposed.dao.UUIDEntity
-import org.jetbrains.exposed.dao.UUIDEntityClass
+import org.jetbrains.exposed.dao.IntEntity
+import org.jetbrains.exposed.dao.IntEntityClass
 import org.jetbrains.exposed.dao.id.EntityID
-import java.util.*
 
-class ScoreDao(id: EntityID<UUID>) : UUIDEntity(id) {
-    companion object : UUIDEntityClass<ScoreDao>(ScoreTable) {
+class ScoreDao(id: EntityID<Int>) : IntEntity(id) {
+    companion object : IntEntityClass<ScoreDao>(ScoreTable) {
         fun fromDomain(domain: Score, existing: ScoreDao? = null): ScoreDao {
             return existing ?: new(domain.id) {
                 userId = UserDao.Companion[domain.userId]

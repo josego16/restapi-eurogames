@@ -2,13 +2,12 @@ package data.db.daos
 
 import data.db.tables.QuestionTable
 import domain.models.Question
-import org.jetbrains.exposed.dao.UUIDEntity
-import org.jetbrains.exposed.dao.UUIDEntityClass
+import org.jetbrains.exposed.dao.IntEntity
+import org.jetbrains.exposed.dao.IntEntityClass
 import org.jetbrains.exposed.dao.id.EntityID
-import java.util.*
 
-class QuestionDao(id: EntityID<UUID>) : UUIDEntity(id) {
-    companion object : UUIDEntityClass<QuestionDao>(QuestionTable)
+class QuestionDao(id: EntityID<Int>) : IntEntity(id) {
+    companion object : IntEntityClass<QuestionDao>(QuestionTable)
 
     var statement by QuestionTable.statement
     var questionType by QuestionTable.questionType

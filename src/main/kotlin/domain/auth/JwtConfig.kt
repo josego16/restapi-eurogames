@@ -14,12 +14,12 @@ object JwtConfig {
     const val REALM = "ktor_realm"
     private val algorithm = Algorithm.HMAC256(SECRET)
 
-    fun generateToken(userId: UUID): String {
+    fun generateToken(userId: Int): String {
         return JWT.create()
             .withIssuer(ISSUER)
             .withAudience(AUDIENCE)
             .withSubject("Authentication")
-            .withClaim("userId", userId.toString())
+            .withClaim("userId", userId) // Guardamos como Int directamente
             .withIssuedAt(Date())
             .withExpiresAt(Date(System.currentTimeMillis() + 1000 * 60 * 15))
             .sign(algorithm)
@@ -35,13 +35,7 @@ object JwtConfig {
         config.realm = REALM
         config.verifier(getVerifier())
         config.validate { credential ->
-            val userIdStr = credential.payload.getClaim("userId").asString()
-            val userId = try {
-                UUID.fromString(userIdStr)
-            } catch (_: IllegalArgumentException) {
-                return@validate null
-            }
-
+            val userId = credential.payload.getClaim("userId").asInt()
             val user = ProviderUserUseCase.getUserById(userId)
             if (user != null) {
                 JWTPrincipal(credential.payload)

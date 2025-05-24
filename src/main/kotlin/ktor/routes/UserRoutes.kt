@@ -8,7 +8,6 @@ import io.ktor.http.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
-import java.util.*
 
 fun Routing.userRouting() {
     route("/users") {
@@ -18,13 +17,11 @@ fun Routing.userRouting() {
         }
         get("/{id}") {
             val idParam = call.parameters["id"]
-            val id = runCatching {
-                UUID.fromString(idParam)
-            }.onFailure {
+            val id = idParam?.toIntOrNull()
+            if (id == null) {
                 call.respond(HttpStatusCode.BadRequest, "Id no valido")
                 return@get
-            }.getOrDefault(UUID.randomUUID())
-
+            }
             val user = ProviderUserUseCase.getUserById(id)
             if (user == null) {
                 call.respond(HttpStatusCode.NotFound, "Usuario no encontrado")
@@ -34,15 +31,12 @@ fun Routing.userRouting() {
         }
         patch("/{id}") {
             val updateUser = call.receive<UserUpdateDto>()
-
             val idParam = call.parameters["id"]
-            val idUser = runCatching {
-                UUID.fromString(idParam)
-            }.onFailure {
+            val idUser = idParam?.toIntOrNull()
+            if (idUser == null) {
                 call.respond(HttpStatusCode.BadRequest, "Id no valido")
                 return@patch
-            }.getOrDefault(UUID.randomUUID())
-
+            }
             val user = ProviderUserUseCase.updateUser(idUser, updateUser)
             if (user == null) {
                 call.respond(HttpStatusCode.NotFound, "No se ha podido actualizar el usuario")

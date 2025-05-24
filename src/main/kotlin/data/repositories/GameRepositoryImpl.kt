@@ -6,7 +6,6 @@ import domain.interfaces.GameInterface
 import domain.models.Game
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import java.util.*
 
 class GameRepositoryImpl : GameInterface {
     private val logger: Logger = LoggerFactory.getLogger(GameRepositoryImpl::class.java)
@@ -19,7 +18,7 @@ class GameRepositoryImpl : GameInterface {
         logger.error("Error al obtener todas las respuestas")
     }.getOrDefault(emptyList())
 
-    override suspend fun getById(id: UUID): Game? = runCatching {
+    override suspend fun getById(id: Int): Game? = runCatching {
         suspendedTransaction {
             GameDao.findById(id)?.toDomain()
         }

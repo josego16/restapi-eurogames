@@ -1,3 +1,6 @@
 package domain.enums
 
-enum class SessionStatus { IN_PROGRESS, FINISHED }
+import kotlinx.serialization.Serializable
+
+@Serializable
+enum class SessionStatus { In_Progress, Finished }

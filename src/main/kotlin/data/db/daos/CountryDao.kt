@@ -2,13 +2,12 @@ package data.db.daos
 
 import data.db.tables.CountryTable
 import domain.models.Country
-import org.jetbrains.exposed.dao.UUIDEntity
-import org.jetbrains.exposed.dao.UUIDEntityClass
+import org.jetbrains.exposed.dao.IntEntity
+import org.jetbrains.exposed.dao.IntEntityClass
 import org.jetbrains.exposed.dao.id.EntityID
-import java.util.*
 
-class CountryDao(id: EntityID<UUID>) : UUIDEntity(id) {
-    companion object : UUIDEntityClass<CountryDao>(CountryTable)
+class CountryDao(id: EntityID<Int>) : IntEntity(id) {
+    companion object : IntEntityClass<CountryDao>(CountryTable)
 
     var nameCommon by CountryTable.nameCommon
     var nameOfficial by CountryTable.nameOfficial

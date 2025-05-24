@@ -4,13 +4,12 @@ import data.db.tables.GameSessionTable
 import domain.models.GameSession
 import kotlinx.datetime.toJavaInstant
 import kotlinx.datetime.toKotlinInstant
-import org.jetbrains.exposed.dao.UUIDEntity
-import org.jetbrains.exposed.dao.UUIDEntityClass
+import org.jetbrains.exposed.dao.IntEntity
+import org.jetbrains.exposed.dao.IntEntityClass
 import org.jetbrains.exposed.dao.id.EntityID
-import java.util.*
 
-class GameSessionDao(id: EntityID<UUID>) : UUIDEntity(id) {
-    companion object : UUIDEntityClass<GameSessionDao>(GameSessionTable) {
+class GameSessionDao(id: EntityID<Int>) : IntEntity(id) {
+    companion object : IntEntityClass<GameSessionDao>(GameSessionTable) {
         fun fromDomain(domain: GameSession, existing: GameSessionDao? = null): GameSessionDao {
             return existing ?: new(domain.id) {
                 userId = UserDao[domain.userId]
@@ -43,6 +42,6 @@ class GameSessionDao(id: EntityID<UUID>) : UUIDEntity(id) {
         gameType,
         status,
         startedAt.toKotlinInstant(),
-        finishedAt?.toKotlinInstant(),
+        finishedAt?.toKotlinInstant()
     )
 }

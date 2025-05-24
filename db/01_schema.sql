@@ -1,4 +1,3 @@
--- 01_schema.sql
 -- ========================================================
 -- ENUMS
 -- ========================================================
@@ -6,31 +5,26 @@ DO
 $$
     BEGIN
         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'difficulty') THEN
-            CREATE TYPE difficulty AS ENUM ('easy', 'medium', 'hard');
+            CREATE TYPE difficulty AS ENUM ('Easy', 'Medium', 'Hard');
         END IF;
 
         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'game_type') THEN
-            CREATE TYPE game_type AS ENUM ('guess_flag','quiz');
+            CREATE TYPE game_type AS ENUM ('Guess_the_flag','Quiz');
         END IF;
 
         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'question_type') THEN
-            CREATE TYPE question_type AS ENUM ('FLAG_GUESS', 'COAT_QUIZ','HISTORY_QUIZ', 'GEOGRAPHY_QUIZ', 'SPORTS_QUIZ','MYTHOLOGY_QUIZ');
+            CREATE TYPE question_type AS ENUM ('Flag_Guess', 'Coat_Quiz','History_Quiz', 'Geography_Quiz', 'Sports_Quiz','Mythology_Quiz');
         END IF;
 
         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'response_mode') THEN
-            CREATE TYPE response_mode AS ENUM ('TRUE/FALSE','MULTIPLE_CHOICE', 'FREE_TEXT');
+            CREATE TYPE response_mode AS ENUM ('True_or_false','Multiple_Choice', 'Free_Text');
         END IF;
 
         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'session_status') THEN
-            CREATE TYPE session_status AS ENUM ('IN_PROGRESS', 'FINISHED');
+            CREATE TYPE session_status AS ENUM ('In_Progress', 'Finished');
         END IF;
     END
 $$;
-
--- ========================================================
--- EXTENSION NECESARIA PARA UUID
--- ========================================================
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 -- ========================================================
 -- TABLAS
@@ -38,24 +32,24 @@ CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 CREATE TABLE IF NOT EXISTS country
 (
-    id               UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    name_common      VARCHAR(255) NOT NULL,
-    name_official    VARCHAR(255) NOT NULL,
-    capital          VARCHAR(255) NOT NULL,
-    region           VARCHAR(255) NOT NULL,
-    subregion        VARCHAR(255) NOT NULL,
-    language         VARCHAR(255) NOT NULL,
-    population       BIGINT       NOT NULL,
-    timezones        VARCHAR(255) NOT NULL,
-    continents       VARCHAR(255) NOT NULL,
-    flag_url         VARCHAR(512) NOT NULL,
-    shield_url       VARCHAR(512) NOT NULL,
-    start_of_week    VARCHAR(255) NOT NULL
+    id            SERIAL PRIMARY KEY,
+    name_common   VARCHAR(255) NOT NULL,
+    name_official VARCHAR(255) NOT NULL,
+    capital       VARCHAR(255) NOT NULL,
+    region        VARCHAR(255) NOT NULL,
+    subregion     VARCHAR(255) NOT NULL,
+    language      VARCHAR(255) NOT NULL,
+    population    BIGINT       NOT NULL,
+    timezones     VARCHAR(255) NOT NULL,
+    continents    VARCHAR(255) NOT NULL,
+    flag_url      VARCHAR(512) NOT NULL,
+    shield_url    VARCHAR(512) NOT NULL,
+    start_of_week VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE auth
 (
-    id        UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    id        SERIAL PRIMARY KEY,
     full_name VARCHAR(255),
     username  VARCHAR(255),
     email     VARCHAR(255) NOT NULL,
@@ -65,7 +59,7 @@ CREATE TABLE auth
 
 CREATE TABLE game
 (
-    id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    id          SERIAL PRIMARY KEY,
     name        VARCHAR(255) NOT NULL,
     game_type   game_type    NOT NULL,
     difficulty  difficulty   NOT NULL,
@@ -75,9 +69,9 @@ CREATE TABLE game
 
 CREATE TABLE game_session
 (
-    id            UUID PRIMARY KEY          DEFAULT uuid_generate_v4(),
-    user_id       UUID REFERENCES auth (id) ON DELETE CASCADE,
-    game_id       UUID REFERENCES game (id) ON DELETE CASCADE,
+    id            SERIAL PRIMARY KEY,
+    user_id       INTEGER REFERENCES auth (id) ON DELETE CASCADE,
+    game_id       INTEGER REFERENCES game (id) ON DELETE CASCADE,
     score_session DOUBLE PRECISION NOT NULL,
     game_type     game_type        NOT NULL,
     difficulty    difficulty       NOT NULL,
@@ -86,7 +80,7 @@ CREATE TABLE game_session
 
 CREATE TABLE question
 (
-    id            UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    id            SERIAL PRIMARY KEY,
     statement     TEXT          NOT NULL,
     question_type question_type NOT NULL,
     response_mode response_mode NOT NULL,
@@ -96,17 +90,17 @@ CREATE TABLE question
 
 CREATE TABLE answer
 (
-    id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    question_id UUID REFERENCES question (id) ON DELETE CASCADE,
+    id          SERIAL PRIMARY KEY,
+    question_id INTEGER REFERENCES question (id) ON DELETE CASCADE,
     text        TEXT    NOT NULL,
     is_correct  BOOLEAN NOT NULL
 );
 
 CREATE TABLE score
 (
-    id          UUID PRIMARY KEY          DEFAULT uuid_generate_v4(),
-    user_id     UUID REFERENCES auth (id) ON DELETE CASCADE,
-    game_id     UUID REFERENCES game (id) ON DELETE CASCADE,
+    id          SERIAL PRIMARY KEY,
+    user_id     INTEGER REFERENCES auth (id) ON DELETE CASCADE,
+    game_id     INTEGER REFERENCES game (id) ON DELETE CASCADE,
     score_value DOUBLE PRECISION NOT NULL,
     game_type   game_type        NOT NULL,
     difficulty  difficulty       NOT NULL,

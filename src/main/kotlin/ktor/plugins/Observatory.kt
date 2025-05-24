@@ -9,7 +9,6 @@ import io.ktor.server.plugins.cors.routing.*
 import io.ktor.server.request.*
 import ktor.prometheusRegistry
 import org.slf4j.event.Level
-import java.util.*
 
 fun Application.configureObservatory() {
 
@@ -19,7 +18,11 @@ fun Application.configureObservatory() {
 
     install(CallId) {
         header(HttpHeaders.XRequestId)
-        generate { UUID.randomUUID().toString() }
+        generate {
+            List(16) {
+                (('a'..'z') + ('0'..'9')).random()
+            }.joinToString("")
+        }
         verify { callId -> callId.isNotEmpty() }
     }
 

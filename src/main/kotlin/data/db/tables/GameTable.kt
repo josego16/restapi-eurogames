@@ -2,9 +2,9 @@ package data.db.tables
 
 import domain.enums.Difficulty
 import domain.enums.GameType
-import org.jetbrains.exposed.dao.id.UUIDTable
+import org.jetbrains.exposed.dao.id.IntIdTable
 
-object GameTable : UUIDTable("game") {
+object GameTable : IntIdTable("game") {
     val name = varchar("name", 255)
     val gameType = enumerationByName("game_type", 50, GameType::class)
     val difficulty = enumerationByName("difficulty", 50, Difficulty::class)

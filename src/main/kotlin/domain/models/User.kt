@@ -1,13 +1,10 @@
 package domain.models
 
-import domain.utils.serializers.UUIDSerializer
 import kotlinx.serialization.Serializable
-import java.util.*
 
 @Serializable
 data class User(
-    @Serializable(with = UUIDSerializer::class)
-    var id: UUID = UUID.randomUUID(),
+    var id: Int = 0,
     var fullName: String,
     var username: String,
     var email: String,

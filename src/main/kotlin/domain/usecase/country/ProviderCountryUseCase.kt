@@ -4,7 +4,6 @@ import data.repositories.CountryRepositoryImpl
 import domain.dto.CountryDetailDto
 import domain.dto.CountryResponseDto
 import domain.interfaces.CountryInterface
-import java.util.*
 
 object ProviderCountryUseCase {
     private val repository: CountryInterface = CountryRepositoryImpl()
@@ -19,7 +18,7 @@ object ProviderCountryUseCase {
         return getAllCountriesUseCase()
     }
 
-    suspend fun getCountryById(id: UUID): CountryDetailDto? {
+    suspend fun getCountryById(id: Int): CountryDetailDto? {
         return getCountryByIdUseCase(id)
     }
 

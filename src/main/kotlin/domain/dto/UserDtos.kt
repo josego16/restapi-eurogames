@@ -1,13 +1,10 @@
 package domain.dto
 
-import domain.utils.serializers.UUIDSerializer
 import kotlinx.serialization.Serializable
-import java.util.*
 
 @Serializable
 data class UserResponseDto(
-    @Serializable(with = UUIDSerializer::class)
-    val id: UUID? = null,
+    var id: Int,
     val fullName: String,
     val username: String,
     val email: String,

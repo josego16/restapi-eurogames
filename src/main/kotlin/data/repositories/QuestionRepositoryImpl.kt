@@ -9,7 +9,6 @@ import domain.models.Question
 import domain.models.QuestionWithAnswer
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import java.util.*
 
 class QuestionRepositoryImpl : QuestionInterface {
     private val logger: Logger = LoggerFactory.getLogger(QuestionRepositoryImpl::class.java)
@@ -22,7 +21,7 @@ class QuestionRepositoryImpl : QuestionInterface {
         logger.error("Error al obtener todas las respuestas",it)
     }.getOrDefault(emptyList())
 
-    override suspend fun getById(id: UUID): Question? = runCatching {
+    override suspend fun getById(id: Int): Question? = runCatching {
         suspendedTransaction {
             QuestionDao.findById(id)?.toDomain()
         }

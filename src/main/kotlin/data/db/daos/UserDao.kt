@@ -2,13 +2,12 @@ package data.db.daos
 
 import data.db.tables.UserTable
 import domain.models.User
-import org.jetbrains.exposed.dao.UUIDEntity
-import org.jetbrains.exposed.dao.UUIDEntityClass
+import org.jetbrains.exposed.dao.IntEntity
+import org.jetbrains.exposed.dao.IntEntityClass
 import org.jetbrains.exposed.dao.id.EntityID
-import java.util.*
 
-class UserDao(id: EntityID<UUID>) : UUIDEntity(id) {
-    companion object : UUIDEntityClass<UserDao>(UserTable) {
+class UserDao(id: EntityID<Int>) : IntEntity(id) {
+    companion object : IntEntityClass<UserDao>(UserTable) {
         fun fromDomain(domain: User, existing: UserDao? = null): UserDao {
             return existing ?: new(domain.id) {
                 fullName = domain.fullName
@@ -37,4 +36,3 @@ class UserDao(id: EntityID<UUID>) : UUIDEntity(id) {
         )
     }
 }
-

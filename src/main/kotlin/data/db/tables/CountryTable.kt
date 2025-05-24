@@ -1,8 +1,8 @@
 package data.db.tables
 
-import org.jetbrains.exposed.dao.id.UUIDTable
+import org.jetbrains.exposed.dao.id.IntIdTable
 
-object CountryTable : UUIDTable("country") {
+object CountryTable : IntIdTable("country") {
     val nameCommon = varchar("name_common", 255)
     val nameOfficial = varchar("name_official", 255)
     val capital = varchar("capital", 255)

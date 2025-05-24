@@ -6,7 +6,6 @@ import domain.interfaces.ScoreInterface
 import domain.models.Score
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import java.util.*
 
 class ScoreRepositoryImpl : ScoreInterface {
     private val logger: Logger = LoggerFactory.getLogger(ScoreRepositoryImpl::class.java)
@@ -19,7 +18,7 @@ class ScoreRepositoryImpl : ScoreInterface {
         logger.error("Error al obtener todas las sesiones", it)
     }.getOrDefault(emptyList())
 
-    override suspend fun getById(id: UUID): Score? = runCatching {
+    override suspend fun getById(id: Int): Score? = runCatching {
         suspendedTransaction {
             ScoreDao.findById(id)?.toDomain()
         }

@@ -11,7 +11,7 @@ object PasswordHash : PasswordInterface {
         println("[HASH] Hash generado: $hashed")
         hashed
     } catch (error: Exception) {
-        throw ExceptionHash("Error while hashing: $error")
+        throw IllegalArgumentException("Error hashing password: ${error.message}", error)
     }
 
     override fun verify(passwd: String, hashedPassword: String): Boolean = try {
@@ -21,7 +21,7 @@ object PasswordHash : PasswordInterface {
         println("[VERIFY] Resultado verificación: $result")
         result
     } catch (error: Exception) {
-        throw ExceptionHash("Error while verifying: $error")
+        throw IllegalArgumentException("Error verifying password: ${error.message}", error)
     }
 
     private fun validateStrength(passwd: String) {

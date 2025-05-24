@@ -1,13 +1,10 @@
 package domain.models
 
-import domain.utils.serializers.UUIDSerializer
 import kotlinx.serialization.Serializable
-import java.util.*
 
 @Serializable
 data class Country(
-    @Serializable(with = UUIDSerializer::class)
-    val id: UUID = UUID.randomUUID(),
+    var id: Int,
 
     val nameCommon: String,
     val nameOfficial: String,

@@ -1,8 +1,8 @@
 package data.db.tables
 
-import org.jetbrains.exposed.dao.id.UUIDTable
+import org.jetbrains.exposed.dao.id.IntIdTable
 
-object UserTable : UUIDTable("auth") {
+object UserTable : IntIdTable("auth") {
     val fullName = varchar("full_name", 255)
     val username = varchar("username", 255)
     val email = varchar("email", 255)

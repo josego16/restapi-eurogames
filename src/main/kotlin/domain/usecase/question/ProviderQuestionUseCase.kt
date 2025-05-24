@@ -4,7 +4,6 @@ import data.repositories.QuestionRepositoryImpl
 import domain.dto.QuestionResponseDto
 import domain.dto.QuestionWithAnswersDto
 import domain.interfaces.QuestionInterface
-import java.util.*
 
 object ProviderQuestionUseCase {
     private val repository: QuestionInterface = QuestionRepositoryImpl()
@@ -15,7 +14,7 @@ object ProviderQuestionUseCase {
 
     suspend fun getAllQuestions(): List<QuestionResponseDto> = getAllQuestionsUseCase()
     suspend fun getAllQuestionWithAnswer(): List<QuestionWithAnswersDto> = getAllQuestionWithAnswerUseCase()
-    suspend fun getQuestionById(id: UUID): QuestionResponseDto? {
+    suspend fun getQuestionById(id: Int): QuestionResponseDto? {
         return getQuestionByIdUseCase(id)
     }
 }
