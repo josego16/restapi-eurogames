@@ -13,7 +13,7 @@ $$
         END IF;
 
         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'question_type') THEN
-            CREATE TYPE question_type AS ENUM ('Flag_Guess', 'Coat_Quiz','History_Quiz', 'Geography_Quiz', 'Sports_Quiz','Mythology_Quiz');
+            CREATE TYPE question_type AS ENUM ('Flag_Guess', 'Coat_Quiz','History_Quiz', 'Geography_Quiz', 'Sports_Quiz','Mythology_Quiz', 'General_Knowledge_Quiz');
         END IF;
 
         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'response_mode') THEN
