@@ -3,6 +3,7 @@ package data.repositories
 import data.db.daos.CountryDao
 import data.db.suspendedTransaction
 import data.db.tables.CountryTable
+import domain.dto.CountryPageResult
 import domain.interfaces.CountryInterface
 import domain.models.Country
 import org.jetbrains.exposed.sql.*
@@ -23,6 +24,24 @@ class CountryRepositoryImpl : CountryInterface {
     }.onFailure {
         logger.error("Error al obtener todos los países", it)
     }.getOrDefault(emptyList())
+
+    override suspend fun getPaginated(page: Int, size: Int): CountryPageResult = runCatching {
+        suspendedTransaction {
+            val totalItems = CountryDao.count()
+            val offset = page * size
+
+            val countries = CountryDao.all()
+                .limit(count = size).offset(start = offset.toLong())
+                .map { it.toDomain() }
+
+            CountryPageResult(
+                countries = countries,
+                totalCount = totalItems.toInt()
+            )
+        }
+    }.onFailure {
+        logger.error("Error al paginar países", it)
+    }.getOrDefault(CountryPageResult(emptyList(), 0))
 
     override suspend fun getById(id: Int): Country? = runCatching {
         suspendedTransaction {
@@ -70,9 +89,9 @@ class CountryRepositoryImpl : CountryInterface {
         suspendedTransaction {
             CountryDao.find {
                 (CountryTable.nameOfficial.lowerCase() like searchText) or
-                (CountryTable.capital.lowerCase() like searchText) or
-                (CountryTable.region.lowerCase() like searchText) or
-                (CountryTable.subregion.lowerCase() like searchText)
+                        (CountryTable.capital.lowerCase() like searchText) or
+                        (CountryTable.region.lowerCase() like searchText) or
+                        (CountryTable.subregion.lowerCase() like searchText)
             }.map { it.toDomain() }
         }
     }.onFailure {

@@ -3,12 +3,14 @@ package domain.usecase.country
 import data.repositories.CountryRepositoryImpl
 import domain.dto.CountryDetailDto
 import domain.dto.CountryResponseDto
+import domain.dto.PaginatedResponseDto
 import domain.interfaces.CountryInterface
 
 object ProviderCountryUseCase {
     private val repository: CountryInterface = CountryRepositoryImpl()
 
     private val getAllCountriesUseCase = GetAllCountriesUseCase(repository)
+    private val getCountriesPaginatedUseCase = GetCountriesPaginatedUseCase(repository)
     private val getCountryByIdUseCase = GetCountryByIdUseCase(repository)
     private val filterCountriesUseCase = FilterCountriesUseCase(repository)
     private val sortCountriesUseCase = SortCountriesUseCase(repository)
@@ -16,6 +18,10 @@ object ProviderCountryUseCase {
 
     suspend fun getAllCountries(): List<CountryResponseDto> {
         return getAllCountriesUseCase()
+    }
+
+    suspend fun getCountriesPaginated(page: Int, size: Int): PaginatedResponseDto<CountryResponseDto> {
+        return getCountriesPaginatedUseCase(page, size)
     }
 
     suspend fun getCountryById(id: Int): CountryDetailDto? {

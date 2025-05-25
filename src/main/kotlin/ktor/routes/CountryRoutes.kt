@@ -11,6 +11,13 @@ fun Routing.countryRouting() {
             val countries = ProviderCountryUseCase.getAllCountries()
             call.respond(countries)
         }
+        get("/paginated") {
+            val page = call.request.queryParameters["page"]?.toIntOrNull() ?: 0
+            val size = call.request.queryParameters["size"]?.toIntOrNull() ?: 20
+
+            val result = ProviderCountryUseCase.getCountriesPaginated(page, size)
+            call.respond(result)
+        }
 
         get("/{id}") {
             val idParam = call.parameters["id"]

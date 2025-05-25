@@ -23,7 +23,7 @@ data class CountryDetailDto(
     val language: String,
     val population: Long,
     val timezones: List<String> = listOf(),
-    val continents:List<String> = listOf(),
+    val continents: List<String> = listOf(),
     val flagUrl: String? = null,
     val shieldUrl: String? = null,
     val startOfWeek: String
