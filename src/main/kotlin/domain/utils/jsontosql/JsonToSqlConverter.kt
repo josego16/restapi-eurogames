@@ -57,7 +57,7 @@ object JsonToSqlConverter {
                 val startOfWeek = countryJson["startOfWeek"]?.jsonPrimitive?.content?.escapeSql() ?: ""
 
                 appendLine("INSERT INTO $tableName (id, name_common, name_official, capital, region, subregion, language, population, timezones, continents, flag_url, flag_description, shield_url, start_of_week) VALUES")
-                appendLine("('$id', '$nameCommon', '$nameOfficial', '$capital', '$region', '$subregion', NULL, $population, '$timezones', '$continents', '${flagUrl ?: ""}', '${flagDescription ?: ""}', '${shieldUrl ?: ""}', '$startOfWeek');")
+                appendLine("('$id', '$nameCommon', '$nameOfficial', '$capital', '$region', '$subregion', NULL, $population, '$timezones', '$continents', '${flagUrl ?: ""}', '${shieldUrl ?: ""}', '$startOfWeek');")
                 appendLine()
             }
         }

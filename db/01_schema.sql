@@ -13,7 +13,11 @@ $$
         END IF;
 
         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'question_type') THEN
-            CREATE TYPE question_type AS ENUM ('Flag_Guess', 'Coat_Quiz','History_Quiz', 'Geography_Quiz', 'Sports_Quiz','Mythology_Quiz', 'General_Knowledge_Quiz');
+            CREATE TYPE question_type AS ENUM (
+                'Flag_Guess', 'Coat_Quiz', 'History_Quiz',
+                'Geography_Quiz', 'Sports_Quiz',
+                'Mythology_Quiz', 'GeneralKnowledge_Quiz'
+                );
         END IF;
 
         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'response_mode') THEN
@@ -38,12 +42,12 @@ CREATE TABLE IF NOT EXISTS country
     capital       VARCHAR(255) NOT NULL,
     region        VARCHAR(255) NOT NULL,
     subregion     VARCHAR(255) NOT NULL,
-    language      VARCHAR(255) NOT NULL,
+    language      VARCHAR(255) NOT NULL DEFAULT 'Unknown',
     population    BIGINT       NOT NULL,
     timezones     VARCHAR(255) NOT NULL,
     continents    VARCHAR(255) NOT NULL,
-    flag_url      VARCHAR(512) NOT NULL,
-    shield_url    VARCHAR(512) NOT NULL,
+    flag_url      VARCHAR(512),
+    shield_url    VARCHAR(512),
     start_of_week VARCHAR(255) NOT NULL
 );
 
