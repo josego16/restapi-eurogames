@@ -9,14 +9,17 @@ import domain.mappers.toResponseDto
 class GetCountriesPaginatedUseCase(private val repository: CountryInterface) {
     suspend operator fun invoke(page: Int, size: Int): PaginatedResponseDto<CountryResponseDto> {
         val result = repository.getPaginated(page, size)
-        val totalPages = (result.totalItems + size - 1) / size
+        val totalPages = if (size == 0) 0 else (result.totalItems + size - 1) / size
+        val next = if (page + 1 < totalPages) (page + 1).toString() else ""
+        val prev = if (page > 0) (page - 1).toString() else null
+        val count = result.countries.size
 
         return PaginatedResponseDto(
             info = PaginationInfoDto(
-                page = page,
-                size = size,
-                totalItems = result.totalItems,
-                totalPages = totalPages
+                count = count,
+                pages = totalPages,
+                next = next,
+                prev = prev
             ),
             items = result.countries.map { it.toResponseDto() }
         )

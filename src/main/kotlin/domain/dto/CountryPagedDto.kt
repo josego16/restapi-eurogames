@@ -17,8 +17,8 @@ data class CountryPageResult(
 
 @Serializable
 data class PaginationInfoDto(
-    val page: Int,
-    val size: Int,
-    val totalItems: Int,
-    val totalPages: Int
+    val count: Int,
+    val pages: Int,
+    val next: String?,
+    val prev: String?
 )
