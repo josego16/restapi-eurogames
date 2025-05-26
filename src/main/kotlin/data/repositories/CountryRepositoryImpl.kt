@@ -36,7 +36,7 @@ class CountryRepositoryImpl : CountryInterface {
 
             CountryPageResult(
                 countries = countries,
-                totalCount = totalItems.toInt()
+                totalItems = totalItems.toInt()
             )
         }
     }.onFailure {
