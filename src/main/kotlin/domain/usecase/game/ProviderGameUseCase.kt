@@ -1,7 +1,6 @@
 package domain.usecase.game
 
 import data.repositories.GameRepositoryImpl
-import domain.dto.GameDetailDto
 import domain.dto.GameResponseDto
 import domain.interfaces.GameInterface
 
@@ -12,7 +11,7 @@ object ProviderGameUseCase {
     private val getGameByIdUseCase = GetGameByIdUseCase(repository)
 
     suspend fun getAllGames(): List<GameResponseDto> = getAllGamesUseCase()
-    suspend fun getGameById(id: Int): GameDetailDto? {
+    suspend fun getGameById(id: Int): GameResponseDto? {
         return getGameByIdUseCase(id)
     }
 }

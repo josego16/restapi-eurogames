@@ -6,7 +6,6 @@ import domain.enums.ResponseMode
 import org.jetbrains.exposed.dao.id.IntIdTable
 
 object QuestionTable : IntIdTable("question") {
-    val countryId = reference("country_id", CountryTable)
     val statement = text("statement")
     val questionType = enumerationByName("question_type", 50, QuestionType::class)
     val responseMode = enumerationByName("response_mode", 50, ResponseMode::class)

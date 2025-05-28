@@ -14,11 +14,9 @@ class QuestionDao(id: EntityID<Int>) : IntEntity(id) {
     var difficulty by QuestionTable.difficulty
     var imageUrl by QuestionTable.imageUrl
     var responseMode by QuestionTable.responseMode
-    var countryId by CountryDao referencedOn QuestionTable.countryId
 
     fun toDomain() = Question(
         id.value,
-        countryId.id.value,
         statement,
         questionType,
         responseMode,

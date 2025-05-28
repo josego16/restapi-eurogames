@@ -12,7 +12,6 @@ class RegisterUseCase(
     private val hasher: PasswordInterface,
 ) {
     suspend operator fun invoke(dto: UserRegisterDto): UserResponseDto? {
-        println("[REGISTER] Comprobando si el usuario existe: ${dto.username}")
         val userExists = repository.findByUsername(dto.username) != null
         if (userExists) {
             println("[REGISTER] Usuario ya existente: ${dto.username}")

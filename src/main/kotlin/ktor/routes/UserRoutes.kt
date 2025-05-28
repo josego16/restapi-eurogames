@@ -49,7 +49,6 @@ fun Routing.userRouting() {
         post("/login") {
             println("[LOGIN] Petición recibida en /auth/login")
             val dto = call.receive<UserLoginDto>()
-            println("[LOGIN] DTO recibido: $dto")
             val authResult = ProviderUserUseCase.login(dto)
 
             if (authResult == null) {
@@ -63,7 +62,6 @@ fun Routing.userRouting() {
         post("/register") {
             println("[REGISTER] Petición recibida en /auth/register")
             val dto = call.receive<UserRegisterDto>()
-            println("[REGISTER] DTO recibido: $dto")
             val authResult = ProviderUserUseCase.register(dto)
 
             if (authResult == null) {

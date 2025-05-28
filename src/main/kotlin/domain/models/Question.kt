@@ -8,7 +8,6 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Question(
     var id: Int,
-    val countryId: Int,
     val statement: String,
     val questionType: QuestionType,
     val responseMode: ResponseMode,

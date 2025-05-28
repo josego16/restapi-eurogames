@@ -7,7 +7,6 @@ import domain.models.QuestionWithAnswer
 
 fun Question.toResponseDto(): QuestionResponseDto = QuestionResponseDto(
     id = id,
-    countryId = countryId,
     statement = statement,
     questionType = questionType,
     responseMode = responseMode,
@@ -17,7 +16,6 @@ fun Question.toResponseDto(): QuestionResponseDto = QuestionResponseDto(
 
 fun QuestionWithAnswer.toDto(): QuestionWithAnswersDto = QuestionWithAnswersDto(
     id = question.id,
-    countryId = question.countryId,
     statement = question.statement,
     questionType = question.questionType,
     responseMode = question.responseMode,
