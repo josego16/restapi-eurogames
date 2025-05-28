@@ -16,12 +16,12 @@ $$
             CREATE TYPE question_type AS ENUM (
                 'Flag_Quiz', 'Coat_Quiz', 'History_Quiz',
                 'Geography_Quiz', 'Sports_Quiz',
-                'Mythology_Quiz', 'GeneralKnowledge_Quiz'
+                'Mythology_Quiz', 'General_Knowledge_Quiz'
                 );
         END IF;
 
         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'response_mode') THEN
-            CREATE TYPE response_mode AS ENUM ('True_or_false','Multiple_Choice', 'Free_Text');
+            CREATE TYPE response_mode AS ENUM ('True_or_false','Multiple_choice', 'Free_Text');
         END IF;
 
         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'session_status') THEN

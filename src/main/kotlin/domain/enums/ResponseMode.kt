@@ -5,6 +5,6 @@ import kotlinx.serialization.Serializable
 @Serializable
 enum class ResponseMode {
     True_or_false,
-    Multiple_Choice,
+    Multiple_choice,
     Free_Text
 }
