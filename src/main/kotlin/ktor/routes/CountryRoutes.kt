@@ -2,61 +2,40 @@ package ktor.routes
 
 import domain.usecase.country.ProviderCountryUseCase
 import io.ktor.http.*
+import io.ktor.server.auth.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
 fun Routing.countryRouting() {
-    route("/countries") {
-        get {
-            val countries = ProviderCountryUseCase.getAllCountries()
-            call.respond(countries)
-        }
-        get("/paginated") {
-            val page = call.request.queryParameters["page"]?.toIntOrNull() ?: 0
-            val size = call.request.queryParameters["size"]?.toIntOrNull() ?: 20
+    authenticate("jwt-auth") {
+        route("/countries") {
+            get {
+                val countries = ProviderCountryUseCase.getAllCountries()
+                call.respond(countries)
+            }
+            get("/paginated") {
+                val page = call.request.queryParameters["page"]?.toIntOrNull() ?: 0
+                val size = call.request.queryParameters["size"]?.toIntOrNull() ?: 20
 
-            val result = ProviderCountryUseCase.getCountriesPaginated(page, size)
-            call.respond(result)
-        }
-
-        get("/{id}") {
-            val idParam = call.parameters["id"]
-            val id = idParam?.toIntOrNull()
-            if (id == null) {
-                call.respond(HttpStatusCode.BadRequest, "Id no valido")
-                return@get
+                val result = ProviderCountryUseCase.getCountriesPaginated(page, size)
+                call.respond(result)
             }
 
-            val country = ProviderCountryUseCase.getCountryById(id)
-            if (country == null) {
-                call.respond(HttpStatusCode.NotFound, "País no encontrado")
-            } else {
-                call.respond(country)
+            get("/{id}") {
+                val idParam = call.parameters["id"]
+                val id = idParam?.toIntOrNull()
+                if (id == null) {
+                    call.respond(HttpStatusCode.BadRequest, "Id no valido")
+                    return@get
+                }
+
+                val country = ProviderCountryUseCase.getCountryById(id)
+                if (country == null) {
+                    call.respond(HttpStatusCode.NotFound, "País no encontrado")
+                } else {
+                    call.respond(country)
+                }
             }
-        }
-
-        get("/filter") {
-            val region = call.request.queryParameters["region"]?.lowercase()
-            val subregion = call.request.queryParameters["subregion"]?.lowercase()
-            val minPop = call.request.queryParameters["minPop"]?.toLongOrNull()
-            val maxPop = call.request.queryParameters["maxPop"]?.toLongOrNull()
-
-            val filtered = ProviderCountryUseCase.filterCountries(region, subregion, minPop, maxPop)
-            call.respond(filtered)
-        }
-
-        get("/search") {
-            val text = call.request.queryParameters["text"]?.lowercase()
-            val results = ProviderCountryUseCase.searchCountries(text)
-            call.respond(results)
-        }
-
-        get("/sort") {
-            val sortBy = call.request.queryParameters["by"]
-            val desc = call.request.queryParameters["desc"]?.toBooleanStrictOrNull() ?: false
-
-            val sorted = ProviderCountryUseCase.sortedCountries(sortBy, desc)
-            call.respond(sorted)
         }
     }
 }

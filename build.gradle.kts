@@ -45,10 +45,6 @@ dependencies {
     // ───── LOGGING ─────
     implementation(libs.logback.classic)
 
-    // ───── MONITORING ─────
-    implementation(libs.micrometer.registry.prometheus)
-    implementation(libs.ktor.server.metrics.micrometer)
-
     // ───── SECURITY ─────
     implementation(libs.bcrypt)
 

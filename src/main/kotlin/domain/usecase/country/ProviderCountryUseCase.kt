@@ -12,9 +12,6 @@ object ProviderCountryUseCase {
     private val getAllCountriesUseCase = GetAllCountriesUseCase(repository)
     private val getCountriesPaginatedUseCase = GetCountriesPaginatedUseCase(repository)
     private val getCountryByIdUseCase = GetCountryByIdUseCase(repository)
-    private val filterCountriesUseCase = FilterCountriesUseCase(repository)
-    private val sortCountriesUseCase = SortCountriesUseCase(repository)
-    private val searchCountriesUseCase = SearchCountriesUseCase(repository)
 
     suspend fun getAllCountries(): List<CountryResponseDto> {
         return getAllCountriesUseCase()
@@ -26,17 +23,5 @@ object ProviderCountryUseCase {
 
     suspend fun getCountryById(id: Int): CountryDetailDto? {
         return getCountryByIdUseCase(id)
-    }
-
-    suspend fun filterCountries(region: String?, subregion: String?, min: Long?, max: Long?): List<CountryResponseDto> {
-        return filterCountriesUseCase(region, subregion, min, max)
-    }
-
-    suspend fun sortedCountries(sortBy: String?, descending: Boolean): List<CountryResponseDto> {
-        return sortCountriesUseCase(sortBy, descending)
-    }
-
-    suspend fun searchCountries(text: String?): List<CountryResponseDto> {
-        return searchCountriesUseCase(text)
     }
 }

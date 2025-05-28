@@ -1,6 +1,5 @@
 package domain.dto
 
-import domain.enums.Difficulty
 import domain.enums.GameType
 import kotlinx.serialization.Serializable
 
@@ -8,15 +7,7 @@ import kotlinx.serialization.Serializable
 data class GameResponseDto(
     val id: Int,
     val name: String,
-    val imageUrl: String? = null,
-)
-
-@Serializable
-data class GameDetailDto(
-    val id: Int,
-    val name: String,
     val gameType: GameType,
-    val difficulty: Difficulty,
     val imageUrl: String? = null,
     val description: String? = null,
 )

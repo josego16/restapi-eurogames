@@ -14,7 +14,7 @@ $$
 
         IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'question_type') THEN
             CREATE TYPE question_type AS ENUM (
-                'Flag_Guess', 'Coat_Quiz', 'History_Quiz',
+                'Flag_Quiz', 'Coat_Quiz', 'History_Quiz',
                 'Geography_Quiz', 'Sports_Quiz',
                 'Mythology_Quiz', 'GeneralKnowledge_Quiz'
                 );
@@ -42,7 +42,6 @@ CREATE TABLE IF NOT EXISTS country
     capital       VARCHAR(255) NOT NULL,
     region        VARCHAR(255) NOT NULL,
     subregion     VARCHAR(255) NOT NULL,
-    language      VARCHAR(255) NOT NULL DEFAULT 'Unknown',
     population    BIGINT       NOT NULL,
     timezones     VARCHAR(255) NOT NULL,
     continents    VARCHAR(255) NOT NULL,
@@ -66,7 +65,6 @@ CREATE TABLE game
     id          SERIAL PRIMARY KEY,
     name        VARCHAR(255) NOT NULL,
     game_type   game_type    NOT NULL,
-    difficulty  difficulty   NOT NULL,
     image_url   VARCHAR(512),
     description TEXT         NOT NULL
 );

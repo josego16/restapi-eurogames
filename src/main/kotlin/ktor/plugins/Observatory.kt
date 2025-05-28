@@ -2,20 +2,13 @@ package ktor.plugins
 
 import io.ktor.http.*
 import io.ktor.server.application.*
-import io.ktor.server.metrics.micrometer.*
 import io.ktor.server.plugins.callid.*
 import io.ktor.server.plugins.calllogging.*
 import io.ktor.server.plugins.cors.routing.*
 import io.ktor.server.request.*
-import ktor.prometheusRegistry
 import org.slf4j.event.Level
 
 fun Application.configureObservatory() {
-
-    install(MicrometerMetrics) {
-        registry = prometheusRegistry
-    }
-
     install(CallId) {
         header(HttpHeaders.XRequestId)
         generate {

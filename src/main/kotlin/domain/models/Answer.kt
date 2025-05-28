@@ -7,5 +7,5 @@ data class Answer(
     var id: Int,
     val questionId: Int,
     val text: String,
-    val isCorrect: Boolean,
+    val isCorrect: Boolean
 )

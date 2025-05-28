@@ -8,7 +8,6 @@ object CountryTable : IntIdTable("country") {
     val capital = varchar("capital", 255)
     val region = varchar("region", 255)
     val subregion = varchar("subregion", 255)
-    val language = varchar("language", 255)
     val population = long("population")
     val timezones = varchar("timezones", 255)
     val continents = varchar("continents", 255)

@@ -9,7 +9,6 @@ fun Country.toResponseDto(): CountryResponseDto = CountryResponseDto(
     nameCommon = nameCommon,
     capital = capital,
     region = region,
-    subregion = subregion,
     flagUrl = flagUrl,
 )
 
@@ -20,11 +19,10 @@ fun Country.toDetailDto(): CountryDetailDto = CountryDetailDto(
     capital = capital,
     region = region,
     subregion = subregion,
-    language = language,
     population = population,
     timezones = timezones,
     continents = continents,
     flagUrl = flagUrl,
     shieldUrl = shieldUrl,
-    startOfWeek = startOfWeek,
+    startOfWeek = startOfWeek
 )

@@ -3,4 +3,4 @@ package domain.enums
 import kotlinx.serialization.Serializable
 
 @Serializable
-enum class GameType { GuessTheFlag, Quiz }
+enum class GameType { Guess_the_flag, Quiz, Unknown }

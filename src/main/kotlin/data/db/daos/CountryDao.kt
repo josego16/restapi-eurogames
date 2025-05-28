@@ -14,7 +14,6 @@ class CountryDao(id: EntityID<Int>) : IntEntity(id) {
     var capital by CountryTable.capital
     var region by CountryTable.region
     var subregion by CountryTable.subregion
-    var language by CountryTable.language
     var population by CountryTable.population
     var timezones by CountryTable.timezones
     var continents by CountryTable.continents
@@ -29,7 +28,6 @@ class CountryDao(id: EntityID<Int>) : IntEntity(id) {
         capital = capital.split(",").map { it.trim() }.filter { it.isNotEmpty() },
         region,
         subregion,
-        language,
         population,
         timezones = timezones.split(",").map { it.trim() }.filter { it.isNotEmpty() },
         continents = continents.split(",").map { it.trim() }.filter { it.isNotEmpty() },
