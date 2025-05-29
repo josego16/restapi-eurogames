@@ -5,24 +5,24 @@ import domain.auth.JwtConfig
 import domain.auth.PasswordHash
 import domain.auth.PasswordInterface
 import domain.dto.*
-import domain.interfaces.UserInterface
-import domain.usecase.user.auth.LoginUseCase
-import domain.usecase.user.auth.RegisterUseCase
+import domain.interfaces.UserRepository
+import domain.usecase.user.auth.SignInUseCase
+import domain.usecase.user.auth.SignUpUseCase
 
 object ProviderUserUseCase {
-    private val repository: UserInterface = UserRepositoryImpl()
+    private val repository: UserRepository = UserRepositoryImpl()
     private val jwt: JwtConfig = JwtConfig
     private val hasher: PasswordInterface = PasswordHash
 
     private val getAllUsersUseCase = GetAllUsersUseCase(repository)
     private val getUserByIdUseCase = GetUserByIdUseCase(repository)
-    private val loginUseCase = LoginUseCase(repository, hasher, jwt)
-    private val registerUseCase = RegisterUseCase(repository, hasher)
+    private val signInUseCase = SignInUseCase(repository, hasher, jwt)
+    private val signUpUseCase = SignUpUseCase(repository, hasher)
     private val updateUserUseCase = UpdateUserUseCase(repository)
 
     suspend fun getAllUsers(): List<UserResponseDto> = getAllUsersUseCase()
     suspend fun getUserById(id: Int): UserResponseDto? = getUserByIdUseCase(id)
-    suspend fun login(dto: UserLoginDto): AuthResponseDto? = loginUseCase(dto)
-    suspend fun register(dto: UserRegisterDto): UserResponseDto? = registerUseCase(dto)
+    suspend fun login(dto: UserLoginDto): AuthResponseDto? = signInUseCase(dto)
+    suspend fun register(dto: UserRegisterDto): UserResponseDto? = signUpUseCase(dto)
     suspend fun updateUser(id: Int, dto: UserUpdateDto): UserResponseDto? = updateUserUseCase(id, dto)
 }

@@ -3,12 +3,12 @@ package domain.usecase.user.auth
 import domain.auth.PasswordInterface
 import domain.dto.UserRegisterDto
 import domain.dto.UserResponseDto
-import domain.interfaces.UserInterface
+import domain.interfaces.UserRepository
 import domain.mappers.toModel
 import domain.mappers.toResponseDto
 
-class RegisterUseCase(
-    private val repository: UserInterface,
+class SignUpUseCase(
+    private val repository: UserRepository,
     private val hasher: PasswordInterface,
 ) {
     suspend operator fun invoke(dto: UserRegisterDto): UserResponseDto? {

@@ -4,11 +4,11 @@ import domain.auth.JwtConfig
 import domain.auth.PasswordInterface
 import domain.dto.AuthResponseDto
 import domain.dto.UserLoginDto
-import domain.interfaces.UserInterface
+import domain.interfaces.UserRepository
 import domain.mappers.toResponseDto
 
-class LoginUseCase(
-    private val repository: UserInterface,
+class SignInUseCase(
+    private val repository: UserRepository,
     private val hasher: PasswordInterface,
     private val jwt: JwtConfig
 ) {

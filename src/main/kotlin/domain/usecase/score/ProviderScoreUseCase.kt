@@ -2,10 +2,10 @@ package domain.usecase.score
 
 import data.repositories.ScoreRepositoryImpl
 import domain.dto.ScoreResponseDto
-import domain.interfaces.ScoreInterface
+import domain.interfaces.ScoreRepository
 
 object ProviderScoreUseCase {
-    private val repository: ScoreInterface = ScoreRepositoryImpl()
+    private val repository: ScoreRepository = ScoreRepositoryImpl()
 
     private val getAllScoresUseCase = GetAllScoresUseCase(repository)
     private val getScoreByIdUseCase = GetScoreByIdUseCase(repository)

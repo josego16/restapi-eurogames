@@ -2,12 +2,12 @@ package data.repositories
 
 import data.db.daos.AnswerDao
 import data.db.suspendedTransaction
-import domain.interfaces.AnswerInterface
+import domain.interfaces.AnswerRepository
 import domain.models.Answer
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
-class AnswerRepositoryImpl : AnswerInterface {
+class AnswerRepositoryImpl : AnswerRepository {
     private val logger: Logger = LoggerFactory.getLogger(AnswerRepositoryImpl::class.java)
 
     override suspend fun getAll(): List<Answer> = runCatching {

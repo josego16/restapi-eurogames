@@ -2,7 +2,7 @@ package domain.interfaces
 
 import domain.models.Game
 
-interface GameInterface{
+interface GameRepository{
     suspend fun getAll(): List<Game>
     suspend fun getById(id: Int): Game?
 }

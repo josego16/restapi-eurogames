@@ -4,12 +4,12 @@ import data.db.daos.UserDao
 import data.db.suspendedTransaction
 import data.db.tables.UserTable
 import domain.auth.PasswordHash
-import domain.interfaces.UserInterface
+import domain.interfaces.UserRepository
 import domain.models.User
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
-class UserRepositoryImpl : UserInterface {
+class UserRepositoryImpl : UserRepository {
     private val logger: Logger = LoggerFactory.getLogger(UserRepositoryImpl::class.java)
 
     override suspend fun getAll(): List<User> = runCatching {

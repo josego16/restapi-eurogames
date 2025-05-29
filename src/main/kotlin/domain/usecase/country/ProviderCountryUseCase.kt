@@ -4,10 +4,10 @@ import data.repositories.CountryRepositoryImpl
 import domain.dto.CountryDetailDto
 import domain.dto.CountryResponseDto
 import domain.dto.PaginatedResponseDto
-import domain.interfaces.CountryInterface
+import domain.interfaces.CountryRepository
 
 object ProviderCountryUseCase {
-    private val repository: CountryInterface = CountryRepositoryImpl()
+    private val repository: CountryRepository = CountryRepositoryImpl()
 
     private val getAllCountriesUseCase = GetAllCountriesUseCase(repository)
     private val getCountriesPaginatedUseCase = GetCountriesPaginatedUseCase(repository)

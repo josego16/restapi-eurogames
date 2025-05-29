@@ -4,10 +4,10 @@ import data.repositories.GameSessionRepositoryImpl
 import domain.dto.GameSessionCreateDto
 import domain.dto.GameSessionResponseDto
 import domain.enums.SessionStatus
-import domain.interfaces.GameSessionInterface
+import domain.interfaces.GameSessionRepository
 
 object ProviderGameSessionUseCase {
-    private val repository: GameSessionInterface = GameSessionRepositoryImpl()
+    private val repository: GameSessionRepository = GameSessionRepositoryImpl()
 
     private val getAllGameSessionsUseCase = GetAllGameSessionsUseCase(repository)
     private val getGameSessionByIdUseCase = GetGameSessionByIdUseCase(repository)

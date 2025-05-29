@@ -2,12 +2,12 @@ package data.repositories
 
 import data.db.daos.GameDao
 import data.db.suspendedTransaction
-import domain.interfaces.GameInterface
+import domain.interfaces.GameRepository
 import domain.models.Game
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
-class GameRepositoryImpl : GameInterface {
+class GameRepositoryImpl : GameRepository {
     private val logger: Logger = LoggerFactory.getLogger(GameRepositoryImpl::class.java)
 
     override suspend fun getAll(): List<Game> = runCatching {

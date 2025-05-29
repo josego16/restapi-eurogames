@@ -4,13 +4,13 @@ import data.db.daos.GameSessionDao
 import data.db.suspendedTransaction
 import domain.dto.GameSessionCreateDto
 import domain.enums.SessionStatus
-import domain.interfaces.GameSessionInterface
+import domain.interfaces.GameSessionRepository
 import domain.mappers.toDomain
 import domain.models.GameSession
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
-class GameSessionRepositoryImpl : GameSessionInterface {
+class GameSessionRepositoryImpl : GameSessionRepository {
     private val logger: Logger = LoggerFactory.getLogger(GameSessionRepositoryImpl::class.java)
 
     override suspend fun getAll(): List<GameSession> = runCatching {

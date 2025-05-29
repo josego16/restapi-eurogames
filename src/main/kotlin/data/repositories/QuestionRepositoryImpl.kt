@@ -6,13 +6,13 @@ import data.db.suspendedTransaction
 import data.db.tables.AnswerTable
 import data.db.tables.QuestionTable
 import domain.enums.Difficulty
-import domain.interfaces.QuestionInterface
+import domain.interfaces.QuestionRepository
 import domain.models.Question
 import domain.models.QuestionWithAnswer
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
-class QuestionRepositoryImpl : QuestionInterface {
+class QuestionRepositoryImpl : QuestionRepository {
     private val logger: Logger = LoggerFactory.getLogger(QuestionRepositoryImpl::class.java)
 
     override suspend fun getAll(): List<Question> = runCatching {

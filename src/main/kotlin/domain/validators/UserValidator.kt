@@ -1,4 +1,4 @@
-package domain.utils.validators
+package domain.validators
 
 import domain.dto.UserLoginDto
 import domain.dto.UserRegisterDto

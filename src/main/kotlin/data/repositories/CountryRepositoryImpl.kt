@@ -3,12 +3,12 @@ package data.repositories
 import data.db.daos.CountryDao
 import data.db.suspendedTransaction
 import domain.dto.CountryPageResult
-import domain.interfaces.CountryInterface
+import domain.interfaces.CountryRepository
 import domain.models.Country
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
-class CountryRepositoryImpl : CountryInterface {
+class CountryRepositoryImpl : CountryRepository {
     private val logger: Logger = LoggerFactory.getLogger(CountryRepositoryImpl::class.java)
 
     override suspend fun getAll(): List<Country> = runCatching {

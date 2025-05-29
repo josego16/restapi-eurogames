@@ -2,7 +2,7 @@ package domain.interfaces
 
 import domain.models.User
 
-interface UserInterface {
+interface UserRepository {
     suspend fun getAll(): List<User>
     suspend fun getById(id: Int): User?
     suspend fun create(user: User): User

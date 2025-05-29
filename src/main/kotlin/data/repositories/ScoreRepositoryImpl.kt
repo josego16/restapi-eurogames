@@ -2,12 +2,12 @@ package data.repositories
 
 import data.db.daos.ScoreDao
 import data.db.suspendedTransaction
-import domain.interfaces.ScoreInterface
+import domain.interfaces.ScoreRepository
 import domain.models.Score
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
-class ScoreRepositoryImpl : ScoreInterface {
+class ScoreRepositoryImpl : ScoreRepository {
     private val logger: Logger = LoggerFactory.getLogger(ScoreRepositoryImpl::class.java)
 
     override suspend fun getAll(): List<Score> = runCatching {

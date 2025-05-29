@@ -1,10 +1,10 @@
 package domain.usecase.question
 
 import domain.dto.QuestionResponseDto
-import domain.interfaces.QuestionInterface
+import domain.interfaces.QuestionRepository
 import domain.mappers.toResponseDto
 
-class GetAllQuestionsUseCase(private val repository: QuestionInterface) {
+class GetAllQuestionsUseCase(private val repository: QuestionRepository) {
     suspend operator fun invoke(): List<QuestionResponseDto> {
         return repository.getAll().map { it.toResponseDto() }
     }

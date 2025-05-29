@@ -3,10 +3,10 @@ package domain.usecase.country
 import domain.dto.CountryResponseDto
 import domain.dto.PaginatedResponseDto
 import domain.dto.PaginationInfoDto
-import domain.interfaces.CountryInterface
+import domain.interfaces.CountryRepository
 import domain.mappers.toResponseDto
 
-class GetCountriesPaginatedUseCase(private val repository: CountryInterface) {
+class GetCountriesPaginatedUseCase(private val repository: CountryRepository) {
     suspend operator fun invoke(page: Int, size: Int): PaginatedResponseDto<CountryResponseDto> {
         val result = repository.getPaginated(page, size)
         val totalPages = if (size == 0) 0 else (result.totalItems + size - 1) / size
