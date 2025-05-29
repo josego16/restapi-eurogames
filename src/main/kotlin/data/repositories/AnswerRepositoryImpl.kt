@@ -25,4 +25,13 @@ class AnswerRepositoryImpl : AnswerInterface {
     }.onFailure {
         logger.error("Error al obtener respuesta con ID $id", it)
     }.getOrNull()
+
+    override suspend fun isAnswerCorrect(questionId: Int, answerId: Int): Boolean = runCatching {
+        suspendedTransaction {
+            val answer = AnswerDao.findById(answerId)
+            answer != null && answer.questionId.id.value == questionId && answer.isCorrect
+        }
+    }.onFailure {
+        logger.error("Error al verificar si la respuesta es correcta para la pregunta $questionId y respuesta $answerId", it)
+    }.getOrDefault(false)
 }

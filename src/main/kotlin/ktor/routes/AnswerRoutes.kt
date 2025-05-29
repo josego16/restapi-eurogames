@@ -27,6 +27,23 @@ fun Routing.answerRouting() {
                     call.respond(answer)
                 }
             }
+            get("/isCorrect") {
+                val questionIdParam = call.parameters["questionId"]
+                val answerIdParam = call.parameters["answerId"]
+
+                val questionId = questionIdParam?.toIntOrNull()
+                val answerId = answerIdParam?.toIntOrNull()
+
+                if (questionId == null || answerId == null) {
+                    call.respond(HttpStatusCode.BadRequest, "Parámetros inválidos")
+                    return@get
+                }
+
+                val isCorrect = ProviderAnswersUseCase.isAnswerCorrect(questionId, answerId)
+                call.respond(HttpStatusCode.OK, mapOf("isCorrect" to isCorrect))
+            }
+            get("") {
+            }
         }
     }
 }
