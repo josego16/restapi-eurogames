@@ -1,5 +1,6 @@
 package ktor.routes
 
+import domain.enums.Difficulty
 import domain.usecase.question.ProviderQuestionUseCase
 import io.ktor.http.*
 import io.ktor.server.auth.*
@@ -7,7 +8,7 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
 fun Routing.questionRouting() {
-    authenticate("jwt-auth"){
+    authenticate("jwt-auth") {
         route("/questions") {
             get {
                 val questions = ProviderQuestionUseCase.getAllQuestions()
@@ -32,6 +33,24 @@ fun Routing.questionRouting() {
             get {
                 val questionwithanswer = ProviderQuestionUseCase.getAllQuestionWithAnswer()
                 call.respond(questionwithanswer)
+            }
+            get("/difficulty/{difficulty}") {
+                val difficultyParam = call.parameters["difficulty"]
+
+                runCatching {
+                    val difficulty = Difficulty.valueOf(
+                        difficultyParam ?: throw IllegalArgumentException()
+                    )
+                    val questionsWithAnswer = ProviderQuestionUseCase.getQuestionwithAnswerBydifficulty(difficulty)
+
+                    if (questionsWithAnswer.isEmpty()) {
+                        call.respond(HttpStatusCode.NotFound, "No se encontraron preguntas con esa dificultad")
+                    } else {
+                        call.respond(questionsWithAnswer)
+                    }
+                }.onFailure {
+                    call.respond(HttpStatusCode.BadRequest, "Dificultad no válida")
+                }.getOrNull()
             }
         }
     }

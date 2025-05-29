@@ -4,6 +4,8 @@ import data.db.daos.AnswerDao
 import data.db.daos.QuestionDao
 import data.db.suspendedTransaction
 import data.db.tables.AnswerTable
+import data.db.tables.QuestionTable
+import domain.enums.Difficulty
 import domain.interfaces.QuestionInterface
 import domain.models.Question
 import domain.models.QuestionWithAnswer
@@ -18,7 +20,7 @@ class QuestionRepositoryImpl : QuestionInterface {
             QuestionDao.all().map { it.toDomain() }
         }
     }.onFailure {
-        logger.error("Error al obtener todas las respuestas",it)
+        logger.error("Error al obtener todas las respuestas", it)
     }.getOrDefault(emptyList())
 
     override suspend fun getById(id: Int): Question? = runCatching {
@@ -40,4 +42,17 @@ class QuestionRepositoryImpl : QuestionInterface {
     }.onFailure {
         logger.error("Error al obtener todas las preguntas con respuestas", it)
     }.getOrDefault(emptyList())
+
+    override suspend fun getQuestionsWithAnswersByDifficulty(difficulty: Difficulty): List<QuestionWithAnswer> =
+        runCatching {
+            suspendedTransaction {
+                QuestionDao.find { QuestionTable.difficulty eq difficulty }.map { questionDao ->
+                    val question = questionDao.toDomain()
+                    val answers = AnswerDao.find { AnswerTable.questionId eq question.id }.map { it.toDomain() }
+                    QuestionWithAnswer(question, answers)
+                }
+            }
+        }.onFailure {
+            logger.error("Error al obtener preguntas con respuestas por dificultad $difficulty", it)
+        }.getOrDefault(emptyList())
 }
