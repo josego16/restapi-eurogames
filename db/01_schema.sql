@@ -1,36 +1,4 @@
 -- ========================================================
--- ENUMS
--- ========================================================
-DO
-$$
-    BEGIN
-        IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'difficulty') THEN
-            CREATE TYPE difficulty AS ENUM ('Easy', 'Medium', 'Hard');
-        END IF;
-
-        IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'game_type') THEN
-            CREATE TYPE game_type AS ENUM ('Guess_the_flag','Quiz');
-        END IF;
-
-        IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'question_type') THEN
-            CREATE TYPE question_type AS ENUM (
-                'Flag_Quiz', 'Coat_Quiz', 'History_Quiz',
-                'Geography_Quiz', 'Sports_Quiz',
-                'Mythology_Quiz', 'General_Knowledge_Quiz'
-                );
-        END IF;
-
-        IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'response_mode') THEN
-            CREATE TYPE response_mode AS ENUM ('True_or_false','Multiple_choice', 'Free_Text');
-        END IF;
-
-        IF NOT EXISTS (SELECT 1 FROM pg_type WHERE typname = 'session_status') THEN
-            CREATE TYPE session_status AS ENUM ('In_Progress', 'Finished');
-        END IF;
-    END
-$$;
-
--- ========================================================
 -- TABLAS
 -- ========================================================
 
@@ -50,7 +18,7 @@ CREATE TABLE IF NOT EXISTS country
     start_of_week VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE auth
+CREATE TABLE IF NOT EXISTS auth
 (
     id        SERIAL PRIMARY KEY,
     full_name VARCHAR(255),
@@ -60,37 +28,37 @@ CREATE TABLE auth
     avatar    VARCHAR(512)
 );
 
-CREATE TABLE game
+CREATE TABLE IF NOT EXISTS game
 (
     id          SERIAL PRIMARY KEY,
     name        VARCHAR(255) NOT NULL,
-    game_type   game_type    NOT NULL,
+    game_type   VARCHAR(50)  NOT NULL,
     image_url   VARCHAR(512),
     description TEXT         NOT NULL
 );
 
-CREATE TABLE game_session
+CREATE TABLE IF NOT EXISTS game_session
 (
     id            SERIAL PRIMARY KEY,
     user_id       INTEGER REFERENCES auth (id) ON DELETE CASCADE,
     game_id       INTEGER REFERENCES game (id) ON DELETE CASCADE,
     score_session DOUBLE PRECISION NOT NULL,
-    game_type     game_type        NOT NULL,
-    difficulty    difficulty       NOT NULL,
+    game_type     VARCHAR(50)      NOT NULL,
+    difficulty    VARCHAR(50)      NOT NULL,
     played_at     TIMESTAMP        NOT NULL DEFAULT now()
 );
 
-CREATE TABLE question
+CREATE TABLE IF NOT EXISTS question
 (
     id            SERIAL PRIMARY KEY,
-    statement     TEXT          NOT NULL,
-    question_type question_type NOT NULL,
-    response_mode response_mode NOT NULL,
-    difficulty    difficulty    NOT NULL,
+    statement     TEXT        NOT NULL,
+    question_type VARCHAR(50) NOT NULL,
+    response_mode VARCHAR(50) NOT NULL,
+    difficulty    VARCHAR(50) NOT NULL,
     image_url     VARCHAR(512)
 );
 
-CREATE TABLE answer
+CREATE TABLE IF NOT EXISTS answer
 (
     id          SERIAL PRIMARY KEY,
     question_id INTEGER REFERENCES question (id) ON DELETE CASCADE,
@@ -98,13 +66,13 @@ CREATE TABLE answer
     is_correct  BOOLEAN NOT NULL
 );
 
-CREATE TABLE score
+CREATE TABLE IF NOT EXISTS score
 (
     id          SERIAL PRIMARY KEY,
     user_id     INTEGER REFERENCES auth (id) ON DELETE CASCADE,
     game_id     INTEGER REFERENCES game (id) ON DELETE CASCADE,
     score_value DOUBLE PRECISION NOT NULL,
-    game_type   game_type        NOT NULL,
-    difficulty  difficulty       NOT NULL,
+    game_type   VARCHAR(50)      NOT NULL,
+    difficulty  VARCHAR(50)      NOT NULL,
     recorded_at TIMESTAMP        NOT NULL DEFAULT now()
 );

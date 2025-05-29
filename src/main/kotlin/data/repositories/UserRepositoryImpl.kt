@@ -40,13 +40,7 @@ class UserRepositoryImpl : UserInterface {
 
     override suspend fun create(user: User): User = runCatching {
         suspendedTransaction {
-            UserDao.new {
-                fullName = user.fullName
-                username = user.username
-                password = user.password
-                email = user.email
-                avatar = user.avatar ?: ""
-            }.toDomain()
+            UserDao.fromDomain(user).toDomain()
         }
     }.onFailure {
         logger.error("Error al registrar usuario", it)
@@ -54,18 +48,16 @@ class UserRepositoryImpl : UserInterface {
 
     override suspend fun update(id: Int, user: User): User? = runCatching {
         suspendedTransaction {
-            val dao = UserDao.findById(id) ?: return@suspendedTransaction null
+            val existing = UserDao.findById(id) ?: return@suspendedTransaction null
 
-            dao.apply {
-                username = user.username
-                if (user.password.isNotBlank() && user.password != dao.password) {
-                    println("[DEBUG] Valor recibido en user.password: ${user.password}")
-                    password = PasswordHash.hash(user.password)
-                }
-                fullName = user.fullName
-                email = user.email
-                avatar = user.avatar ?: ""
-            }.toDomain()
+            // Solo hasheamos si cambió y no viene hasheada
+            val newPassword = if (
+                user.password.isNotBlank() &&
+                user.password != existing.password
+            ) PasswordHash.hash(user.password) else existing.password
+
+            val updatedUser = user.copy(password = newPassword)
+            UserDao.fromDomain(updatedUser, existing).toDomain()
         }
     }.onFailure {
         logger.error("Error al actualizar usuario con ID $id", it)

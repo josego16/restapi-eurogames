@@ -9,7 +9,13 @@ import org.jetbrains.exposed.dao.id.EntityID
 class UserDao(id: EntityID<Int>) : IntEntity(id) {
     companion object : IntEntityClass<UserDao>(UserTable) {
         fun fromDomain(domain: User, existing: UserDao? = null): UserDao {
-            return existing ?: new(domain.id) {
+            return existing?.apply {
+                fullName = domain.fullName
+                username = domain.username
+                email = domain.email
+                password = domain.password
+                avatar = domain.avatar ?: ""
+            } ?: new(domain.id) {
                 fullName = domain.fullName
                 username = domain.username
                 email = domain.email

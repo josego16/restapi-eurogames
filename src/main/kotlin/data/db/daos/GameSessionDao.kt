@@ -11,7 +11,7 @@ import org.jetbrains.exposed.dao.id.EntityID
 class GameSessionDao(id: EntityID<Int>) : IntEntity(id) {
     companion object : IntEntityClass<GameSessionDao>(GameSessionTable) {
         fun fromDomain(domain: GameSession, existing: GameSessionDao? = null): GameSessionDao {
-            return existing ?: new(domain.id) {
+            val dao = existing ?: new {
                 userId = UserDao[domain.userId]
                 gameId = GameDao[domain.gameId]
                 scoreSession = domain.scoreSession
@@ -21,11 +21,24 @@ class GameSessionDao(id: EntityID<Int>) : IntEntity(id) {
                 startedAt = domain.startedAt.toJavaInstant()
                 finishedAt = domain.finishedAt?.toJavaInstant()
             }
+
+            if (existing != null) {
+                dao.userId = UserDao[domain.userId]
+                dao.gameId = GameDao[domain.gameId]
+                dao.scoreSession = domain.scoreSession
+                dao.gameType = domain.gameType
+                dao.difficulty = domain.difficulty
+                dao.status = domain.status
+                dao.startedAt = domain.startedAt.toJavaInstant()
+                dao.finishedAt = domain.finishedAt?.toJavaInstant()
+            }
+
+            return dao
         }
     }
 
-    var userId by UserDao.Companion referencedOn GameSessionTable.userId
-    var gameId by GameDao.Companion referencedOn GameSessionTable.gameId
+    var userId by UserDao referencedOn GameSessionTable.userId
+    var gameId by GameDao referencedOn GameSessionTable.gameId
     var scoreSession by GameSessionTable.scoreSession
     var gameType by GameSessionTable.gameType
     var difficulty by GameSessionTable.difficulty
@@ -33,7 +46,7 @@ class GameSessionDao(id: EntityID<Int>) : IntEntity(id) {
     var startedAt by GameSessionTable.startedAt
     var finishedAt by GameSessionTable.finishedAt
 
-    fun toDomain() = GameSession(
+    fun toDomain(): GameSession = GameSession(
         id.value,
         userId.id.value,
         gameId.id.value,
