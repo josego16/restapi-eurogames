@@ -12,7 +12,8 @@ data class QuestionResponseDto(
     val questionType: QuestionType,
     val responseMode: ResponseMode,
     val difficulty: Difficulty,
-    val imageUrl: String? = null,
+    val flagUrl: String? = null,
+    val coatUrl: String? = null,
 )
 
 @Serializable
@@ -22,6 +23,7 @@ data class QuestionWithAnswersDto(
     val questionType: QuestionType,
     val responseMode: ResponseMode,
     val difficulty: Difficulty,
-    val imageUrl: String? = null,
+    val flagUrl: String? = null,
+    val coatUrl: String? = null,
     val answers: List<AnswerResponseDto>
 )

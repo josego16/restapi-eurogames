@@ -11,7 +11,8 @@ fun Question.toResponseDto(): QuestionResponseDto = QuestionResponseDto(
     questionType = questionType,
     responseMode = responseMode,
     difficulty = difficulty,
-    imageUrl = imageUrl
+    flagUrl = flagUrl,
+    coatUrl = coatUrl,
 )
 
 fun QuestionWithAnswer.toDto(): QuestionWithAnswersDto = QuestionWithAnswersDto(
@@ -20,6 +21,7 @@ fun QuestionWithAnswer.toDto(): QuestionWithAnswersDto = QuestionWithAnswersDto(
     questionType = question.questionType,
     responseMode = question.responseMode,
     difficulty = question.difficulty,
-    imageUrl = question.imageUrl,
+    flagUrl = question.flagUrl,
+    coatUrl = question.coatUrl,
     answers = answer.map { it.toResponseDto() }
 )

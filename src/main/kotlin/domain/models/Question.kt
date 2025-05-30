@@ -12,5 +12,6 @@ data class Question(
     val questionType: QuestionType,
     val responseMode: ResponseMode,
     val difficulty: Difficulty,
-    val imageUrl: String? = null
+    val flagUrl: String? = null,
+    val coatUrl: String? = null
 )

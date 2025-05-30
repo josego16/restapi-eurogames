@@ -1,7 +1,7 @@
 -- Question 1
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/pm.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Hard', 'Multiple_choice', 'https://flagcdn.com/w320/pm.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -15,8 +15,8 @@ SELECT id, 'Saint Pierre and Miquelon', TRUE FROM new_question;
 
 -- Question 2
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ie.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Medium','Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ie.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -30,8 +30,8 @@ SELECT id, 'Cuba', FALSE FROM new_question;
 
 -- Question 3
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/ps.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag', 'Medium', 'Multiple_choice', 'https://flagcdn.com/w320/ps.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -45,8 +45,8 @@ SELECT id, 'Vatican City', FALSE FROM new_question;
 
 -- Question 4
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/mf.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Medium','Multiple_choice', 'https://flagcdn.com/w320/mf.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -60,8 +60,8 @@ SELECT id, 'Myanmar', FALSE FROM new_question;
 
 -- Question 5
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/ca.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag', 'Easy','Multiple_choice', 'https://flagcdn.com/w320/ca.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -75,8 +75,8 @@ SELECT id, 'Croatia', FALSE FROM new_question;
 
 -- Question 6
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/mm.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Hard','Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/mm.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -90,8 +90,8 @@ SELECT id, 'France', FALSE FROM new_question;
 
 -- Question 7
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/nl.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Easy','Multiple_choice','https://flagcdn.com/w320/nl.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -105,8 +105,8 @@ SELECT id, 'Austria', FALSE FROM new_question;
 
 -- Question 8
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ke.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Hard','Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ke.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -120,8 +120,8 @@ SELECT id, 'Western Sahara', FALSE FROM new_question;
 
 -- Question 9
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/to.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Hard','Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/to.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -135,8 +135,8 @@ SELECT id, 'Slovenia', FALSE FROM new_question;
 
 -- Question 10
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/be.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Medium', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/be.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -150,8 +150,8 @@ SELECT id, 'Belgium', TRUE FROM new_question;
 
 -- Question 11
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/vg.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Hard', 'Multiple_choice', 'https://flagcdn.com/w320/vg.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -165,8 +165,8 @@ SELECT id, 'British Virgin Islands', TRUE FROM new_question;
 
 -- Question 12
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ki.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Hard', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ki.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -180,8 +180,8 @@ SELECT id, 'Kiribati', TRUE FROM new_question;
 
 -- Question 13
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/ly.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Medium', 'Multiple_choice', 'https://flagcdn.com/w320/ly.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -195,8 +195,8 @@ SELECT id, 'Bermuda', FALSE FROM new_question;
 
 -- Question 14
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ge.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Medium','Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ge.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -210,8 +210,8 @@ SELECT id, 'Georgia', TRUE FROM new_question;
 
 -- Question 15
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/mh.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Hard', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/mh.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -225,8 +225,8 @@ SELECT id, 'Marshall Islands', TRUE FROM new_question;
 
 -- Question 16
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ao.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Hard', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ao.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -240,8 +240,8 @@ SELECT id, 'Bouvet Island', FALSE FROM new_question;
 
 -- Question 17
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/zm.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Medium', 'Multiple_choice', 'https://flagcdn.com/w320/zm.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -255,8 +255,8 @@ SELECT id, 'Armenia', FALSE FROM new_question;
 
 -- Question 18
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/mv.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Easy', 'Multiple_choice', 'https://flagcdn.com/w320/mv.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -270,8 +270,8 @@ SELECT id, 'Russia', FALSE FROM new_question;
 
 -- Question 19
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/kh.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Hard', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/kh.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -285,8 +285,8 @@ SELECT id, 'Denmark', FALSE FROM new_question;
 
 -- Question 20
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/cz.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Medium', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/cz.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -300,8 +300,8 @@ SELECT id, 'Czechia', TRUE FROM new_question;
 
 -- Question 21
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/ht.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag', 'Medium','Multiple_choice', 'https://flagcdn.com/w320/ht.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -315,8 +315,8 @@ SELECT id, 'Dominica', FALSE FROM new_question;
 
 -- Question 22
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/gw.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Hard', 'Multiple_choice', 'https://flagcdn.com/w320/gw.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -330,8 +330,8 @@ SELECT id, 'Bosnia and Herzegovina', FALSE FROM new_question;
 
 -- Question 23
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/xk.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Hard', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/xk.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -345,8 +345,8 @@ SELECT id, 'Germany', FALSE FROM new_question;
 
 -- Question 24
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/sl.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Hard', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/sl.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -360,8 +360,8 @@ SELECT id, 'Belize', FALSE FROM new_question;
 
 -- Question 25
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/hu.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Easy', 'Multiple_choice', 'https://flagcdn.com/w320/hu.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -375,8 +375,8 @@ SELECT id, 'Bangladesh', FALSE FROM new_question;
 
 -- Question 26
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/jo.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Easy', 'Multiple_choice', 'https://flagcdn.com/w320/jo.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -390,8 +390,8 @@ SELECT id, 'Grenada', FALSE FROM new_question;
 
 -- Question 27
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/bb.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Hard', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/bb.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -405,8 +405,8 @@ SELECT id, 'Barbados', TRUE FROM new_question;
 
 -- Question 28
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ai.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Hard', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ai.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -420,8 +420,8 @@ SELECT id, 'Saint Pierre and Miquelon', FALSE FROM new_question;
 
 -- Question 29
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/bn.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Medium', 'Multiple_choice', 'https://flagcdn.com/w320/bn.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -435,8 +435,8 @@ SELECT id, 'British Indian Ocean Territory', FALSE FROM new_question;
 
 -- Question 30
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/bt.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Medium', 'Multiple_choice', 'https://flagcdn.com/w320/bt.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -450,8 +450,8 @@ SELECT id, 'Bhutan', TRUE FROM new_question;
 
 -- Question 31
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/pw.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Hard', 'Multiple_choice', 'https://flagcdn.com/w320/pw.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -465,8 +465,8 @@ SELECT id, 'Faroe Islands', FALSE FROM new_question;
 
 -- Question 32
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/sc.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Hard', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/sc.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -480,8 +480,8 @@ SELECT id, 'Martinique', FALSE FROM new_question;
 
 -- Question 33
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/tn.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Medium', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/tn.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -495,8 +495,8 @@ SELECT id, 'Niger', FALSE FROM new_question;
 
 -- Question 34
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/sn.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Easy', 'Multiple_choice', 'https://flagcdn.com/w320/sn.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -510,8 +510,8 @@ SELECT id, 'Senegal', TRUE FROM new_question;
 
 -- Question 35
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/bf.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Hard', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/bf.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -525,8 +525,8 @@ SELECT id, 'Myanmar', FALSE FROM new_question;
 
 -- Question 36
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/mn.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Medium', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/mn.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -540,8 +540,8 @@ SELECT id, 'Sweden', FALSE FROM new_question;
 
 -- Question 37
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/gr.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Easy', 'Multiple_choice', 'https://flagcdn.com/w320/gr.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -555,8 +555,8 @@ SELECT id, 'Greece', TRUE FROM new_question;
 
 -- Question 38
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/mr.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Hard', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/mr.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -570,8 +570,8 @@ SELECT id, 'Mauritania', TRUE FROM new_question;
 
 -- Question 39
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/in.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Easy', 'Multiple_choice', 'https://flagcdn.com/w320/in.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -585,8 +585,8 @@ SELECT id, 'South Sudan', FALSE FROM new_question;
 
 -- Question 40
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/my.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Easy', 'Multiple_choice', 'https://flagcdn.com/w320/my.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -600,8 +600,8 @@ SELECT id, 'French Southern and Antarctic Lands', FALSE FROM new_question;
 
 -- Question 41
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/br.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Medium', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/br.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -615,8 +615,8 @@ SELECT id, 'Algeria', FALSE FROM new_question;
 
 -- Question 42
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/eg.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Easy', 'Multiple_choice', 'https://flagcdn.com/w320/eg.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -630,8 +630,8 @@ SELECT id, 'Eritrea', FALSE FROM new_question;
 
 -- Question 43
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/zw.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Hard', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/zw.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -645,8 +645,8 @@ SELECT id, 'Zimbabwe', TRUE FROM new_question;
 
 -- Question 44
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/hn.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Medium', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/hn.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -660,8 +660,8 @@ SELECT id, 'Honduras', TRUE FROM new_question;
 
 -- Question 45
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/fr.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag', 'Easy','Multiple_choice', 'https://flagcdn.com/w320/fr.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -675,8 +675,8 @@ SELECT id, 'France', TRUE FROM new_question;
 
 -- Question 46
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/dj.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Hard', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/dj.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -690,8 +690,8 @@ SELECT id, 'Djibouti', TRUE FROM new_question;
 
 -- Question 47
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/lv.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Easy', 'Multiple_choice', 'https://flagcdn.com/w320/lv.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -705,8 +705,8 @@ SELECT id, 'Vietnam', FALSE FROM new_question;
 
 -- Question 48
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ws.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Hard','Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ws.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -720,8 +720,8 @@ SELECT id, 'Dominican Republic', FALSE FROM new_question;
 
 -- Question 49
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/co.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag', 'Easy','Multiple_choice', 'https://flagcdn.com/w320/co.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -735,8 +735,8 @@ SELECT id, 'Bahrain', FALSE FROM new_question;
 
 -- Question 50
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/al.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Easy', 'Multiple_choice', 'https://flagcdn.com/w320/al.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -750,8 +750,8 @@ SELECT id, 'Albania', TRUE FROM new_question;
 
 -- Question 51
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ck.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Hard', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ck.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -765,8 +765,8 @@ SELECT id, 'Cook Islands', TRUE FROM new_question;
 
 -- Question 52
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ua.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Medium', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ua.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -780,8 +780,8 @@ SELECT id, 'Bolivia', FALSE FROM new_question;
 
 -- Question 53
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/vn.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Easy', 'Multiple_choice', 'https://flagcdn.com/w320/vn.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -795,8 +795,8 @@ SELECT id, 'Vietnam', TRUE FROM new_question;
 
 -- Question 54
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/va.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Hard', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/va.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -810,8 +810,8 @@ SELECT id, 'Botswana', FALSE FROM new_question;
 
 -- Question 55
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/md.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Easy', 'Multiple_choice', 'https://flagcdn.com/w320/md.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -825,8 +825,8 @@ SELECT id, 'French Guiana', FALSE FROM new_question;
 
 -- Question 56
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/gu.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Hard', 'Multiple_choice', 'https://flagcdn.com/w320/gu.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -840,8 +840,8 @@ SELECT id, 'South Georgia', FALSE FROM new_question;
 
 -- Question 57
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/cy.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Medium', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/cy.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -855,8 +855,8 @@ SELECT id, 'Cyprus', TRUE FROM new_question;
 
 -- Question 58
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/se.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Easy', 'Multiple_choice', 'https://flagcdn.com/w320/se.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -870,8 +870,8 @@ SELECT id, 'Croatia', FALSE FROM new_question;
 
 -- Question 59
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, coat_url)
-  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ni.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
+  VALUES ('Which country does this coat of arms belong to?', 'Coat_of_arms','Medium', 'Multiple_choice', 'https://mainfacts.com/media/images/coats_of_arms/ni.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -885,8 +885,8 @@ SELECT id, 'Rwanda', FALSE FROM new_question;
 
 -- Question 60
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, flag_url)
-  VALUES ('Which country does this flag belong to?', 'Flag', 'Multiple_choice', 'https://flagcdn.com/w320/py.png')
+  INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
+  VALUES ('Which country does this flag belong to?', 'Flag','Easy', 'Multiple_choice', 'https://flagcdn.com/w320/py.png')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)

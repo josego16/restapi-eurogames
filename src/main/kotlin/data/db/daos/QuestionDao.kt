@@ -12,7 +12,8 @@ class QuestionDao(id: EntityID<Int>) : IntEntity(id) {
     var statement by QuestionTable.statement
     var questionType by QuestionTable.questionType
     var difficulty by QuestionTable.difficulty
-    var imageUrl by QuestionTable.imageUrl
+    var flagUrl by QuestionTable.flagUrl
+    var coatUrl by QuestionTable.coatUrl
     var responseMode by QuestionTable.responseMode
 
     fun toDomain() = Question(
@@ -21,6 +22,7 @@ class QuestionDao(id: EntityID<Int>) : IntEntity(id) {
         questionType,
         responseMode,
         difficulty,
-        imageUrl,
+        flagUrl,
+        coatUrl
     )
 }
