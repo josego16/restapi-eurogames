@@ -426,4 +426,3 @@ UNION ALL
 SELECT id, 'Ahmedabad', FALSE FROM new_question
 UNION ALL
 SELECT id, 'Ghaziabad', FALSE FROM new_question;
-

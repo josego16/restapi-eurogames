@@ -419,4 +419,3 @@ UNION ALL
 SELECT id, 'Mut', FALSE FROM new_question
 UNION ALL
 SELECT id, 'Meret', FALSE FROM new_question;
-

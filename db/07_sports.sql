@@ -443,4 +443,3 @@ UNION ALL
 SELECT id, 'Cambridge Bruins', FALSE FROM new_question
 UNION ALL
 SELECT id, 'Hartford Bruins', FALSE FROM new_question;
-

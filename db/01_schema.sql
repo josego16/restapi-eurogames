@@ -55,7 +55,8 @@ CREATE TABLE IF NOT EXISTS question
     question_type VARCHAR(50) NOT NULL,
     response_mode VARCHAR(50) NOT NULL,
     difficulty    VARCHAR(50) NOT NULL,
-    image_url     VARCHAR(512)
+    flag_url      VARCHAR(512),
+    coat_url      VARCHAR(512)
 );
 
 CREATE TABLE IF NOT EXISTS answer
