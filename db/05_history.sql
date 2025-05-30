@@ -1,7 +1,7 @@
 -- Question 1
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which modern country is known as "The Graveyard of Empires"?', 'History_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('Which modern country is known as "The Graveyard of Empires"?', 'History', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -16,7 +16,7 @@ SELECT id, 'Russia', FALSE FROM new_question;
 -- Question 2
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('United States President John F. Kennedy was assassinated during his presidential motorcade in Atlanta, Georgia on November 22nd, 1963.', 'History_Quiz', 'True_or_false', 'Easy')
+  VALUES ('United States President John F. Kennedy was assassinated during his presidential motorcade in Atlanta, Georgia on November 22nd, 1963.', 'History', 'True_or_false', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -27,7 +27,7 @@ SELECT id, 'True', FALSE FROM new_question;
 -- Question 3
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Vikings were the first Europeans to discover North America.', 'History_Quiz', 'True_or_false', 'Easy')
+  VALUES ('Vikings were the first Europeans to discover North America.', 'History', 'True_or_false', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -38,7 +38,7 @@ SELECT id, 'False', FALSE FROM new_question;
 -- Question 4
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('A collection of Sanskrit hymns and verses known as the Vedas are sacred texts in what religion?', 'History_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('A collection of Sanskrit hymns and verses known as the Vedas are sacred texts in what religion?', 'History', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -53,7 +53,7 @@ SELECT id, 'Buddhism', FALSE FROM new_question;
 -- Question 5
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Adolf Hitler was a german soldier in World War I.', 'History_Quiz', 'True_or_false', 'Easy')
+  VALUES ('Adolf Hitler was a german soldier in World War I.', 'History', 'True_or_false', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -64,7 +64,7 @@ SELECT id, 'False', FALSE FROM new_question;
 -- Question 6
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which famous world leader is famed for the saying, "Let them eat cake", yet is rumored that he/she never said it at all?', 'History_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('Which famous world leader is famed for the saying, "Let them eat cake", yet is rumored that he/she never said it at all?', 'History', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -79,7 +79,7 @@ SELECT id, 'Henry VIII', FALSE FROM new_question;
 -- Question 7
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('The United States Department of Homeland Security was formed in response to the September 11th attacks.', 'History_Quiz', 'True_or_false', 'Easy')
+  VALUES ('The United States Department of Homeland Security was formed in response to the September 11th attacks.', 'History', 'True_or_false', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -90,7 +90,7 @@ SELECT id, 'False', FALSE FROM new_question;
 -- Question 8
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In which country was the Statue of Liberty built and exported to the United States of America?', 'History_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('In which country was the Statue of Liberty built and exported to the United States of America?', 'History', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -105,7 +105,7 @@ SELECT id, 'England', FALSE FROM new_question;
 -- Question 9
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What was the first sport to have been played on the moon?', 'History_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('What was the first sport to have been played on the moon?', 'History', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -120,7 +120,7 @@ SELECT id, 'Soccer', FALSE FROM new_question;
 -- Question 10
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Who discovered Penicillin?', 'History_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('Who discovered Penicillin?', 'History', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -135,7 +135,7 @@ SELECT id, 'Louis Pasteur', FALSE FROM new_question;
 -- Question 1
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is the oldest US state?', 'History_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('What is the oldest US state?', 'History', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -150,7 +150,7 @@ SELECT id, 'Virginia', FALSE FROM new_question;
 -- Question 2
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What was the total length of the Titanic?', 'History_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('What was the total length of the Titanic?', 'History', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -165,7 +165,7 @@ SELECT id, '825 ft | 251.5 m', FALSE FROM new_question;
 -- Question 3
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which country had an "Orange Revolution" between 2004 and 2005?', 'History_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('Which country had an "Orange Revolution" between 2004 and 2005?', 'History', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -180,7 +180,7 @@ SELECT id, 'Lithuania', FALSE FROM new_question;
 -- Question 4
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Joseph Stalin had a criminal past doing what?', 'History_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('Joseph Stalin had a criminal past doing what?', 'History', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -195,7 +195,7 @@ SELECT id, 'Identity Fraud', FALSE FROM new_question;
 -- Question 5
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which U.S. president took part in the Potsdam Conference, where the Allies reached a peace settlement with Germany?', 'History_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('Which U.S. president took part in the Potsdam Conference, where the Allies reached a peace settlement with Germany?', 'History', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -210,7 +210,7 @@ SELECT id, 'Herbert Hoover', FALSE FROM new_question;
 -- Question 6
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('The Fourth Crusade lasted from 1095-1099 AD.', 'History_Quiz', 'True_or_false', 'Medium')
+  VALUES ('The Fourth Crusade lasted from 1095-1099 AD.', 'History', 'True_or_false', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -221,7 +221,7 @@ SELECT id, 'True', FALSE FROM new_question;
 -- Question 7
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What was the name of the chemical that was dropped on Vietnam during the Vietnam war?', 'History_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('What was the name of the chemical that was dropped on Vietnam during the Vietnam war?', 'History', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -236,7 +236,7 @@ SELECT id, 'Hydrogen Cyanide', FALSE FROM new_question;
 -- Question 8
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Ottoman Empire was created in 1299.', 'History_Quiz', 'True_or_false', 'Medium')
+  VALUES ('Ottoman Empire was created in 1299.', 'History', 'True_or_false', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -247,7 +247,7 @@ SELECT id, 'False', FALSE FROM new_question;
 -- Question 9
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Who tutored Alexander the Great?', 'History_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('Who tutored Alexander the Great?', 'History', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -262,7 +262,7 @@ SELECT id, 'King Philip', FALSE FROM new_question;
 -- Question 10
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What was the capital of South Vietnam before the Vietnam War?', 'History_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('What was the capital of South Vietnam before the Vietnam War?', 'History', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -277,7 +277,7 @@ SELECT id, 'Hue', FALSE FROM new_question;
 -- Question 1
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In addition to his career as an astrologer and "prophet", Nostradamus published a 1555 treatise that included a section on what?', 'History_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('In addition to his career as an astrologer and "prophet", Nostradamus published a 1555 treatise that included a section on what?', 'History', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -292,7 +292,7 @@ SELECT id, 'Digging graves', FALSE FROM new_question;
 -- Question 2
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('The man that shot Alexander Hamilton was named Aaron Burr.', 'History_Quiz', 'True_or_false', 'Hard')
+  VALUES ('The man that shot Alexander Hamilton was named Aaron Burr.', 'History', 'True_or_false', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -303,7 +303,7 @@ SELECT id, 'False', FALSE FROM new_question;
 -- Question 3
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('During the Spanish Civil War (1936), Francisco Franco fought for which political faction?', 'History_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('During the Spanish Civil War (1936), Francisco Franco fought for which political faction?', 'History', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -318,7 +318,7 @@ SELECT id, 'Papal State', FALSE FROM new_question;
 -- Question 4
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('The fourth funnel of the RMS Titanic was fake designed to make the ship look more powerful and symmetrical.', 'History_Quiz', 'True_or_false', 'Hard')
+  VALUES ('The fourth funnel of the RMS Titanic was fake designed to make the ship look more powerful and symmetrical.', 'History', 'True_or_false', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -329,7 +329,7 @@ SELECT id, 'False', FALSE FROM new_question;
 -- Question 5
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('How many sonatas did Ludwig van Beethoven write?', 'History_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('How many sonatas did Ludwig van Beethoven write?', 'History', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -344,7 +344,7 @@ SELECT id, '21', FALSE FROM new_question;
 -- Question 6
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('The USS Missouri (BB-63) last served in the Korean War.', 'History_Quiz', 'True_or_false', 'Hard')
+  VALUES ('The USS Missouri (BB-63) last served in the Korean War.', 'History', 'True_or_false', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -355,7 +355,7 @@ SELECT id, 'True', FALSE FROM new_question;
 -- Question 7
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What year was the United States Declaration of Independence signed?', 'History_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('What year was the United States Declaration of Independence signed?', 'History', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -370,7 +370,7 @@ SELECT id, '1777', FALSE FROM new_question;
 -- Question 8
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What was the last colony the UK ceded marking the end of the British Empire?', 'History_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('What was the last colony the UK ceded marking the end of the British Empire?', 'History', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -385,7 +385,7 @@ SELECT id, 'Ireland', FALSE FROM new_question;
 -- Question 9
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('When was Finland''s 100th year of being independent?', 'History_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('When was Finland''s 100th year of being independent?', 'History', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -400,7 +400,7 @@ SELECT id, '2015', FALSE FROM new_question;
 -- Question 10
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What year was Canada founded in?', 'History_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('What year was Canada founded in?', 'History', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)

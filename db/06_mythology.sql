@@ -1,7 +1,7 @@
 -- Question 1
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In the Greek Mythology, the Gorgon can turn those who behold her to stone.', 'Mythology_Quiz', 'True_or_false', 'Easy')
+  VALUES ('In the Greek Mythology, the Gorgon can turn those who behold her to stone.', 'Mythology', 'True_or_false', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -12,7 +12,7 @@ SELECT id, 'False', FALSE FROM new_question;
 -- Question 2
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In the Greek Mythology, the god of war is called Mars.', 'Mythology_Quiz', 'True_or_false', 'Easy')
+  VALUES ('In the Greek Mythology, the god of war is called Mars.', 'Mythology', 'True_or_false', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -23,7 +23,7 @@ SELECT id, 'True', FALSE FROM new_question;
 -- Question 3
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('How many heads does Cerberus have?', 'Mythology_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('How many heads does Cerberus have?', 'Mythology', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -38,7 +38,7 @@ SELECT id, '5', FALSE FROM new_question;
 -- Question 4
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which of these mythological creatures is said to be half-man and half-horse?', 'Mythology_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('Which of these mythological creatures is said to be half-man and half-horse?', 'Mythology', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -53,7 +53,7 @@ SELECT id, 'Gorgon', FALSE FROM new_question;
 -- Question 5
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which Greek & Roman god was known as the god of music, truth and prophecy, healing, the sun and light, plague, poetry, and more?', 'Mythology_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('Which Greek & Roman god was known as the god of music, truth and prophecy, healing, the sun and light, plague, poetry, and more?', 'Mythology', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -68,7 +68,7 @@ SELECT id, 'Athena', FALSE FROM new_question;
 -- Question 6
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('The ancient Roman god of war was commonly known as which of the following?', 'Mythology_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('The ancient Roman god of war was commonly known as which of the following?', 'Mythology', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -83,7 +83,7 @@ SELECT id, 'Ares', FALSE FROM new_question;
 -- Question 7
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In Greek mythology, who is the god of wine?', 'Mythology_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('In Greek mythology, who is the god of wine?', 'Mythology', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -98,7 +98,7 @@ SELECT id, 'Apollo', FALSE FROM new_question;
 -- Question 8
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In Norse mythology, Thor once dressed as a woman.', 'Mythology_Quiz', 'True_or_false', 'Easy')
+  VALUES ('In Norse mythology, Thor once dressed as a woman.', 'Mythology', 'True_or_false', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -109,7 +109,7 @@ SELECT id, 'False', FALSE FROM new_question;
 -- Question 9
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Who was the only god from Greece who did not get a name change in Rome?', 'Mythology_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('Who was the only god from Greece who did not get a name change in Rome?', 'Mythology', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -124,7 +124,7 @@ SELECT id, 'Athena', FALSE FROM new_question;
 -- Question 10
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What mytological creatures have women''s faces and vultures'' bodies?', 'Mythology_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('What mytological creatures have women''s faces and vultures'' bodies?', 'Mythology', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -139,7 +139,7 @@ SELECT id, 'Lilith', FALSE FROM new_question;
 -- Question 1
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Hel was the daughter of which Norse Mythological figure?', 'Mythology_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('Hel was the daughter of which Norse Mythological figure?', 'Mythology', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -154,7 +154,7 @@ SELECT id, 'Balder', FALSE FROM new_question;
 -- Question 2
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('According to Norse mythology, Loki is a mother.', 'Mythology_Quiz', 'True_or_false', 'Medium')
+  VALUES ('According to Norse mythology, Loki is a mother.', 'Mythology', 'True_or_false', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -165,7 +165,7 @@ SELECT id, 'False', FALSE FROM new_question;
 -- Question 3
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Who is the God Loki''s son? ', 'Mythology_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('Who is the God Loki''s son? ', 'Mythology', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -180,7 +180,7 @@ SELECT id, 'Sigyn', FALSE FROM new_question;
 -- Question 4
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Who is the god of war in Polynesian mythology?', 'Mythology_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('Who is the god of war in Polynesian mythology?', 'Mythology', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -195,7 +195,7 @@ SELECT id, 'Māui', FALSE FROM new_question;
 -- Question 5
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('The Japanese god Izanagi successfully returned his wife Izanami from the Underworld.', 'Mythology_Quiz', 'True_or_false', 'Medium')
+  VALUES ('The Japanese god Izanagi successfully returned his wife Izanami from the Underworld.', 'Mythology', 'True_or_false', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -206,7 +206,7 @@ SELECT id, 'True', FALSE FROM new_question;
 -- Question 6
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Hera is god of...', 'Mythology_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('Hera is god of...', 'Mythology', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -221,7 +221,7 @@ SELECT id, 'War', FALSE FROM new_question;
 -- Question 7
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('A minotaur is half human half what?', 'Mythology_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('A minotaur is half human half what?', 'Mythology', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -236,7 +236,7 @@ SELECT id, 'Eagle', FALSE FROM new_question;
 -- Question 8
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('The Hippogriff, not to be confused with the Griffon, is a magical creature with the front half of an eagle, and the back half of what?', 'Mythology_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('The Hippogriff, not to be confused with the Griffon, is a magical creature with the front half of an eagle, and the back half of what?', 'Mythology', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -251,7 +251,7 @@ SELECT id, 'A Lion', FALSE FROM new_question;
 -- Question 9
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Neptune''s greek name was...', 'Mythology_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('Neptune''s greek name was...', 'Mythology', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -266,7 +266,7 @@ SELECT id, 'Apollo', FALSE FROM new_question;
 -- Question 10
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('According to Japanese folklore, what is the favorite food of the Kappa.', 'Mythology_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('According to Japanese folklore, what is the favorite food of the Kappa.', 'Mythology', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -281,7 +281,7 @@ SELECT id, 'Soba', FALSE FROM new_question;
 -- Question 1
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Rannamaari was a sea demon that haunted the people of the Maldives and had to be appeased monthly with the sacrifice of a virgin girl.', 'Mythology_Quiz', 'True_or_false', 'Hard')
+  VALUES ('Rannamaari was a sea demon that haunted the people of the Maldives and had to be appeased monthly with the sacrifice of a virgin girl.', 'Mythology', 'True_or_false', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -292,7 +292,7 @@ SELECT id, 'False', FALSE FROM new_question;
 -- Question 2
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Skaði is the Norse Goddess of skiing, mountains, winter and bowhunting.', 'Mythology_Quiz', 'True_or_false', 'Hard')
+  VALUES ('Skaði is the Norse Goddess of skiing, mountains, winter and bowhunting.', 'Mythology', 'True_or_false', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -303,7 +303,7 @@ SELECT id, 'False', FALSE FROM new_question;
 -- Question 3
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Talos, the mythical giant bronze man, was the protector of which island?', 'Mythology_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('Talos, the mythical giant bronze man, was the protector of which island?', 'Mythology', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -318,7 +318,7 @@ SELECT id, 'Cyprus', FALSE FROM new_question;
 -- Question 4
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Who is a minor god that is protector and creator of various arts, such as cheese making and bee keeping.', 'Mythology_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('Who is a minor god that is protector and creator of various arts, such as cheese making and bee keeping.', 'Mythology', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -333,7 +333,7 @@ SELECT id, 'Cephisso', FALSE FROM new_question;
 -- Question 5
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('According to Algonquian folklore, how does one transform into a Wendigo?', 'Mythology_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('According to Algonquian folklore, how does one transform into a Wendigo?', 'Mythology', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -348,7 +348,7 @@ SELECT id, 'Drinking the blood of many slain animals.', FALSE FROM new_question;
 -- Question 6
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Who did Hippomenes defeat in a footrace?', 'Mythology_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('Who did Hippomenes defeat in a footrace?', 'Mythology', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -363,7 +363,7 @@ SELECT id, 'Jason', FALSE FROM new_question;
 -- Question 7
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What was the punishment for Sysiphus''s craftiness?', 'Mythology_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('What was the punishment for Sysiphus''s craftiness?', 'Mythology', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -378,7 +378,7 @@ SELECT id, 'To fell a tree that regenerated after every axe swing.', FALSE FROM 
 -- Question 8
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Nidhogg is a mythical creature from what mythology?', 'Mythology_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('Nidhogg is a mythical creature from what mythology?', 'Mythology', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -393,7 +393,7 @@ SELECT id, 'Hindu', FALSE FROM new_question;
 -- Question 9
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which of the following is NOT a god in Norse Mythology.', 'Mythology_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('Which of the following is NOT a god in Norse Mythology.', 'Mythology', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -408,7 +408,7 @@ SELECT id, 'Snotra', FALSE FROM new_question;
 -- Question 10
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Who is the Egyptian god of reproduction and lettuce?', 'Mythology_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('Who is the Egyptian god of reproduction and lettuce?', 'Mythology', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)

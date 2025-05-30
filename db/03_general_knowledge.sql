@@ -1,7 +1,7 @@
 -- Question 1
 WITH new_question AS (
     INSERT INTO question (statement, question_type, response_mode, difficulty)
-        VALUES ('Who is the youngest person to receive a Nobel Prize?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Easy')
+        VALUES ('Who is the youngest person to receive a Nobel Prize?', 'General_Knowledge', 'Multiple_choice', 'Easy')
         RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -16,7 +16,7 @@ SELECT id, 'Yasser Arafat', FALSE FROM new_question;
 -- Question 2
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What are Panama hats made out of?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('What are Panama hats made out of?', 'General_Knowledge', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 
@@ -32,7 +32,7 @@ SELECT id, 'Flax', FALSE FROM new_question;
 -- Question 3
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is the French word for "hat"?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('What is the French word for "hat"?', 'General_Knowledge', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 
@@ -48,7 +48,7 @@ SELECT id, ' Casque', FALSE FROM new_question;
 -- Question 4
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In architecture, a "pecklesteiner" is a set of doors that overlap each other when closed, and can be locked through a single keyhole.', 'General_Knowledge_Quiz', 'True_or_false', 'Easy')
+  VALUES ('In architecture, a "pecklesteiner" is a set of doors that overlap each other when closed, and can be locked through a single keyhole.', 'General_Knowledge', 'True_or_false', 'Easy')
   RETURNING id
 )
 
@@ -60,7 +60,7 @@ SELECT id, 'True', FALSE FROM new_question;
 -- Question 5
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('When was the website reddit founded ?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('When was the website reddit founded ?', 'General_Knowledge', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 
@@ -76,7 +76,7 @@ SELECT id, '2006', FALSE FROM new_question;
 -- Question 6
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Terry Gilliam was an animator that worked with which British comedy group?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('Terry Gilliam was an animator that worked with which British comedy group?', 'General_Knowledge', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 
@@ -92,7 +92,7 @@ SELECT id, 'The Penny Dreadfuls', FALSE FROM new_question;
 -- Question 7
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Of the following months, which has the most amount of days?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('Of the following months, which has the most amount of days?', 'General_Knowledge', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 
@@ -108,7 +108,7 @@ SELECT id, 'November ', FALSE FROM new_question;
 -- Question 8
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which company did Valve cooperate with in the creation of the Vive?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('Which company did Valve cooperate with in the creation of the Vive?', 'General_Knowledge', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 
@@ -124,7 +124,7 @@ SELECT id, 'Razer', FALSE FROM new_question;
 -- Question 9
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which of the following card games revolves around numbers and basic math?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('Which of the following card games revolves around numbers and basic math?', 'General_Knowledge', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -139,7 +139,7 @@ SELECT id, 'Munchkin', FALSE FROM new_question;
 -- Question 10
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which of these holidays is NOT usually celebrated in the month of December?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Easy')
+  VALUES ('Which of these holidays is NOT usually celebrated in the month of December?', 'General_Knowledge', 'Multiple_choice', 'Easy')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -154,7 +154,7 @@ SELECT id, 'Hanukkah', FALSE FROM new_question;
 -- Question 1
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is the highest number of Michelin stars a restaurant can receive?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('What is the highest number of Michelin stars a restaurant can receive?', 'General_Knowledge', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -169,7 +169,7 @@ SELECT id, 'Six', FALSE FROM new_question;
 -- Question 2
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Frank Lloyd Wright was the architect behind what famous building?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('Frank Lloyd Wright was the architect behind what famous building?', 'General_Knowledge', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -184,7 +184,7 @@ SELECT id, 'The Space Needle', FALSE FROM new_question;
 -- Question 3
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In which country was the 1992 Summer Olympics Games held?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('In which country was the 1992 Summer Olympics Games held?', 'General_Knowledge', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -199,7 +199,7 @@ SELECT id, 'USA', FALSE FROM new_question;
 -- Question 4
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('An eggplant is a vegetable.', 'General_Knowledge_Quiz', 'True_or_false', 'Medium')
+  VALUES ('An eggplant is a vegetable.', 'General_Knowledge', 'True_or_false', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -210,7 +210,7 @@ SELECT id, 'True', FALSE FROM new_question;
 -- Question 5
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Fast food restaurant chains Carl''s Jr. and Hardee''s are owned by the same company.', 'General_Knowledge_Quiz', 'True_or_false', 'Medium')
+  VALUES ('Fast food restaurant chains Carl''s Jr. and Hardee''s are owned by the same company.', 'General_Knowledge', 'True_or_false', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -221,7 +221,7 @@ SELECT id, 'False', FALSE FROM new_question;
 -- Question 6
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Directly between the Washington Monument and the Reflecting Pool is a memorial to which war?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('Directly between the Washington Monument and the Reflecting Pool is a memorial to which war?', 'General_Knowledge', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -236,7 +236,7 @@ SELECT id, 'American Revolutionary War', FALSE FROM new_question;
 -- Question 7
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which Italian automobile manufacturer gained majority control of U.S. automobile manufacturer Chrysler in 2011?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('Which Italian automobile manufacturer gained majority control of U.S. automobile manufacturer Chrysler in 2011?', 'General_Knowledge', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -251,7 +251,7 @@ SELECT id, 'Ferrari', FALSE FROM new_question;
 -- Question 8
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Albert Einstein had trouble with mathematics when he was in school.', 'General_Knowledge_Quiz', 'True_or_false', 'Medium')
+  VALUES ('Albert Einstein had trouble with mathematics when he was in school.', 'General_Knowledge', 'True_or_false', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -262,7 +262,7 @@ SELECT id, 'True', FALSE FROM new_question;
 -- Question 9
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('When was Nintendo founded?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Medium')
+  VALUES ('When was Nintendo founded?', 'General_Knowledge', 'Multiple_choice', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -277,7 +277,7 @@ SELECT id, 'December 27th, 1894', FALSE FROM new_question;
 -- Question 10
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('The vapor produced by e-cigarettes is actually water.', 'General_Knowledge_Quiz', 'True_or_false', 'Medium')
+  VALUES ('The vapor produced by e-cigarettes is actually water.', 'General_Knowledge', 'True_or_false', 'Medium')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -288,7 +288,7 @@ SELECT id, 'True', FALSE FROM new_question;
 -- Question 1
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is the most commonly used noun in the English language?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('What is the most commonly used noun in the English language?', 'General_Knowledge', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -303,7 +303,7 @@ SELECT id, 'Man', FALSE FROM new_question;
 -- Question 2
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('The Quadrangularis Reversum is best described as which of the following?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('The Quadrangularis Reversum is best described as which of the following?', 'General_Knowledge', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -318,7 +318,7 @@ SELECT id, 'A geometric theorem', FALSE FROM new_question;
 -- Question 3
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What was Bank of America originally established as?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('What was Bank of America originally established as?', 'General_Knowledge', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -333,7 +333,7 @@ SELECT id, 'Bank of Charlotte', FALSE FROM new_question;
 -- Question 4
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('According to Fair Works Australia, how long do you have to work to get Long Service Leave?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('According to Fair Works Australia, how long do you have to work to get Long Service Leave?', 'General_Knowledge', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -348,7 +348,7 @@ SELECT id, '6 months', FALSE FROM new_question;
 -- Question 5
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In the MMO RPG "Realm of the Mad God", what dungeon is widely considered to be the most difficult?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('In the MMO RPG "Realm of the Mad God", what dungeon is widely considered to be the most difficult?', 'General_Knowledge', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -363,7 +363,7 @@ SELECT id, 'The Puppet Master''s Theater', FALSE FROM new_question;
 -- Question 6
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In Scandinavian languages, the letter Å means river.', 'General_Knowledge_Quiz', 'True_or_false', 'Hard')
+  VALUES ('In Scandinavian languages, the letter Å means river.', 'General_Knowledge', 'True_or_false', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -374,7 +374,7 @@ SELECT id, 'False', FALSE FROM new_question;
 -- Question 7
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which film star has his statue in Leicester Square?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('Which film star has his statue in Leicester Square?', 'General_Knowledge', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -389,7 +389,7 @@ SELECT id, 'Alfred Hitchcock', FALSE FROM new_question;
 -- Question 8
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Before the 19th Century, the "Living Room" was originally called the...', 'General_Knowledge_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('Before the 19th Century, the "Living Room" was originally called the...', 'General_Knowledge', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -404,7 +404,7 @@ SELECT id, 'Loft', FALSE FROM new_question;
 -- Question 9
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is the romanized Korean word for "heart"?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('What is the romanized Korean word for "heart"?', 'General_Knowledge', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
@@ -419,7 +419,7 @@ SELECT id, 'Segseu', FALSE FROM new_question;
 -- Question 10
 WITH new_question AS (
   INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Sciophobia is the fear of what?', 'General_Knowledge_Quiz', 'Multiple_choice', 'Hard')
+  VALUES ('Sciophobia is the fear of what?', 'General_Knowledge', 'Multiple_choice', 'Hard')
   RETURNING id
 )
 INSERT INTO answer (question_id, text, is_correct)
