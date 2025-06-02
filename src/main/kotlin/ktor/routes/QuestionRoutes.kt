@@ -34,6 +34,20 @@ fun Routing.questionRouting() {
                 val questionwithanswer = ProviderQuestionUseCase.getAllQuestionWithAnswer()
                 call.respond(questionwithanswer)
             }
+            get("/{id}") {
+                val idParam = call.parameters["id"]
+                val id = idParam?.toIntOrNull()
+                if (id == null) {
+                    call.respond(HttpStatusCode.BadRequest, "Id no valido")
+                    return@get
+                }
+                val questionWithAnswer = ProviderQuestionUseCase.getQuestionWithAnswerById(id)
+                if (questionWithAnswer == null) {
+                    call.respond(HttpStatusCode.NotFound, "Pregunta con respuestas no encontrada")
+                } else {
+                    call.respond(questionWithAnswer)
+                }
+            }
             get("/difficulty/{difficulty}") {
                 val difficultyParam = call.parameters["difficulty"]
 

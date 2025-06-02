@@ -12,6 +12,7 @@ object ProviderQuestionUseCase {
     private val getAllQuestionsUseCase = GetAllQuestionsUseCase(repository)
     private val getQuestionByIdUseCase = GetQuestionByIdUseCase(repository)
     private val getQuestionsWithAnswersUseCase = GetQuestionsWithAnswersUseCase(repository)
+    private val getQuestionWithAnswerByIdUseCase = GetQuestionWithAnswerByIdUseCase(repository)
     private val getQuestionWithAnswerByDifficultyUseCase = GetQuestionWithAnswerByDifficultyUseCase(repository)
 
     suspend fun getAllQuestions(): List<QuestionResponseDto> = getAllQuestionsUseCase()
@@ -20,6 +21,7 @@ object ProviderQuestionUseCase {
     }
 
     suspend fun getAllQuestionWithAnswer(): List<QuestionWithAnswersDto> = getQuestionsWithAnswersUseCase()
+    suspend fun getQuestionWithAnswerById(id: Int): QuestionWithAnswersDto? = getQuestionWithAnswerByIdUseCase(id)
     suspend fun getQuestionwithAnswerBydifficulty(difficulty: Difficulty): List<QuestionWithAnswersDto> {
         return getQuestionWithAnswerByDifficultyUseCase(difficulty)
     }

@@ -43,6 +43,17 @@ class QuestionRepositoryImpl : QuestionRepository {
         logger.error("Error al obtener todas las preguntas con respuestas", it)
     }.getOrDefault(emptyList())
 
+    override suspend fun getQuestionWithAnswersById(id: Int): QuestionWithAnswer? = runCatching {
+        suspendedTransaction {
+            QuestionDao.findById(id)?.toDomain()?.let { question ->
+                val answers = AnswerDao.find { AnswerTable.questionId eq question.id }.map { it.toDomain() }
+                QuestionWithAnswer(question, answers)
+            }
+        }
+    }.onFailure {
+        logger.error("Error al obtener pregunta con respuestas por ID $id", it)
+    }.getOrNull()
+
     override suspend fun getQuestionsWithAnswersByDifficulty(difficulty: Difficulty): List<QuestionWithAnswer> =
         runCatching {
             suspendedTransaction {
