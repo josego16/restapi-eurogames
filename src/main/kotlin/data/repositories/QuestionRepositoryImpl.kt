@@ -6,9 +6,11 @@ import data.db.suspendedTransaction
 import data.db.tables.AnswerTable
 import data.db.tables.QuestionTable
 import domain.enums.Difficulty
+import domain.enums.QuestionType
 import domain.interfaces.QuestionRepository
 import domain.models.Question
 import domain.models.QuestionWithAnswer
+import org.jetbrains.exposed.sql.and
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
@@ -54,16 +56,40 @@ class QuestionRepositoryImpl : QuestionRepository {
         logger.error("Error al obtener pregunta con respuestas por ID $id", it)
     }.getOrNull()
 
-    override suspend fun getQuestionsWithAnswersByDifficulty(difficulty: Difficulty): List<QuestionWithAnswer> =
-        runCatching {
-            suspendedTransaction {
-                QuestionDao.find { QuestionTable.difficulty eq difficulty }.map { questionDao ->
-                    val question = questionDao.toDomain()
-                    val answers = AnswerDao.find { AnswerTable.questionId eq question.id }.map { it.toDomain() }
-                    QuestionWithAnswer(question, answers)
+    override suspend fun getQuestionsWithAnswersByDifficulty(
+        difficulty: Difficulty?,
+        category: QuestionType?
+    ): List<QuestionWithAnswer> = runCatching {
+        suspendedTransaction {
+            val query = when {
+                difficulty != null && category != null -> {
+                    QuestionDao.find {
+                        (QuestionTable.difficulty eq difficulty) and (QuestionTable.questionType eq category)
+                    }
+                }
+
+                difficulty != null -> {
+                    QuestionDao.find { QuestionTable.difficulty eq difficulty }
+                }
+
+                category != null -> {
+                    QuestionDao.find { QuestionTable.questionType eq category }
+                }
+
+                else -> {
+                    QuestionDao.all()
                 }
             }
-        }.onFailure {
-            logger.error("Error al obtener preguntas con respuestas por dificultad $difficulty", it)
-        }.getOrDefault(emptyList())
+            query.map { questionDao ->
+                val question = questionDao.toDomain()
+                val answers = AnswerDao.find { AnswerTable.questionId eq question.id }.map { it.toDomain() }
+                QuestionWithAnswer(question, answers)
+            }
+        }
+    }.onFailure {
+        logger.error(
+            "Error al obtener preguntas con respuestas por dificultad $difficulty y categoría $category",
+            it
+        )
+    }.getOrDefault(emptyList())
 }

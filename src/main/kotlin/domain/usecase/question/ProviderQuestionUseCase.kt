@@ -4,6 +4,7 @@ import data.repositories.QuestionRepositoryImpl
 import domain.dto.QuestionResponseDto
 import domain.dto.QuestionWithAnswersDto
 import domain.enums.Difficulty
+import domain.enums.QuestionType
 import domain.interfaces.QuestionRepository
 
 object ProviderQuestionUseCase {
@@ -22,7 +23,10 @@ object ProviderQuestionUseCase {
 
     suspend fun getAllQuestionWithAnswer(): List<QuestionWithAnswersDto> = getQuestionsWithAnswersUseCase()
     suspend fun getQuestionWithAnswerById(id: Int): QuestionWithAnswersDto? = getQuestionWithAnswerByIdUseCase(id)
-    suspend fun getQuestionwithAnswerBydifficulty(difficulty: Difficulty): List<QuestionWithAnswersDto> {
-        return getQuestionWithAnswerByDifficultyUseCase(difficulty)
+    suspend fun getQuestionwithAnswerBydifficulty(
+        difficulty: Difficulty? = null,
+        category: QuestionType? = null
+    ): List<QuestionWithAnswersDto> {
+        return getQuestionWithAnswerByDifficultyUseCase(difficulty, category)
     }
 }
