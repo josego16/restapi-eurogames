@@ -25,7 +25,7 @@ fun GameSessionCreateDto.toDomain(): GameSession = GameSession(
     scoreSession = 0.0, // valor inicial
     gameType = gameType,
     difficulty = difficulty,
-    status = SessionStatus.In_Progress, // estado inicial
+    status = SessionStatus.En_progreso, // estado inicial
     startedAt = Clock.System.now(),
     finishedAt = null
 )

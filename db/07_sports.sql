@@ -1,445 +1,585 @@
--- Question 1
+-- Pregunta 1
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In baseball, how many fouls are an out?', 'Sports', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, '0', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('En béisbol, ¿cuántos fouls son un out?', 'Deportes', 'Opcion_multiple', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, '0', TRUE
+FROM new_question
 UNION ALL
-SELECT id, '5', FALSE FROM new_question
+SELECT id, '5', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '3', FALSE FROM new_question
+SELECT id, '3', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '2', FALSE FROM new_question;
+SELECT id, '2', FALSE
+FROM new_question;
 
--- Question 2
+-- Pregunta 2
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In Baseball, how many times does the ball have to be pitched outside of the strike zone before the batter is walked?', 'Sports', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, '4', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('En béisbol, ¿cuántas veces debe lanzarse la pelota fuera de la zona de strike para que el bateador reciba una base por bolas?',
+                'Deportes', 'Opcion_multiple', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, '4', TRUE
+FROM new_question
 UNION ALL
-SELECT id, '1', FALSE FROM new_question
+SELECT id, '1', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '2', FALSE FROM new_question
+SELECT id, '2', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '3', FALSE FROM new_question;
+SELECT id, '3', FALSE
+FROM new_question;
 
--- Question 3
+-- Pregunta 3
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What was the final score of the Germany vs. Brazil 2014 FIFA World Cup match?', 'Sports', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, '7 - 1', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál fue el marcador final del partido Alemania vs. Brasil en la Copa Mundial de la FIFA 2014?',
+                'Deportes', 'Opcion_multiple', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, '7 - 1', TRUE
+FROM new_question
 UNION ALL
-SELECT id, '0 - 1', FALSE FROM new_question
+SELECT id, '0 - 1', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '3 - 4', FALSE FROM new_question
+SELECT id, '3 - 4', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '16 - 0', FALSE FROM new_question;
+SELECT id, '16 - 0', FALSE
+FROM new_question;
 
--- Question 4
+-- Pregunta 4
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What team did England beat to win in the 1966 World Cup final?', 'Sports', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'West Germany', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿A qué equipo venció Inglaterra para ganar la final de la Copa Mundial de 1966?', 'Deportes',
+                'Opcion_multiple', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Alemania Occidental', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Soviet Union', FALSE FROM new_question
+SELECT id, 'Unión Soviética', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Portugal', FALSE FROM new_question
+SELECT id, 'Portugal', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Brazil', FALSE FROM new_question;
+SELECT id, 'Brasil', FALSE
+FROM new_question;
 
--- Question 5
+-- Pregunta 5
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Who won the UEFA Champions League in 2016?', 'Sports', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Real Madrid C.F.', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Quién ganó la UEFA Champions League en 2016?', 'Deportes', 'Opcion_multiple', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Real Madrid C.F.', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'FC Bayern Munich', FALSE FROM new_question
+SELECT id, 'FC Bayern Múnich', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Atletico Madrid', FALSE FROM new_question
+SELECT id, 'Atlético de Madrid', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Manchester City F.C.', FALSE FROM new_question;
+SELECT id, 'Manchester City F.C.', FALSE
+FROM new_question;
 
--- Question 6
+-- Pregunta 6
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In association football, or soccer, a corner kick is when the game restarts after someone scores a goal.', 'Sports', 'True_or_false', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'False', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('En el fútbol asociación, o soccer, ¿un saque de esquina es cuando el juego se reinicia después de que alguien marca un gol?',
+                'Deportes', 'True_or_false', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Falso', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'True', FALSE FROM new_question;
+SELECT id, 'Verdadero', FALSE
+FROM new_question;
 
--- Question 7
+-- Pregunta 7
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which country won the 2018 FIFA World Cup hosted in Russia?', 'Sports', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'France', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Qué país ganó la Copa Mundial de la FIFA 2018 celebrada en Rusia?', 'Deportes', 'Opcion_multiple',
+                'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Francia', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Croatia', FALSE FROM new_question
+SELECT id, 'Croacia', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Belgium', FALSE FROM new_question
+SELECT id, 'Bélgica', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'England', FALSE FROM new_question;
+SELECT id, 'Inglaterra', FALSE
+FROM new_question;
 
--- Question 8
+-- Pregunta 8
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which of the following sports is not part of the triathlon?', 'Sports', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Horse-Riding', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál de los siguientes deportes no forma parte del triatlón?', 'Deportes', 'Opcion_multiple', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Equitación', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Cycling', FALSE FROM new_question
+SELECT id, 'Ciclismo', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Swimming', FALSE FROM new_question
+SELECT id, 'Natación', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Running', FALSE FROM new_question;
+SELECT id, 'Carrera', FALSE
+FROM new_question;
 
--- Question 9
+-- Pregunta 9
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which country hosted the 2022 FIFA World Cup?', 'Sports', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Qatar', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Qué país fue el anfitrión de la Copa Mundial de la FIFA 2022?', 'Deportes', 'Opcion_multiple',
+                'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Catar', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'USA', FALSE FROM new_question
+SELECT id, 'Estados Unidos', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Japan', FALSE FROM new_question
+SELECT id, 'Japón', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Switzerland', FALSE FROM new_question;
+SELECT id, 'Suiza', FALSE
+FROM new_question;
 
--- Question 10
+-- Pregunta 10
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What year did the New Orleans Saints win the Super Bowl?', 'Sports', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, '2010', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿En qué año ganaron los New Orleans Saints el Super Bowl?', 'Deportes', 'Opcion_multiple', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, '2010', TRUE
+FROM new_question
 UNION ALL
-SELECT id, '2008', FALSE FROM new_question
+SELECT id, '2008', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '2009', FALSE FROM new_question
+SELECT id, '2009', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '2011', FALSE FROM new_question;
+SELECT id, '2011', FALSE
+FROM new_question;
 
--- Question 1
+-- Pregunta 1
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In a game of snooker, what colour ball is worth 3 points?', 'Sports', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Green', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('En una partida de snooker, ¿de qué color es la bola que vale 3 puntos?', 'Deportes', 'Opcion_multiple',
+                'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Verde', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Yellow', FALSE FROM new_question
+SELECT id, 'Amarillo', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Brown', FALSE FROM new_question
+SELECT id, 'Marrón', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Blue', FALSE FROM new_question;
+SELECT id, 'Azul', FALSE
+FROM new_question;
 
--- Question 2
+-- Pregunta 2
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In what sport does Fanny Chmelar compete for Germany?', 'Sports', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Skiing', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿En qué deporte compite Fanny Chmelar por Alemania?', 'Deportes', 'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Esquí', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Swimming', FALSE FROM new_question
+SELECT id, 'Natación', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Showjumping', FALSE FROM new_question
+SELECT id, 'Salto ecuestre', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Gymnastics', FALSE FROM new_question;
+SELECT id, 'Gimnasia', FALSE
+FROM new_question;
 
--- Question 3
+-- Pregunta 3
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('How many games did Arsenal FC go unbeaten during the 2003-2004 season of the English Premier League', 'Sports', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, '38', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuántos partidos estuvo invicto el Arsenal FC durante la temporada 2003-2004 de la Premier League inglesa?',
+                'Deportes', 'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, '38', TRUE
+FROM new_question
 UNION ALL
-SELECT id, '51', FALSE FROM new_question
+SELECT id, '51', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '49', FALSE FROM new_question
+SELECT id, '49', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '22', FALSE FROM new_question;
+SELECT id, '22', FALSE
+FROM new_question;
 
--- Question 4
+-- Pregunta 4
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Who was the topscorer for England national football team?', 'Sports', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Wayne Rooney', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Quién fue el máximo goleador de la selección nacional de fútbol de Inglaterra?', 'Deportes',
+                'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Wayne Rooney', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'David Beckham', FALSE FROM new_question
+SELECT id, 'David Beckham', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Steven Gerrard', FALSE FROM new_question
+SELECT id, 'Steven Gerrard', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Michael Owen', FALSE FROM new_question;
+SELECT id, 'Michael Owen', FALSE
+FROM new_question;
 
--- Question 5
+-- Pregunta 5
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is the name of the AHL affiliate of the Toronto Maple Leafs?', 'Sports', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Toronto Marlies', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál es el nombre del afiliado de la AHL de los Toronto Maple Leafs?', 'Deportes', 'Opcion_multiple',
+                'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Toronto Marlies', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Toronto Rock', FALSE FROM new_question
+SELECT id, 'Toronto Rock', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Toronto Argonauts', FALSE FROM new_question
+SELECT id, 'Toronto Argonauts', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Toronto Wolfpack', FALSE FROM new_question;
+SELECT id, 'Toronto Wolfpack', FALSE
+FROM new_question;
 
--- Question 6
+-- Pregunta 6
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('How many premier league trophies did Sir Alex Ferguson win during his time at Manchester United?', 'Sports', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, '13', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuántos trofeos de la Premier League ganó Sir Alex Ferguson durante su tiempo en el Manchester United?',
+                'Deportes', 'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, '13', TRUE
+FROM new_question
 UNION ALL
-SELECT id, '11', FALSE FROM new_question
+SELECT id, '11', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '20', FALSE FROM new_question
+SELECT id, '20', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '22', FALSE FROM new_question;
+SELECT id, '22', FALSE
+FROM new_question;
 
--- Question 7
+-- Pregunta 7
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which nation hosted the FIFA World Cup in 2006?', 'Sports', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Germany', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Qué nación fue la anfitriona de la Copa Mundial de la FIFA en 2006?', 'Deportes', 'Opcion_multiple',
+                'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Alemania', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'United Kingdom', FALSE FROM new_question
+SELECT id, 'Reino Unido', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Brazil', FALSE FROM new_question
+SELECT id, 'Brasil', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'South Africa', FALSE FROM new_question;
+SELECT id, 'Sudáfrica', FALSE
+FROM new_question;
+-- Pregunta 8
+WITH new_question AS (
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Qué equipo de fútbol ganó la Copa América Centenario 2016?', 'Deportes', 'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Chile', TRUE
+FROM new_question
+UNION ALL
+SELECT id, 'Argentina', FALSE
+FROM new_question
+UNION ALL
+SELECT id, 'Brasil', FALSE
+FROM new_question
+UNION ALL
+SELECT id, 'Colombia', FALSE
+FROM new_question;
 
--- Question 8
+-- Pregunta 9
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which soccer team won the Copa América Centenario 2016?', 'Sports', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Chile', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿De qué isla portuguesa es originario el futbolista Cristiano Ronaldo?', 'Deportes', 'Opcion_multiple',
+                'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Madeira', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Argentina', FALSE FROM new_question
+SELECT id, 'Terceira', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Brazil', FALSE FROM new_question
+SELECT id, 'Santa María', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Colombia', FALSE FROM new_question;
+SELECT id, 'Porto Santo', FALSE
+FROM new_question;
 
--- Question 9
+-- Pregunta 10
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which portuguese island is soccer player Cristiano Ronaldo from?', 'Sports', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Madeira', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿En qué año nació la leyenda del hockey Wayne Gretzky?', 'Deportes', 'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, '1961', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Terceira', FALSE FROM new_question
+SELECT id, '1965', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Santa Maria', FALSE FROM new_question
+SELECT id, '1959', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Porto Santo', FALSE FROM new_question;
+SELECT id, '1963', FALSE
+FROM new_question;
 
--- Question 10
+-- Pregunta 1
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What year was hockey legend Wayne Gretzky born?', 'Sports', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, '1961', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('En el fútbol canadiense, ¿cuántos puntos vale anotar un rouge?', 'Deportes', 'Opcion_multiple',
+                'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, '1', TRUE
+FROM new_question
 UNION ALL
-SELECT id, '1965', FALSE FROM new_question
+SELECT id, '2', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '1959', FALSE FROM new_question
+SELECT id, '3', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '1963', FALSE FROM new_question;
+SELECT id, '4', FALSE
+FROM new_question;
 
--- Question 1
+-- Pregunta 2
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In Canadian football, scoring a rouge is worth how many points?', 'Sports', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, '1', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Qué jugadora ganó la medalla de oro en tenis de mesa individual en los Juegos Olímpicos de 2016?',
+                'Deportes',
+                'Opcion_multiple', 'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'DING Ning (China)', TRUE
+FROM new_question
 UNION ALL
-SELECT id, '2', FALSE FROM new_question
+SELECT id, 'LI Xiaoxia (China)', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '3', FALSE FROM new_question
+SELECT id, 'Ai FUKUHARA (Japón)', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '4', FALSE FROM new_question;
+SELECT id, 'Song KIM (Corea del Norte)', FALSE
+FROM new_question;
 
--- Question 2
+-- Pregunta 3
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which female player won the gold medal of table tennis singles in 2016 Olympics Games?', 'Sports', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'DING Ning (China)', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿En qué año se celebró el tercer Super Bowl?', 'Deportes', 'Opcion_multiple', 'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, '1969', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'LI Xiaoxia (China)', FALSE FROM new_question
+SELECT id, '1968', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Ai FUKUHARA (Japan)', FALSE FROM new_question
+SELECT id, '1971', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Song KIM (North Korea)', FALSE FROM new_question;
+SELECT id, '1970', FALSE
+FROM new_question;
 
--- Question 3
+-- Pregunta 4
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which year was the third Super Bowl held?', 'Sports', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, '1969', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿El Etihad Stadium es el estadio local de qué equipo?', 'Deportes', 'Opcion_multiple', 'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Manchester City', TRUE
+FROM new_question
 UNION ALL
-SELECT id, '1968', FALSE FROM new_question
+SELECT id, 'Manchester United', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '1971', FALSE FROM new_question
+SELECT id, 'Arsenal', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '1970', FALSE FROM new_question;
+SELECT id, 'Blackpool', FALSE
+FROM new_question;
 
--- Question 4
+-- Pregunta 5
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Etihad Stadium is the home stadium for which team?', 'Sports', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Manchester City', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Qué ciudad tiene todos sus equipos deportivos profesionales con el mismo esquema de colores en sus camisetas?',
+                'Deportes', 'Opcion_multiple', 'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Pittsburgh', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Manchester United', FALSE FROM new_question
+SELECT id, 'Nueva York', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Arsenal', FALSE FROM new_question
+SELECT id, 'Seattle', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Blackpool', FALSE FROM new_question;
+SELECT id, 'Tampa Bay', FALSE
+FROM new_question;
 
--- Question 5
+-- Pregunta 6
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which city features all of their professional sports teams'' jersey''s with the same color scheme?', 'Sports', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Pittsburgh', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál es el nombre completo del futbolista "Cristiano Ronaldo"?', 'Deportes', 'Opcion_multiple',
+                'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Cristiano Ronaldo dos Santos Aveiro', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'New York', FALSE FROM new_question
+SELECT id, 'Cristiano Ronaldo los Santos Diego', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Seattle', FALSE FROM new_question
+SELECT id, 'Cristiano Armando Diego Ronaldo', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Tampa Bay', FALSE FROM new_question;
+SELECT id, 'Cristiano Luis Armando Ronaldo', FALSE
+FROM new_question;
 
--- Question 6
+-- Pregunta 7
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is the full name of the footballer "Cristiano Ronaldo"?', 'Sports', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Cristiano Ronaldo dos Santos Aveiro', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Qué jugador "dio una patada de kung-fu" a un aficionado del Crystal Palace en enero de 1995?',
+                'Deportes', 'Opcion_multiple',
+                'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Eric Cantona', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Cristiano Ronaldo los Santos Diego', FALSE FROM new_question
+SELECT id, 'David Seamen', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Cristiano Armando Diego Ronaldo', FALSE FROM new_question
+SELECT id, 'Ashley Cole', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Cristiano Luis Armando Ronaldo', FALSE FROM new_question;
+SELECT id, 'Mark Hughes', FALSE
+FROM new_question;
 
--- Question 7
+-- Pregunta 8
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which player "kung-fu kicked" a Crystal Palace fan in January 1995?', 'Sports', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Eric Cantona', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Qué jugador masculino ganó la medalla de oro en tenis de mesa individual en los Juegos Olímpicos de 2016?',
+                'Deportes', 'Opcion_multiple', 'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Ma Long (China)', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'David Seamen', FALSE FROM new_question
+SELECT id, 'Zhang Jike (China)', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Ashley Cole', FALSE FROM new_question
+SELECT id, 'Jun Mizutani (Japón)', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Mark Hughes', FALSE FROM new_question;
+SELECT id, 'Vladimir Samsonov (Bielorrusia)', FALSE
+FROM new_question;
 
--- Question 8
+-- Pregunta 9
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which male player won the gold medal of table tennis singles in 2016 Olympics Games?', 'Sports', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Ma Long (China)', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuántas veces ganó Martina Navratilova el Campeonato de Wimbledon en individuales?', 'Deportes',
+                'Opcion_multiple', 'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Nueve', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Zhang Jike (China)', FALSE FROM new_question
+SELECT id, 'Diez', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Jun Mizutani (Japan)', FALSE FROM new_question
+SELECT id, 'Siete', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Vladimir Samsonov (Belarus)', FALSE FROM new_question;
+SELECT id, 'Ocho', FALSE
+FROM new_question;
 
--- Question 9
+-- Pregunta 10
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('How many times did Martina Navratilova win the Wimbledon Singles Championship?', 'Sports', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Nine', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cómo se llama el equipo afiliado de la AHL de los Boston Bruins?', 'Deportes', 'Opcion_multiple',
+                'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Providence Bruins', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Ten', FALSE FROM new_question
+SELECT id, 'New Haven Bruins', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Seven', FALSE FROM new_question
+SELECT id, 'Cambridge Bruins', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Eight', FALSE FROM new_question;
-
--- Question 10
-WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('The AHL affiliate team of the Boston Bruins is named what?', 'Sports', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Providence Bruins', TRUE FROM new_question
-UNION ALL
-SELECT id, 'New Haven Bruins', FALSE FROM new_question
-UNION ALL
-SELECT id, 'Cambridge Bruins', FALSE FROM new_question
-UNION ALL
-SELECT id, 'Hartford Bruins', FALSE FROM new_question;
+SELECT id, 'Hartford Bruins', FALSE
+FROM new_question;

@@ -45,6 +45,7 @@ CREATE TABLE IF NOT EXISTS game_session
     score_session DOUBLE PRECISION NOT NULL,
     game_type     VARCHAR(50)      NOT NULL,
     difficulty    VARCHAR(50)      NOT NULL,
+    status        VARCHAR(50)      NOT NULL,
     played_at     TIMESTAMP        NOT NULL DEFAULT now()
 );
 

@@ -14,7 +14,7 @@ data class GameSession(
     val scoreSession: Double = 0.0,
     val difficulty: Difficulty,
     val gameType: GameType,
-    val status: SessionStatus = SessionStatus.In_Progress,
+    val status: SessionStatus = SessionStatus.En_progreso,
     val startedAt: Instant,
     val finishedAt: Instant? = null
 )

@@ -1,428 +1,557 @@
 -- Question 1
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is the capital of the American state of Arizona?', 'Geography', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Phoenix', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál es la capital del estado estadounidense de Arizona?', 'Geografia', 'Opcion_multiple', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Phoenix', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Montgomery', FALSE FROM new_question
+SELECT id, 'Montgomery', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Tallahassee', FALSE FROM new_question
+SELECT id, 'Tallahassee', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Raleigh', FALSE FROM new_question;
+SELECT id, 'Raleigh', FALSE
+FROM new_question;
 
--- Question 2
+-- Pregunta 2
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Alaska is the largest state in the United States.', 'Geography', 'True_or_false', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'True', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('Alaska es el estado más grande de los Estados Unidos.', 'Geografia', 'Verdadero_falso', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Verdadero', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'False', FALSE FROM new_question;
+SELECT id, 'Falso', FALSE
+FROM new_question;
 
--- Question 3
+-- Pregunta 3
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('The Alps are a mountain range on which continent?', 'Geography', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Europe', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿En qué continente se encuentra la cordillera de los Alpes?', 'Geografia', 'Opcion_multiple', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Europa', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'North America', FALSE FROM new_question
+SELECT id, 'Norteamérica', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Asia', FALSE FROM new_question
+SELECT id, 'Asia', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Africa', FALSE FROM new_question;
+SELECT id, 'África', FALSE
+FROM new_question;
 
--- Question 4
+-- Pregunta 4
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What state is the largest state of the United States of America?', 'Geography', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Alaska', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál es el estado más grande de los Estados Unidos de América?', 'Geografia', 'Opcion_multiple',
+                'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Alaska', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'California', FALSE FROM new_question
+SELECT id, 'California', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Texas', FALSE FROM new_question
+SELECT id, 'Texas', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Washington', FALSE FROM new_question;
+SELECT id, 'Washington', FALSE
+FROM new_question;
 
--- Question 5
+-- Pregunta 5
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which of these African countries list "Spanish" as an official language?', 'Geography', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Equatorial Guinea', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál de estos países africanos tiene el español como idioma oficial?', 'Geografia',
+                'Opcion_multiple', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Guinea Ecuatorial', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Guinea', FALSE FROM new_question
+SELECT id, 'Guinea', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Cameroon', FALSE FROM new_question
+SELECT id, 'Camerún', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Angola', FALSE FROM new_question;
+SELECT id, 'Angola', FALSE
+FROM new_question;
 
--- Question 6
+-- Pregunta 6
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('A group of islands is called an ''archipelago''.', 'Geography', 'True_or_false', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'True', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('Un grupo de islas se llama un "archipiélago".', 'Geografia', 'Verdadero_falso', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Verdadero', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'False', FALSE FROM new_question;
+SELECT id, 'Falso', FALSE
+FROM new_question;
 
--- Question 7
+-- Pregunta 7
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is the only state in the United States that does not have a flag in a shape with 4 edges?', 'Geography', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Ohio', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál es el único estado de Estados Unidos que no tiene una bandera con forma de 4 lados?',
+                'Geografia', 'Opcion_multiple', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Ohio', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Florida', FALSE FROM new_question
+SELECT id, 'Florida', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Idaho', FALSE FROM new_question
+SELECT id, 'Idaho', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'New Mexico', FALSE FROM new_question;
+SELECT id, 'Nuevo México', FALSE
+FROM new_question;
 
--- Question 8
+-- Pregunta 8
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('There is a city called Rome in every continent on Earth.', 'Geography', 'True_or_false', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'False', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('Existe una ciudad llamada Roma en cada continente de la Tierra.', 'Geografia', 'Verdadero_falso',
+                'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Falso', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'True', FALSE FROM new_question;
+SELECT id, 'Verdadero', FALSE
+FROM new_question;
 
--- Question 9
+-- Pregunta 9
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which small country is located between the borders of France and Spain?', 'Geography', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Andorra', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Qué pequeño país se encuentra entre las fronteras de Francia y España?', 'Geografia',
+                'Opcion_multiple', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Andorra', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'San Marino', FALSE FROM new_question
+SELECT id, 'San Marino', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Vatican City', FALSE FROM new_question
+SELECT id, 'Ciudad del Vaticano', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Lichtenstein', FALSE FROM new_question;
+SELECT id, 'Liechtenstein', FALSE
+FROM new_question;
 
--- Question 10
+-- Pregunta 10
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Vatican City is a country.', 'Geography', 'True_or_false', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'True', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('La Ciudad del Vaticano es un país.', 'Geografia', 'Verdadero_falso', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Verdadero', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'False', FALSE FROM new_question;
+SELECT id, 'Falso', FALSE
+FROM new_question;
 
--- Question 1
+-- Pregunta 1
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is the capital of Seychelles?', 'Geography', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Victoria', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál es la capital de Seychelles?', 'Geografia', 'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Victoria', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Luanda', FALSE FROM new_question
+SELECT id, 'Luanda', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'N''Djamena', FALSE FROM new_question
+SELECT id, 'Yamena', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Tripoli', FALSE FROM new_question;
+SELECT id, 'Trípoli', FALSE
+FROM new_question;
 
--- Question 2
+-- Pregunta 2
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which European city has the highest mileage of canals in the world?', 'Geography', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Birmingham', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Qué ciudad europea tiene la mayor cantidad de kilómetros de canales en el mundo?', 'Geografia',
+                'Opcion_multiple',
+                'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Birmingham', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Venice', FALSE FROM new_question
+SELECT id, 'Venecia', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Amsterdam', FALSE FROM new_question
+SELECT id, 'Ámsterdam', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Berlin', FALSE FROM new_question;
+SELECT id, 'Berlín', FALSE
+FROM new_question;
 
--- Question 3
+-- Pregunta 3
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('The capital of the US State Ohio is the city of Chillicothe.', 'Geography', 'True_or_false', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'False', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('La capital del estado estadounidense de Ohio es la ciudad de Chillicothe.', 'Geografia',
+                'Verdadero_falso', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Falso', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'True', FALSE FROM new_question;
+SELECT id, 'Verdadero', FALSE
+FROM new_question;
 
--- Question 4
+-- Pregunta 4
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which of these countries is the smallest by population?', 'Geography', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Norway', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál de estos países es el más pequeño por población?', 'Geografia', 'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Noruega', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Slovakia', FALSE FROM new_question
+SELECT id, 'Eslovaquia', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Finland', FALSE FROM new_question
+SELECT id, 'Finlandia', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Hong Kong', FALSE FROM new_question;
+SELECT id, 'Hong Kong', FALSE
+FROM new_question;
 
--- Question 5
+-- Pregunta 5
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What are the four corner states of the US?', 'Geography', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Utah, Colorado, Arizona, New Mexico', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuáles son los cuatro estados de las esquinas de EE.UU.?', 'Geografia', 'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Utah, Colorado, Arizona, Nuevo México', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Oregon, Idaho, Nevada, Utah', FALSE FROM new_question
+SELECT id, 'Oregón, Idaho, Nevada, Utah', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Kansas, Oklahoma, Arkansas, Louisiana', FALSE FROM new_question
+SELECT id, 'Kansas, Oklahoma, Arkansas, Luisiana', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'South Dakota, Minnesota, Nebraska, Iowa', FALSE FROM new_question;
+SELECT id, 'Dakota del Sur, Minnesota, Nebraska, Iowa', FALSE
+FROM new_question;
 
--- Question 6
+-- Pregunta 6
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which one of these countries borders with Poland?', 'Geography', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Lithuania', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál de estos países limita con Polonia?', 'Geografia', 'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Lituania', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'France', FALSE FROM new_question
+SELECT id, 'Francia', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Norway', FALSE FROM new_question
+SELECT id, 'Noruega', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Netherlands', FALSE FROM new_question;
+SELECT id, 'Países Bajos', FALSE
+FROM new_question;
 
--- Question 7
+-- Pregunta 7
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is the capital of Chile?', 'Geography', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Santiago', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál es la capital de Chile?', 'Geografia', 'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Santiago', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Valparaíso', FALSE FROM new_question
+SELECT id, 'Valparaíso', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Copiapó', FALSE FROM new_question
+SELECT id, 'Copiapó', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Antofagasta', FALSE FROM new_question;
+SELECT id, 'Antofagasta', FALSE
+FROM new_question;
 
--- Question 8
+-- Pregunta 8
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('The following Spanish provinces are located in the northern area of Spain except:', 'Geography', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Murcia', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('Las siguientes provincias españolas están ubicadas en el norte de España, excepto:', 'Geografia',
+                'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Murcia', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Asturias', FALSE FROM new_question
+SELECT id, 'Asturias', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Navarre', FALSE FROM new_question
+SELECT id, 'Navarra', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'León', FALSE FROM new_question;
+SELECT id, 'León', FALSE
+FROM new_question;
 
--- Question 9
+-- Pregunta 9
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is the smallest country in South America by area?', 'Geography', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Suriname', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál es el país más pequeño de Sudamérica por superficie?', 'Geografia', 'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Surinam', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Brazil', FALSE FROM new_question
+SELECT id, 'Brasil', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Uruguay', FALSE FROM new_question
+SELECT id, 'Uruguay', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Chile', FALSE FROM new_question;
+SELECT id, 'Chile', FALSE
+FROM new_question;
 
--- Question 10
+-- Pregunta 10
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is the capital of the State of Washington, United States?', 'Geography', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Olympia', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál es la capital del estado de Washington, Estados Unidos?', 'Geografia', 'Opcion_multiple',
+                'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Olympia', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Washington D.C.', FALSE FROM new_question
+SELECT id, 'Washington D.C.', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Seattle', FALSE FROM new_question
+SELECT id, 'Seattle', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Yukon', FALSE FROM new_question;
+SELECT id, 'Yukón', FALSE
+FROM new_question;
 
--- Question 1
+-- Pregunta 1
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is the name of rocky region that spans most of eastern Canada?', 'Geography', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Canadian Shield', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cómo se llama la región rocosa que abarca la mayor parte del este de Canadá?', 'Geografia',
+                'Opcion_multiple',
+                'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Escudo Canadiense', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Rocky Mountains', FALSE FROM new_question
+SELECT id, 'Montañas Rocosas', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Appalachian Mountains', FALSE FROM new_question
+SELECT id, 'Montes Apalaches', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Himalayas', FALSE FROM new_question;
--- Question 2
-WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('The emblem on the flag of the Republic of Tajikistan features a sunrise over mountains below what symbol?', 'Geography', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Crown', TRUE FROM new_question
-UNION ALL
-SELECT id, 'Bird', FALSE FROM new_question
-UNION ALL
-SELECT id, 'Sickle', FALSE FROM new_question
-UNION ALL
-SELECT id, 'Tree', FALSE FROM new_question;
+SELECT id, 'Himalayas', FALSE
+FROM new_question;
 
--- Question 3
+-- Pregunta 2
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is the tallest mountain in Canada?', 'Geography', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Mount Logan', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('El emblema en la bandera de la República de Tayikistán presenta un amanecer sobre montañas debajo de qué símbolo?',
+                'Geografia', 'Opcion_multiple', 'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Corona', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Mont Tremblant', FALSE FROM new_question
+SELECT id, 'Pájaro', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Whistler Mountain', FALSE FROM new_question
+SELECT id, 'Hoz', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Blue Mountain', FALSE FROM new_question;
+SELECT id, 'Árbol', FALSE
+FROM new_question;
 
--- Question 4
+-- Pregunta 3
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is the most populous Muslim-majority nation in 2010?', 'Geography', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Indonesia', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál es la montaña más alta de Canadá?', 'Geografia', 'Opcion_multiple', 'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Monte Logan', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Saudi Arabia', FALSE FROM new_question
+SELECT id, 'Mont Tremblant', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Iran', FALSE FROM new_question
+SELECT id, 'Montaña Whistler', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Sudan', FALSE FROM new_question;
+SELECT id, 'Montaña Azul', FALSE
+FROM new_question;
 
--- Question 5
+-- Pregunta 4
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is the official German name of the Swiss Federal Railways?', 'Geography', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Schweizerische Bundesbahnen', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál era la nación de mayoría musulmana más poblada en 2010?', 'Geografia', 'Opcion_multiple',
+                'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Indonesia', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Schweizerische Nationalbahnen', FALSE FROM new_question
+SELECT id, 'Arabia Saudita', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Bundesbahnen der Schweiz', FALSE FROM new_question
+SELECT id, 'Irán', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Schweizerische Staatsbahnen', FALSE FROM new_question;
+SELECT id, 'Sudán', FALSE
+FROM new_question;
 
--- Question 6
+-- Pregunta 5
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is the second-largest city in Lithuania?', 'Geography', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Kaunas', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál es el nombre oficial en alemán de los Ferrocarriles Federales Suizos?', 'Geografia',
+                'Opcion_multiple',
+                'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Schweizerische Bundesbahnen', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Panevėžys', FALSE FROM new_question
+SELECT id, 'Schweizerische Nationalbahnen', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Vilnius', FALSE FROM new_question
+SELECT id, 'Bundesbahnen der Schweiz', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Klaipėda', FALSE FROM new_question;
+SELECT id, 'Schweizerische Staatsbahnen', FALSE
+FROM new_question;
 
--- Question 7
+-- Pregunta 6
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is the largest city and commercial capital of Sri Lanka?', 'Geography', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Colombo', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál es la segunda ciudad más grande de Lituania?', 'Geografia', 'Opcion_multiple', 'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Kaunas', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Moratuwa', FALSE FROM new_question
+SELECT id, 'Panevėžys', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Negombo', FALSE FROM new_question
+SELECT id, 'Vilna', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Kandy', FALSE FROM new_question;
+SELECT id, 'Klaipėda', FALSE
+FROM new_question;
 
--- Question 8
+-- Pregunta 7
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What is Canada''s largest island?', 'Geography', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Baffin Island', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál es la ciudad más grande y la capital comercial de Sri Lanka?', 'Geografia', 'Opcion_multiple',
+                'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Colombo', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Prince Edward Island', FALSE FROM new_question
+SELECT id, 'Moratuwa', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Vancouver Island', FALSE FROM new_question
+SELECT id, 'Negombo', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Newfoundland', FALSE FROM new_question;
+SELECT id, 'Kandy', FALSE
+FROM new_question;
 
--- Question 9
+-- Pregunta 8
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What national museum will you find in Cooperstown, New York?', 'Geography', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'National Baseball Hall of Fame', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál es la isla más grande de Canadá?', 'Geografia', 'Opcion_multiple', 'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Isla de Baffin', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Metropolitan Museum of Art', FALSE FROM new_question
+SELECT id, 'Isla del Príncipe Eduardo', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'National Toy Hall of Fame', FALSE FROM new_question
+SELECT id, 'Isla de Vancouver', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Museum of Modern Art', FALSE FROM new_question;
+SELECT id, 'Terranova', FALSE
+FROM new_question;
 
--- Question 10
+-- Pregunta 9
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which of these is NOT a city in India?', 'Geography', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Islamabad', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Qué museo nacional encontrarás en Cooperstown, Nueva York?', 'Geografia', 'Opcion_multiple',
+                'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Salón de la Fama del Béisbol Nacional', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Hyderabad', FALSE FROM new_question
+SELECT id, 'Museo Metropolitano de Arte', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Ahmedabad', FALSE FROM new_question
+SELECT id, 'Salón de la Fama Nacional del Juguete', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Ghaziabad', FALSE FROM new_question;
+SELECT id, 'Museo de Arte Moderno', FALSE
+FROM new_question;
+
+-- Pregunta 10
+WITH new_question AS (
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál de estas NO es una ciudad de la India?', 'Geografia', 'Opcion_multiple', 'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Islamabad', TRUE
+FROM new_question
+UNION ALL
+SELECT id, 'Hyderabad', FALSE
+FROM new_question
+UNION ALL
+SELECT id, 'Ahmedabad', FALSE
+FROM new_question
+UNION ALL
+SELECT id, 'Ghaziabad', FALSE
+FROM new_question;

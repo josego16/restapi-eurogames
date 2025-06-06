@@ -1,421 +1,543 @@
--- Question 1
+-- Pregunta 1
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In the Greek Mythology, the Gorgon can turn those who behold her to stone.', 'Mythology', 'True_or_false', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'True', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('En la mitología griega, la Gorgona puede convertir en piedra a quienes la miran.', 'Mitologia',
+                'Verdadero_falso', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Verdadero', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'False', FALSE FROM new_question;
+SELECT id, 'Falso', FALSE
+FROM new_question;
 
--- Question 2
+-- Pregunta 2
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In the Greek Mythology, the god of war is called Mars.', 'Mythology', 'True_or_false', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'False', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('En la mitología griega, el dios de la guerra se llama Marte.', 'Mitologia', 'Verdadero_falso', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Falso', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'True', FALSE FROM new_question;
+SELECT id, 'Verdadero', FALSE
+FROM new_question;
 
--- Question 3
+-- Pregunta 3
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('How many heads does Cerberus have?', 'Mythology', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, '3', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuántas cabezas tiene Cerbero?', 'Mitologia', 'Opcion_multiple', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, '3', TRUE
+FROM new_question
 UNION ALL
-SELECT id, '2', FALSE FROM new_question
+SELECT id, '2', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '1', FALSE FROM new_question
+SELECT id, '1', FALSE
+FROM new_question
 UNION ALL
-SELECT id, '5', FALSE FROM new_question;
+SELECT id, '5', FALSE
+FROM new_question;
 
--- Question 4
+-- Pregunta 4
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which of these mythological creatures is said to be half-man and half-horse?', 'Mythology', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Centaur', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál de estas criaturas mitológicas se dice que es mitad hombre y mitad caballo?', 'Mitologia',
+                'Opcion_multiple', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Centauro', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Minotaur', FALSE FROM new_question
+SELECT id, 'Minotauro', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Pegasus', FALSE FROM new_question
+SELECT id, 'Pegaso', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Gorgon', FALSE FROM new_question;
+SELECT id, 'Gorgona', FALSE
+FROM new_question;
 
--- Question 5
+-- Pregunta 5
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which Greek & Roman god was known as the god of music, truth and prophecy, healing, the sun and light, plague, poetry, and more?', 'Mythology', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Apollo', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Qué dios griego y romano era conocido como el dios de la música, la verdad y la profecía, la curación, el sol y la luz, la peste, la poesía y más?',
+                'Mitologia', 'Opcion_multiple', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Apolo', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Aphrodite', FALSE FROM new_question
+SELECT id, 'Afrodita', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Artemis', FALSE FROM new_question
+SELECT id, 'Artemisa', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Athena', FALSE FROM new_question;
+SELECT id, 'Atenea', FALSE
+FROM new_question;
 
--- Question 6
+-- Pregunta 6
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('The ancient Roman god of war was commonly known as which of the following?', 'Mythology', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Mars', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cómo se conocía comúnmente al dios de la guerra en la antigua Roma?', 'Mitologia',
+                'Opcion_multiple', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Marte', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Jupiter', FALSE FROM new_question
+SELECT id, 'Júpiter', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Juno', FALSE FROM new_question
+SELECT id, 'Juno', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Ares', FALSE FROM new_question;
+SELECT id, 'Ares', FALSE
+FROM new_question;
 
--- Question 7
+-- Pregunta 7
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In Greek mythology, who is the god of wine?', 'Mythology', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Dionysus', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('En la mitología griega, ¿quién es el dios del vino?', 'Mitologia', 'Opcion_multiple', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Dionisio', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Hephaestus', FALSE FROM new_question
+SELECT id, 'Hefesto', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Demeter', FALSE FROM new_question
+SELECT id, 'Deméter', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Apollo', FALSE FROM new_question;
+SELECT id, 'Apolo', FALSE
+FROM new_question;
 
--- Question 8
+-- Pregunta 8
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('In Norse mythology, Thor once dressed as a woman.', 'Mythology', 'True_or_false', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'True', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('En la mitología nórdica, Thor una vez se vistió de mujer.', 'Mitologia', 'Verdadero_falso', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Verdadero', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'False', FALSE FROM new_question;
+SELECT id, 'Falso', FALSE
+FROM new_question;
 
--- Question 9
+-- Pregunta 9
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Who was the only god from Greece who did not get a name change in Rome?', 'Mythology', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Apollo', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Quién fue el único dios de Grecia que no cambió de nombre en Roma?', 'Mitologia',
+                'Opcion_multiple', 'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Apolo', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Demeter', FALSE FROM new_question
+SELECT id, 'Deméter', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Zeus', FALSE FROM new_question
+SELECT id, 'Zeus', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Athena', FALSE FROM new_question;
+SELECT id, 'Atenea', FALSE
+FROM new_question;
 
--- Question 10
+-- Pregunta 10
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What mytological creatures have women''s faces and vultures'' bodies?', 'Mythology', 'Multiple_choice', 'Easy')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Harpies', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Qué criaturas mitológicas tienen rostro de mujer y cuerpo de buitre?', 'Mitologia', 'Opcion_multiple',
+                'Facil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Harpías', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Mermaids', FALSE FROM new_question
+SELECT id, 'Sirenas', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Nymph', FALSE FROM new_question
+SELECT id, 'Ninfa', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Lilith', FALSE FROM new_question;
+SELECT id, 'Lilith', FALSE
+FROM new_question;
 
--- Question 1
+-- Pregunta 1
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Hel was the daughter of which Norse Mythological figure?', 'Mythology', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Loki', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Hel era hija de qué figura mitológica nórdica?', 'Mitologia', 'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Loki', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Thor', FALSE FROM new_question
+SELECT id, 'Thor', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Odin', FALSE FROM new_question
+SELECT id, 'Odín', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Balder', FALSE FROM new_question;
+SELECT id, 'Balder', FALSE
+FROM new_question;
 
--- Question 2
+-- Pregunta 2
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('According to Norse mythology, Loki is a mother.', 'Mythology', 'True_or_false', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'True', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('Según la mitología nórdica, Loki es madre.', 'Mitologia', 'Verdadero_falso', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Verdadero', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'False', FALSE FROM new_question;
+SELECT id, 'Falso', FALSE
+FROM new_question;
 
--- Question 3
+-- Pregunta 3
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Who is the God Loki''s son? ', 'Mythology', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Fenrir ', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Quién es hijo del dios Loki?', 'Mitologia', 'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Fenrir', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Odin', FALSE FROM new_question
+SELECT id, 'Odín', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Hel', FALSE FROM new_question
+SELECT id, 'Hel', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Sigyn', FALSE FROM new_question;
+SELECT id, 'Sigyn', FALSE
+FROM new_question;
 
--- Question 4
+-- Pregunta 4
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Who is the god of war in Polynesian mythology?', 'Mythology', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, '''Oro', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Quién es el dios de la guerra en la mitología polinesia?', 'Mitologia', 'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, '''Oro', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Hina', FALSE FROM new_question
+SELECT id, 'Hina', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Kohara', FALSE FROM new_question
+SELECT id, 'Kohara', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Māui', FALSE FROM new_question;
+SELECT id, 'Māui', FALSE
+FROM new_question;
 
--- Question 5
+-- Pregunta 5
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('The Japanese god Izanagi successfully returned his wife Izanami from the Underworld.', 'Mythology', 'True_or_false', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'False', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('El dios japonés Izanagi logró devolver con éxito a su esposa Izanami del inframundo.', 'Mitologia',
+                'Verdadero_falso', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Falso', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'True', FALSE FROM new_question;
+SELECT id, 'Verdadero', FALSE
+FROM new_question;
 
--- Question 6
+-- Pregunta 6
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Hera is god of...', 'Mythology', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Marriage', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('Hera es diosa de...', 'Mitologia', 'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Matrimonio', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Agriculture', FALSE FROM new_question
+SELECT id, 'Agricultura', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Sea', FALSE FROM new_question
+SELECT id, 'Mar', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'War', FALSE FROM new_question;
+SELECT id, 'Guerra', FALSE
+FROM new_question;
 
--- Question 7
+-- Pregunta 7
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('A minotaur is half human half what?', 'Mythology', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Bull', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Un minotauro es mitad humano y mitad qué?', 'Mitologia', 'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Toro', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Cow', FALSE FROM new_question
+SELECT id, 'Vaca', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Horse', FALSE FROM new_question
+SELECT id, 'Caballo', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Eagle', FALSE FROM new_question;
+SELECT id, 'Águila', FALSE
+FROM new_question;
 
--- Question 8
+-- Pregunta 8
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('The Hippogriff, not to be confused with the Griffon, is a magical creature with the front half of an eagle, and the back half of what?', 'Mythology', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'A Horse', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('El hipogrifo, que no debe confundirse con el grifo, es una criatura mágica con la parte delantera de un águila y la parte trasera de qué animal?',
+                'Mitologia', 'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Un caballo', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'A Dragon', FALSE FROM new_question
+SELECT id, 'Un dragón', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'A Tiger', FALSE FROM new_question
+SELECT id, 'Un tigre', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'A Lion', FALSE FROM new_question;
+SELECT id, 'Un león', FALSE
+FROM new_question;
 
--- Question 9
+-- Pregunta 9
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Neptune''s greek name was...', 'Mythology', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Poseidon', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('El nombre griego de Neptuno era...', 'Mitologia', 'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Poseidón', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Ares', FALSE FROM new_question
+SELECT id, 'Ares', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Zeus', FALSE FROM new_question
+SELECT id, 'Zeus', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Apollo', FALSE FROM new_question;
+SELECT id, 'Apolo', FALSE
+FROM new_question;
 
--- Question 10
+-- Pregunta 10
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('According to Japanese folklore, what is the favorite food of the Kappa.', 'Mythology', 'Multiple_choice', 'Medium')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Cucumbers', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('Según el folclore japonés, ¿cuál es la comida favorita del Kappa?', 'Mitologia',
+                'Opcion_multiple', 'Normal')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Pepinos', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Kabocha', FALSE FROM new_question
+SELECT id, 'Kabocha', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Nasu', FALSE FROM new_question
+SELECT id, 'Nasu', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Soba', FALSE FROM new_question;
+SELECT id, 'Soba', FALSE
+FROM new_question;
 
--- Question 1
+-- Pregunta 1
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Rannamaari was a sea demon that haunted the people of the Maldives and had to be appeased monthly with the sacrifice of a virgin girl.', 'Mythology', 'True_or_false', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'True', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('Rannamaari era un demonio marino que atormentaba a la gente de Maldivas y tenía que ser apaciguado mensualmente con el sacrificio de una joven virgen.',
+                'Mitologia', 'Verdadero_falso', 'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Verdadero', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'False', FALSE FROM new_question;
+SELECT id, 'Falso', FALSE
+FROM new_question;
 
--- Question 2
+-- Pregunta 2
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Skaði is the Norse Goddess of skiing, mountains, winter and bowhunting.', 'Mythology', 'True_or_false', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'True', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('Skaði es la diosa nórdica del esquí, las montañas, el invierno y la caza con arco.', 'Mitologia',
+                'Verdadero_falso',
+                'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Verdadero', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'False', FALSE FROM new_question;
+SELECT id, 'Falso', FALSE
+FROM new_question;
 
--- Question 3
+-- Pregunta 3
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Talos, the mythical giant bronze man, was the protector of which island?', 'Mythology', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Crete', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('Talos, el mítico gigante de bronce, ¿de qué isla era protector?', 'Mitologia',
+                'Opcion_multiple', 'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Creta', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Sardinia', FALSE FROM new_question
+SELECT id, 'Cerdeña', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Sicily', FALSE FROM new_question
+SELECT id, 'Sicilia', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Cyprus', FALSE FROM new_question;
+SELECT id, 'Chipre', FALSE
+FROM new_question;
 
--- Question 4
+-- Pregunta 4
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Who is a minor god that is protector and creator of various arts, such as cheese making and bee keeping.', 'Mythology', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Aristaeus', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Quién es un dios menor protector y creador de varias artes, como la fabricación de queso y la apicultura?',
+                'Mitologia', 'Opcion_multiple', 'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Aristeo', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Autonoe', FALSE FROM new_question
+SELECT id, 'Autónoe', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Carme', FALSE FROM new_question
+SELECT id, 'Carme', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Cephisso', FALSE FROM new_question;
+SELECT id, 'Cefiso', FALSE
+FROM new_question;
 
--- Question 5
+-- Pregunta 5
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('According to Algonquian folklore, how does one transform into a Wendigo?', 'Mythology', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Participating in cannibalism.', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('Según el folclore algonquino, ¿cómo se transforma uno en un Wendigo?', 'Mitologia',
+                'Opcion_multiple', 'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Participando en el canibalismo.', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Excessive mutilation of animal corpses.', FALSE FROM new_question
+SELECT id, 'Mutilación excesiva de cadáveres de animales.', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Performing a ritual involving murder.', FALSE FROM new_question
+SELECT id, 'Realizando un ritual que implica asesinato.', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Drinking the blood of many slain animals.', FALSE FROM new_question;
+SELECT id, 'Bebiendo la sangre de muchos animales muertos.', FALSE
+FROM new_question;
 
--- Question 6
+-- Pregunta 6
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Who did Hippomenes defeat in a footrace?', 'Mythology', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Atalanta', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿A quién derrotó Hipómenes en una carrera a pie?', 'Mitologia', 'Opcion_multiple', 'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Atalanta', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Peleus', FALSE FROM new_question
+SELECT id, 'Peleo', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Theseus', FALSE FROM new_question
+SELECT id, 'Teseo', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Jason', FALSE FROM new_question;
+SELECT id, 'Jasón', FALSE
+FROM new_question;
 
--- Question 7
+-- Pregunta 7
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('What was the punishment for Sysiphus''s craftiness?', 'Mythology', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Cursed to roll a boulder up a hill for eternity.', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál fue el castigo por la astucia de Sísifo?', 'Mitologia', 'Opcion_multiple', 'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Condenado a empujar una roca cuesta arriba por la eternidad.', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Tied to a boulder for eternity, being pecked by birds.', FALSE FROM new_question
+SELECT id, 'Atado a una roca por la eternidad, siendo picoteado por aves.', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Standing in a lake filled with water he could not drink.', FALSE FROM new_question
+SELECT id, 'De pie en un lago lleno de agua que no podía beber.', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'To fell a tree that regenerated after every axe swing.', FALSE FROM new_question;
+SELECT id, 'Talar un árbol que se regeneraba después de cada hachazo.', FALSE
+FROM new_question;
 
--- Question 8
+-- Pregunta 8
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Nidhogg is a mythical creature from what mythology?', 'Mythology', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Norse', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Nidhogg es una criatura mítica de qué mitología?', 'Mitologia', 'Opcion_multiple', 'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Nórdica', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Egyptian', FALSE FROM new_question
+SELECT id, 'Egipcia', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Greek', FALSE FROM new_question
+SELECT id, 'Griega', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Hindu', FALSE FROM new_question;
+SELECT id, 'Hindú', FALSE
+FROM new_question;
 
--- Question 9
+-- Pregunta 9
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Which of the following is NOT a god in Norse Mythology.', 'Mythology', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Jens', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Cuál de los siguientes NO es un dios de la mitología nórdica?', 'Mitologia', 'Opcion_multiple',
+                'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Jens', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Loki', FALSE FROM new_question
+SELECT id, 'Loki', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Tyr', FALSE FROM new_question
+SELECT id, 'Tyr', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Snotra', FALSE FROM new_question;
+SELECT id, 'Snotra', FALSE
+FROM new_question;
 
--- Question 10
+-- Pregunta 10
 WITH new_question AS (
-  INSERT INTO question (statement, question_type, response_mode, difficulty)
-  VALUES ('Who is the Egyptian god of reproduction and lettuce?', 'Mythology', 'Multiple_choice', 'Hard')
-  RETURNING id
-)
-INSERT INTO answer (question_id, text, is_correct)
-SELECT id, 'Min', TRUE FROM new_question
+    INSERT INTO question (statement, question_type, response_mode, difficulty)
+        VALUES ('¿Quién es el dios egipcio de la reproducción y la lechuga?', 'Mitologia', 'Opcion_multiple', 'Dificil')
+        RETURNING id)
+INSERT
+INTO answer (question_id, text, is_correct)
+SELECT id, 'Min', TRUE
+FROM new_question
 UNION ALL
-SELECT id, 'Menu', FALSE FROM new_question
+SELECT id, 'Menu', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Mut', FALSE FROM new_question
+SELECT id, 'Mut', FALSE
+FROM new_question
 UNION ALL
-SELECT id, 'Meret', FALSE FROM new_question;
+SELECT id, 'Meret', FALSE
+FROM new_question;

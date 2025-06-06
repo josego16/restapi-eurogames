@@ -12,7 +12,7 @@ object GameSessionTable : IntIdTable("game_session") {
     val scoreSession = double("score_session").default(0.0)
     val gameType = enumerationByName("game_type", 50, GameType::class)
     val difficulty = enumerationByName("difficulty", 50, Difficulty::class)
-    val status = enumerationByName("status", 20, SessionStatus::class).default(SessionStatus.In_Progress)
+    val status = enumerationByName("status", 20, SessionStatus::class).default(SessionStatus.En_progreso)
     val startedAt = timestamp("started_at")
     val finishedAt = timestamp("finished_at").nullable()
 }
