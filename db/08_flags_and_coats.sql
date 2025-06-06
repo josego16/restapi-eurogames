@@ -56,7 +56,7 @@ SELECT id, 'Palestina', TRUE
 FROM new_question
 UNION ALL
 SELECT id, 'Ciudad del Vaticano', FALSE
-FROM new_question FROM new_question;
+FROM new_question;
 
 -- Question 4
 WITH new_question AS (
@@ -456,7 +456,7 @@ SELECT id, 'Jamaica', FALSE
 FROM new_question
 UNION ALL
 SELECT id, 'Alemania', FALSE
-FROM new_question FROM new_question;
+FROM new_question;
 
 -- Question 24
 WITH new_question AS (
@@ -776,7 +776,7 @@ SELECT id, 'Seychelles', FALSE
 FROM new_question
 UNION ALL
 SELECT id, 'Sudán del Sur', FALSE
-FROM new_question FROM new_question;
+FROM new_question;
 
 -- Question 40
 WITH new_question AS (
@@ -976,7 +976,7 @@ SELECT id, 'Guadalupe', FALSE
 FROM new_question
 UNION ALL
 SELECT id, 'Baréin', FALSE
-FROM new_question FROM new_question;
+FROM new_question;
 
 -- Question 50
 WITH new_question AS (

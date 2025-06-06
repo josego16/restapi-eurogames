@@ -202,7 +202,7 @@ WITH new_question AS (
     INSERT INTO question (statement, question_type, response_mode, difficulty)
         VALUES ('¿Cuál es el mayor número de estrellas Michelin que puede recibir un restaurante?',
                 'Conocimiento_general',
-                'Opcion_multiple', 'Media')
+                'Opcion_multiple', 'Normal')
         RETURNING id)
 INSERT
 INTO answer (question_id, text, is_correct)
@@ -222,7 +222,7 @@ FROM new_question;
 WITH new_question AS (
     INSERT INTO question (statement, question_type, response_mode, difficulty)
         VALUES ('Frank Lloyd Wright fue el arquitecto detrás de qué famoso edificio?', 'Conocimiento_general',
-                'Opcion_multiple', 'Media')
+                'Opcion_multiple', 'Normal')
         RETURNING id)
 INSERT
 INTO answer (question_id, text, is_correct)
@@ -243,7 +243,7 @@ WITH new_question AS (
     INSERT INTO question (statement, question_type, response_mode, difficulty)
         VALUES ('¿En qué país se celebraron los Juegos Olímpicos de Verano de 1992?', 'Conocimiento_general',
                 'Opcion_multiple',
-                'Media')
+                'Normal')
         RETURNING id)
 INSERT
 INTO answer (question_id, text, is_correct)
@@ -262,7 +262,7 @@ FROM new_question;
 -- Question 4
 WITH new_question AS (
     INSERT INTO question (statement, question_type, response_mode, difficulty)
-        VALUES ('Una berenjena es una verdura.', 'Conocimiento_general', 'Verdadero_falso', 'Media')
+        VALUES ('Una berenjena es una verdura.', 'Conocimiento_general', 'Verdadero_falso', 'Normal')
         RETURNING id)
 INSERT
 INTO answer (question_id, text, is_correct)
@@ -276,7 +276,7 @@ FROM new_question;
 WITH new_question AS (
     INSERT INTO question (statement, question_type, response_mode, difficulty)
         VALUES ('Las cadenas de restaurantes de comida rápida Carl''s Jr. y Hardee''s son propiedad de la misma compañía.',
-                'Conocimiento_general', 'Verdadero_falso', 'Media')
+                'Conocimiento_general', 'Verdadero_falso', 'Normal')
         RETURNING id)
 INSERT
 INTO answer (question_id, text, is_correct)
@@ -290,7 +290,7 @@ FROM new_question;
 WITH new_question AS (
     INSERT INTO question (statement, question_type, response_mode, difficulty)
         VALUES ('Directamente entre el Monumento a Washington y el Reflecting Pool hay un monumento conmemorativo a qué guerra?',
-                'Conocimiento_general', 'Opcion_multiple', 'Media')
+                'Conocimiento_general', 'Opcion_multiple', 'Normal')
         RETURNING id)
 INSERT
 INTO answer (question_id, text, is_correct)
@@ -310,7 +310,7 @@ FROM new_question;
 WITH new_question AS (
     INSERT INTO question (statement, question_type, response_mode, difficulty)
         VALUES ('¿Qué fabricante italiano de automóviles obtuvo el control mayoritario del fabricante estadounidense Chrysler en 2011?',
-                'Conocimiento_general', 'Opcion_multiple', 'Media')
+                'Conocimiento_general', 'Opcion_multiple', 'Normal')
         RETURNING id)
 INSERT
 INTO answer (question_id, text, is_correct)
@@ -331,7 +331,7 @@ WITH new_question AS (
     INSERT INTO question (statement, question_type, response_mode, difficulty)
         VALUES ('Albert Einstein tuvo problemas con las matemáticas cuando estaba en la escuela.',
                 'Conocimiento_general',
-                'Verdadero_falso', 'Media')
+                'Verdadero_falso', 'Normal')
         RETURNING id)
 INSERT
 INTO answer (question_id, text, is_correct)
@@ -344,7 +344,7 @@ FROM new_question;
 -- Question 9
 WITH new_question AS (
     INSERT INTO question (statement, question_type, response_mode, difficulty)
-        VALUES ('¿Cuándo se fundó Nintendo?', 'Conocimiento_general', 'Opcion_multiple', 'Media')
+        VALUES ('¿Cuándo se fundó Nintendo?', 'Conocimiento_general', 'Opcion_multiple', 'Normal')
         RETURNING id)
 INSERT
 INTO answer (question_id, text, is_correct)
@@ -364,7 +364,7 @@ FROM new_question;
 WITH new_question AS (
     INSERT INTO question (statement, question_type, response_mode, difficulty)
         VALUES ('El vapor producido por los cigarrillos electrónicos es en realidad agua.', 'Conocimiento_general',
-                'True_or_false', 'Medium')
+                'True_or_false', 'Normal')
         RETURNING id)
 INSERT
 INTO answer (question_id, text, is_correct)
