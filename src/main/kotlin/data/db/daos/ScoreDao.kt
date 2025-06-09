@@ -15,6 +15,9 @@ class ScoreDao(id: EntityID<Int>) : IntEntity(id) {
                 scoreValue = domain.scoreValue
                 gameType = domain.gameType
                 difficulty = domain.difficulty
+                correctAnswers = domain.correctAnswers
+                wrongAnswers = domain.wrongAnswers
+                totalQuestions = domain.totalQuestions
             }
         }
     }
@@ -24,6 +27,9 @@ class ScoreDao(id: EntityID<Int>) : IntEntity(id) {
     var gameType by ScoreTable.gameType
     var difficulty by ScoreTable.difficulty
     var scoreValue by ScoreTable.scoreValue
+    var correctAnswers by ScoreTable.correctAnswers
+    var wrongAnswers by ScoreTable.wrongAnswers
+    var totalQuestions by ScoreTable.totalQuestions
 
     fun toDomain() = Score(
         id.value,
@@ -32,5 +38,8 @@ class ScoreDao(id: EntityID<Int>) : IntEntity(id) {
         scoreValue,
         gameType,
         difficulty,
+        correctAnswers,
+        wrongAnswers,
+        totalQuestions
     )
 }

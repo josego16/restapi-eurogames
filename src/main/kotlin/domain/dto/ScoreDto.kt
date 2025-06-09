@@ -10,8 +10,12 @@ data class ScoreCreateDto(
     val gameId: Int,
     val scoreValue: Double,
     val gameType: GameType,
-    val difficulty: Difficulty
+    val difficulty: Difficulty,
+    val correctAnswers: Int,
+    val wrongAnswers: Int,
+    val totalQuestions: Int
 )
+
 @Serializable
 data class ScoreResponseDto(
     var id: Int,
@@ -19,5 +23,8 @@ data class ScoreResponseDto(
     val gameId: Int,
     val scoreValue: Double,
     val gameType: GameType,
-    val difficulty: Difficulty
+    val difficulty: Difficulty,
+    val correctAnswers: Int,
+    val wrongAnswers: Int,
+    val totalQuestions: Int
 )

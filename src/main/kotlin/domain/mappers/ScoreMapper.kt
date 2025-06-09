@@ -10,5 +10,8 @@ fun Score.toResponseDto(): ScoreResponseDto = ScoreResponseDto(
     gameId = gameId,
     scoreValue = scoreValue,
     gameType = gameType,
-    difficulty = difficulty
+    difficulty = difficulty,
+    correctAnswers = correctAnswers,
+    wrongAnswers = wrongAnswers,
+    totalQuestions = totalQuestions
 )

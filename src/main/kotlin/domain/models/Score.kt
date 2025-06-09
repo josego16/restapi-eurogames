@@ -11,5 +11,8 @@ data class Score(
     val gameId: Int,
     val scoreValue: Double,
     val gameType: GameType,
-    val difficulty: Difficulty
+    val difficulty: Difficulty,
+    val correctAnswers: Int,
+    val wrongAnswers: Int,
+    val totalQuestions: Int
 )

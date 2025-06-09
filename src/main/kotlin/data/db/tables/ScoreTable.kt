@@ -10,4 +10,7 @@ object ScoreTable : IntIdTable("score") {
     val scoreValue = double("score_value")
     val gameType = enumerationByName("game_type", 50, GameType::class)
     val difficulty = enumerationByName("difficulty", 50, Difficulty::class)
+    val correctAnswers = integer("correct_answers")
+    val wrongAnswers = integer("wrong_answers")
+    val totalQuestions = integer("total_questions")
 }
