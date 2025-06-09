@@ -29,9 +29,9 @@ class GameSessionRepositoryImpl : GameSessionRepository {
         logger.error("Error al obtener sesión con ID $id", it)
     }.getOrNull()
 
-    override suspend fun createGameSession(createDto: GameSessionCreateDto): GameSession = runCatching {
+    override suspend fun createGameSession(createDto: GameSessionCreateDto, userId: Int): GameSession = runCatching {
         suspendedTransaction {
-            val domain = createDto.toDomain()
+            val domain = createDto.toDomain(userId)
             GameSessionDao.fromDomain(domain).toDomain()
         }
     }.onFailure {

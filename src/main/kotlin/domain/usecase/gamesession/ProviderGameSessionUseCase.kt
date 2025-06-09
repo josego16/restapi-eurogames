@@ -23,8 +23,8 @@ object ProviderGameSessionUseCase {
         return getGameSessionsByUserIdUseCase(userId)
     }
 
-    suspend fun createGameSession(sessionCreateDto: GameSessionCreateDto): GameSessionResponseDto {
-        return createGameSessionUseCase(sessionCreateDto)
+    suspend fun createGameSession(sessionCreateDto: GameSessionCreateDto, userId: Int): GameSessionResponseDto {
+        return createGameSessionUseCase(sessionCreateDto, userId)
     }
 
     suspend fun updateGameSession(id: Int, session: domain.models.GameSession): GameSessionResponseDto? {

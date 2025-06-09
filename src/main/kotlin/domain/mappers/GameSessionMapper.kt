@@ -18,14 +18,14 @@ fun GameSession.toResponseDto(): GameSessionResponseDto = GameSessionResponseDto
     finishedAt = finishedAt?.toEpochMilliseconds()
 )
 
-fun GameSessionCreateDto.toDomain(): GameSession = GameSession(
-    id = 0,  // ID autogenerado
+fun GameSessionCreateDto.toDomain(userId: Int): GameSession = GameSession(
+    id = 0,
     userId = userId,
     gameId = gameId,
-    scoreSession = 0.0, // valor inicial
+    scoreSession = 0.0,
     gameType = gameType,
     difficulty = difficulty,
-    status = SessionStatus.En_progreso, // estado inicial
+    status = SessionStatus.En_progreso,
     startedAt = Clock.System.now(),
     finishedAt = null
 )

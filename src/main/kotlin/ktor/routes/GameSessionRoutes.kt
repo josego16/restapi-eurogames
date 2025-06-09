@@ -26,21 +26,26 @@ fun Routing.gameSessionRouting() {
                     call.respond(HttpStatusCode.BadRequest, "Id no válido")
                     return@get
                 }
+                val userSession = call.sessions.get<UserSession>()
+                if (userSession == null) {
+                    call.respond(HttpStatusCode.Unauthorized, "Sesión no encontrada")
+                    return@get
+                }
                 val gameSession = ProviderGameSessionUseCase.getGameSessionById(id)
-                if (gameSession == null) {
-                    call.respond(HttpStatusCode.NotFound, "Sesión de juego no encontrada")
+                if (gameSession == null || gameSession.userId != userSession.userId) {
+                    call.respond(HttpStatusCode.NotFound, "Sesión de juego no encontrada o acceso denegado")
                 } else {
                     call.respond(gameSession)
                 }
             }
 
-            get("/user/{userId}") {
-                val userId = call.parameters["userId"]?.toIntOrNull()
-                if (userId == null) {
-                    call.respond(HttpStatusCode.BadRequest, "Id de usuario no válido")
+            get("/user") {
+                val userSession = call.sessions.get<UserSession>()
+                if (userSession == null) {
+                    call.respond(HttpStatusCode.Unauthorized, "Sesión no encontrada")
                     return@get
                 }
-                val sessions = ProviderGameSessionUseCase.getGameSessionsByUserId(userId)
+                val sessions = ProviderGameSessionUseCase.getGameSessionsByUserId(userSession.userId)
                 call.respond(sessions)
             }
 
@@ -50,17 +55,13 @@ fun Routing.gameSessionRouting() {
                     call.respond(HttpStatusCode.Unauthorized, "Sesión no encontrada")
                     return@post
                 }
-
                 val createDto = try {
                     call.receive<GameSessionCreateDto>()
                 } catch (e: Exception) {
                     call.respond(HttpStatusCode.BadRequest, "Datos inválidos para crear sesión")
                     return@post
                 }
-                // Usamos el userId de la sesión, ignoramos userId que venga en el body (si acaso)
-                val sessionToCreate = createDto.copy(userId = userSession.userId)
-
-                val createdSession = ProviderGameSessionUseCase.createGameSession(sessionToCreate)
+                val createdSession = ProviderGameSessionUseCase.createGameSession(createDto, userSession.userId)
                 call.respond(HttpStatusCode.Created, createdSession)
             }
 

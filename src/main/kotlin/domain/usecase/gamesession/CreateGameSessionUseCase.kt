@@ -6,8 +6,8 @@ import domain.interfaces.GameSessionRepository
 import domain.mappers.toResponseDto
 
 class CreateGameSessionUseCase(private val repository: GameSessionRepository) {
-    suspend operator fun invoke(sessionCreateDto: GameSessionCreateDto): GameSessionResponseDto {
-        val session = repository.createGameSession(sessionCreateDto)
+    suspend operator fun invoke(sessionCreateDto: GameSessionCreateDto, userId: Int): GameSessionResponseDto {
+        val session = repository.createGameSession(sessionCreateDto, userId)
         return session.toResponseDto()
     }
 }

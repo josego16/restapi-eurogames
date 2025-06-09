@@ -7,7 +7,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class GameSessionCreateDto(
-    val userId: Int,
     val gameId: Int,
     val gameType: GameType,
     val difficulty: Difficulty,
