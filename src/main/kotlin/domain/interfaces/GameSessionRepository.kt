@@ -7,6 +7,8 @@ import domain.models.GameSession
 interface GameSessionRepository {
     suspend fun getAll(): List<GameSession>
     suspend fun getById(id: Int): GameSession?
+    suspend fun getByUserId(userId: Int): List<GameSession>
     suspend fun createGameSession(createDto: GameSessionCreateDto): GameSession
+    suspend fun updateGameSession(id: Int, session: GameSession): GameSession?
     suspend fun updateSessionStatus(sessionId: Int, status: SessionStatus): Boolean
 }

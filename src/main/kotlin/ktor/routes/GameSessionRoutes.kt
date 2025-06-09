@@ -34,6 +34,16 @@ fun Routing.gameSessionRouting() {
                 }
             }
 
+            get("/user/{userId}") {
+                val userId = call.parameters["userId"]?.toIntOrNull()
+                if (userId == null) {
+                    call.respond(HttpStatusCode.BadRequest, "Id de usuario no válido")
+                    return@get
+                }
+                val sessions = ProviderGameSessionUseCase.getGameSessionsByUserId(userId)
+                call.respond(sessions)
+            }
+
             post {
                 val userSession = call.sessions.get<UserSession>()
                 if (userSession == null) {
@@ -52,6 +62,26 @@ fun Routing.gameSessionRouting() {
 
                 val createdSession = ProviderGameSessionUseCase.createGameSession(sessionToCreate)
                 call.respond(HttpStatusCode.Created, createdSession)
+            }
+
+            patch("/{id}") {
+                val id = call.parameters["id"]?.toIntOrNull()
+                if (id == null) {
+                    call.respond(HttpStatusCode.BadRequest, "Id no válido")
+                    return@patch
+                }
+                val session = try {
+                    call.receive<domain.models.GameSession>()
+                } catch (e: Exception) {
+                    call.respond(HttpStatusCode.BadRequest, "Datos inválidos para actualizar sesión")
+                    return@patch
+                }
+                val updatedSession = ProviderGameSessionUseCase.updateGameSession(id, session)
+                if (updatedSession == null) {
+                    call.respond(HttpStatusCode.NotFound, "Sesión de juego no encontrada")
+                } else {
+                    call.respond(HttpStatusCode.OK, updatedSession)
+                }
             }
 
             patch("/{id}/status") {

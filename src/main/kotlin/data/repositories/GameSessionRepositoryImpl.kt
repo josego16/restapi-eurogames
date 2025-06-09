@@ -47,4 +47,29 @@ class GameSessionRepositoryImpl : GameSessionRepository {
     }.onFailure {
         logger.error("Error al actualizar el estado de la sesión con ID $sessionId", it)
     }.getOrDefault(false)
+
+    override suspend fun updateGameSession(id: Int, session: GameSession): GameSession? = runCatching {
+        suspendedTransaction {
+            val existing = GameSessionDao.findById(id) ?: return@suspendedTransaction null
+            val updatedSession = session.copy(
+                id = existing.id.value,
+                startedAt = session.startedAt,
+                finishedAt = session.finishedAt,
+                scoreSession = session.scoreSession,
+                status = session.status
+            )
+            GameSessionDao.fromDomain(updatedSession, existing).toDomain()
+        }
+    }.onFailure {
+        logger.error("Error al actualizar sesión de juego con ID $id", it)
+    }.getOrNull()
+
+    override suspend fun getByUserId(userId: Int): List<GameSession> = runCatching {
+        suspendedTransaction {
+            GameSessionDao.find { data.db.tables.GameSessionTable.userId eq userId }
+                .map { it.toDomain() }
+        }
+    }.onFailure {
+        logger.error("Error al obtener sesiones del usuario con ID $userId", it)
+    }.getOrDefault(emptyList())
 }
