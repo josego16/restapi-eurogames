@@ -364,7 +364,7 @@ FROM new_question;
 WITH new_question AS (
     INSERT INTO question (statement, question_type, response_mode, difficulty)
         VALUES ('El vapor producido por los cigarrillos electrónicos es en realidad agua.', 'Conocimiento_general',
-                'True_or_false', 'Normal')
+                'Verdadero_falso', 'Normal')
         RETURNING id)
 INSERT
 INTO answer (question_id, text, is_correct)

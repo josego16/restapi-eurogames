@@ -100,7 +100,7 @@ FROM new_question;
 WITH new_question AS (
     INSERT INTO question (statement, question_type, response_mode, difficulty)
         VALUES ('En el fútbol asociación, o soccer, ¿un saque de esquina es cuando el juego se reinicia después de que alguien marca un gol?',
-                'Deportes', 'True_or_false', 'Facil')
+                'Deportes', 'Verdadero_falso', 'Facil')
         RETURNING id)
 INSERT
 INTO answer (question_id, text, is_correct)
