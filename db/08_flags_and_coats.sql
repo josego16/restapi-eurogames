@@ -21,7 +21,7 @@ FROM new_question;
 -- Question 2
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
-        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Normal', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Facil', 'Opcion_multiple',
                 'https://mainfacts.com/media/images/coats_of_arms/ie.png')
         RETURNING id)
 INSERT
@@ -101,7 +101,7 @@ FROM new_question;
 -- Question 6
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
-        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Dificil', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'NormaL', 'Opcion_multiple',
                 'https://mainfacts.com/media/images/coats_of_arms/mm.png')
         RETURNING id)
 INSERT
@@ -141,7 +141,7 @@ FROM new_question;
 -- Question 8
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
-        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Dificil', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Facil', 'Opcion_multiple',
                 'https://mainfacts.com/media/images/coats_of_arms/ke.png')
         RETURNING id)
 INSERT
@@ -181,7 +181,7 @@ FROM new_question;
 -- Question 10
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
-        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Normal', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Facil', 'Opcion_multiple',
                 'https://mainfacts.com/media/images/coats_of_arms/be.png')
         RETURNING id)
 INSERT
@@ -261,7 +261,7 @@ FROM new_question;
 -- Question 14
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
-        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Normal', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Facil', 'Opcion_multiple',
                 'https://mainfacts.com/media/images/coats_of_arms/ge.png')
         RETURNING id)
 INSERT
@@ -301,7 +301,7 @@ FROM new_question;
 -- Question 16
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
-        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Dificil', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Normal', 'Opcion_multiple',
                 'https://mainfacts.com/media/images/coats_of_arms/ao.png')
         RETURNING id)
 INSERT
@@ -341,7 +341,7 @@ FROM new_question;
 -- Question 18
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
-        VALUES ('¿A qué país pertenece esta bandera?', 'Banderas', 'Facil', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece esta bandera?', 'Banderas', 'Normal', 'Opcion_multiple',
                 'https://flagcdn.com/w320/mv.png')
         RETURNING id)
 INSERT
@@ -361,7 +361,7 @@ FROM new_question;
 -- Question 19
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
-        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Dificil', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Normal', 'Opcion_multiple',
                 'https://mainfacts.com/media/images/coats_of_arms/kh.png')
         RETURNING id)
 INSERT
@@ -381,7 +381,7 @@ FROM new_question;
 -- Question 20
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
-        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Normal', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Facil', 'Opcion_multiple',
                 'https://mainfacts.com/media/images/coats_of_arms/cz.png')
         RETURNING id)
 INSERT
@@ -441,7 +441,7 @@ FROM new_question;
 -- Question 23
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
-        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Dificil', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Normal', 'Opcion_multiple',
                 'https://mainfacts.com/media/images/coats_of_arms/xk.png')
         RETURNING id)
 INSERT
@@ -501,7 +501,7 @@ FROM new_question;
 -- Question 26
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
-        VALUES ('¿A qué país pertenece esta bandera?', 'Banderas', 'Facil', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece esta bandera?', 'Banderas', 'Normal', 'Opcion_multiple',
                 'https://flagcdn.com/w320/jo.png')
         RETURNING id)
 INSERT
@@ -521,7 +521,7 @@ FROM new_question;
 -- Question 27
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
-        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Dificil', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Normal', 'Opcion_multiple',
                 'https://mainfacts.com/media/images/coats_of_arms/bb.png')
         RETURNING id)
 INSERT
@@ -541,7 +541,7 @@ FROM new_question;
 -- Question 28
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
-        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Dificil', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Normal', 'Opcion_multiple',
                 'https://mainfacts.com/media/images/coats_of_arms/ai.png')
         RETURNING id)
 INSERT
@@ -621,7 +621,7 @@ FROM new_question;
 -- Question 32
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
-        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Dificil', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Normal', 'Opcion_multiple',
                 'https://mainfacts.com/media/images/coats_of_arms/sc.png')
         RETURNING id)
 INSERT
@@ -681,7 +681,7 @@ FROM new_question;
 -- Question 35
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
-        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Dificil', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Normal', 'Opcion_multiple',
                 'https://mainfacts.com/media/images/coats_of_arms/bf.png')
         RETURNING id)
 INSERT
@@ -801,7 +801,7 @@ FROM new_question;
 -- Question 41
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
-        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Normal', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Facil', 'Opcion_multiple',
                 'https://mainfacts.com/media/images/coats_of_arms/br.png')
         RETURNING id)
 INSERT
@@ -861,7 +861,7 @@ FROM new_question;
 -- Question 44
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
-        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Normal', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Facil', 'Opcion_multiple',
                 'https://mainfacts.com/media/images/coats_of_arms/hn.png')
         RETURNING id)
 INSERT
@@ -1021,7 +1021,7 @@ FROM new_question;
 -- Question 52
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
-        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Normal', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Facil', 'Opcion_multiple',
                 'https://mainfacts.com/media/images/coats_of_arms/ua.png')
         RETURNING id)
 INSERT
@@ -1081,7 +1081,7 @@ FROM new_question;
 -- Question 55
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, flag_url)
-        VALUES ('¿A qué país pertenece esta bandera?', 'Banderas', 'Facil', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece esta bandera?', 'Banderas', 'Normal', 'Opcion_multiple',
                 'https://flagcdn.com/w320/md.png')
         RETURNING id)
 INSERT
@@ -1121,7 +1121,7 @@ FROM new_question;
 -- Question 57
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
-        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Normal', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Facil', 'Opcion_multiple',
                 'https://mainfacts.com/media/images/coats_of_arms/cy.png')
         RETURNING id)
 INSERT
@@ -1161,7 +1161,7 @@ FROM new_question;
 -- Question 59
 WITH new_question AS (
     INSERT INTO question (statement, question_type, difficulty, response_mode, coat_url)
-        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Normal', 'Opcion_multiple',
+        VALUES ('¿A qué país pertenece este escudo?', 'Escudos', 'Facil', 'Opcion_multiple',
                 'https://mainfacts.com/media/images/coats_of_arms/ni.png')
         RETURNING id)
 INSERT
