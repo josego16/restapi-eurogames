@@ -9,7 +9,7 @@ import org.jetbrains.exposed.dao.id.EntityID
 class ScoreDao(id: EntityID<Int>) : IntEntity(id) {
     companion object : IntEntityClass<ScoreDao>(ScoreTable) {
         fun fromDomain(domain: Score, existing: ScoreDao? = null): ScoreDao {
-            return existing ?: new(domain.id) {
+            fun ScoreDao.assignFromDomain(domain: Score) {
                 userId = UserDao.Companion[domain.userId]
                 gameId = GameDao.Companion[domain.gameId]
                 scoreValue = domain.scoreValue
@@ -18,6 +18,15 @@ class ScoreDao(id: EntityID<Int>) : IntEntity(id) {
                 correctAnswers = domain.correctAnswers
                 wrongAnswers = domain.wrongAnswers
                 totalQuestions = domain.totalQuestions
+            }
+            return existing ?: if (domain.id == 0) {
+                new {
+                    assignFromDomain(domain)
+                }
+            } else {
+                new(domain.id) {
+                    assignFromDomain(domain)
+                }
             }
         }
     }

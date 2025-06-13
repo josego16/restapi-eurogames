@@ -21,8 +21,8 @@ CREATE TABLE IF NOT EXISTS country
 CREATE TABLE IF NOT EXISTS auth
 (
     id        SERIAL PRIMARY KEY,
-    full_name VARCHAR(255),
-    username  VARCHAR(255),
+    full_name VARCHAR(255) NOT NULL,
+    username  VARCHAR(255) NOT NULL,
     email     VARCHAR(255) NOT NULL,
     password  VARCHAR(255) NOT NULL,
     avatar    VARCHAR(512)
@@ -42,11 +42,12 @@ CREATE TABLE IF NOT EXISTS game_session
     id            SERIAL PRIMARY KEY,
     user_id       INTEGER REFERENCES auth (id) ON DELETE CASCADE,
     game_id       INTEGER REFERENCES game (id) ON DELETE CASCADE,
-    score_session DOUBLE PRECISION NOT NULL,
+    score_session DOUBLE PRECISION NOT NULL DEFAULT 0.0,
     game_type     VARCHAR(50)      NOT NULL,
     difficulty    VARCHAR(50)      NOT NULL,
-    status        VARCHAR(50)      NOT NULL,
-    played_at     TIMESTAMP        NOT NULL DEFAULT now()
+    status        VARCHAR(20)      NOT NULL DEFAULT 'En_progreso',
+    started_at    TIMESTAMP        NOT NULL,
+    finished_at   TIMESTAMP
 );
 
 CREATE TABLE IF NOT EXISTS question
@@ -70,11 +71,13 @@ CREATE TABLE IF NOT EXISTS answer
 
 CREATE TABLE IF NOT EXISTS score
 (
-    id          SERIAL PRIMARY KEY,
-    user_id     INTEGER REFERENCES auth (id) ON DELETE CASCADE,
-    game_id     INTEGER REFERENCES game (id) ON DELETE CASCADE,
-    score_value DOUBLE PRECISION NOT NULL,
-    game_type   VARCHAR(50)      NOT NULL,
-    difficulty  VARCHAR(50)      NOT NULL,
-    recorded_at TIMESTAMP        NOT NULL DEFAULT now()
+    id              SERIAL PRIMARY KEY,
+    user_id         INTEGER REFERENCES auth (id) ON DELETE CASCADE,
+    game_id         INTEGER REFERENCES game (id) ON DELETE CASCADE,
+    score_value     DOUBLE PRECISION NOT NULL,
+    game_type       VARCHAR(50)      NOT NULL,
+    difficulty      VARCHAR(50)      NOT NULL,
+    correct_answers INTEGER          NOT NULL,
+    wrong_answers   INTEGER          NOT NULL,
+    total_questions INTEGER          NOT NULL
 );

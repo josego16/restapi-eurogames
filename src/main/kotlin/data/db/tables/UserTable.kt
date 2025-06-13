@@ -7,5 +7,5 @@ object UserTable : IntIdTable("auth") {
     val username = varchar("username", 255)
     val email = varchar("email", 255)
     val password = varchar("password", 255)
-    val avatar = varchar("avatar", 512)
+    val avatar = varchar("avatar", 512).nullable()
 }
