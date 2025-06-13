@@ -1,8 +1,9 @@
-
 plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.ktor)
     alias(libs.plugins.kotlin.plugin.serialization)
+    id("org.jetbrains.dokka") version "2.0.0"
+    id("org.jetbrains.dokka-javadoc") version "2.0.0"
 }
 
 group = "com.restapi"
@@ -32,7 +33,6 @@ dependencies {
     implementation(libs.ktor.server.netty)
     implementation(libs.ktor.server.status.pages)
     implementation(libs.ktor.server.default.headers)
-    implementation(libs.ktor.server.sessions)
 
     // ───── DATABASE ─────
     implementation(libs.exposed.core)
@@ -48,11 +48,13 @@ dependencies {
     // ───── SECURITY ─────
     implementation(libs.bcrypt)
 
-    // ───── OTHER ─────
-    implementation(libs.koin.ktor)
-    implementation(libs.koin.logger.slf4j)
-
     // ───── TESTING ─────
     testImplementation(libs.kotlin.test.junit)
     testImplementation(libs.ktor.server.test.host)
+}
+
+dokka {
+    dokkaPublications.html {
+        outputDirectory.set(layout.projectDirectory.dir("docs"))
+    }
 }
