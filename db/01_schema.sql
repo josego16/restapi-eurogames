@@ -37,19 +37,6 @@ CREATE TABLE IF NOT EXISTS game
     description TEXT         NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS game_session
-(
-    id            SERIAL PRIMARY KEY,
-    user_id       INTEGER REFERENCES auth (id) ON DELETE CASCADE,
-    game_id       INTEGER REFERENCES game (id) ON DELETE CASCADE,
-    score_session DOUBLE PRECISION NOT NULL DEFAULT 0.0,
-    game_type     VARCHAR(50)      NOT NULL,
-    difficulty    VARCHAR(50)      NOT NULL,
-    status        VARCHAR(20)      NOT NULL DEFAULT 'En_progreso',
-    started_at    TIMESTAMP        NOT NULL,
-    finished_at   TIMESTAMP
-);
-
 CREATE TABLE IF NOT EXISTS question
 (
     id            SERIAL PRIMARY KEY,

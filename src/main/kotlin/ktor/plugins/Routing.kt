@@ -15,7 +15,6 @@ fun Application.configureRouting() {
         userRouting()
         countryRouting()
         gameRouting()
-        gameSessionRouting()
         questionRouting()
         answerRouting()
         scoreRouting()

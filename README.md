@@ -1,6 +1,6 @@
-![EuroGames REST API](https://socialify.git.ci/josego16/restapi-eurogames/image?custom_language=Kotlin&font=Source+Code+Pro&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Light)
-
 # EuroGames REST API
+
+![restapi-eurogames](https://socialify.git.ci/josego16/restapi-eurogames/image?custom_language=Kotlin&language=1&name=1&owner=1&theme=Light)
 
 > Backend para la gestión de datos de EuroGames101. Facilita la administración de usuarios, juegos, partidas y
 > resultados de forma segura y eficiente.
@@ -142,15 +142,14 @@ Alternativamente, puedes usar Docker Compose:
 El proyecto utiliza PostgreSQL como sistema de gestión de bases de datos relacional. La estructura de la base de datos
 incluye las siguientes tablas principales:
 
-| Tabla            | Descripción                                           |
-|------------------|-------------------------------------------------------|
-| **country**      | Almacena información sobre países europeos            |
-| **auth**         | Gestiona datos de autenticación de usuarios           |
-| **game**         | Contiene información sobre los minijuegos disponibles |
-| **game_session** | Registra las sesiones de juego de los usuarios        |
-| **question**     | Almacena preguntas para los minijuegos tipo quiz      |
-| **answer**       | Contiene respuestas asociadas a las preguntas         |
-| **score**        | Registra las puntuaciones de los usuarios             |
+| Tabla        | Descripción                                           |
+|--------------|-------------------------------------------------------|
+| **country**  | Almacena información sobre países europeos            |
+| **auth**     | Gestiona datos de autenticación de usuarios           |
+| **game**     | Contiene información sobre los minijuegos disponibles |
+| **question** | Almacena preguntas para los minijuegos tipo quiz      |
+| **answer**   | Contiene respuestas asociadas a las preguntas         |
+| **score**    | Registra las puntuaciones de los usuarios             |
 
 La base de datos está configurada para inicializarse automáticamente con Docker Compose, utilizando los scripts SQL
 ubicados en el directorio `db/`.
@@ -265,32 +264,6 @@ Esta estructura sigue los principios de la arquitectura hexagonal, donde:
    Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
    ```
 
-### 🎲 Gestión de sesiones de juego
-
-1. **Crear una nueva sesión de juego**:
-   ```http
-   POST /gameSessions
-   Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-   Content-Type: application/json
-
-   {
-     "gameId": 1,
-     "difficulty": "MEDIUM"
-   }
-   ```
-
-2. **Obtener sesiones de juego del usuario actual**:
-   ```http
-   GET /gameSessions/user
-   Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-   ```
-
-3. **Actualizar el estado de una sesión de juego**:
-   ```http
-   PATCH /gameSessions/1/status?status=COMPLETED
-   Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-   ```
-
 ### 🌍 Datos de países
 
 1. **Obtener información de países**:
@@ -336,8 +309,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 
 ### 📖 Documentación
 
-Consulta la documentación interactiva Swagger en `/swagger` para explorar todos los endpoints disponibles y sus
-parámetros.
+Consulta la documentación interactiva con Dokka en Github Pages para saber.
 
 ---
 
