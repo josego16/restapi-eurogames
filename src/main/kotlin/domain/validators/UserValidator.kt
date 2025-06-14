@@ -5,6 +5,11 @@ import domain.dto.UserRegisterDto
 import domain.dto.UserUpdateDto
 import io.ktor.server.plugins.requestvalidation.*
 
+/**
+ * Configuración de validaciones para los DTO de usuario.
+ * Incluye validaciones para registro, login y actualización de usuario.
+ * @receiver Configuración de validación de Ktor.
+ */
 fun RequestValidationConfig.usersValidation() {
 
     val emailRegex = Regex("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$")

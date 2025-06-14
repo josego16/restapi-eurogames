@@ -7,6 +7,11 @@ import io.ktor.server.auth.jwt.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
+/**
+ * Configura la seguridad y autenticación JWT en la aplicación Ktor.
+ * Incluye rutas protegidas y públicas de ejemplo.
+ * @receiver Aplicación Ktor donde se configura la seguridad.
+ */
 fun Application.configureSecurity() {
     install(Authentication) {
         jwt("jwt-auth") {

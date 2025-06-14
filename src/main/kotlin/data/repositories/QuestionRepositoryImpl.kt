@@ -17,6 +17,10 @@ import org.slf4j.LoggerFactory
 class QuestionRepositoryImpl : QuestionRepository {
     private val logger: Logger = LoggerFactory.getLogger(QuestionRepositoryImpl::class.java)
 
+    /**
+     * Obtiene todas las preguntas.
+     * @return Lista de preguntas o lista vacía si ocurre un error.
+     */
     override suspend fun getAll(): List<Question> = runCatching {
         suspendedTransaction {
             QuestionDao.all().map { it.toDomain() }
@@ -25,6 +29,11 @@ class QuestionRepositoryImpl : QuestionRepository {
         logger.error("Error al obtener todas las respuestas", it)
     }.getOrDefault(emptyList())
 
+    /**
+     * Obtiene una pregunta por su ID.
+     * @param id Identificador de la pregunta.
+     * @return Pregunta encontrada o null si no existe o hay error.
+     */
     override suspend fun getById(id: Int): Question? = runCatching {
         suspendedTransaction {
             QuestionDao.findById(id)?.toDomain()
@@ -33,6 +42,10 @@ class QuestionRepositoryImpl : QuestionRepository {
         logger.error("Error al obtener respuesta con ID $id", it)
     }.getOrNull()
 
+    /**
+     * Obtiene todas las preguntas junto con sus respuestas.
+     * @return Lista de preguntas con respuestas o vacía si ocurre un error.
+     */
     override suspend fun getAllQuestionWithAnswers(): List<QuestionWithAnswer> = runCatching {
         suspendedTransaction {
             QuestionDao.all().map { questionDao ->
@@ -45,6 +58,11 @@ class QuestionRepositoryImpl : QuestionRepository {
         logger.error("Error al obtener todas las preguntas con respuestas", it)
     }.getOrDefault(emptyList())
 
+    /**
+     * Obtiene una pregunta con sus respuestas por ID.
+     * @param id Identificador de la pregunta.
+     * @return Pregunta con respuestas o null si no existe o hay error.
+     */
     override suspend fun getQuestionWithAnswersById(id: Int): QuestionWithAnswer? = runCatching {
         suspendedTransaction {
             QuestionDao.findById(id)?.toDomain()?.let { question ->
@@ -56,6 +74,12 @@ class QuestionRepositoryImpl : QuestionRepository {
         logger.error("Error al obtener pregunta con respuestas por ID $id", it)
     }.getOrNull()
 
+    /**
+     * Obtiene preguntas con respuestas filtradas por dificultad y/o categoría.
+     * @param difficulty Dificultad de la pregunta (opcional).
+     * @param category Categoría o tipo de pregunta (opcional).
+     * @return Lista de preguntas con respuestas filtradas o vacía si ocurre un error.
+     */
     override suspend fun getQuestionsWithAnswersByDifficulty(
         difficulty: Difficulty?,
         category: QuestionType?

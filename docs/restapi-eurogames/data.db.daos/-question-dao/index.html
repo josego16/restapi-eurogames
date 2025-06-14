@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>QuestionDao</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<link href="../../../ui-kit/ui-kit.min.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../ui-kit/ui-kit.min.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+    <div class="root">
+    <nav class="navigation theme-dark" id="navigation-wrapper">
+            <a class="library-name--link" href="../../../index.html">
+                    restapi-eurogames
+            </a>
+        <button class="navigation-controls--btn navigation-controls--btn_toc ui-kit_mobile-only" id="toc-toggle"
+                type="button">Toggle table of contents
+        </button>
+        <div class="navigation-controls--break ui-kit_mobile-only"></div>
+        <div class="library-version" id="library-version">
+0.0.1        </div>
+        <div class="navigation-controls">
+        <div class="filter-section filter-section_loading" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active=""
+                        data-filter=":/main">jvm</button>
+            <div class="dropdown filter-section--dropdown" data-role="dropdown" id="filter-section-dropdown">
+                <button class="button button_dropdown filter-section--dropdown-toggle" role="combobox"
+                        data-role="dropdown-toggle"
+                        aria-controls="platform-tags-listbox"
+                        aria-haspopup="listbox"
+                        aria-expanded="false"
+                        aria-label="Toggle source sets"
+                ></button>
+                <ul role="listbox" id="platform-tags-listbox" class="dropdown--list" data-role="dropdown-listbox">
+                    <div class="dropdown--header"><span>Platform filter</span>
+                        <button class="button" data-role="dropdown-toggle" aria-label="Close platform filter">
+                            <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                        </button>
+                    </div>
+                        <li role="option" class="dropdown--option platform-selector-option jvm-like" tabindex="0">
+                            <label class="checkbox">
+                                <input type="checkbox" class="checkbox--input" id=":/main"
+                                       data-filter=":/main"/>
+                                <span class="checkbox--icon"></span>
+                                jvm
+                            </label>
+                        </li>
+                </ul>
+                <div class="dropdown--overlay"></div>
+            </div>
+        </div>
+            <button class="navigation-controls--btn navigation-controls--btn_theme" id="theme-toggle-button"
+                    type="button">Switch theme
+            </button>
+            <div class="navigation-controls--btn navigation-controls--btn_search" id="searchBar" role="button">Search in
+                API
+            </div>
+        </div>
+    </nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="dropdown theme-dark_mobile" data-role="dropdown" id="toc-dropdown">
+                    <ul role="listbox" id="toc-listbox" class="dropdown--list dropdown--list_toc-list"
+                        data-role="dropdown-listbox">
+                        <div class="dropdown--header">
+                            <span>
+                                    restapi-eurogames
+                            </span>
+                            <button class="button" data-role="dropdown-toggle" aria-label="Close table of contents">
+                                <i class="ui-kit-icon ui-kit-icon_cross"></i>
+                            </button>
+                        </div>
+                        <div class="sidebar--inner" id="sideMenu"></div>
+                    </ul>
+                    <div class="dropdown--overlay"></div>
+                </div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="restapi-eurogames::data.db.daos/QuestionDao///PointingToDeclaration//-251573632">
+  <div class="breadcrumbs"><a href="../../../index.html">restapi-eurogames</a><span class="delimiter">/</span><a href="../index.html">data.db.daos</a><span class="delimiter">/</span><span class="current">QuestionDao</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>Question</span><wbr></wbr><span><span>Dao</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">class </span><a href="index.html">QuestionDao</a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">id<span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.dao.id/EntityID///PointingToDeclaration/">EntityID</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span> : <span data-unresolved-link="org.jetbrains.exposed.dao/IntEntity///PointingToDeclaration/">IntEntity</span></div><p class="paragraph">DAO para la entidad Question. Permite el acceso y manipulación de preguntas en la base de datos.</p></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,PROPERTY,FUNCTION">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="CONSTRUCTOR">
+        <h2 class="">Constructors</h2>
+        <div class="table"><a data-name="-1246141241%2FConstructors%2F-251573632" anchor-label="QuestionDao" id="-1246141241%2FConstructors%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-togglable="CONSTRUCTOR" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-question-dao.html"><span>Question</span><wbr></wbr><span><span>Dao</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1246141241%2FConstructors%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">constructor</span><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">id<span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.dao.id/EntityID///PointingToDeclaration/">EntityID</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="-2004546999%2FClasslikes%2F-251573632" anchor-label="Companion" id="-2004546999%2FClasslikes%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-companion/index.html"><span><span>Companion</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2004546999%2FClasslikes%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">object </span><a href="-companion/index.html">Companion</a> : <span data-unresolved-link="org.jetbrains.exposed.dao/IntEntityClass///PointingToDeclaration/">IntEntityClass</span><span class="token operator">&lt;</span><a href="index.html">QuestionDao</a><span class="token operator">&gt; </span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="PROPERTY">
+        <h2 class="">Properties</h2>
+        <div class="table"><a data-name="-2098822139%2FProperties%2F-251573632" anchor-label="_readValues" id="-2098822139%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-user-dao/index.html#-2098822139%2FProperties%2F-251573632"><span>_</span><wbr></wbr><span>readValues</span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2098822139%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">var </span><a href="../-user-dao/index.html#-2098822139%2FProperties%2F-251573632">_readValues</a><span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.sql/ResultRow///PointingToDeclaration/">ResultRow</span><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1750148878%2FProperties%2F-251573632" anchor-label="coatUrl" id="-1750148878%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="coat-url.html"><span>coat</span><wbr></wbr><span><span>Url</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1750148878%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">var </span><a href="coat-url.html">coatUrl</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">URL del escudo asociado.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1715679808%2FProperties%2F-251573632" anchor-label="db" id="-1715679808%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-user-dao/index.html#-1715679808%2FProperties%2F-251573632"><span><span>db</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1715679808%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">var </span><a href="../-user-dao/index.html#-1715679808%2FProperties%2F-251573632">db</a><span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.sql/Database///PointingToDeclaration/">Database</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1476483005%2FProperties%2F-251573632" anchor-label="difficulty" id="1476483005%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="difficulty.html"><span><span>difficulty</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1476483005%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">var </span><a href="difficulty.html">difficulty</a><span class="token operator">: </span><a href="../../domain.enums/-difficulty/index.html">Difficulty</a></div><div class="brief "><p class="paragraph">Dificultad de la pregunta.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-663313089%2FProperties%2F-251573632" anchor-label="flagUrl" id="-663313089%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="flag-url.html"><span>flag</span><wbr></wbr><span><span>Url</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-663313089%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">var </span><a href="flag-url.html">flagUrl</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a><span class="token operator">?</span></div><div class="brief "><p class="paragraph">URL de la bandera asociada.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1140537405%2FProperties%2F-251573632" anchor-label="id" id="-1140537405%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-user-dao/index.html#-1140537405%2FProperties%2F-251573632"><span><span>id</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1140537405%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-user-dao/index.html#-1140537405%2FProperties%2F-251573632">id</a><span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.dao.id/EntityID///PointingToDeclaration/">EntityID</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1812061660%2FProperties%2F-251573632" anchor-label="klass" id="1812061660%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-user-dao/index.html#1812061660%2FProperties%2F-251573632"><span><span>klass</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1812061660%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">var </span><a href="../-user-dao/index.html#1812061660%2FProperties%2F-251573632">klass</a><span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.dao/EntityClass///PointingToDeclaration/">EntityClass</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span><span data-unresolved-link="org.jetbrains.exposed.dao/Entity///PointingToDeclaration/">Entity</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1546172440%2FProperties%2F-251573632" anchor-label="questionType" id="1546172440%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="question-type.html"><span>question</span><wbr></wbr><span><span>Type</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1546172440%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">var </span><a href="question-type.html">questionType</a><span class="token operator">: </span><a href="../../domain.enums/-question-type/index.html">QuestionType</a></div><div class="brief "><p class="paragraph">Tipo de pregunta.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1258952742%2FProperties%2F-251573632" anchor-label="readValues" id="1258952742%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-user-dao/index.html#1258952742%2FProperties%2F-251573632"><span>read</span><wbr></wbr><span><span>Values</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1258952742%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-user-dao/index.html#1258952742%2FProperties%2F-251573632">readValues</a><span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.sql/ResultRow///PointingToDeclaration/">ResultRow</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1551732564%2FProperties%2F-251573632" anchor-label="responseMode" id="1551732564%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="response-mode.html"><span>response</span><wbr></wbr><span><span>Mode</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1551732564%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">var </span><a href="response-mode.html">responseMode</a><span class="token operator">: </span><a href="../../domain.enums/-response-mode/index.html">ResponseMode</a></div><div class="brief "><p class="paragraph">Modo de respuesta de la pregunta.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-474203533%2FProperties%2F-251573632" anchor-label="statement" id="-474203533%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="statement.html"><span><span>statement</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-474203533%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">var </span><a href="statement.html">statement</a><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-string/index.html">String</a></div><div class="brief "><p class="paragraph">Enunciado de la pregunta.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1015419227%2FProperties%2F-251573632" anchor-label="writeValues" id="1015419227%2FProperties%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-user-dao/index.html#1015419227%2FProperties%2F-251573632"><span>write</span><wbr></wbr><span><span>Values</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1015419227%2FProperties%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">val </span><a href="../-user-dao/index.html#1015419227%2FProperties%2F-251573632">writeValues</a><span class="token operator">: </span><a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedHashMap.html">LinkedHashMap</a><span class="token operator">&lt;</span><span data-unresolved-link="org.jetbrains.exposed.sql/Column///PointingToDeclaration/">Column</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span><span class="token operator">&gt;</span><span class="token punctuation">, </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">?</span><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="-1796355917%2FFunctions%2F-251573632" anchor-label="delete" id="-1796355917%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-user-dao/index.html#-1796355917%2FFunctions%2F-251573632"><span><span>delete</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1796355917%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-user-dao/index.html#-1796355917%2FFunctions%2F-251573632"><span class="token function">delete</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-583453363%2FFunctions%2F-251573632" anchor-label="flush" id="-583453363%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-user-dao/index.html#-583453363%2FFunctions%2F-251573632"><span><span>flush</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-583453363%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-user-dao/index.html#-583453363%2FFunctions%2F-251573632"><span class="token function">flush</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">batch<span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.dao/EntityBatchUpdate///PointingToDeclaration/">EntityBatchUpdate</span><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1235913345%2FFunctions%2F-251573632" anchor-label="getValue" id="-1235913345%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-user-dao/index.html#-660305598%2FFunctions%2F-251573632"><span>get</span><wbr></wbr><span><span>Value</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1235913345%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-660305598%2FFunctions%2F-251573632">Unwrapped</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#-660305598%2FFunctions%2F-251573632">Wrapped</a><span class="token operator">&gt; </span><span data-unresolved-link="org.jetbrains.exposed.dao/EntityFieldWithTransform///PointingToDeclaration/">EntityFieldWithTransform</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-660305598%2FFunctions%2F-251573632">Unwrapped</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#-660305598%2FFunctions%2F-251573632">Wrapped</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="../-user-dao/index.html#-660305598%2FFunctions%2F-251573632"><span class="token function">getValue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">o<span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.dao/Entity///PointingToDeclaration/">Entity</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">desc<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.reflect/-k-property/index.html">KProperty</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-user-dao/index.html#-660305598%2FFunctions%2F-251573632">Wrapped</a></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-1797203184%2FFunctions%2F-251573632">REF</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#-1797203184%2FFunctions%2F-251573632">RID</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#-1797203184%2FFunctions%2F-251573632">T</a><span class="token operator"> : </span><span data-unresolved-link="org.jetbrains.exposed.dao/Entity///PointingToDeclaration/">Entity</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-1797203184%2FFunctions%2F-251573632">RID</a><span class="token operator">&gt;</span><span class="token operator">&gt; </span><span data-unresolved-link="org.jetbrains.exposed.dao/OptionalReference///PointingToDeclaration/">OptionalReference</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-1797203184%2FFunctions%2F-251573632">REF</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#-1797203184%2FFunctions%2F-251573632">RID</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#-1797203184%2FFunctions%2F-251573632">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="../-user-dao/index.html#-1797203184%2FFunctions%2F-251573632"><span class="token function">getValue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">o<span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.dao/Entity///PointingToDeclaration/">Entity</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">desc<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.reflect/-k-property/index.html">KProperty</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-user-dao/index.html#-1797203184%2FFunctions%2F-251573632">T</a><span class="token operator">?</span></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#2123942288%2FFunctions%2F-251573632">REF</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#2123942288%2FFunctions%2F-251573632">RID</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#2123942288%2FFunctions%2F-251573632">T</a><span class="token operator"> : </span><span data-unresolved-link="org.jetbrains.exposed.dao/Entity///PointingToDeclaration/">Entity</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#2123942288%2FFunctions%2F-251573632">RID</a><span class="token operator">&gt;</span><span class="token operator">&gt; </span><span data-unresolved-link="org.jetbrains.exposed.dao/Reference///PointingToDeclaration/">Reference</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#2123942288%2FFunctions%2F-251573632">REF</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#2123942288%2FFunctions%2F-251573632">RID</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#2123942288%2FFunctions%2F-251573632">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="../-user-dao/index.html#2123942288%2FFunctions%2F-251573632"><span class="token function">getValue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">o<span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.dao/Entity///PointingToDeclaration/">Entity</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">desc<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.reflect/-k-property/index.html">KProperty</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-user-dao/index.html#2123942288%2FFunctions%2F-251573632">T</a></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-1562203761%2FFunctions%2F-251573632">T</a><span class="token operator">&gt; </span><span data-unresolved-link="org.jetbrains.exposed.sql/Column///PointingToDeclaration/">Column</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-1562203761%2FFunctions%2F-251573632">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="../-user-dao/index.html#-1562203761%2FFunctions%2F-251573632"><span class="token function">getValue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">o<span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.dao/Entity///PointingToDeclaration/">Entity</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">desc<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.reflect/-k-property/index.html">KProperty</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-user-dao/index.html#-1562203761%2FFunctions%2F-251573632">T</a></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#1569408690%2FFunctions%2F-251573632">T</a><span class="token operator">&gt; </span><span data-unresolved-link="org.jetbrains.exposed.sql/CompositeColumn///PointingToDeclaration/">CompositeColumn</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#1569408690%2FFunctions%2F-251573632">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="../-user-dao/index.html#1569408690%2FFunctions%2F-251573632"><span class="token function">getValue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">o<span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.dao/Entity///PointingToDeclaration/">Entity</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">desc<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.reflect/-k-property/index.html">KProperty</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-user-dao/index.html#1569408690%2FFunctions%2F-251573632">T</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2076602490%2FFunctions%2F-251573632" anchor-label="lookup" id="-2076602490%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-user-dao/index.html#-2076602490%2FFunctions%2F-251573632"><span><span>lookup</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2076602490%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-2076602490%2FFunctions%2F-251573632">T</a><span class="token operator">&gt; </span><span data-unresolved-link="org.jetbrains.exposed.sql/Column///PointingToDeclaration/">Column</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-2076602490%2FFunctions%2F-251573632">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="../-user-dao/index.html#-2076602490%2FFunctions%2F-251573632"><span class="token function">lookup</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-user-dao/index.html#-2076602490%2FFunctions%2F-251573632">T</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1201706482%2FFunctions%2F-251573632" anchor-label="lookupInReadValues" id="1201706482%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-user-dao/index.html#1201706482%2FFunctions%2F-251573632"><span>lookup</span><wbr></wbr><span>In</span><wbr></wbr><span>Read</span><wbr></wbr><span><span>Values</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1201706482%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#1201706482%2FFunctions%2F-251573632">T</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#1201706482%2FFunctions%2F-251573632">R</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token operator">&gt; </span><span data-unresolved-link="org.jetbrains.exposed.sql/Column///PointingToDeclaration/">Column</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#1201706482%2FFunctions%2F-251573632">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="../-user-dao/index.html#1201706482%2FFunctions%2F-251573632"><span class="token function">lookupInReadValues</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">found<span class="token operator">: </span><span class="token punctuation">(</span><a href="../-user-dao/index.html#1201706482%2FFunctions%2F-251573632">T</a><span class="token operator">?</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="../-user-dao/index.html#1201706482%2FFunctions%2F-251573632">R</a><span class="token operator">?</span><span class="token punctuation">, </span></span><span class="parameter ">notFound<span class="token operator">: </span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator"> -&gt; </span><a href="../-user-dao/index.html#1201706482%2FFunctions%2F-251573632">R</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../-user-dao/index.html#1201706482%2FFunctions%2F-251573632">R</a><span class="token operator">?</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="771771046%2FFunctions%2F-251573632" anchor-label="refresh" id="771771046%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-user-dao/index.html#771771046%2FFunctions%2F-251573632"><span><span>refresh</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="771771046%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">open </span><span class="token keyword">fun </span><a href="../-user-dao/index.html#771771046%2FFunctions%2F-251573632"><span class="token function">refresh</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">flush<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-boolean/index.html">Boolean</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="491986929%2FFunctions%2F-251573632" anchor-label="setValue" id="491986929%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-user-dao/index.html#-2004336299%2FFunctions%2F-251573632"><span>set</span><wbr></wbr><span><span>Value</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="491986929%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-2004336299%2FFunctions%2F-251573632">Unwrapped</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#-2004336299%2FFunctions%2F-251573632">Wrapped</a><span class="token operator">&gt; </span><span data-unresolved-link="org.jetbrains.exposed.dao/EntityFieldWithTransform///PointingToDeclaration/">EntityFieldWithTransform</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-2004336299%2FFunctions%2F-251573632">Unwrapped</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#-2004336299%2FFunctions%2F-251573632">Wrapped</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="../-user-dao/index.html#-2004336299%2FFunctions%2F-251573632"><span class="token function">setValue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">o<span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.dao/Entity///PointingToDeclaration/">Entity</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">desc<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.reflect/-k-property/index.html">KProperty</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="../-user-dao/index.html#-2004336299%2FFunctions%2F-251573632">Wrapped</a></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#1572888762%2FFunctions%2F-251573632">REF</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#1572888762%2FFunctions%2F-251573632">RID</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#1572888762%2FFunctions%2F-251573632">T</a><span class="token operator"> : </span><span data-unresolved-link="org.jetbrains.exposed.dao/Entity///PointingToDeclaration/">Entity</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#1572888762%2FFunctions%2F-251573632">RID</a><span class="token operator">&gt;</span><span class="token operator">&gt; </span><span data-unresolved-link="org.jetbrains.exposed.dao/OptionalReference///PointingToDeclaration/">OptionalReference</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#1572888762%2FFunctions%2F-251573632">REF</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#1572888762%2FFunctions%2F-251573632">RID</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#1572888762%2FFunctions%2F-251573632">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="../-user-dao/index.html#1572888762%2FFunctions%2F-251573632"><span class="token function">setValue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">o<span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.dao/Entity///PointingToDeclaration/">Entity</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">desc<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.reflect/-k-property/index.html">KProperty</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="../-user-dao/index.html#1572888762%2FFunctions%2F-251573632">T</a><span class="token operator">?</span></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-1041003319%2FFunctions%2F-251573632">REF</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#-1041003319%2FFunctions%2F-251573632">RID</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#-1041003319%2FFunctions%2F-251573632">T</a><span class="token operator"> : </span><span data-unresolved-link="org.jetbrains.exposed.dao/Entity///PointingToDeclaration/">Entity</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-1041003319%2FFunctions%2F-251573632">RID</a><span class="token operator">&gt;</span><span class="token operator">&gt; </span><span data-unresolved-link="org.jetbrains.exposed.dao/Reference///PointingToDeclaration/">Reference</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-1041003319%2FFunctions%2F-251573632">REF</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#-1041003319%2FFunctions%2F-251573632">RID</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#-1041003319%2FFunctions%2F-251573632">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="../-user-dao/index.html#-1041003319%2FFunctions%2F-251573632"><span class="token function">setValue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">o<span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.dao/Entity///PointingToDeclaration/">Entity</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">desc<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.reflect/-k-property/index.html">KProperty</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="../-user-dao/index.html#-1041003319%2FFunctions%2F-251573632">T</a></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-713706846%2FFunctions%2F-251573632">T</a><span class="token operator">&gt; </span><span data-unresolved-link="org.jetbrains.exposed.sql/Column///PointingToDeclaration/">Column</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-713706846%2FFunctions%2F-251573632">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="../-user-dao/index.html#-713706846%2FFunctions%2F-251573632"><span class="token function">setValue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">o<span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.dao/Entity///PointingToDeclaration/">Entity</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">desc<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.reflect/-k-property/index.html">KProperty</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="../-user-dao/index.html#-713706846%2FFunctions%2F-251573632">T</a></span></span><span class="token punctuation">)</span></div><div class="symbol monospace"><span class="token keyword">operator </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-648410275%2FFunctions%2F-251573632">T</a><span class="token operator">&gt; </span><span data-unresolved-link="org.jetbrains.exposed.sql/CompositeColumn///PointingToDeclaration/">CompositeColumn</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-648410275%2FFunctions%2F-251573632">T</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="../-user-dao/index.html#-648410275%2FFunctions%2F-251573632"><span class="token function">setValue</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">o<span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.dao/Entity///PointingToDeclaration/">Entity</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">desc<span class="token operator">: </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.reflect/-k-property/index.html">KProperty</a><span class="token operator">&lt;</span><span class="token operator">*</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">value<span class="token operator">: </span><a href="../-user-dao/index.html#-648410275%2FFunctions%2F-251573632">T</a></span></span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="904790982%2FFunctions%2F-251573632" anchor-label="storeWrittenValues" id="904790982%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-user-dao/index.html#904790982%2FFunctions%2F-251573632"><span>store</span><wbr></wbr><span>Written</span><wbr></wbr><span><span>Values</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="904790982%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="../-user-dao/index.html#904790982%2FFunctions%2F-251573632"><span class="token function">storeWrittenValues</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-511247463%2FFunctions%2F-251573632" anchor-label="toDomain" id="-511247463%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="to-domain.html"><span>to</span><wbr></wbr><span><span>Domain</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-511247463%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">fun </span><a href="to-domain.html"><span class="token function">toDomain</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../domain.models/-question/index.html">Question</a></div><div class="brief "><p class="paragraph">Convierte el DAO a un modelo de dominio <a href="../../domain.models/-question/index.html">Question</a>.</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1338816974%2FFunctions%2F-251573632" anchor-label="via" id="1338816974%2FFunctions%2F-251573632" data-filterable-set=":/main"></a>
+          <div class="table-row" data-filterable-current=":/main" data-filterable-set=":/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="../-user-dao/index.html#-1171716846%2FFunctions%2F-251573632"><span><span>via</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1338816974%2FFunctions%2F-251573632"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">infix </span><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-1171716846%2FFunctions%2F-251573632">TID</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#-1171716846%2FFunctions%2F-251573632">Target</a><span class="token operator"> : </span><span data-unresolved-link="org.jetbrains.exposed.dao/Entity///PointingToDeclaration/">Entity</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-1171716846%2FFunctions%2F-251573632">TID</a><span class="token operator">&gt;</span><span class="token operator">&gt; </span><span data-unresolved-link="org.jetbrains.exposed.dao/EntityClass///PointingToDeclaration/">EntityClass</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-1171716846%2FFunctions%2F-251573632">TID</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#-1171716846%2FFunctions%2F-251573632">Target</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="../-user-dao/index.html#-1171716846%2FFunctions%2F-251573632"><span class="token function">via</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">table<span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.sql/Table///PointingToDeclaration/">Table</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.dao/InnerTableLink///PointingToDeclaration/">InnerTableLink</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span><span data-unresolved-link="org.jetbrains.exposed.dao/Entity///PointingToDeclaration/">Entity</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span><span class="token punctuation">, </span><a href="../-user-dao/index.html#-1171716846%2FFunctions%2F-251573632">TID</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#-1171716846%2FFunctions%2F-251573632">Target</a><span class="token operator">&gt;</span></div><div class="symbol monospace"><span class="token keyword">fun </span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-568990136%2FFunctions%2F-251573632">TID</a><span class="token operator"> : </span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-any/index.html">Any</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#-568990136%2FFunctions%2F-251573632">Target</a><span class="token operator"> : </span><span data-unresolved-link="org.jetbrains.exposed.dao/Entity///PointingToDeclaration/">Entity</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-568990136%2FFunctions%2F-251573632">TID</a><span class="token operator">&gt;</span><span class="token operator">&gt; </span><span data-unresolved-link="org.jetbrains.exposed.dao/EntityClass///PointingToDeclaration/">EntityClass</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-568990136%2FFunctions%2F-251573632">TID</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#-568990136%2FFunctions%2F-251573632">Target</a><span class="token operator">&gt;</span><span class="token punctuation">.</span><a href="../-user-dao/index.html#-568990136%2FFunctions%2F-251573632"><span class="token function">via</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">sourceColumn<span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.sql/Column///PointingToDeclaration/">Column</span><span class="token operator">&lt;</span><span data-unresolved-link="org.jetbrains.exposed.dao.id/EntityID///PointingToDeclaration/">EntityID</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span><span class="token punctuation">, </span></span><span class="parameter ">targetColumn<span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.sql/Column///PointingToDeclaration/">Column</span><span class="token operator">&lt;</span><span data-unresolved-link="org.jetbrains.exposed.dao.id/EntityID///PointingToDeclaration/">EntityID</span><span class="token operator">&lt;</span><a href="../-user-dao/index.html#-568990136%2FFunctions%2F-251573632">TID</a><span class="token operator">&gt;</span><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><span data-unresolved-link="org.jetbrains.exposed.dao/InnerTableLink///PointingToDeclaration/">InnerTableLink</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token punctuation">, </span><span data-unresolved-link="org.jetbrains.exposed.dao/Entity///PointingToDeclaration/">Entity</span><span class="token operator">&lt;</span><a href="https://kotlinlang.org/api/core/kotlin-stdlib/kotlin/-int/index.html">Int</a><span class="token operator">&gt;</span><span class="token punctuation">, </span><a href="../-user-dao/index.html#-568990136%2FFunctions%2F-251573632">TID</a><span class="token punctuation">, </span><a href="../-user-dao/index.html#-568990136%2FFunctions%2F-251573632">Target</a><span class="token operator">&gt;</span></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="footer">
+        <a href="#content" id="go-to-top-link" class="footer--button footer--button_go-to-top"></a>
+        <span>© 2025 Copyright</span>
+        <span class="pull-right">
+            <span>Generated by </span>
+            <a class="footer--link footer--link_external" href="https://github.com/Kotlin/dokka">
+                <span>dokka</span>
+            </a>
+        </span>
+    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

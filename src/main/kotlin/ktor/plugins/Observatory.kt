@@ -8,6 +8,11 @@ import io.ktor.server.plugins.cors.routing.*
 import io.ktor.server.request.*
 import org.slf4j.event.Level
 
+/**
+ * Configura la observabilidad de la aplicación Ktor.
+ * Incluye CallId, logging de llamadas y CORS.
+ * @receiver Aplicación Ktor donde se configura la observabilidad.
+ */
 fun Application.configureObservatory() {
     install(CallId) {
         header(HttpHeaders.XRequestId)

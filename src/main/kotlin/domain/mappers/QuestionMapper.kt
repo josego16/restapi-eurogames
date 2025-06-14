@@ -5,6 +5,11 @@ import domain.dto.QuestionWithAnswersDto
 import domain.models.Question
 import domain.models.QuestionWithAnswer
 
+/**
+ * Convierte un modelo [Question] a un [QuestionResponseDto].
+ * @receiver Question a convertir
+ * @return [QuestionResponseDto] con los datos de la pregunta
+ */
 fun Question.toResponseDto(): QuestionResponseDto = with(this) {
     QuestionResponseDto(
         id = id,
@@ -17,6 +22,11 @@ fun Question.toResponseDto(): QuestionResponseDto = with(this) {
     )
 }
 
+/**
+ * Convierte un modelo [QuestionWithAnswer] a un [QuestionWithAnswersDto] que incluye las respuestas.
+ * @receiver QuestionWithAnswer a convertir
+ * @return [QuestionWithAnswersDto] con la pregunta y sus respuestas
+ */
 fun QuestionWithAnswer.toDto(): QuestionWithAnswersDto = with(this) {
     QuestionWithAnswersDto(
         id = question.id,

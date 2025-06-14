@@ -9,6 +9,11 @@ import domain.interfaces.UserRepository
 import domain.usecase.user.auth.SignInUseCase
 import domain.usecase.user.auth.SignUpUseCase
 
+/**
+ * Clase que agrupa y provee acceso a los casos de uso relacionados con [domain.models.User].
+ *
+ * Facilita la inyección y organización centralizada de lógica de negocio.
+ */
 object ProviderUserUseCase {
     private val repository: UserRepository = UserRepositoryImpl()
     private val jwt: JwtConfig = JwtConfig

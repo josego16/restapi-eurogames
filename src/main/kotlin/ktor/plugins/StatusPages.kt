@@ -9,6 +9,11 @@ import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.response.*
 import org.slf4j.LoggerFactory
 
+/**
+ * Configura el manejo global de errores y excepciones en la aplicación Ktor.
+ * Incluye manejo de validaciones, errores JWT, rutas no encontradas y errores internos.
+ * @receiver Aplicación Ktor donde se configuran las páginas de estado.
+ */
 fun Application.configureStatusPages() {
     val logger = LoggerFactory.getLogger("StatusPages")
 

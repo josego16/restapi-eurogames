@@ -5,6 +5,11 @@ import domain.dto.ScoreCreateDto
 import domain.dto.ScoreResponseDto
 import domain.interfaces.ScoreRepository
 
+/**
+ * Clase que agrupa y provee acceso a los casos de uso relacionados con [domain.models.Score].
+ *
+ * Facilita la inyección y organización centralizada de lógica de negocio para puntuaciones.
+ */
 object ProviderScoreUseCase {
     private val repository: ScoreRepository = ScoreRepositoryImpl()
 

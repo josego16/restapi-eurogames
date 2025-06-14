@@ -6,8 +6,26 @@ import org.jetbrains.exposed.dao.IntEntity
 import org.jetbrains.exposed.dao.IntEntityClass
 import org.jetbrains.exposed.dao.id.EntityID
 
+/**
+ * DAO para la entidad Score.
+ * Permite el acceso y manipulación de puntuaciones en la base de datos.
+ * @property userId Referencia al usuario que obtuvo la puntuación.
+ * @property gameId Referencia al juego asociado.
+ * @property gameType Tipo de juego.
+ * @property difficulty Dificultad del juego.
+ * @property scoreValue Valor de la puntuación obtenida.
+ * @property correctAnswers Número de respuestas correctas.
+ * @property wrongAnswers Número de respuestas incorrectas.
+ * @property totalQuestions Número total de preguntas.
+ */
 class ScoreDao(id: EntityID<Int>) : IntEntity(id) {
     companion object : IntEntityClass<ScoreDao>(ScoreTable) {
+        /**
+         * Crea o actualiza un DAO a partir de un modelo de dominio [Score].
+         * @param domain Modelo de dominio [Score].
+         * @param existing Instancia existente de [ScoreDao] (opcional).
+         * @return [ScoreDao] creado o actualizado.
+         */
         fun fromDomain(domain: Score, existing: ScoreDao? = null): ScoreDao {
             fun ScoreDao.assignFromDomain(domain: Score) {
                 userId = UserDao.Companion[domain.userId]
@@ -40,6 +58,10 @@ class ScoreDao(id: EntityID<Int>) : IntEntity(id) {
     var wrongAnswers by ScoreTable.wrongAnswers
     var totalQuestions by ScoreTable.totalQuestions
 
+    /**
+     * Convierte el DAO a un modelo de dominio [Score].
+     * @return [Score] con los datos de la puntuación.
+     */
     fun toDomain() = Score(
         id.value,
         userId.id.value,

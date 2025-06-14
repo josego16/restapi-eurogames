@@ -3,6 +3,11 @@ package ktor.plugins
 import io.ktor.server.application.*
 import org.jetbrains.exposed.sql.Database
 
+/**
+ * Configura la conexión a la base de datos usando parámetros del entorno de Ktor.
+ * Lanza un log informativo si la conexión es exitosa o un error si falla.
+ * @receiver Aplicación Ktor donde se configura la base de datos.
+ */
 fun Application.configureDatabases() {
     val driver = environment.config.property("ktor.database.driver").getString()
     val url = environment.config.property("ktor.database.url").getString()

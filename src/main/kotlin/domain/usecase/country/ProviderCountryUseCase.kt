@@ -6,6 +6,11 @@ import domain.dto.CountryResponseDto
 import domain.dto.PaginatedResponseDto
 import domain.interfaces.CountryRepository
 
+/**
+ * Clase que agrupa y provee acceso a los casos de uso relacionados con [domain.models.Country].
+ *
+ * Facilita la inyección y organización centralizada de lógica de negocio para países.
+ */
 object ProviderCountryUseCase {
     private val repository: CountryRepository = CountryRepositoryImpl()
 

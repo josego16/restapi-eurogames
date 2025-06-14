@@ -7,6 +7,11 @@ import domain.enums.Difficulty
 import domain.enums.QuestionType
 import domain.interfaces.QuestionRepository
 
+/**
+ * Clase que agrupa y provee acceso a los casos de uso relacionados con [domain.models.Question].
+ *
+ * Facilita la inyección y organización centralizada de lógica de negocio para preguntas.
+ */
 object ProviderQuestionUseCase {
     private val repository: QuestionRepository = QuestionRepositoryImpl()
 
